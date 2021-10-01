@@ -3,3 +3,52 @@ File: footer.css
 Author: Maurice Vossen
 Date: November 2021
 */
+
+
+footer {
+    background-color: lightgrey;
+    text-align: center;
+    border-top: 2px solid red;
+    overflow: hidden;
+}
+
+
+#follow-socials {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+footer i {
+    font-size: 30px;
+}
+
+footer a {
+    text-decoration: none;
+    color: black;
+}
+
+footer a:hover {
+    color: red;
+}
+
+footer > ul {
+    margin-bottom: 20px;
+}
+
+
+footer > ul > li{
+    display: inline-block;
+    padding: 0 10px;
+}
+
+
+#copyright {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
