@@ -23,7 +23,8 @@ def hello():
 @app.route("/get_celebrities")
 def get_celebrities():
     celebrities = mongo.db.celebrities.find()
-    return render_template("celebrities.html", celebrities=celebrities)
+    return render_template("celebrities.html", celebrities=celebrities,
+                           title='Celebrities')
 
 
 if __name__ == "__main__":
