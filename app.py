@@ -14,17 +14,16 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
-
 @app.route("/")
 def hello():
     return "hello"
 
 
-@app.route("/get_celebrities")
-def get_celebrities():
-    celebrities = mongo.db.celebrities.find()
-    return render_template("celebrities.html", celebrities=celebrities,
-                           title='Celebrities')
+@app.route("/login")
+def get_usernames():
+    usernames = mongo.db.users.find()
+    return render_template("login.html", usernames=usernames,
+                           title='Citypop Central | Login')
 
 
 if __name__ == "__main__":

@@ -9,10 +9,11 @@ Date: November 2021
     padding: 0;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 20px;
+    letter-spacing: 1px;
 }
 
 body {
-    background: url('/static/img/hero-image.jpg') no-repeat center center;
+    background: url('/static/img/hero-imageB.jpg') no-repeat center center;
     background-attachment: fixed;
     background-size: cover;
     background-blend-mode: darken;
@@ -28,14 +29,12 @@ header {
 #logo-top-span {
     font-size: 54px;
     display: block;
-    letter-spacing: 1px;
 }
 
 
 #logo-bottom-span {
     font-size: 22px;
     display: block;
-    letter-spacing: 1px;
 }
 
 
@@ -60,10 +59,14 @@ header {
     list-style-type: none;
     padding: 0 10px;
     font-size: 30px;
-    letter-spacing: 1px;
 }
 
 
 #main-content {
     padding: 30px;
+}
+
+
+h3 {
+    font-size: 26px;
 }

@@ -1,0 +1,39 @@
+/*
+File: forms.css
+Author: Maurice Vossen
+Date: November 2021
+*/
+
+#login-form-div {
+    margin: 0 auto;
+    width: 40%;
+}
+
+
+
+.form-label {
+    padding-left: 4px;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+.mandatory-astrisk {
+    color: red;
+}
+
+
+.form-textbox {
+    margin-top: 4px;
+    margin-bottom: 16px;
+    font-size: 18px;
+    padding: 4px 0 4px 8px;
+    width: 100%;
+    letter-spacing: 1px;
+}
+
+
+.form-button {
+    font-size: 16px;
+    letter-spacing: 1px;
+    padding: 4px 8px;
+}
