@@ -44,11 +44,19 @@
             <div id="navigation-div">
 
                 <ul>
-                    <li>About</li>
-                    <li>Contact</li>
-                    <li><a href="{{ url_for('login') }}">Login</a></li>
-                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
-                    <li><a href="{{ url_for('register') }}">Register</a></li>
+                    
+                    {% if session.user %}
+                        <li>Home</li>
+                        <li>About</li>
+                        <li>Contact</li>
+                        <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                    {% else %}
+                        <li>Home</li>
+                        <li>About</li>
+                        <li>Contact</li>
+                        <li><a href="{{ url_for('login') }}">Login</a></li>
+                        <li><a href="{{ url_for('register') }}">Register</a></li>
+                    {% endif %}
 
                 </ul>
 
