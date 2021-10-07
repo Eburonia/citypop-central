@@ -4,32 +4,31 @@
 {% block content %}
 
 {% for username in usernames %}
-    {{ username.username }} <br><br><br>
-
-        <div id="login-form-div">
-
-            <h3>Log in to your Citypop Central account</h3><br>
-
-            <form action="" method="POST">
-
-                <label for="username" class="form-label">Username<span class="mandatory-astrisk"> *</span></label><br>
-                <input type="text" id="username" name="username" class="form-textbox" placeholder="Enter your Username" aria-label="" required><br>
-
-                <label for="password" class="form-label">Password<span class="mandatory-astrisk"> *</span></label><br>
-                <input type="password" id="password" name="password" class="form-textbox" placeholder="Enter your Password" aria-label="" required><br>
-
-                <input type="submit" value="login" class="form-button" aria-label="Click this button to submit the form, make sure you have added all required fields above"><br><br>
-
-            </form>
-
-            <p id="form-p">New to Citypop Central? <a href="create_account">Create an account</a></p>
-
-        </div>    
-
-
+    {{ username.username }} <br>
 
 {% endfor %}
 
+<div id="login-form-div">
+
+    <h3>Login to your Citypop Central account</h3><br>
+
+    <form action="" method="POST">
+
+        <label for="username" class="form-label">Username<span class="mandatory-astrisk"> *</span></label><br>
+        <input type="text" id="username" name="username" class="form-textbox" placeholder="Enter your Username" aria-label="" required><br>
+
+        <label for="password" class="form-label">Password<span class="mandatory-astrisk"> *</span></label><br>
+        <input type="password" id="password" name="password" class="form-textbox" placeholder="Enter your Password" aria-label="" required><br>
+
+        <input type="submit" value="login" class="form-button" aria-label="Click this button to submit the form, make sure you have added all required fields above"><br><br>
+
+    </form>
+
+    <p id="form-p">New to Citypop Central? Create a New Account <a href="{{ url_for('register') }}">Here</a></p>
+
+    <a href="{{ url_for('register') }}">Register Account</a>
+
+</div>   
 
 {% endblock %}
 

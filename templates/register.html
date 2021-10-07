@@ -1,0 +1,31 @@
+
+
+{% extends "base.html" %}
+{% block content %}
+
+<div id="register-form-div">
+
+    <h3>Create a Citypop Central account</h3><br>
+
+    <form action="" method="POST">
+
+        <label for="username" class="form-label">Username<span class="mandatory-astrisk"> *</span></label><br>
+        <input type="text" id="username" name="username" class="form-textbox" placeholder="Enter your new Username" aria-label="" required><br>
+
+        <label for="password" class="form-label">Password<span class="mandatory-astrisk"> *</span></label><br>
+        <input type="password" id="password" name="password" class="form-textbox" placeholder="Enter your new Password" aria-label="" required><br>
+
+        <input type="submit" value="login" class="form-button" aria-label="Click this button to submit the form, make sure you have added all required fields above"><br><br>
+
+    </form>
+
+    <p id="form-p">Already have a Citypop Central Account? Login <a href="{{ url_for('login') }}">Here</a></p>
+
+</div>  
+
+{% endblock %}
+
+
+
+
+
