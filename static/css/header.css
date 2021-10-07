@@ -70,3 +70,11 @@ header {
 h3 {
     font-size: 26px;
 }
+
+
+#flash-messages {
+    padding: 20px 0;
+    font-size: 20px;
+    text-align: center;
+    background-color: lightblue;
+}

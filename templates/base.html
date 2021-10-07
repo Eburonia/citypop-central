@@ -46,7 +46,9 @@
                 <ul>
                     <li>About</li>
                     <li>Contact</li>
-                    <li>Login</li>
+                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                    <li><a href="{{ url_for('register') }}">Register</a></li>
+
                 </ul>
 
             </div>
@@ -61,7 +63,7 @@
         {% with messages = get_flashed_messages() %}
             {% if messages %}
                 {% for message in messages %}
-                        {{ message }}
+                       <div id="flash-messages">{{ message }}</div>
                 {% endfor %}
             {% endif %}
         {% endwith %}

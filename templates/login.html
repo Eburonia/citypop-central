@@ -12,7 +12,7 @@
 
     <h3>Login to your Citypop Central account</h3><br>
 
-    <form action="" method="POST">
+    <form method="POST" action="{{ url_for('login') }}">
 
         <label for="username" class="form-label">Username<span class="mandatory-astrisk"> *</span></label><br>
         <input type="text" id="username" name="username" class="form-textbox" placeholder="Enter your Username" aria-label="" required><br>
@@ -24,7 +24,7 @@
 
     </form>
 
-    <p id="form-p">New to Citypop Central? Create a New Account <a href="">Here</a></p>
+    <p id="form-p">New to Citypop Central? Create a New Account <a href="{{ url_for('register') }}">Here</a></p>
 
 </div>   
 
