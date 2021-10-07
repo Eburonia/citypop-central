@@ -56,6 +56,18 @@
 
     </header>
 
+    <section>
+        <!-- flash messages -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                        {{ message }}
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </section>
+
+
         <div id="main-content">
 
             <!-- add the main content here -->
