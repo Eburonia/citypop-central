@@ -36,7 +36,7 @@
             <div id="logo-div">
 
                 <span id="logo-top-span">Citypop Central</span>
-                <span id="logo-bottom-span">Japanese Music from the 80's and 90's</span>
+                <span id="logo-bottom-span">Japanese Music from the 70's and 80's</span>
 
             </div>
 
@@ -45,18 +45,18 @@
 
                 <ul>
                     
+
+
                     {% if session.user %}
-                        <li>Home</li>
-                        <li>About</li>
-                        <li>Contact</li>
-                        <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                        <li id="logout-button"><a href="{{ url_for('logout') }}">Logout</a></li>
                     {% else %}
-                        <li>Home</li>
-                        <li>About</li>
-                        <li>Contact</li>
-                        <li><a href="{{ url_for('login') }}">Login</a></li>
-                        <li><a href="{{ url_for('register') }}">Register</a></li>
+                        <li id="register-button"><a href="{{ url_for('register') }}">Register</a></li>
+                        <li id="login-button"><a href="{{ url_for('login') }}">Login</a></li>
                     {% endif %}
+
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="{{ url_for('index') }}">Home</a></li>
 
                 </ul>
 

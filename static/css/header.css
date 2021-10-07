@@ -4,37 +4,47 @@ Author: Maurice Vossen
 Date: November 2021
 */
 
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Nunito', sans-serif;
     font-size: 20px;
     letter-spacing: 1px;
 }
 
+
 body {
-    background: url('/static/img/hero-imageB.jpg') no-repeat center center;
+    background: url('/static/img/hero-image.jpg') no-repeat center center;
     background-attachment: fixed;
     background-size: cover;
-    background-blend-mode: darken;
+    background-blend-mode: luminosity;
+    background-color: steelblue;
 }
+
 
 header {
     overflow: hidden;
-    background-color: lightgrey;
-    border-bottom: 2px solid red;
+    background-color: transparent;
+    border-bottom: 2px solid rgb(238, 238, 238);
+    background-color: rgba(10, 10, 10, 0.95);
 }
 
 
 #logo-top-span {
+    color:steelblue;
     font-size: 54px;
     display: block;
+    text-align: center;
 }
 
 
 #logo-bottom-span {
-    font-size: 22px;
+    color: rgb(238, 238, 238);
+    font-size: 20px;
     display: block;
+    text-align: center;
 }
 
 
@@ -42,7 +52,7 @@ header {
     float: left;
     padding: 20px;
     box-sizing: border-box;
-    width: 500px;
+    width: 450px;
 }
 
 
@@ -50,7 +60,7 @@ header {
     float: left;
     padding: 20px;
     box-sizing: border-box;
-    width: calc(100% - 500px);
+    width: calc(100% - 450px);
 }
 
 
@@ -59,7 +69,21 @@ header {
     list-style-type: none;
     padding: 0 10px;
     font-size: 30px;
+    
 }
+
+
+#navigation-div > ul > li > a {
+    color: rgb(238, 238, 238);
+    text-decoration: none;
+}
+
+
+#navigation-div > ul > li > a:hover {
+    text-decoration: underline;
+    color: steelblue;
+}
+
 
 
 #main-content {
@@ -76,5 +100,44 @@ h3 {
     padding: 20px 0;
     font-size: 20px;
     text-align: center;
-    background-color: lightblue;
+    background-color: limegreen;
+    color: black;
+}
+
+
+
+
+#register-button > a {
+    padding: 5px 10px  !important;
+    margin: 0 !important;
+    border: 2px solid #D24946 !important;
+    border-radius: 8px;
+    background-color: #D24946 !important;
+    color: black !important;
+    text-decoration: none !important;
+}
+
+
+
+
+#login-button > a, #logout-button > a {
+    padding: 5px 10px  !important;
+    margin: 0 !important;
+    border: 2px solid steelblue !important;
+    border-radius: 8px;
+    background-color: steelblue !important;
+    color: black !important;
+    text-decoration: none !important;
+}
+
+
+#login-button > a:hover, #logout-button > a:hover {
+    background-color: black !important;
+    color: steelblue !important;
+}
+
+
+#register-button > a:hover {
+    background-color: black !important;
+    color: #D24946 !important;
 }

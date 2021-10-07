@@ -17,8 +17,8 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-def hello():
-    return "hello"
+def index():
+    return render_template("index.html")
 
 
 @app.route("/register", methods=["GET", "POST"])
