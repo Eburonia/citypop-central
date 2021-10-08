@@ -16,6 +16,10 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/forms.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}" type="text/css">
+
+        <!-- jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     {% block styles %}
     {% endblock %}
 
@@ -33,6 +37,8 @@
         <!-- navigation bar -->
         <nav>   
                 
+
+
             <div id="logo-div">
 
                 <span id="logo-top-span">Citypop Central</span>
@@ -43,10 +49,10 @@
 
             <div id="navigation-div">
 
+                <button id="toggle-button"><i class="fas fa-bars"></i></button>
+
+
                 <ul>
-                    
-
-
                     {% if session.user %}
                         <li id="logout-button"><a href="{{ url_for('logout') }}">Logout</a></li>
                     {% else %}
@@ -57,11 +63,24 @@
                     <li><a href="#">Contact</a></li>
                     <li><a href="#">About</a></li>
                     <li><a href="{{ url_for('index') }}">Home</a></li>
-
                 </ul>
 
             </div>
 
+
+            <div id="toggle-menu">
+
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Contact</a></li>
+                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                    <li><a href="">Register</a></li>
+                    <li><a href="">Logout</a></li>
+                </ul>
+
+
+            </div>
 
         </nav>
 
@@ -101,6 +120,11 @@
         <span id="copyright">© CityPop Central 2021</span>
 
     </footer>
+
+    <!-- load javascript -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+    
 
 </body>
 

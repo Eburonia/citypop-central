@@ -141,3 +141,64 @@ h3 {
     background-color: black !important;
     color: #D24946 !important;
 }
+
+
+#toggle-button {
+    display: none;
+    float: right;
+    height: 40px;
+    width: 40px;
+    border: 2px solid steelblue;
+    background-color: transparent;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+
+#toggle-button > i {
+    color: steelblue;
+}
+
+
+
+#toggle-menu {
+    display: none;
+    color: white;
+    text-align: center;
+    float: left;
+    clear: left;
+    width: 100%;
+}
+
+
+#toggle-menu li {
+    list-style-type: none;
+    background-color: steelblue;
+    padding: 5px;
+    margin: 2px;
+    cursor: pointer;
+}
+
+
+
+
+/* media queries for base.html only */
+
+/* for tablets and phones */
+@media only screen and (max-width: 1000px) { 
+
+    #toggle-button {
+        display: block;
+    }
+
+    #navigation-div > ul {
+        display: none;
+    }
+
+
+    #toggle-menu {
+        display: block;
+    }
+
+
+}
