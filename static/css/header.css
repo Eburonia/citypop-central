@@ -180,7 +180,19 @@ h3 {
 }
 
 
+#toggele-menu > ul > li > a {
+    text-decoration: none !important;
+    color: rgb(238, 238, 238) !important;
+}
 
+
+#toggle-menu-home > a {
+    color: rgb(238, 238, 238) !important;
+}
+
+.toggle-menu-li {
+    color: rgb(238, 238, 238) !important;
+}
 
 /* media queries for base.html only */
 
