@@ -65,33 +65,20 @@
             padding: 3px;
         }
 
-
-        .edit-delete-button {
-            font-size: 14px;
-            padding: 3px 5px;
-            border: 1px solid black;
-            border-radius: 5px;
-            color: rgb(238, 238, 238);
-            cursor: pointer;
-        }
-        
-        .edit-button {
-            background-color: #D24946;
+        .edit-delete-field > a {
+            font-size: 16px;
+            text-decoration: none;
         }
 
-        .delete-button {
-            background-color: steelblue;
-            
+        #edit-link {
+            color: blue;
         }
 
-        .delete-button:hover {
-            background-color: rgb(0, 103, 187);
+        #delete-link {
+            color: red;
         }
 
 
-        .edit-button:hover {
-            background-color: #d30400;
-        }
 
         .song-album-div > a > img {
             border: 1px solid black;
@@ -120,9 +107,14 @@
 
                 <div class="edit-delete-field">
 
-                    <button class="edit-delete-button edit-button">Edit</button>
-                    <button class="edit-delete-button delete-button">Delete</button>
-                    <a href="{{ url_for('delete_song', song_id=song._id) }}">DELETE</a>
+                    <a id="edit-link" href="">EDIT</a> | 
+                    <i id="delete-song-check" class="fas fa-trash-alt"></i>
+                    <a id="delete-link" href="{{ url_for('delete_song', song_id=song._id) }}">DELETE</a>
+                    
+                    
+
+                    
+                    
 
                 </div>
 
@@ -136,10 +128,7 @@
             <div class="information-field-text">{{ song.song_name }} </div>
 
             <div class="information-field-descr">Upload By: </div>
-            <div class="information-field-text">{{ song.song_name }} </div>
-
-            <div class="information-field-descr">Upload By: </div>
-            <div class="information-field-text">{{ song.song_name }} </div>
+            <div class="information-field-text">{{ song.uploaded_by }} </div>
 
         </div>
 
