@@ -20,11 +20,12 @@
             box-sizing: border-box;
             padding: 10px;
             width: 150px;
-            height: 150px;
+   
             float: left;
             text-align: center;
             border-radius: 10px;
             border: 1px solid black;
+            overflow: hidden;
         }
 
         .song-information-div {
@@ -45,7 +46,7 @@
             padding: 3px;
             float: left;
             font-size: 16px;
-            color: blue;
+            color: black;
         }
 
         .information-field-text {
@@ -60,20 +61,78 @@
         }
 
 
+        .edit-delete-field {
+            padding: 3px;
+        }
+
+
+        .edit-delete-button {
+            font-size: 14px;
+            padding: 3px 5px;
+            border: 1px solid black;
+            border-radius: 5px;
+            color: rgb(238, 238, 238);
+            cursor: pointer;
+        }
+        
+        .edit-button {
+            background-color: #D24946;
+        }
+
+        .delete-button {
+            background-color: steelblue;
+            
+        }
+
+        .delete-button:hover {
+            background-color: rgb(0, 103, 187);
+        }
+
+
+        .edit-button:hover {
+            background-color: #d30400;
+        }
+
+        .song-album-div > a > img {
+            border: 1px solid black;
+        }
+
+
     </style>
 
 {% for song in songs %}
 
     <div class="song-div">
         
-        <div class="song-album-div">Album</div>
+        <div class="song-album-div">
+
+            <a href="https://img.discogs.com/xuWtHNPFMGqKf1x3GMRPHk_xb8o=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-1553522-1588781998-7158.jpeg.jpg">
+                <img style="width: 120px; vertical-align: bottom;" src="https://img.discogs.com/xuWtHNPFMGqKf1x3GMRPHk_xb8o=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-1553522-1588781998-7158.jpeg.jpg" alt="">
+            </a>
+
+        </div>
+
+
 
         <div class="song-information-div">
+
+            <div class="edit-delete-field">
+
+                <button class="edit-delete-button edit-button">Edit</button>
+                <button class="edit-delete-button delete-button">Delete</button>
+
+            </div>
 
             <div class="information-field-descr">Artist Name: </div>
             <div class="information-field-text">{{ song.artist_name }}</div>
 
             <div class="information-field-descr">Song Name: </div>
+            <div class="information-field-text">{{ song.song_name }} </div>
+
+            <div class="information-field-descr">Upload By: </div>
+            <div class="information-field-text">{{ song.song_name }} </div>
+
+            <div class="information-field-descr">Upload By: </div>
             <div class="information-field-text">{{ song.song_name }} </div>
 
         </div>
