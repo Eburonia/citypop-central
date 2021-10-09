@@ -118,6 +118,13 @@ def add_song():
     return render_template("add_song.html")
 
 
+@app.route("/delete_song/<song_id>")
+def delete_song(song_id):
+    mongo.db.songs.remove({"_id": ObjectId(song_id)})
+
+    return redirect(url_for("show_songs"))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
