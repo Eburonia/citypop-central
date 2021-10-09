@@ -21,6 +21,13 @@ def index():
     return render_template("index.html")
 
 
+@app.route("/show_songs")
+def show_songs():
+    songs = mongo.db.songs.find()
+    return render_template("songs.html", songs=songs)
+
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":

@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% block content %}
+    
+    <style>
+
+        .song-div {
+            width: 50%;
+            background-color:rgba(10, 10, 10, 0.95);
+            margin: 20px auto;
+            box-sizing: border-box;
+            padding: 15px;
+            overflow: hidden;
+            border-radius: 10px;
+            border: 2px solid rgb(238, 238, 238);
+        }
+
+        .song-album-div {
+            background-color: lightgray;
+            margin: 5px;
+            box-sizing: border-box;
+            padding: 10px;
+            width: 150px;
+            height: 150px;
+            float: left;
+            text-align: center;
+            border-radius: 10px;
+            border: 1px solid black;
+        }
+
+        .song-information-div {
+            background-color: lightgray;
+            margin: 5px;
+            box-sizing: border-box;
+            padding: 10px;
+            float: left;
+            width: calc(100% - 170px);
+            border: 1px solid black;
+            border-radius: 10px;
+        }
+
+        .information-field-descr {
+            width: 120px;
+            box-sizing: border-box;
+            margin: 2px;
+            padding: 3px;
+            float: left;
+            font-size: 16px;
+            color: blue;
+        }
+
+        .information-field-text {
+            width: 200px;
+            box-sizing: border-box;
+            margin: 2px;
+            padding: 3px;
+            float: left;
+            width: calc(100% - 130px);
+            font-size: 16px;
+            color: steelblue;
+        }
+
+
+    </style>
+
+{% for song in songs %}
+
+    <div class="song-div">
+        
+        <div class="song-album-div">Album</div>
+
+        <div class="song-information-div">
+
+            <div class="information-field-descr">Artist Name: </div>
+            <div class="information-field-text">{{ song.artist_name }}</div>
+
+            <div class="information-field-descr">Song Name: </div>
+            <div class="information-field-text">{{ song.song_name }} </div>
+
+        </div>
+
+    </div>
+
+{% endfor %}
+
+   
+
+{% endblock %}
