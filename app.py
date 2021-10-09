@@ -103,6 +103,21 @@ def logout():
     return redirect(url_for("login"))
 
 
+@app.route("/add_song", methods=["GET", "POST"])
+def add_song():
+    # add a song to the database
+    if request.method == "POST":
+        song = {
+            "artist_name": request.form.get("artist_name"),
+            "song_name": request.form.get("song_name"),
+            "uploaded_by": session["user"]
+        }
+        mongo.db.songs.insert_one(song)
+        return redirect(url_for("show_songs"))
+
+    return render_template("add_song.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

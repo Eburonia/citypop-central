@@ -116,12 +116,17 @@
 
         <div class="song-information-div">
 
-            <div class="edit-delete-field">
+            {% if session.user == song.uploaded_by %}
 
-                <button class="edit-delete-button edit-button">Edit</button>
-                <button class="edit-delete-button delete-button">Delete</button>
+                <div class="edit-delete-field">
 
-            </div>
+                    <button class="edit-delete-button edit-button">Edit</button>
+                    <button class="edit-delete-button delete-button">Delete</button>
+
+                </div>
+
+            {% endif %}
+
 
             <div class="information-field-descr">Artist Name: </div>
             <div class="information-field-text">{{ song.artist_name }}</div>
