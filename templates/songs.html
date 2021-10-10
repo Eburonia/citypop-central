@@ -107,7 +107,7 @@
 
                 <div class="edit-delete-field">
 
-                    <a id="edit-link" href="">EDIT</a> | 
+                    <a id="edit-link" href="{{ url_for('edit_song', song_id=song._id) }}">EDIT</a> | 
                     <i id="delete-song-check" class="fas fa-trash-alt"></i>
                     <a id="delete-link" href="{{ url_for('delete_song', song_id=song._id) }}">DELETE</a>
                     

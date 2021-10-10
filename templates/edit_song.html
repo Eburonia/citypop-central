@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+
+    #edit-song-div {
+        background-color: lightgray;
+        width: 50%;
+        margin: 0 auto;
+        box-sizing: border-box;
+        overflow: hidden;
+        padding: 20px;
+
+    }
+
+</style>
+
+
+<div id="edit-song-div">
+
+    <h3>Edit an existing song in the database</h3><br>
+
+    <form action="" method="POST">
+
+        <label for="artist_name" class="form-label">Artist Name:<span class="mandatory-astrisk"> *</span></label><br>
+        <input type="text" id="artist_name" name="artist_name" value="{{ song.artist_name }}" class="form-textbox" aria-label="please enter the artist name, this a required field" required><br>
+
+        <label for="song_name" class="form-label">Song Name:<span class="mandatory-astrisk"> *</span></label><br>
+        <input type="text" id="song_name" name="song_name" value="{{ song.song_name }}" class="form-textbox" aria-label="please enter a song name, this a required field" required><br>
+
+        <input type="submit" value="edit song" class="form-button" aria-label="Click this button to submit the song, make sure you have added all required fields above"><br><br>
+
+
+    </form>
+
+
+</div>
+
+{% endblock %}

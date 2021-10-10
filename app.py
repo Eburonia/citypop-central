@@ -27,7 +27,6 @@ def show_songs():
     return render_template("songs.html", songs=songs)
 
 
-
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -118,12 +117,26 @@ def add_song():
     return render_template("add_song.html")
 
 
+@app.route("/edit_song/<song_id>", methods=["GET", "POST"])
+def edit_song(song_id):
+    if request.method == "POST":
+        submit = {
+            "artist_name": request.form.get("artist_name"),
+            "song_name": request.form.get("song_name"),
+            "upload_by": session["user"]
+        }
+        mongo.db.songs.update({"_id": ObjectId(song_id)}, submit)
+        flash("Song Successfully Updated")
+
+    song = mongo.db.songs.find_one({"_id": ObjectId(song_id)})
+    return render_template("edit_song.html", song=song)
+
+
 @app.route("/delete_song/<song_id>")
 def delete_song(song_id):
     mongo.db.songs.remove({"_id": ObjectId(song_id)})
 
     return redirect(url_for("show_songs"))
-
 
 
 if __name__ == "__main__":
