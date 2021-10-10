@@ -123,7 +123,7 @@ def edit_song(song_id):
         submit = {
             "artist_name": request.form.get("artist_name"),
             "song_name": request.form.get("song_name"),
-            "upload_by": session["user"]
+            "uploaded_by": session["user"]
         }
         mongo.db.songs.update({"_id": ObjectId(song_id)}, submit)
         flash("Song Successfully Updated")
