@@ -3,9 +3,13 @@
 {% extends "base.html" %}
 {% block content %}
 
+
+
+
+
 <div id="register-form-div">
 
-    <h3>Create a Citypop Central account</h3><br>
+    <h3>Create a Citypop Central Account</h3><br>
 
     <form method="POST" action="{{ url_for('register') }}">
 
@@ -14,6 +18,17 @@
 
         <label for="password" class="form-label">Password<span class="mandatory-astrisk"> *</span></label><br>
         <input type="password" id="password" name="password" class="form-textbox" placeholder="Enter your new Password" aria-label="" required><br>
+
+        <label for="country" class="form-label">Country<span class="mandatory-astrisk"> *</span></label><br>
+        <select id="country" name="country" class="form-textbox" aria-label="please enter your home country, this is a dropdown menu, check the selected value">
+
+            {% for country in countries %}
+
+                <option value="the Netherlands">{{ country.country_name }}</option>
+
+            {% endfor %}
+
+        </select><br>
 
         <input type="submit" value="register" class="form-button" aria-label="Click this button to submit the form, make sure you have added all required fields above"><br><br>
 

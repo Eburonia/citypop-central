@@ -37,6 +37,10 @@ def search():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
+
+    
+
+
     if request.method == "POST":
         # check if username already exists in database
         existing_user = mongo.db.users.find_one(
@@ -48,7 +52,8 @@ def register():
 
         regi = {
             "username": request.form.get("username").lower(),
-            "password": generate_password_hash(request.form.get("password"))
+            "password": generate_password_hash(request.form.get("password")),
+            "country_name": request.form.get("country").lower()
         }
 
         mongo.db.users.insert_one(regi)
@@ -58,7 +63,8 @@ def register():
         flash("Regristration succesful")
         return redirect(url_for("profile", username=session["user"]))
 
-    return render_template("register.html")
+    countries = mongo.db.countries.find().sort("country_name", 1)
+    return render_template("register.html", countries=countries)
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -121,6 +127,10 @@ def update_profile(username):
     return redirect(url_for("index"))
 
 
+@app.route("/get_countries")
+def show_countries():
+    countries = mongo.db.countries.find()
+    return render_template("register.html", countries=countries)
 
 
 @app.route("/logout")
