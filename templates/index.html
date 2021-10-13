@@ -62,7 +62,11 @@
 
 
     .edit-delete-field {
-        padding: 3px;
+        float: left;
+        width: 100%;
+        padding: 5px 10px;
+
+        box-sizing: border-box;
     }
 
     .edit-delete-field > a {
@@ -71,12 +75,12 @@
     }
 
     #edit-link {
-        color: #D24946;
+        color: steelblue;
         cursor: pointer;
     }
 
     .delete-link {
-        color: #D24946;
+        color: steelblue;
         font-weight: 600;
     }
 
@@ -87,7 +91,7 @@
 
     .delete-song-check {
         cursor: pointer;
-        color: #D24946;
+        color: steelblue;
     }
 
 
@@ -104,6 +108,39 @@
     #search-query {
         width: 50%;
         border-radius: 25px;
+    }
+
+
+    .song-field {
+        float: left;
+        box-sizing: border-box;
+        padding: 5px 10px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: calc(100% - 50px);
+        background-color: steelblue;
+        color:rgb(238, 238, 238)
+    }
+
+    .song-toggle-button {
+        float: left;
+        box-sizing: border-box;
+        padding: 5px 10px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 50px;
+        background-color: black;
+        text-align: center;
+        color: rgb(238, 238, 238);
+        cursor: pointer;
+
+    }
+
+    .song-toggle-button i {
+        font-size: 20px;
+        text-decoration: none;
     }
 
 
@@ -133,7 +170,7 @@
     <div class="song-album-div">
 
         <a href="https://img.discogs.com/xuWtHNPFMGqKf1x3GMRPHk_xb8o=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-1553522-1588781998-7158.jpeg.jpg">
-            <img style="width: 120px; vertical-align: bottom;" src="https://img.discogs.com/xuWtHNPFMGqKf1x3GMRPHk_xb8o=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-1553522-1588781998-7158.jpeg.jpg" alt="">
+            <img style="width: 120px; vertical-align: bottom;" src="https://img.discogs.com/xuWtHNPFMGqKf1x3GMRPHk_xb8o=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-1553522-1588781998-7158.jpeg.jpg" alt="Song album" title="click here to listen on YouTube">
         </a>
 
     </div>
@@ -141,6 +178,18 @@
 
 
     <div class="song-information-div">
+
+        <div class="song-field">
+        
+            {{ song.artist_name }} - {{ song.song_name }}
+            
+        </div>
+
+        <div class="song-toggle-button">
+            <i class="fas fa-question-circle" title="more information about this record"></i>
+        </div>
+
+
 
         {% if session.user == song.uploaded_by %}
 
@@ -150,11 +199,6 @@
                 <i class="delete-song-check fas fa-trash-alt" title="delete song"></i>
                 <a class="delete-link" href="{{ url_for('delete_song', song_id=song._id) }}">DELETE</a>
                 
-                
-
-                
-                
-
             </div>
 
         {% endif %}
@@ -166,10 +210,20 @@
         <div class="information-field-descr">Song Name: </div>
         <div class="information-field-text">{{ song.song_name }} </div>
 
+        <div class="toggle-part">
+
+        <div class="information-field-descr">YouTube</div>
+        <div class="information-field-text">{{ song.uploaded_by }} </div>
+
         <div class="information-field-descr">Upload By: </div>
         <div class="information-field-text">{{ song.uploaded_by }} </div>
 
+
+        </div>
+
     </div>
+
+    
 
 </div>
 

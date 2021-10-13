@@ -146,6 +146,8 @@
 
             {% if session.user == song.uploaded_by %}
 
+                <div style="background-color: red;">song title</div>
+
                 <div class="edit-delete-field">
 
                     <a id="edit-link" href="{{ url_for('edit_song', song_id=song._id) }}" title="edit song"><i class="fas fa-edit"></i></a>

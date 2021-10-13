@@ -53,6 +53,20 @@ $(document).on('click', '.delete-song-check', function(){
   else {
       $('.delete-link').eq(x).show();
   }
-  
+
+});
+
+
+
+$( ".toggle-part" ).hide();
+
+
+$(document).on('click', '.song-toggle-button', function(){
+
+    let x = $('.song-toggle-button').index(this);
+
+    $(".toggle-part").eq(x).slideToggle();
+
+
 
 });
