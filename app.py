@@ -18,7 +18,8 @@ mongo = PyMongo(app)
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    songs = mongo.db.songs.find()
+    return render_template("index.html", songs=songs)
 
 
 @app.route("/show_songs")

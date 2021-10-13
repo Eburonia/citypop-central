@@ -40,16 +40,21 @@ $(document).on('click', '.toggle-menu-item', function(){
 
 });
 
-$('#delete-link').hide();
+$('.delete-link').hide();
 
-$(document).on('click', '#delete-song-check', function(){
+$(document).on('click', '.delete-song-check', function(){
 
-        if($('#delete-link').is(':visible')) {
-            $('#delete-link').hide();
+        if($('.delete-link').is(':visible')) {
+            $('.delete-song-check').eq('.delete-link').index(this);
+            $('.delete-link').hide();
+            
+
+         
         }
         else {
-            alert('Press the red "Delete" Button to delete this song from the database')
-            $('#delete-link').show();
+            //alert('Press the red "Delete" Button to delete this song from the database')
+            $('.delete-link').show();
+    
         }
 
 });

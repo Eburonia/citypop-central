@@ -56,12 +56,13 @@
                     {% if session.user %}
                         <li id="logout-button"><a href="{{ url_for('logout') }}">Logout</a></li>
                         <li><a href="{{ url_for('add_song') }}">Add Song</a></li>
+                        <li class="toggle-menu-item"><a href="">Profile</a></li>
                     {% else %}
                         <li id="register-button"><a href="{{ url_for('register') }}">Register</a></li>
                         <li id="login-button"><a href="{{ url_for('login') }}">Login</a></li>
                     {% endif %}
 
-                    <li><a href="{{ url_for('show_songs') }}">Show Songs</a></li>
+
                     <li><a href="{{ url_for('index') }}">Home</a></li>
                 </ul>
 
@@ -71,12 +72,19 @@
             <div id="toggle-menu">
 
                 <ul>
-                    <li class="toggle-menu-item"><a href="">Home</a></li>
-                    <li class="toggle-menu-item"><a href="{{ url_for('login') }}">Login</a></li>
-                    <li class="toggle-menu-item"><a href="">Register</a></li>
-                    <li class="toggle-menu-item"><a href="">Logout</a></li>
-                </ul>
 
+                    <li class="toggle-menu-item"><a href="">Home</a></li>
+
+                    {% if session.user %}
+                        <li class="toggle-menu-item"><a href="">Profile</a></li>
+                        <li><a href="{{ url_for('add_song') }}">Add Song</a></li>
+                        <li class="toggle-menu-item"><a href="">Logout</a></li>
+                    {% else %}
+                        <li class="toggle-menu-item"><a href="{{ url_for('login') }}">Login</a></li>
+                        <li class="toggle-menu-item"><a href="">Register</a></li>
+                    {% endif %}
+
+                </ul>
 
             </div>
 
