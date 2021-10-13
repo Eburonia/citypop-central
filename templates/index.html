@@ -5,7 +5,7 @@
 
     .song-div {
         width: 50%;
-        background-color:rgba(10, 10, 10, 0.95);
+        background-color:rgba(10, 10, 10, 0.9);
         margin: 20px auto;
         box-sizing: border-box;
         padding: 15px;
@@ -15,7 +15,7 @@
     }
 
     .song-album-div {
-        background-color: rgba(10, 10, 10, 0.95);
+        background-color: rgba(10, 10, 10, 0.9);
         margin: 5px;
         box-sizing: border-box;
         padding: 10px;
@@ -48,7 +48,7 @@
     }
 
     .song-album-field img{
-        border: 1px solid black;
+        border: 1px solid rgb(238, 238, 238);
     }
 
 
@@ -106,12 +106,19 @@
 
 
     .song-album-div > a > img {
-        border: 1px solid black;
+        border: 1px solid rgb(238, 238, 238);
     }
 
     .delete-song-check {
         cursor: pointer;
         color:rgb(238, 238, 238);
+        font-weight: 300;
+    }
+
+
+    .delete-song-confirmed {
+        cursor: pointer;
+        color:red;
         font-weight: 300;
     }
 
@@ -165,10 +172,120 @@
     .song-toggle-button i {
         font-size: 20px;
         text-decoration: none;
+        cursor: pointer;
     }
 
 
 
+
+
+
+
+
+
+.song-record-div {
+    background-color: rgba(10, 10, 10, 0.95);
+    margin: 20px auto;
+    border: 2px solid rgb(238, 238, 238);
+    border-radius: 20px;
+    width: 50%;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 20px;
+  }
+
+
+.artist-song-div {
+  float: left;
+  background-color: steelblue;
+  color:rgb(238, 238, 238);
+  box-sizing: border-box;
+    overflow: hidden;
+    padding: 10px 20px;
+    clear: right;
+    width: calc(100% - 50px);
+    margin-bottom: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+
+.expand-info {
+  float: left;
+  background-color: rgb(1, 101, 184);
+  padding: 10px;
+  width: 50px;
+      box-sizing: border-box;
+    overflow: hidden;
+text-align: center;
+color:rgb(238, 238, 238);
+cursor: pointer;
+border-top-right-radius: 10px;
+border-bottom-right-radius: 10px;
+
+}
+
+
+
+.album-div {
+  float: left;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 10px 0;
+    width: 140px;
+}
+
+
+.album-div img {
+    border: 1px solid rgb(238, 238, 238);
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+
+.song-info-visible, .song-info-toggle {
+  float: right;
+    color:rgb(238, 238, 238);
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 0;
+    width: calc(100% - 140px);
+    
+}
+
+
+
+
+
+
+
+.song-info-desc {
+    float: left;
+    width: 160px;
+    font-size: 18px;
+    box-sizing: border-box;
+    padding: 10px;
+    color: rgb(238, 238, 238);
+    font-weight: 600;
+}
+
+
+.song-info-value {
+    float: left;
+    width: calc(100% - 160px);
+    font-size: 18px;
+    box-sizing: border-box;
+    padding: 10px;
+    min-height: 10px;
+    color: rgb(238, 238, 238);
+}
+
+
+.song-info-value a {
+    text-decoration: none;
+    color: rgb(238, 238, 238);
+    font-size: 18px;
+}
 
 </style>
 
@@ -190,6 +307,63 @@
 
 
 {% for song in songs %}
+
+
+<div class="song-record-div">
+
+    <div class="artist-song-div">
+        
+        {% if session.user == song.uploaded_by %}
+            
+            <a  href="{{ url_for('edit_song', song_id=song._id) }}" title="edit song"><i class="edit-link fas fa-edit"></i></a>
+            <i class="delete-song-check fas fa-trash-alt" title="delete song"></i>
+            <a class="delete-link" href="{{ url_for('delete_song', song_id=song._id) }}"><i class="delete-song-confirmed fas fa-trash-alt" title="delete song"></i></a> | 
+
+
+        {% endif %}
+
+        {{ song.artist_name }} - {{ song.song_name }}</div>
+    <div class="expand-info" title="more information about this record"><i class="fas fa-question-circle"></i></div>
+
+    <div class="album-div">
+
+        <a href="{{ song.youtube }}" target="_blank">
+
+            <img style="width: 120px; vertical-align: bottom;" src="https://img.discogs.com/xuWtHNPFMGqKf1x3GMRPHk_xb8o=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-1553522-1588781998-7158.jpeg.jpg" alt="Song album" title="click here to listen on YouTube">
+
+        </a>
+
+    </div>
+
+    <div class="song-info-visible">
+
+        <div class="song-info-desc">Artist Name :</div>
+        <div class="song-info-value">{{ song.artist_name }}</div>
+
+        <div class="song-info-desc">Song Name :</div>
+        <div class="song-info-value">{{ song.song_name }}</div>
+
+
+        <div class="song-info-desc">Uploaded By :</div>
+        <div class="song-info-value">{{ song.uploaded_by }}</div>
+
+
+    </div>
+
+       <div class="song-info-toggle">
+
+        <div class="song-info-desc">Youtube:</div>
+        <div class="song-info-value"><a href="{{ song.youtube }}">{{ song.youtube }}</a></div>
+
+       </div>
+
+  </div>
+
+
+
+
+<!--
+
 
 <div class="song-div">
     
@@ -258,6 +432,8 @@
     
 
 </div>
+
+-->
 
 {% endfor %}
 

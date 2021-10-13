@@ -176,7 +176,7 @@ def edit_song(song_id):
 def delete_song(song_id):
     mongo.db.songs.remove({"_id": ObjectId(song_id)})
 
-    return redirect(url_for("show_songs"))
+    return redirect(url_for("index"))
 
 
 if __name__ == "__main__":

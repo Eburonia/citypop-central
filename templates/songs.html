@@ -108,6 +108,73 @@
         }
 
 
+
+        .song-record-div {
+    background-color: red;
+    margin: 0 auto;
+    width: 50%;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 20px;
+  }
+
+
+.artist-song-div {
+  float: left;
+  background-color: yellow;
+  box-sizing: border-box;
+    overflow: hidden;
+    padding: 10px;
+    clear: right;
+    width: calc(100% - 30px);
+}
+
+
+.album-div {
+  float: left;
+  background-color: green;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 10px 0;
+    width: 140px;
+}
+
+
+.song-info-visible {
+  float: right;
+  background-color: blue;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 10px;
+    width: calc(100% - 140px);
+    
+}
+
+
+.song-info-toggle {
+  float: right;
+  background-color: blue;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 10px;
+    width: calc(100% - 140px);
+}
+
+.expand-info {
+  float: left;
+  background-color: purple;
+  padding: 10px;
+  width: 30px;
+      box-sizing: border-box;
+    overflow: hidden;
+
+
+}
+
+
+
+
+
     </style>
 
 
@@ -130,7 +197,7 @@
 
 {% for song in songs %}
 
-    <div class="song-div">
+    <!-- <div class="song-div">
         
         <div class="song-album-div">
 
@@ -146,7 +213,7 @@
 
             {% if session.user == song.uploaded_by %}
 
-                <div style="background-color: red;">song title</div>
+                
 
                 <div class="edit-delete-field">
 
@@ -176,6 +243,9 @@
         </div>
 
     </div>
+
+
+-->
 
 {% endfor %}
    
