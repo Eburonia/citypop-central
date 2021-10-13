@@ -10,6 +10,8 @@
         margin: 0 auto;
         border-radius: 10px;
         overflow: hidden;
+        box-sizing: border-box;
+        padding: 20px;
     }
 
     #settings > h3 {
@@ -19,7 +21,7 @@
 
     .setting-text {
         float: left;
-        background-color: yellow;
+
         padding: 3px 0 3px 10px;
         width: 150px;
         box-sizing: border-box;
@@ -27,7 +29,7 @@
 
     .setting-value {
         float: left;
-        background-color: green;
+
         padding: 3px 0 3px 10px;
         box-sizing: border-box;
         width: calc(100% - 150px)
@@ -41,15 +43,18 @@
 
     <h3>Profile Settings</h3>
 
-    <form action="" method="POST">
+    <form action="{{ url_for('update_profile', username=session.user) }}" method="POST">
 
         <div class="setting-text">Username: </div>
-        <div class="setting-value">{{ username }}</div>
+        <input type="text" id="username" name="username" value="{{ username }}" class="form-textbox" placeholder="Enter your new Username" aria-label="" disabled><br>
     
         <div class="setting-text">Country: </div>
-        <div class="setting-value">{{ settings.country }}</div>
-    
+        <input type="text" id="country" name="country" value="{{ settings.country }}" class="form-textbox" placeholder="" aria-label="" required><br>
 
+        <div class="setting-text">Gender: </div>
+        <input type="text" id="gender" name="gender" value="{{ settings.gender }}" class="form-textbox" placeholder="Enter your new Username" aria-label="" required><br>
+
+        <input type="submit" value="update" class="form-button" aria-label="Click this button to update your profile, make sure you have added all required fields above"><br><br>
 
     </form>
 

@@ -106,6 +106,23 @@ def profile(username):
     return redirect(url_for("login"))
 
 
+@app.route("/update_profile/<username>", methods=["GET", "POST"])
+def update_profile(username):
+
+    if request.method == "POST":
+        submit = {
+            "username": session["user"],
+            "password": generate_password_hash("Delusso666!"),
+            "gender": request.form.get("gender")
+        }
+        mongo.db.users.update({"username": username}, submit)
+        flash("Profile Successfully Updated")
+
+    return redirect(url_for("index"))
+
+
+
+
 @app.route("/logout")
 def logout():
     # remove user from session cookies
