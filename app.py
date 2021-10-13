@@ -30,7 +30,7 @@ def show_songs():
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("search-query")
-    songs = list(mongo.db.tasks.find({"$text": {"$search": query}}))
+    songs = list(mongo.db.songs.find({"$text": {"$search": query}}))
     return render_template("songs.html", songs=songs)
 
 

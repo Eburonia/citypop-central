@@ -126,7 +126,7 @@
 </div>
 
 
-{% if songs|length > 0 %}
+{
 
 {% for song in songs %}
 
@@ -176,12 +176,6 @@
     </div>
 
 {% endfor %}
-
-{% else %}
-
-    <div style="color: white;">No Results Found</div>
-
-{% endif %}
    
 
 {% endblock %}
