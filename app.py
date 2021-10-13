@@ -148,10 +148,11 @@ def add_song():
         song = {
             "artist_name": request.form.get("artist_name"),
             "song_name": request.form.get("song_name"),
+            "youtube": request.form.get("youtube"),
             "uploaded_by": session["user"]
         }
         mongo.db.songs.insert_one(song)
-        return redirect(url_for("show_songs"))
+        return redirect(url_for("index"))
 
     return render_template("add_song.html")
 
