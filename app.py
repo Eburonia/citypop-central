@@ -27,6 +27,13 @@ def show_songs():
     return render_template("songs.html", songs=songs)
 
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("search-query")
+    songs = list(mongo.db.tasks.find({"$text": {"$search": query}}))
+    return render_template("songs.html", songs=songs)
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -38,12 +45,12 @@ def register():
             flash('Username already exists')
             return redirect(url_for("register"))
 
-        register = {
+        regi = {
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password"))
         }
 
-        mongo.db.users.insert_one(register)
+        mongo.db.users.insert_one(regi)
 
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
@@ -63,10 +70,10 @@ def login():
         if existing_user:
             if check_password_hash(
                 existing_user["password"], request.form.get("password")):
-                    session["user"] = request.form.get("username").lower()
-                    flash("Welcome, {}".format(
-                        request.form.get("username")))
-                    return redirect(url_for(
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome, {}".format(
+                    request.form.get("username")))
+                return redirect(url_for(
                         "profile", username=session["user"]))
 
             else:
