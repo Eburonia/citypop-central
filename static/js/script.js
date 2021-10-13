@@ -42,19 +42,17 @@ $(document).on('click', '.toggle-menu-item', function(){
 
 $('.delete-link').hide();
 
+
 $(document).on('click', '.delete-song-check', function(){
 
-        if($('.delete-link').is(':visible')) {
-            $('.delete-song-check').eq('.delete-link').index(this);
-            $('.delete-link').hide();
-            
+  let x = $('.delete-song-check').index(this);
 
-         
-        }
-        else {
-            //alert('Press the red "Delete" Button to delete this song from the database')
-            $('.delete-link').show();
-    
-        }
+  if($('.delete-link').is(':visible')) {
+      $('.delete-link').eq(x).hide();
+  }
+  else {
+      $('.delete-link').eq(x).show();
+  }
+  
 
 });
