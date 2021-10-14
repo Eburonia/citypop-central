@@ -104,8 +104,10 @@ def profile(username):
         settings = mongo.db.users.find_one({"username": session["user"]})
 
         countries = mongo.db.countries.find().sort("country_name", 1)
+        genders = mongo.db.genders.find().sort("gender", 1)
+
         return render_template(
-            "profile.html", username=username, settings=settings, countries=countries)
+            "profile.html", username=username, settings=settings, countries=countries, genders=genders)
 
     return redirect(url_for("login"))
 
@@ -114,10 +116,14 @@ def profile(username):
 def update_profile(username):
 
     if request.method == "POST":
+
         submit = {
             "username": session["user"],
             "password": generate_password_hash("Delusso666!"),
-            "gender": request.form.get("gender")
+            "gender": request.form.get("gender"),
+            "country": request.form.get("country"),
+            "email": request.form.get("email")
+           
         }
         mongo.db.users.update({"username": username}, submit)
         flash("Profile Successfully Updated")

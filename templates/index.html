@@ -3,20 +3,17 @@
   
 <style>
 
-
-
-
     .edit-link {
         color:rgb(238, 238, 238);
         cursor: pointer;
         font-weight: 200;
     }
 
+
     .delete-link {
         color: red;
         font-weight: 600;
     }
-
 
 
     .delete-song-check {
@@ -49,110 +46,105 @@
     }
 
 
+    .song-record-div {
+        background-color: rgba(10, 10, 10, 0.95);
+        margin: 20px auto;
+        border: 2px solid rgb(238, 238, 238);
+        border-radius: 20px;
+        width: 50%;
+        box-sizing: border-box;
+        overflow: hidden;
+        padding: 20px;
+    }
 
 
-.song-record-div {
-    background-color: rgba(10, 10, 10, 0.95);
-    margin: 20px auto;
-    border: 2px solid rgb(238, 238, 238);
-    border-radius: 20px;
-    width: 50%;
-    box-sizing: border-box;
-    overflow: hidden;
-    padding: 20px;
-  }
+    .artist-song-div {
+        float: left;
+        background-color: steelblue;
+        color:rgb(238, 238, 238);
+        box-sizing: border-box;
+        overflow: hidden;
+        padding: 10px 20px;
+        clear: right;
+        width: calc(100% - 50px);
+        margin-bottom: 10px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
 
 
-.artist-song-div {
-  float: left;
-  background-color: steelblue;
-  color:rgb(238, 238, 238);
-  box-sizing: border-box;
-    overflow: hidden;
-    padding: 10px 20px;
-    clear: right;
-    width: calc(100% - 50px);
-    margin-bottom: 10px;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-}
+    .expand-info {
+        float: left;
+        background-color: rgb(1, 101, 184);
+        padding: 10px;
+        width: 50px;
+        box-sizing: border-box;
+        overflow: hidden;
+        text-align: center;
+        color:rgb(238, 238, 238);
+        cursor: pointer;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
 
 
-.expand-info {
-  float: left;
-  background-color: rgb(1, 101, 184);
-  padding: 10px;
-  width: 50px;
-      box-sizing: border-box;
-    overflow: hidden;
-text-align: center;
-color:rgb(238, 238, 238);
-cursor: pointer;
-border-top-right-radius: 10px;
-border-bottom-right-radius: 10px;
-
-}
+    .album-div {
+        float: left;
+        box-sizing: border-box;
+        overflow: hidden;
+        padding: 10px 0;
+        width: 140px;
+    }
 
 
-
-.album-div {
-  float: left;
-    box-sizing: border-box;
-    overflow: hidden;
-    padding: 10px 0;
-    width: 140px;
-}
+    .album-div img {
+        border: 1px solid rgb(238, 238, 238);
+        cursor: pointer;
+        border-radius: 10px;
+    }
 
 
-.album-div img {
-    border: 1px solid rgb(238, 238, 238);
-    cursor: pointer;
-    border-radius: 10px;
-}
+    .song-info-visible, .song-info-toggle {
+        float: right;
+        color:rgb(238, 238, 238);
+        box-sizing: border-box;
+        overflow: hidden;
+        padding: 0;
+        width: calc(100% - 140px);
+    }
 
 
-.song-info-visible, .song-info-toggle {
-    float: right;
-    color:rgb(238, 238, 238);
-    box-sizing: border-box;
-    overflow: hidden;
-    padding: 0;
-    width: calc(100% - 140px);
-}
+    .song-info-visible {
+        margin-top: 10px;
+    }
 
 
-.song-info-visible {
-    margin-top: 10px;
-  
-}
+    .song-info-desc {
+        float: left;
+        width: 160px;
+        font-size: 18px;
+        box-sizing: border-box;
+        color: rgb(238, 238, 238);
+        font-weight: 600;
+        padding: 3px 0;
+    }
 
 
-.song-info-desc {
-    float: left;
-    width: 160px;
-    font-size: 18px;
-    box-sizing: border-box;
-    color: rgb(238, 238, 238);
-    font-weight: 600;
-    padding: 3px 0;
-}
+    .song-info-value {
+        float: left;
+        width: calc(100% - 160px);
+        font-size: 18px;
+        box-sizing: border-box;
+        color: rgb(238, 238, 238);
+        padding: 3px 0;
+    }
 
 
-.song-info-value {
-    float: left;
-    width: calc(100% - 160px);
-    font-size: 18px;
-    box-sizing: border-box;
-    color: rgb(238, 238, 238);
-    padding: 3px 0;
-}
-
-
-.song-info-value a {
-    text-decoration: none;
-    color: red;
-    font-size: 18px;
-}
+    .song-info-value a {
+        text-decoration: none;
+        color: red;
+        font-size: 18px;
+    }
 
 </style>
 
