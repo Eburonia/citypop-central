@@ -76,7 +76,7 @@ def login():
             if check_password_hash(
                 existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
-                flash("Welcome, {}".format(
+                flash("Welcome back {}".format(
                     request.form.get("username")))
                 return redirect(url_for(
                         "index", username=session["user"]))
@@ -194,6 +194,8 @@ def edit_song(song_id):
 
         mongo.db.songs.update({"_id": ObjectId(song_id)}, submit)
         flash("Song Successfully Updated")
+        return redirect(url_for("index"))
+        
 
     genres = mongo.db.genres.find().sort("genre", 1)
     release_years = mongo.db.release_years.find().sort("release_year", 1)

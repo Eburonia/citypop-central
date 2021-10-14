@@ -22,15 +22,15 @@
 
     <div id="add-song-div">
 
-        <h3>Add a New Song to the Database</h3><br>
+        <h3>Add a new song to the database</h3><br>
 
         <form action="{{ url_for('add_song') }}" method="POST">
 
             <label for="artist_name" class="form-label">Artist Name:<span class="mandatory-astrisk"> *</span></label><br>
-            <input type="text" id="artist_name" name="artist_name" class="form-textbox" placeholder="Enter the artist name" aria-label="please enter the artist name, this a required field" required><br>
+            <input type="text" id="artist_name" name="artist_name" class="form-textbox" aria-label="please enter the artist name, this a required field" required><br>
 
             <label for="song_name" class="form-label">Song Name:<span class="mandatory-astrisk"> *</span></label><br>
-            <input type="text" id="song_name" name="song_name" class="form-textbox" placeholder="Enter the song name" aria-label="please enter a song name, this a required field" required><br>
+            <input type="text" id="song_name" name="song_name" class="form-textbox" aria-label="please enter a song name, this a required field" required><br>
 
 
             <label for="genre" class="setting-label">Genre : <span class="mandatory-astrisk"> *</span></label><br>
@@ -45,10 +45,10 @@
         </select><br>
 
             <label for="album_name" class="form-label">Album Name:<span class="mandatory-astrisk"> *</span></label><br>
-            <input type="text" id="album_name" name="album_name" class="form-textbox" placeholder="Enter the album name" aria-label="please the album name, this a required field" required><br>
+            <input type="text" id="album_name" name="album_name" class="form-textbox" aria-label="please the album name, this a required field" required><br>
 
             <label for="album_image" class="form-label">Album Image:<span class="mandatory-astrisk"> *</span></label><br>
-            <input type="text" id="album_image" name="album_image" class="form-textbox" placeholder="Enter the album image link" aria-label="please the enter the album image, this a required field" required><br>
+            <input type="text" id="album_image" name="album_image" class="form-textbox" aria-label="please the enter the album image, this a required field" required><br>
 
             <label for="release_year" class="form-label">Release Year: <span class="mandatory-astrisk"> *</span></label><br>
             <select id="release_year" name="release_year" class="form-textbox" aria-label="">
@@ -62,15 +62,11 @@
     
             </select><br>
 
-
-
-
-
             <label for="song_length" class="form-label">Song Length:<span class="mandatory-astrisk"> *</span></label><br>
-            <input type="text" id="song_length" name="song_length" class="form-textbox" placeholder="Enter the record's release year" aria-label="please the song's release year, this a required field" required><br>
+            <input type="text" id="song_length" name="song_length" class="form-textbox" aria-label="please the song's release year, this a required field" required><br>
 
             <label for="youtube" class="form-label">YouTube Link:<span class="mandatory-astrisk"> *</span></label><br>
-            <input type="text" id="youtube" name="youtube" class="form-textbox" placeholder="Enter Youtube Link here" aria-label="please enter the link to the song on Youtube, this a required field" required><br>
+            <input type="text" id="youtube" name="youtube" class="form-textbox" aria-label="please enter the link to the song on Youtube, this a required field" required><br>
 
             <input type="submit" value="upload" class="form-button" aria-label="Click this button to submit the song, make sure you have added all required fields above"><br><br>
 
