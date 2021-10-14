@@ -39,6 +39,7 @@ Date: November 2021
     width: 100%;
     letter-spacing: 1px;
     border: 2px solid steelblue;
+    box-sizing: border-box;
 }
 
 

@@ -101,9 +101,22 @@ h3 {
     font-size: 20px;
     text-align: center;
     background-color: limegreen;
-    color: black;
+    color:rgb(0, 80, 0);
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden;
 }
 
+
+#flash-message-close {
+    background-color: limegreen;
+    box-sizing: border-box;
+    width: 100px;
+    overflow: hidden;
+    float: right;
+    color:rgb(0, 80, 0);
+    text-decoration: none;
+}
 
 
 

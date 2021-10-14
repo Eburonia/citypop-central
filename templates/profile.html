@@ -4,55 +4,65 @@
 
 <style>
 
-    #settings {
-        background-color: lightgray;
+    #settings-div {
+        background-color: rgba(10, 10, 10, 0.95);
         width: 40%;
         margin: 0 auto;
-        border-radius: 10px;
+        border-radius: 20px;
         overflow: hidden;
         box-sizing: border-box;
         padding: 20px;
+        border: 2px solid rgb(238, 238, 238);
+        color: rgb(238, 238, 238);
     }
 
-    #settings > h3 {
+    #settings-div > h3 {
         text-align: center;
         padding: 10px 0;
+        color: steelblue;
     }
 
-    .setting-text {
-        float: left;
-
-        padding: 3px 0 3px 10px;
-        width: 150px;
-        box-sizing: border-box;
+    .setting-label {
+        padding-left: 5px;
     }
 
     .setting-value {
         float: left;
-
         padding: 3px 0 3px 10px;
         box-sizing: border-box;
         width: calc(100% - 150px)
     }
 
 
+
 </style>
 
 
-<div id="settings">
+<div id="settings-div">
 
     <h3>Profile Settings</h3>
 
     <form action="{{ url_for('update_profile', username=session.user) }}" method="POST">
 
-        <div class="setting-text">Username: </div>
+
+        <label class="setting-label" for="username">Username : <span class="mandatory-astrisk"> *</span></label>
         <input type="text" id="username" name="username" value="{{ username }}" class="form-textbox" placeholder="Enter your new Username" aria-label="" disabled><br>
     
-        <div class="setting-text">Country: </div>
-        <input type="text" id="country" name="country" value="{{ settings.country }}" class="form-textbox" placeholder="" aria-label="" required><br>
+        <label for="country" class="setting-label">Country: <span class="mandatory-astrisk"> *</span></label><br>
+        <select id="country" name="country" class="form-textbox" aria-label="please enter your home country, this is a dropdown menu, check the selected value">
 
-        <div class="setting-text">Gender: </div>
-        <input type="text" id="gender" name="gender" value="{{ settings.gender }}" class="form-textbox" placeholder="Enter your new Username" aria-label="" required><br>
+            {% for country in countries %}
+
+                {% if country.country_name == settings.country %}
+                    <option value="{{ country.country_name }}" selected>{{ country.country_name }}</option>
+                {% else %}
+                    <option value="{{ country.country_name }}">{{ country.country_name }}</option>
+                {% endif %}
+
+            {% endfor %}
+
+        </select><br>
+
 
         <input type="submit" value="update" class="form-button" aria-label="Click this button to update your profile, make sure you have added all required fields above"><br><br>
 

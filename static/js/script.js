@@ -92,3 +92,13 @@ $(document).on('click', '.expand-info', function() {
       }
 
 });
+
+
+
+
+
+$(document).on('click', '#flash-messages', function() {
+
+    
+
+});

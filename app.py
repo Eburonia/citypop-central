@@ -38,9 +38,6 @@ def search():
 @app.route("/register", methods=["GET", "POST"])
 def register():
 
-    
-
-
     if request.method == "POST":
         # check if username already exists in database
         existing_user = mongo.db.users.find_one(
@@ -106,8 +103,9 @@ def profile(username):
 
         settings = mongo.db.users.find_one({"username": session["user"]})
 
+        countries = mongo.db.countries.find().sort("country_name", 1)
         return render_template(
-            "profile.html", username=username, settings=settings)
+            "profile.html", username=username, settings=settings, countries=countries)
 
     return redirect(url_for("login"))
 

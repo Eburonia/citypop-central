@@ -93,14 +93,23 @@
     </header>
 
     <section>
+
         <!-- flash messages -->
         {% with messages = get_flashed_messages() %}
+
             {% if messages %}
+
                 {% for message in messages %}
-                       <div id="flash-messages">{{ message }}</div>
+
+                       <div id="flash-messages">{{ message }} <a id="flash-message-close" href=""><i class="fas fa-times"></i></a></div>
+         
+
                 {% endfor %}
+
             {% endif %}
+
         {% endwith %}
+
     </section>
 
 
