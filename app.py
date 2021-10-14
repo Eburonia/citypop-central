@@ -169,21 +169,29 @@ def add_song():
         mongo.db.songs.insert_one(song)
         return redirect(url_for("index"))
 
+    release_years = mongo.db.release_years.find().sort("release_year", 1)
     genres = mongo.db.genres.find().sort("genre", 1)
-    return render_template("add_song.html", genres=genres)
+    return render_template("add_song.html", genres=genres, release_years=release_years)
 
 
 @app.route("/edit_song/<song_id>", methods=["GET", "POST"])
 def edit_song(song_id):
     if request.method == "POST":
+
+        x = datetime.datetime.now()
+        date = str(x.day) + " " + str(x.strftime("%B")) + " " + str(x.year)
+
         submit = {
-            "artist_name": request.form.get("artist_name"),
-            "song_name": request.form.get("song_name"),
-            "uploaded_by": session["user"],
-            "genre": request.form.get("genre"),
-            "release_year": request.form.get("release_year"),
-            "album_name": request.form.get("album_name")
+            "$set": {"artist_name": request.form.get(
+                "artist_name"), "song_name": request.form.get(
+                    "song_name"), "uploaded_by": session["user"], "genre": request.form.get(
+                        "genre"), "release_year": request.form.get(
+                            "release_year"), "album_name": request.form.get(
+                                "album_name"), "album_image": request.form.get(
+                                    "album_image"), "song_length": request.form.get(
+                                        "song_length"), "edit_date": date}
         }
+
         mongo.db.songs.update({"_id": ObjectId(song_id)}, submit)
         flash("Song Successfully Updated")
 

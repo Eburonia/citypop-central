@@ -80,7 +80,7 @@ header {
 
 
 #navigation-div > ul > li > a:hover {
-    text-decoration: underline;
+    transition: 1s;
     color: steelblue;
 }
 

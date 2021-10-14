@@ -82,13 +82,18 @@ $('.song-info-toggle').hide();
 
 $(document).on('click', '.expand-info', function() {
 
+
+    $('.song-info-toggle').hide();
+
   let x = $('.expand-info').index(this);
 
   if($('.song-info-toggle').is(':visible')) {
       $('.song-info-toggle').eq(x).hide();
       }
   else {
+   
       $('.song-info-toggle').eq(x).show();
+      
       }
 
 });

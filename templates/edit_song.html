@@ -30,7 +30,7 @@
         <label for="song_name" class="form-label">Song Name:<span class="mandatory-astrisk"> *</span></label><br>
         <input type="text" id="song_name" name="song_name" value="{{ song.song_name }}" class="form-textbox" aria-label="please enter a song name, this a required field" required><br>
 
-        <label for="genre" class="setting-label">Genre: <span class="mandatory-astrisk"> *</span></label><br>
+        <label for="genre" class="form-label">Genre: <span class="mandatory-astrisk"> *</span></label><br>
         <select id="genre" name="genre" class="form-textbox" aria-label="">
 
             {% for genre in genres %}
@@ -46,7 +46,7 @@
         </select><br>
 
 
-        <label for="release_year" class="setting-label">Release Year: <span class="mandatory-astrisk"> *</span></label><br>
+        <label for="release_year" class="form-label">Release Year: <span class="mandatory-astrisk"> *</span></label><br>
         <select id="release_year" name="release_year" class="form-textbox" aria-label="">
 
             {% for release_year in release_years %}
@@ -64,6 +64,11 @@
         <label for="album_name" class="form-label">Album Name:<span class="mandatory-astrisk"> *</span></label><br>
         <input type="text" id="album_name" name="album_name" value="{{ song.album_name }}" class="form-textbox" aria-label="" required><br>
 
+        <label for="album_image" class="form-label">Album Image:<span class="mandatory-astrisk"> *</span></label><br>
+        <input type="text" id="album_image" name="album_image" value="{{ song.album_image }}" class="form-textbox" aria-label="" required><br>
+
+        <label for="song_length" class="form-label">Song Length:<span class="mandatory-astrisk"> *</span></label><br>
+        <input type="text" id="song_length" name="song_length" value="{{ song.song_length }}" class="form-textbox" aria-label="" required><br>
 
         <input type="submit" value="edit song" class="form-button" aria-label="Click this button to submit the song, make sure you have added all required fields above"><br><br>
 
