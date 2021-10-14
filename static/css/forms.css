@@ -69,7 +69,7 @@ Date: November 2021
 }
 
 
-#register-form-div h3, #login-form-div h3, #add-song-div h3 {
+#register-form-div h3, #login-form-div h3, #add-song-div h3, #edit-song-div > h3 {
 
     color: steelblue;
 }

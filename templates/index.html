@@ -73,6 +73,8 @@
         margin-bottom: 10px;
         border-top-left-radius: 10px;
         border-bottom-left-radius: 10px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
 
 
@@ -131,6 +133,8 @@
         color: rgb(238, 238, 238);
         font-weight: 600;
         padding: 3px 0;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
 
 
@@ -141,6 +145,8 @@
         box-sizing: border-box;
         color: rgb(238, 238, 238);
         padding: 3px 0;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
 
 
@@ -208,9 +214,9 @@
 
     <div class="album-div">
 
-        <a href="https://img.discogs.com/xuWtHNPFMGqKf1x3GMRPHk_xb8o=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-1553522-1588781998-7158.jpeg.jpg" target="_blank">
+        <a href="{{ song.album_image }}" target="_blank">
 
-            <img style="width: 120px; vertical-align: bottom;" src="https://img.discogs.com/xuWtHNPFMGqKf1x3GMRPHk_xb8o=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-1553522-1588781998-7158.jpeg.jpg" alt="Song album" title="Click here to see the album image">
+            <img style="width: 120px; vertical-align: bottom;" src="{{ song.album_image }}" alt="Song's Album" title="Click here to see the album image">
 
         </a>
 
@@ -225,26 +231,27 @@
         <div class="song-info-value">{{ song.song_name }}</div>
 
         <div class="song-info-desc">Genre :</div>
-        <div class="song-info-value">-</div>
+        <div class="song-info-value">{{ song.genre }}</div>
 
-        <div class="song-info-desc">Album Name :</div>
-        <div class="song-info-value">-</div>
-
-
+        <div class="song-info-desc">Release Year :</div>
+        <div class="song-info-value">{{ song.release_year }}</div>
 
 
     </div>
 
        <div class="song-info-toggle">
 
-        <div class="song-info-desc">Record Label :</div>
-        <div class="song-info-value">-</div>
+        <div class="song-info-desc">Album Name :</div>
+        <div class="song-info-value">{{ song.album_name }}</div>
+
+        <div class="song-info-desc">Song Length :</div>
+        <div class="song-info-value">{{ song.song_length }}</div>
 
         <div class="song-info-desc">Uploaded By :</div>
         <div class="song-info-value">{{ song.uploaded_by }}</div>
 
         <div class="song-info-desc">Upload Date :</div>
-        <div class="song-info-value">-</div>
+        <div class="song-info-value">{{ song.upload_date }}</div>
 
        </div>
 

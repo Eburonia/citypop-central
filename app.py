@@ -4,6 +4,7 @@ from flask import (
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
+import datetime
 
 if os.path.exists("env.py"):
     import env
@@ -148,16 +149,28 @@ def logout():
 def add_song():
     # add a song to the database
     if request.method == "POST":
+
+        x = datetime.datetime.now()
+        date = str(x.day) + " " + str(x.strftime("%B")) + " " + str(x.year)
+
         song = {
             "artist_name": request.form.get("artist_name"),
             "song_name": request.form.get("song_name"),
             "youtube": request.form.get("youtube"),
-            "uploaded_by": session["user"]
+            "uploaded_by": session["user"],
+            "genre": request.form.get("genre"),
+            "upload_date": str(date),
+            "album_name": request.form.get("album_name"),
+            "release_year": request.form.get("release_year"),
+            "album_image": request.form.get("album_image"),
+            "song_length": request.form.get("song_length")
         }
+
         mongo.db.songs.insert_one(song)
         return redirect(url_for("index"))
 
-    return render_template("add_song.html")
+    genres = mongo.db.genres.find().sort("genre", 1)
+    return render_template("add_song.html", genres=genres)
 
 
 @app.route("/edit_song/<song_id>", methods=["GET", "POST"])
@@ -166,13 +179,18 @@ def edit_song(song_id):
         submit = {
             "artist_name": request.form.get("artist_name"),
             "song_name": request.form.get("song_name"),
-            "uploaded_by": session["user"]
+            "uploaded_by": session["user"],
+            "genre": request.form.get("genre"),
+            "release_year": request.form.get("release_year"),
+            "album_name": request.form.get("album_name")
         }
         mongo.db.songs.update({"_id": ObjectId(song_id)}, submit)
         flash("Song Successfully Updated")
 
+    genres = mongo.db.genres.find().sort("genre", 1)
+    release_years = mongo.db.release_years.find().sort("release_year", 1)
     song = mongo.db.songs.find_one({"_id": ObjectId(song_id)})
-    return render_template("edit_song.html", song=song)
+    return render_template("edit_song.html", song=song, genres=genres, release_years=release_years)
 
 
 @app.route("/delete_song/<song_id>")
