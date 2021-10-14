@@ -4,21 +4,25 @@
 <style>
 
     #add-song-div {
-        background-color: lightgray;
-        width: 50%;
         margin: 0 auto;
-        box-sizing: border-box;
+        width: 40%;
+        text-decoration: none;
+        color: rgb(238, 238, 238);
+        background-color: rgba(10, 10, 10, 0.95);
         overflow: hidden;
-        padding: 20px;
-
+        padding: 30px;
+        border-radius: 20px;
+        border: 2px solid rgb(238, 238, 238);
     }
+
+
 
 </style>
 
 
     <div id="add-song-div">
 
-        <h3>Add a new song to the database</h3><br>
+        <h3>Add a New Song to the Database</h3><br>
 
         <form action="{{ url_for('add_song') }}" method="POST">
 

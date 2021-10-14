@@ -32,7 +32,7 @@ def show_songs():
 def search():
     query = request.form.get("search-query")
     songs = list(mongo.db.songs.find({"$text": {"$search": query}}))
-    return render_template("songs.html", songs=songs)
+    return render_template("index.html", songs=songs)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -78,7 +78,7 @@ def login():
                 flash("Welcome, {}".format(
                     request.form.get("username")))
                 return redirect(url_for(
-                        "profile", username=session["user"]))
+                        "index", username=session["user"]))
 
             else:
                 # invalid password match
@@ -122,7 +122,7 @@ def update_profile(username):
                 "email"), "gender": request.form.get(
                     "gender"), "country": request.form.get("country")}
         }
-    
+
         mongo.db.users.update({"username": username}, submit)
 
         flash("Profile Successfully Updated")

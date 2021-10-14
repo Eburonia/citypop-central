@@ -33,16 +33,19 @@
     #search-bar {
         box-sizing: border-box;
         padding: 30px;
-        color: black;
-        background-color: lightgray;
+        color: rgb(238, 238, 238);
+        background-color: rgba(10, 10, 10, 0.95);
         width: 50%;
         margin: 0 auto;
+        border: 2px solid rgb(238, 238, 238);
+        border-radius: 20px;
     }
 
 
     #search-query {
-        width: 50%;
-        border-radius: 25px;
+        width: 80%;
+        box-sizing: border-box;
+        padding: 5px 10px;
     }
 
 
@@ -98,9 +101,10 @@
 
 
     .album-div img {
-        border: 1px solid rgb(238, 238, 238);
+        border: 2px solid black;
         cursor: pointer;
         border-radius: 10px;
+        box-sizing: border-box;
     }
 
 
@@ -146,6 +150,19 @@
         font-size: 18px;
     }
 
+
+    #youtube-icon {
+        color:rgb(238, 238, 238);
+    }
+
+
+    #youtube-icon:hover {
+        color:rgb(255, 0, 0);
+        transition: 1s;
+    }
+
+
+
 </style>
 
 
@@ -185,15 +202,15 @@
 
 
 
-        <a style="color:rgb(238, 238, 238);" href="{{ song.youtube }}"><i class="fab fa-youtube"></i></a> {{ song.artist_name }} - {{ song.song_name }}</div>
+        <a id="youtube-icon" href="{{ song.youtube }}" target="_blank" title="Watch on YouTube"><i class="fab fa-youtube"></i></a> {{ song.artist_name }} - {{ song.song_name }}</div>
 
-    <div class="expand-info" title="more information about this record"><i class="fas fa-question-circle"></i></div>
+    <div class="expand-info" title="More information about this record"><i class="fas fa-question-circle"></i></div>
 
     <div class="album-div">
 
         <a href="https://img.discogs.com/xuWtHNPFMGqKf1x3GMRPHk_xb8o=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-1553522-1588781998-7158.jpeg.jpg" target="_blank">
 
-            <img style="width: 120px; vertical-align: bottom;" src="https://img.discogs.com/xuWtHNPFMGqKf1x3GMRPHk_xb8o=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-1553522-1588781998-7158.jpeg.jpg" alt="Song album" title="click here to see the album image">
+            <img style="width: 120px; vertical-align: bottom;" src="https://img.discogs.com/xuWtHNPFMGqKf1x3GMRPHk_xb8o=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-1553522-1588781998-7158.jpeg.jpg" alt="Song album" title="Click here to see the album image">
 
         </a>
 

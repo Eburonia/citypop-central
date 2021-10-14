@@ -126,7 +126,7 @@ h3 {
     border: 2px solid #D24946 !important;
     border-radius: 8px;
     background-color: #D24946 !important;
-    color: black !important;
+    color: rgb(238, 238, 238) !important;
     text-decoration: none !important;
 }
 
@@ -139,7 +139,7 @@ h3 {
     border: 2px solid steelblue !important;
     border-radius: 8px;
     background-color: steelblue !important;
-    color: black !important;
+    color:rgb(238, 238, 238) !important;
     text-decoration: none !important;
 }
 

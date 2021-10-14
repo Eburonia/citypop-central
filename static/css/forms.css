@@ -16,6 +16,7 @@ Date: November 2021
     overflow: hidden;
     padding: 30px;
     border-radius: 20px;
+    border: 2px solid rgb(238, 238, 238);
 }
 
 
@@ -62,7 +63,14 @@ Date: November 2021
 }
 
 
-#login-form-div a {
-    text-decoration: none;
+#register-form-div a, #login-form-div a {
+    text-decoration: underline;
     color: steelblue;
 }
+
+
+#register-form-div h3, #login-form-div h3, #add-song-div h3 {
+
+    color: steelblue;
+}
+
