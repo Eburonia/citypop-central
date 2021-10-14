@@ -118,14 +118,13 @@ def update_profile(username):
     if request.method == "POST":
 
         submit = {
-            "username": session["user"],
-            "password": generate_password_hash("Delusso666!"),
-            "gender": request.form.get("gender"),
-            "country": request.form.get("country"),
-            "email": request.form.get("email")
-           
+            "$set": {"email": request.form.get(
+                "email"), "gender": request.form.get(
+                    "gender"), "country": request.form.get("country")}
         }
+    
         mongo.db.users.update({"username": username}, submit)
+
         flash("Profile Successfully Updated")
 
     return redirect(url_for("index"))
