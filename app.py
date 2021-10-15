@@ -28,6 +28,8 @@ def numbers():
 
     number = mongo.db.numbers
 
+    max = number.count()
+    
     # offset = starting point
     offset = int(request.args['offset'])
 
@@ -45,12 +47,15 @@ def numbers():
     for i in numbers:
         output.append(i['number'])
 
-    next_url = '/numbers?limit=' + str(limit) + '&offset=' + str(offset + limit)
-    prev_url = '/numbers?limit=' + str(limit) + '&offset=' + str(offset - limit)
+    next_url = '/numbers?limit=' + str(
+        limit) + '&offset=' + str(offset + limit)
+    prev_url = '/numbers?limit=' + str(
+        limit) + '&offset=' + str(offset - limit)
 
-    test = {'result': output, 'prev_url': prev_url, 'next_url': next_url}
+    #test = {'result': output, 'prev_url': prev_url, 'next_url': next_url}
 
-    return render_template("numbers.html", a=output)
+    return render_template("numbers.html", a=output,
+                           next_url=next_url, prev_url=prev_url, offset=offset, limit=limit, max=max)
 
 
 @app.route("/show_songs")
