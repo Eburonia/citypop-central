@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+
+    {% for n in numb %}
+
+        <div style="background-color: steelblue; color:white;"> {{ n.artist_name }} </div>
+
+
+
+
+
+
+    {% endfor %}
+
+    <div style="background-color: red; color:white;">
+        
+        {% if offset >= limit  %}
+            <a href="{{ prev_url }}">previous</a>
+        {% endif %}
+        
+        
+  
+    
+        {% if (maximum - 1) >= limit + offset   %}
+        <a href="{{ next_url }}">next</a>
+        {% endif %}
+
+
+    
+    </div>
+
+{% endblock %}

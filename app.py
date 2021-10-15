@@ -19,8 +19,33 @@ mongo = PyMongo(app)
 
 @app.route("/")
 def index():
+
     songs = mongo.db.songs.find()
     return render_template("index.html", songs=songs)
+
+
+
+@app.route("/database", methods=["GET"])
+def database():
+
+    song = mongo.db.songs
+
+    maximum = song.count()
+
+    offset = int(request.args['offset'])
+    limit = int(request.args['limit'])
+
+    starting_id = song.find().sort('_id', 1)
+    last_id = starting_id[offset]['_id']
+
+    numb = song.find({'_id': {'$gte': last_id}}).sort('_id', 1).limit(limit)
+
+    next_url = '/database?limit=' + str(limit) + '&offset=' + str(offset + limit)
+    prev_url = '/database?limit=' + str(limit) + '&offset=' + str(offset - limit)
+
+    return render_template("database.html",
+                           numb=numb, prev_url=prev_url, next_url=next_url, offset=offset, limit=limit, maximum=maximum)
+
 
 
 @app.route("/numbers", methods=["GET"])
@@ -28,8 +53,8 @@ def numbers():
 
     number = mongo.db.numbers
 
-    max = number.count()
-    
+    maxixum = number.count()
+
     # offset = starting point
     offset = int(request.args['offset'])
 
@@ -39,12 +64,12 @@ def numbers():
     starting_id = number.find().sort('_id', 1)
     last_id = starting_id[offset]['_id']
 
-    numbers = number.find(
+    numb = number.find(
         {'_id': {'$gte': last_id}}).sort('_id', 1).limit(limit)
 
     output = []
 
-    for i in numbers:
+    for i in numb:
         output.append(i['number'])
 
     next_url = '/numbers?limit=' + str(
@@ -52,16 +77,7 @@ def numbers():
     prev_url = '/numbers?limit=' + str(
         limit) + '&offset=' + str(offset - limit)
 
-    #test = {'result': output, 'prev_url': prev_url, 'next_url': next_url}
-
-    return render_template("numbers.html", a=output,
-                           next_url=next_url, prev_url=prev_url, offset=offset, limit=limit, max=max)
-
-
-@app.route("/show_songs")
-def show_songs():
-    songs = mongo.db.songs.find()
-    return render_template("songs.html", songs=songs)
+    return render_template("numbers.html", a=output, next_url=next_url, prev_url=prev_url, offset=offset, limit=limit, max=maxixum)
 
 
 @app.route("/search", methods=["GET", "POST"])

@@ -183,6 +183,7 @@
 
     </form>
 
+    <div style="background-color: red;"><a href="/database?limit=10&offset=10">link</a></div>
 
 </div>
 
@@ -202,11 +203,6 @@
             <a class="delete-link" href="{{ url_for('delete_song', song_id=song._id) }}"><i class="delete-song-confirmed fas fa-trash-alt" title="delete song"></i></a> | 
 
         {% endif %}
-
-    
-
-
-
 
         <a id="youtube-icon" href="{{ song.youtube }}" target="_blank" title="Watch on YouTube"><i class="fab fa-youtube"></i></a> {{ song.artist_name }} - {{ song.song_name }}</div>
 
