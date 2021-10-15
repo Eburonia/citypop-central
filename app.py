@@ -1,6 +1,6 @@
 import os
 from flask import (
-    Flask, flash, render_template, redirect, request, session, url_for)
+    Flask, flash, render_template, redirect, request, jsonify, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -21,6 +21,36 @@ mongo = PyMongo(app)
 def index():
     songs = mongo.db.songs.find()
     return render_template("index.html", songs=songs)
+
+
+@app.route("/numbers", methods=["GET"])
+def numbers():
+
+    number = mongo.db.numbers
+
+    # offset = starting point
+    offset = int(request.args['offset'])
+
+    # limit = show amount of records on page
+    limit = int(request.args['limit']) 
+
+    starting_id = number.find().sort('_id', 1)
+    last_id = starting_id[offset]['_id']
+
+    numbers = number.find(
+        {'_id': {'$gte': last_id}}).sort('_id', 1).limit(limit)
+
+    output = []
+
+    for i in numbers:
+        output.append(i['number'])
+
+    next_url = '/numbers?limit=' + str(limit) + '&offset=' + str(offset + limit)
+    prev_url = '/numbers?limit=' + str(limit) + '&offset=' + str(offset - limit)
+
+    test = {'result': output, 'prev_url': prev_url, 'next_url': next_url}
+
+    return render_template("numbers.html", a=output)
 
 
 @app.route("/show_songs")
