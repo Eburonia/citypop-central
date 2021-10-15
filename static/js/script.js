@@ -14,48 +14,25 @@ $('#toggle-button').on('click', function() {
 });
 
 
-$(document).on('click', '.toggle-menu-item', function(){
-    
-    let clickedItem = $('.toggle-menu-item').index(this);
-
-    switch(clickedItem) {
-
-        case 0:
-            window.open('/', '_parent');
-            break;
-
-        case 1:
-            window.open('/about', '_parent');
-            break;
-
-        case 2:
-            window.open('/contact', '_parent');
-            break;
-
-        case 3:
-            window.open('/login', '_parent');
-            break;
-          
-      } 
-
-});
-
 $('.delete-link').hide();
 
 
 $(document).on('click', '.delete-song-check', function(){
 
-  let x = $('.delete-song-check').index(this);
+    let x = $('.delete-song-check').index(this);
 
-  if($('.delete-link').is(':visible')) {
-      $('.delete-link').eq(x).hide();
-  }
-  else {
-      $('.delete-link').eq(x).show();
-  }
+    if($('.delete-link').is(':visible')) {
+
+        $('.delete-link').eq(x).hide();
+    }
+
+    else {
+
+        $('.delete-link').eq(x).show();
+
+    }
 
 });
-
 
 
 $( ".toggle-part" ).hide();
@@ -66,8 +43,6 @@ $(document).on('click', '.song-toggle-button', function(){
     let x = $('.song-toggle-button').index(this);
 
     $(".toggle-part").eq(x).slideToggle();
-
-
 
 });
 

@@ -1,58 +1,28 @@
+<!--
+File: profile.html
+Author: Maurice Vossen
+Date: November 2021
+-->
+
+
+
 {% extends "base.html" %}
 {% block content %}
 
+<div id="form-div">
 
-<style>
-
-    #settings-div {
-        background-color: rgba(10, 10, 10, 0.95);
-        width: 40%;
-        margin: 0 auto;
-        border-radius: 20px;
-        overflow: hidden;
-        box-sizing: border-box;
-        padding: 20px;
-        border: 2px solid rgb(238, 238, 238);
-        color: rgb(238, 238, 238);
-    }
-
-    #settings-div > h3 {
-        text-align: center;
-        padding: 10px 0;
-        color: steelblue;
-    }
-
-    .setting-label {
-        padding-left: 5px;
-    }
-
-    .setting-value {
-        float: left;
-        padding: 3px 0 3px 10px;
-        box-sizing: border-box;
-        width: calc(100% - 150px)
-    }
-
-
-
-</style>
-
-
-<div id="settings-div">
-
-    <h3>Profile settings</h3>
+    <h3 class="form-h3">Profile settings</h3>
 
     <form action="{{ url_for('update_profile', username=session.user) }}" method="POST">
 
-
-        <label class="setting-label" for="username">Username :</label>
-        <input type="text" id="username" name="username" value="{{ username }}" class="form-textbox" placeholder="Enter your new Username" aria-label="" disabled><br>
+        <label class="form-label" for="username">Username :</label>
+        <input type="text" id="username" name="username" value="{{ username }}" class="form-textbox" placeholder="" aria-label="" disabled><br>
     
-        <label class="setting-label" for="email">Email :<span class="mandatory-astrisk"> *</span></label>
+        <label class="form-label" for="email">Email :</label>
         <input type="email" id="email" name="email" value="{{ settings.email }}" class="form-textbox" placeholder="" aria-label="" required><br>
 
-        <label for="country" class="setting-label">Country : <span class="mandatory-astrisk"> *</span></label><br>
-        <select id="country" name="country" class="form-textbox" aria-label="please enter your home country, this is a dropdown menu, check the selected value">
+        <label for="country" class="form-label">Country :</label><br>
+        <select id="country" name="country" class="form-textbox" aria-label="">
 
             {% for country in countries %}
 
@@ -67,12 +37,12 @@
         </select><br>
 
 
-        <label for="gender" class="setting-label">Gender : <span class="mandatory-astrisk"> *</span></label><br>
+        <label for="gender" class="form-label">Gender :</label><br>
         <select id="gender" name="gender" class="form-textbox" aria-label="">
 
             {% for gender in genders %}
             
-                <div style="color: red;">{{ gender }}</div>
+                <div>{{ gender }}</div>
 
                 {% if gender.gender == settings.gender %}
                     <option value="{{ gender.gender }}" selected>{{ gender.gender }}</option>
@@ -84,18 +54,10 @@
 
         </select><br>
 
-
-        <input type="submit" value="update" class="form-button" aria-label="Click this button to update your profile, make sure you have added all required fields above"><br><br>
+        <input type="submit" value="update" class="form-button" aria-label=""><br><br>
 
     </form>
 
-
-
-
 </div>
-
-
-   
-
     
 {% endblock %}

@@ -79,23 +79,6 @@ header {
 }
 
 
-#navigation-div > ul > li > a:hover {
-    transition: 1s;
-    color: steelblue;
-}
-
-
-
-#main-content {
-    padding: 30px;
-}
-
-
-h3 {
-    font-size: 26px;
-}
-
-
 #flash-messages {
     padding: 20px 0;
     font-size: 20px;
@@ -119,40 +102,39 @@ h3 {
 }
 
 
-
 #register-button > a {
-    padding: 5px 10px  !important;
-    margin: 0 !important;
-    border: 2px solid #D24946 !important;
+    padding: 5px 10px;
+    margin: 0;
+    border: 2px solid #D24946;
     border-radius: 8px;
-    background-color: #D24946 !important;
-    color: rgb(238, 238, 238) !important;
-    text-decoration: none !important;
+    background-color: #D24946;
+    color: rgb(238, 238, 238);
+    text-decoration: none;
 }
 
 
-
-
 #login-button > a, #logout-button > a {
-    padding: 5px 10px  !important;
-    margin: 0 !important;
-    border: 2px solid steelblue !important;
+    padding: 5px 10px;
+    margin: 0;
+    border: 2px solid steelblue;
     border-radius: 8px;
-    background-color: steelblue !important;
-    color:rgb(238, 238, 238) !important;
-    text-decoration: none !important;
+    background-color: steelblue;
+    color:rgb(238, 238, 238);
+    text-decoration: none;
 }
 
 
 #login-button > a:hover, #logout-button > a:hover {
-    background-color: black !important;
-    color: steelblue !important;
+    background-color: black;
+    color: steelblue;
+    transition: 1s;
 }
 
 
 #register-button > a:hover {
-    background-color: black !important;
-    color: #D24946 !important;
+    background-color: black;
+    color: #D24946;
+    transition: 1s;
 }
 
 
@@ -171,7 +153,6 @@ h3 {
 #toggle-button > i {
     color: steelblue;
 }
-
 
 
 #toggle-menu {
@@ -194,17 +175,17 @@ h3 {
 
 
 #toggele-menu > ul > li > a {
-    text-decoration: none !important;
-    color: rgb(238, 238, 238) !important;
+    text-decoration: none;
+    color: rgb(238, 238, 238);
 }
 
 
 #toggle-menu-home > a {
-    color: rgb(238, 238, 238) !important;
+    color: rgb(238, 238, 238);
 }
 
 .toggle-menu-li {
-    color: rgb(238, 238, 238) !important;
+    color: rgb(238, 238, 238);
 }
 
 /* media queries for base.html only */
@@ -220,12 +201,10 @@ h3 {
         display: none;
     }
 
-
     #toggle-menu {
         display: block;
     }
 
-    
     .toggle-menu-item {
         text-decoration: none;
         color:rgb(238, 238, 238);

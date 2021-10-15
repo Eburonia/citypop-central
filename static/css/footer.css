@@ -29,10 +29,12 @@ footer i {
     font-size: 30px;
 }
 
+
 footer a {
     text-decoration: none;
     color: rgb(238, 238, 238);
 }
+
 
 footer a:hover {
     color: steelblue;

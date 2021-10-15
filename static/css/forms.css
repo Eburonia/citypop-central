@@ -4,11 +4,8 @@ Author: Maurice Vossen
 Date: November 2021
 */
 
-
-
-
-#login-form-div, #register-form-div {
-    margin: 0 auto;
+#form-div {
+    margin: 50px auto;
     width: 40%;
     text-decoration: none;
     color: rgb(238, 238, 238);
@@ -20,15 +17,19 @@ Date: November 2021
 }
 
 
+.form-h3 {
+    color: steelblue;
+    font-size: 28px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+
 .form-label {
     padding-left: 4px;
     font-size: 18px;
     letter-spacing: 1px;
     text-decoration: none;
-}
-
-.mandatory-astrisk {
-    color: red;
 }
 
 
@@ -48,29 +49,27 @@ Date: November 2021
     font-size: 16px;
     letter-spacing: 1px;
     padding: 4px 8px;
-    border-radius: 8px;
+    border-radius: 5px;
     border: 2px solid rgb(238, 238, 238);
     margin-top: 10px;
     background-color: steelblue;
-    font-weight: 600;
+    font-weight: 300;
     color: rgb(238, 238, 238);
     cursor: pointer;
 }
 
 
 .form-button:hover {
-    background-color:rgb(21, 114, 190);
+    background-color:rgb(4, 109, 194);
 }
 
 
-#register-form-div a, #login-form-div a {
+.form-link {
+    color: steelblue;
+    text-decoration: none;
+}
+
+
+.form-link:hover {
     text-decoration: underline;
-    color: steelblue;
 }
-
-
-#register-form-div h3, #login-form-div h3, #add-song-div h3, #edit-song-div > h3 {
-
-    color: steelblue;
-}
-

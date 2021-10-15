@@ -1,40 +1,41 @@
+<!--
+File: register.html
+Author: Maurice Vossen
+Date: November 2021
+-->
 
 
 {% extends "base.html" %}
 {% block content %}
 
+<div id="form-div">
 
-
-
-
-<div id="register-form-div">
-
-    <h3>Create a Citypop Central account</h3><br>
+    <h3 class="form-h3">Create a Citypop Central account</h3>
 
     <form method="POST" action="{{ url_for('register') }}">
 
-        <label for="username" class="form-label">Username<span class="mandatory-astrisk"> *</span></label><br>
-        <input type="text" id="username" name="username" class="form-textbox" placeholder="Enter your new Username" aria-label="" required><br>
+        <label for="username" class="form-label">Username :</label>
+        <input type="text" id="username" name="username" class="form-textbox" placeholder="" aria-label="" required>
 
-        <label for="password" class="form-label">Password<span class="mandatory-astrisk"> *</span></label><br>
-        <input type="password" id="password" name="password" class="form-textbox" placeholder="Enter your new Password" aria-label="" required><br>
+        <label for="password" class="form-label">Password :</label>
+        <input type="password" id="password" name="password" class="form-textbox" placeholder="" aria-label="" required>
 
-        <label for="country" class="form-label">Country<span class="mandatory-astrisk"> *</span></label><br>
-        <select id="country" name="country" class="form-textbox" aria-label="please enter your home country, this is a dropdown menu, check the selected value">
+        <label for="country" class="form-label">Country :</label>
+        <select id="country" name="country" class="form-textbox" aria-label="">
 
             {% for country in countries %}
 
-                <option value="the Netherlands">{{ country.country_name }}</option>
+                <option value="{{ country.country_name }}">{{ country.country_name }}</option>
 
             {% endfor %}
 
-        </select><br>
+        </select>
 
-        <input type="submit" value="register" class="form-button" aria-label="Click this button to submit the form, make sure you have added all required fields above"><br><br>
+        <input type="submit" value="register" class="form-button" aria-label=""><br><br>
 
     </form>
 
-    <p id="form-p">Already have a Citypop Central Account? Login <a href="{{ url_for('login') }}">Here</a></p>
+    <p id="form-p">Already have a Citypop Central Account? Login <a class="form-link" href="{{ url_for('login') }}">Here</a></p>
 
 </div>  
 
