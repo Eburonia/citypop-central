@@ -25,26 +25,43 @@ def index():
 
 
 
-@app.route("/database", methods=["GET"])
-def database():
+@app.route("/search", methods=["GET", "POST"])
+def search():
+   
+    query = request.form.get("search-query")
 
-    song = mongo.db.songs
+    if query:
+        
+        songs_query = mongo.db.songs.find({"$text": {"$search": query}})
+        songs_query.sort('artist_name')
+        # maximum = songs_query.count()
 
-    maximum = song.count()
+        songs_query = list(mongo.db.songs.find({"$text": {"$search": query}}))
+        
+        # offset = starting point
+        # page = 0
 
-    offset = int(request.args['offset'])
-    limit = int(request.args['limit'])
+        # limit = show amount of records on page
+        # limit = 10
 
-    starting_id = song.find().sort('_id', 1)
-    last_id = starting_id[offset]['_id']
 
-    numb = song.find({'_id': {'$gte': last_id}}).sort('_id', 1).limit(limit)
 
-    next_url = '/database?limit=' + str(limit) + '&offset=' + str(offset + limit)
-    prev_url = '/database?limit=' + str(limit) + '&offset=' + str(offset - limit)
+        # numb = songs_query.find({'_id': {'$gte': last_id}}).sort('_id', 1).limit(limit)
+        output = []
 
-    return render_template("database.html",
-                           numb=numb, prev_url=prev_url, next_url=next_url, offset=offset, limit=limit, maximum=maximum)
+        # for i in songs_query:
+        #    output.append(i)
+
+
+        for i in range(9):
+            output.append(songs_query[i])
+            
+
+        
+        return render_template("songs.html", songs_query=output)
+    else:
+        return render_template("songs.html")
+
 
 
 @app.route("/songs", methods=["GET"])
@@ -52,11 +69,13 @@ def songs():
 
     number = mongo.db.numbers
 
-    maxixum = number.count()
+    maximum = number.count()
+
+    if maximum == 0:
+        return render_template("songs.html")
 
     # offset = starting point
     page = int(request.args['page'])
-
 
     # limit = show amount of records on page
     limit = 10
@@ -80,7 +99,7 @@ def songs():
     prev_url = '/songs?page=' + str(previous_page)
 
     return render_template("songs.html", a=output, next_url=next_url,
-                           prev_url=prev_url, limit=limit, maximum=maxixum, page=page)
+                           prev_url=prev_url, limit=limit, maximum=maximum, page=page)
 
 
 @app.route("/numbers", methods=["GET"])
@@ -115,11 +134,7 @@ def numbers():
     return render_template("numbers.html", a=output, next_url=next_url, prev_url=prev_url, offset=offset, limit=limit, max=maxixum)
 
 
-@app.route("/search", methods=["GET", "POST"])
-def search():
-    query = request.form.get("search-query")
-    songs = list(mongo.db.songs.find({"$text": {"$search": query}}))
-    return render_template("index.html", songs=songs)
+
 
 
 @app.route("/register", methods=["GET", "POST"])

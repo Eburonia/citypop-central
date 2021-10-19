@@ -7,29 +7,57 @@ Date: November 2021
 {% extends "base.html" %}
 {% block content %}
 
+<div style="color: white; text-decoration: none; background-color: lightgrey; color:white; width: 50%; margin: 0 auto; box-sizing: border-box; padding: 10px;">
+
+    <form action="{{ url_for('search') }}" method="POST">
+
+        <label for="search-query" class="form-label" value="citypop">Search Songs</span></label><br>
+        <input type="text" id="search-query" name="search-query" class="form-textbox" placeholder="" aria-label="" required>
+
+        <input type="submit" value="search" class="form-button" aria-label="Click this button to generate a search query, make sure you have added all required fields above"><br><br>
+
+    </form>
+
+
+
+
+
+</div>
+
+
+
     {% for n in a %}
 
-        <div style="color: white; text-decoration: none; background-color: steelblue; color:white; width: 50%; margin: 0 auto; box-sizing: border-box; padding: 10px;"> {{ n }} </div>
+        <div style="color: white; text-decoration: none; background-color:lightgrey; color:white; width: 50%; margin: 0 auto; box-sizing: border-box; padding: 10px;"> {{ n }} </div>
 
     {% endfor %}    
 
     
     <div style="color: white; text-decoration: none; text-align:center; background-color: steelblue; color:white; width: 50%; margin: 0 auto; box-sizing: border-box; padding: 10px;">
 
-        {% if page == 0 %}
 
-        {% else %}
-            <a href="{{ prev_url }}">previous page</a> | 
-        {% endif %}
+        {% for song in songs_query %}
+
+         {{ song.artist_name }} <br>
+         {{ song.song_name }} <br>
+         {{ song.genre }} <br>
+
+         <br><br>
+
+        {% endfor %}
 
 
-        {% if ((page + 1) * 10) >= maximum %}
+        {% for ss in songs_query %}
+        
+         <div>{{ ss.artist_name }}</div>
 
-        {% else %}
-            <a href="{{ next_url }}">next page</a>
-        {% endif %}
+        {% endfor %}
 
     </div>
+
+
+
+
 
 
 {% endblock %}
