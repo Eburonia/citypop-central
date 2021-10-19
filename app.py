@@ -34,31 +34,24 @@ def search():
         
         songs_query = mongo.db.songs.find({"$text": {"$search": query}})
         songs_query.sort('artist_name')
-        # maximum = songs_query.count()
+        maximum = songs_query.count()
 
-        songs_query = list(mongo.db.songs.find({"$text": {"$search": query}}))
+        songs_query = list(songs_query)
         
         # offset = starting point
-        # page = 0
+        page = 10
 
         # limit = show amount of records on page
-        # limit = 10
-
-
+        limit = 10
 
         # numb = songs_query.find({'_id': {'$gte': last_id}}).sort('_id', 1).limit(limit)
         output = []
 
-        # for i in songs_query:
-        #    output.append(i)
-
-
-        for i in range(9):
+        for i in range(maximum):
             output.append(songs_query[i])
             
 
-        
-        return render_template("songs.html", songs_query=output)
+        return render_template("songs.html", songs_query=output, maximum=maximum)
     else:
         return render_template("songs.html")
 
