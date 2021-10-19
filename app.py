@@ -80,7 +80,7 @@ def songs():
     prev_url = '/songs?page=' + str(previous_page)
 
     return render_template("songs.html", a=output, next_url=next_url,
-                           prev_url=prev_url, limit=limit, max=maxixum, page=page)
+                           prev_url=prev_url, limit=limit, maximum=maxixum, page=page)
 
 
 @app.route("/numbers", methods=["GET"])
