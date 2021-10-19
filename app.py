@@ -47,6 +47,41 @@ def database():
                            numb=numb, prev_url=prev_url, next_url=next_url, offset=offset, limit=limit, maximum=maximum)
 
 
+@app.route("/songs", methods=["GET"])
+def songs():
+
+    number = mongo.db.numbers
+
+    maxixum = number.count()
+
+    # offset = starting point
+    page = int(request.args['page'])
+
+
+    # limit = show amount of records on page
+    limit = 10
+
+    starting_id = number.find().sort('_id', 1)
+    last_id = starting_id[page*10]['_id']
+
+    numb = number.find(
+        {'_id': {'$gte': last_id}}).sort('_id', 1).limit(limit)
+
+    output = []
+
+    for i in numb:
+        output.append(i['number'])
+
+    next_page = page + 1
+    previous_page = page - 1
+
+    print(next_page)
+    next_url = '/songs?page=' + str(next_page)
+    prev_url = '/songs?page=' + str(previous_page)
+
+    return render_template("songs.html", a=output, next_url=next_url,
+                           prev_url=prev_url, limit=limit, max=maxixum, page=page)
+
 
 @app.route("/numbers", methods=["GET"])
 def numbers():
@@ -247,11 +282,11 @@ def edit_song(song_id):
         flash("Song Successfully Updated")
         return redirect(url_for("index"))
         
-
     genres = mongo.db.genres.find().sort("genre", 1)
     release_years = mongo.db.release_years.find().sort("release_year", 1)
     song = mongo.db.songs.find_one({"_id": ObjectId(song_id)})
-    return render_template("edit_song.html", song=song, genres=genres, release_years=release_years)
+    return render_template("edit_song.html", song=song, genres=genres, 
+                           release_years=release_years)
 
 
 @app.route("/delete_song/<song_id>")

@@ -1,0 +1,22 @@
+<!--
+File: songs.html
+Author: Maurice Vossen
+Date: November 2021
+-->
+
+{% extends "base.html" %}
+{% block content %}
+
+    {% for n in a %}
+
+        <div style="background-color: steelblue; color:white; width: 50%; margin: 0 auto; box-sizing: border-box; padding: 10px;"> {{ n }} </div>
+
+    {% endfor %}    
+
+    {% if page == 0%}
+        <div style="text-align:center; background-color: steelblue; color:white; width: 50%; margin: 0 auto; box-sizing: border-box; padding: 10px;"><a href="{{ next_url }}">next page</a></div>
+    {% else %}
+        <div style="text-align:center; background-color: steelblue; color:white; width: 50%; margin: 0 auto; box-sizing: border-box; padding: 10px;"><a href="{{ prev_url }}">previous page</a> | <a href="{{ next_url }}">next page</a></div>
+    {% endif %}
+
+{% endblock %}
