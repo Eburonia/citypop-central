@@ -145,15 +145,12 @@ def results():
         query = request.form.get("search-query")
     else:
         query = request.args.get('search')
-
-    # search = request.args.get('search')
-    # limit = request.args.get('limit')
     
     if query:
         
         songs_query = mongo.db.songs.find({"$text": {"$search": query}})
         songs_query.sort('artist_name')
-        maximum = songs_query.count()
+        number_of_results = songs_query.count()
 
         songs_query = list(songs_query)
 
@@ -165,21 +162,33 @@ def results():
         # Pagination
 
         # Limit the amount of results per page
-        limit = 3
+        limit = 4
 
         # Determine number of pages needed for results
-        number_of_pages = math.ceil(maximum / limit)
+        number_of_pages = math.ceil(number_of_results / limit)
 
 
-        if((int(page) + 1) * limit < maximum):
+        if((int(page) + 1) * limit < number_of_results):
             for i in range(int(page) * limit, (int(page) * limit) + limit):
                 output.append(songs_query[i])
         else:
-            for i in range(int(page) * limit, maximum):
+            for i in range(int(page) * limit, number_of_results):
                 output.append(songs_query[i])
 
-        next_page_text = ''
+        
+        # Determine previous page link for pagination
+        
+        if int(page) >= 1:
+            previous_page = '/results?search=' + query + '&page=' + str(int(page) - 1)
+            previous_page_text = 'previous page'
+        else:
+            previous_page = ''
+            previous_page_text = ''
 
+
+        # determine next page link for pagination
+        next_page_text = ''
+        
         if int(page) < number_of_pages - 1:
             next_page = '/results?search=' + query + '&page=' + str(int(page) + 1)
             next_page_text = 'next page'
@@ -187,7 +196,16 @@ def results():
             next_page_text = ''
             next_page = ''
 
-        return render_template("results.html", songs=output, search=search, next_page=next_page, next_page_text=next_page_text)
+        # Seperation pipe
+        if previous_page_text and next_page_text:
+            separator = '|' 
+        else:
+            separator = ''
+
+        number_of_results = 'Number of results: ' + str(number_of_results)
+
+        return render_template("results.html", songs=output, search=search, previous_page=previous_page, 
+                                previous_page_text=previous_page_text, next_page=next_page, next_page_text=next_page_text, number_of_results=number_of_results, separator=separator)
     
     return render_template("results.html")
 

@@ -8,7 +8,7 @@ Date: November 2021
 {% extends "base.html" %}
 {% block content %}
     
-<div style="color: white; text-decoration: none; background-color: lightgrey; color:white; width: 50%; margin: 0 auto; box-sizing: border-box; padding: 10px;">
+<div style="color:black; text-decoration: none; background-color: lightgrey; width: 50%; margin: 0 auto; box-sizing: border-box; padding: 10px;">
 
     <form action="{{ url_for('results') }}" method="POST">
 
@@ -19,15 +19,29 @@ Date: November 2021
 
     </form>
 
-    {{ test }}
+    <strong> {{ number_of_results }} </strong><br><br>
+
+    
 
 
     {% for song in songs %}
 
-        <div style="color: black;">{{ song.artist_name }}</div>
+        <div style="color: black;">
+            
+            Artist Name: {{ song.artist_name }} <br>
+
+            Song Name: {{ song.song_name }} <br>
+
+            Genre: {{ song.genre }} <br><br>
+        
+        
+        
+        </div>
 
     {% endfor %}
 
+    <a href="{{ previous_page }}">{{ previous_page_text }}</a>
+        {{ separator }}
         <a href="{{ next_page }}">{{ next_page_text }}</a>
 
 </div>
