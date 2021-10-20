@@ -131,7 +131,15 @@ def numbers():
 def results():
 
     query = request.form.get("search-query")
+
+    limit = 5
+
+    # query variables
+    # keyword to search for
     search = request.args.get('search')
+
+    # page number of results
+    page = request.args.get('page')
 
     if search is None:
         query = request.form.get("search-query")
@@ -145,14 +153,17 @@ def results():
         
         songs_query = mongo.db.songs.find({"$text": {"$search": query}})
         songs_query.sort('artist_name')
-        maximum = songs_query.count()
+        # maximum = songs_query.count()
 
         songs_query = list(songs_query)
 
         output = []
 
-        for i in range(maximum):
-            output.append(songs_query[i])
+        if page is None:
+            page = 0
+
+        for i in range(int(page) * limit, (int(page) * limit) + limit):
+             output.append(songs_query[i])
 
         return render_template("results.html", songs=output, search=search)
     
