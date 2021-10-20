@@ -127,7 +127,36 @@ def numbers():
     return render_template("numbers.html", a=output, next_url=next_url, prev_url=prev_url, offset=offset, limit=limit, max=maxixum)
 
 
+@app.route("/results", methods=["GET", "POST"])
+def results():
 
+    query = request.form.get("search-query")
+    search = request.args.get('search')
+
+    if search is None:
+        query = request.form.get("search-query")
+    else:
+        query = request.args.get('search')
+
+    # search = request.args.get('search')
+    # limit = request.args.get('limit')
+    
+    if query:
+        
+        songs_query = mongo.db.songs.find({"$text": {"$search": query}})
+        songs_query.sort('artist_name')
+        maximum = songs_query.count()
+
+        songs_query = list(songs_query)
+
+        output = []
+
+        for i in range(maximum):
+            output.append(songs_query[i])
+
+        return render_template("results.html", songs=output, search=search)
+    
+    return render_template("results.html")
 
 
 @app.route("/register", methods=["GET", "POST"])

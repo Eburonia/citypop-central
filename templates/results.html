@@ -1,0 +1,35 @@
+<!--
+File: results.html
+Author: Maurice Vossen
+Date: November 2021
+-->
+
+
+{% extends "base.html" %}
+{% block content %}
+    
+<div style="color: white; text-decoration: none; background-color: lightgrey; color:white; width: 50%; margin: 0 auto; box-sizing: border-box; padding: 10px;">
+
+    <form action="{{ url_for('results') }}" method="POST">
+
+        <label for="search-query" class="form-label" value="citypop">Search Songs</span></label><br>
+        <input type="text" id="search-query" name="search-query" class="form-textbox" placeholder="" aria-label="" value="citypop" required>
+
+        <input type="submit" value="search" class="form-button" aria-label="Click this button to generate a search query, make sure you have added all required fields above"><br><br>
+
+    </form>
+
+    {{ test }}
+
+
+    {% for song in songs %}
+
+        <div style="color: black;">{{ song.artist_name }}</div>
+
+    {% endfor %}
+
+
+</div>
+
+
+{% endblock %}
