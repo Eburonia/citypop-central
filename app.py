@@ -162,7 +162,7 @@ def results():
         # Pagination
 
         # Limit the amount of results per page
-        limit = 4
+        limit = 5
 
         # Determine number of pages needed for results
         number_of_pages = math.ceil(number_of_results / limit)
@@ -171,6 +171,9 @@ def results():
         if((int(page) + 1) * limit < number_of_results):
             for i in range(int(page) * limit, (int(page) * limit) + limit):
                 output.append(songs_query[i])
+
+
+
         else:
             for i in range(int(page) * limit, number_of_results):
                 output.append(songs_query[i])
@@ -204,8 +207,22 @@ def results():
 
         number_of_results = 'Number of results: ' + str(number_of_results)
 
+        start_result = (int(page) * limit) + 1
+
+        #if((int(page) + 1) * limit < number_of_results):
+        #    end_result = start_result + (limit - 1)
+        #else:
+            end_result = str(number_of_results)
+
+        current_results = str(start_result) + ' to ' + str(end_result)
+
+        result_numbers = []
+
+        for i in range(start_result, end_result+1):
+            result_numbers.append(i)
+
         return render_template("results.html", songs=output, search=search, previous_page=previous_page, 
-                                previous_page_text=previous_page_text, next_page=next_page, next_page_text=next_page_text, number_of_results=number_of_results, separator=separator)
+                                previous_page_text=previous_page_text, next_page=next_page, next_page_text=next_page_text, number_of_results=number_of_results, separator=separator, current_results=current_results, result_numbers=result_numbers)
     
     return render_template("results.html")
 
