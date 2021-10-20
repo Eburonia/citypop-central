@@ -12,8 +12,8 @@ Date: November 2021
 
     <form action="{{ url_for('results') }}" method="POST">
 
-        <label for="search-query" class="form-label" value="citypop">Search Songs</span></label><br>
-        <input type="text" id="search-query" name="search-query" class="form-textbox" placeholder="" aria-label="" value="citypop" required>
+        <label for="search-query" class="form-label">Search Songs</span></label><br>
+        <input type="text" id="search-query" name="search-query" class="form-textbox" placeholder="" aria-label="" required>
 
         <input type="submit" value="search" class="form-button" aria-label="Click this button to generate a search query, make sure you have added all required fields above"><br><br>
 
@@ -28,6 +28,7 @@ Date: November 2021
 
     {% endfor %}
 
+        <a href="{{ next_page }}">{{ next_page_text }}</a>
 
 </div>
 

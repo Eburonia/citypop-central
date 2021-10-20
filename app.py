@@ -5,6 +5,7 @@ from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 import datetime
+import math
 
 if os.path.exists("env.py"):
     import env
@@ -132,7 +133,6 @@ def results():
 
     query = request.form.get("search-query")
 
-    limit = 5
 
     # query variables
     # keyword to search for
@@ -153,7 +153,7 @@ def results():
         
         songs_query = mongo.db.songs.find({"$text": {"$search": query}})
         songs_query.sort('artist_name')
-        # maximum = songs_query.count()
+        maximum = songs_query.count()
 
         songs_query = list(songs_query)
 
@@ -162,10 +162,32 @@ def results():
         if page is None:
             page = 0
 
-        for i in range(int(page) * limit, (int(page) * limit) + limit):
-             output.append(songs_query[i])
+        # Pagination
 
-        return render_template("results.html", songs=output, search=search)
+        # Limit the amount of results per page
+        limit = 3
+
+        # Determine number of pages needed for results
+        number_of_pages = math.ceil(maximum / limit)
+
+
+        if((int(page) + 1) * limit < maximum):
+            for i in range(int(page) * limit, (int(page) * limit) + limit):
+                output.append(songs_query[i])
+        else:
+            for i in range(int(page) * limit, maximum):
+                output.append(songs_query[i])
+
+        next_page_text = ''
+
+        if int(page) < number_of_pages - 1:
+            next_page = '/results?search=' + query + '&page=' + str(int(page) + 1)
+            next_page_text = 'next page'
+        else:
+            next_page_text = ''
+            next_page = ''
+
+        return render_template("results.html", songs=output, search=search, next_page=next_page, next_page_text=next_page_text)
     
     return render_template("results.html")
 
