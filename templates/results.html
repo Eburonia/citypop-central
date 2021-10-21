@@ -7,45 +7,226 @@ Date: November 2021
 
 {% extends "base.html" %}
 {% block content %}
-    
-<div style="color:black; text-decoration: none; background-color: lightgrey; width: 50%; margin: 0 auto; box-sizing: border-box; padding: 10px;">
+
+
+<style>
+
+#search-div {
+    color:black;
+    text-decoration: none;
+    background-color: rgba(10, 10, 10, 0.95);
+    width: 50%;
+    margin: 50px auto;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+
+.search-textbox {
+    margin-top: 4px;
+    font-size: 18px;
+    padding: 4px 0 4px 8px;
+    width: calc(100% - 100px);
+    letter-spacing: 1px;
+    border: 2px solid mediumorchid;
+    box-sizing: border-box;
+}
+
+
+.search-button {
+    font-size: 16px;
+    letter-spacing: 1px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 2px solid mediumorchid;
+    margin-top: 10px;
+    margin-left: 10px;
+    background-color: transparent;
+    font-weight: 500;
+    color: mediumorchid;
+    cursor: pointer;
+}
+
+
+.search-label {
+    color: rgb(238, 238, 238);
+    padding-left: 4px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+
+.results-div {
+    color: rgb(238, 238, 238);
+}
+
+
+.search-results {
+    color: rgb(238, 238, 238);
+    font-size: 18px;
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 5px 0;
+    overflow: hidden;
+}
+
+
+#pagination-links {
+    text-align: center;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+
+#pagination-links > a {
+    color:mediumorchid;
+    text-decoration: none;
+}
+
+
+.song-info-desc {
+    padding: 2px;
+    font-size: 18px;
+    font-weight: 800;
+    box-sizing: border-box;
+    float: left;
+    width: 200px;
+}
+
+
+.song-info-value {
+    padding: 2px;
+    font-size: 18px;
+    font-weight: 200;
+    box-sizing: border-box;
+    float: left;
+    width: calc(100% - 200px);
+}
+
+
+.image-frame > img {
+    width: 150px;
+}
+
+</style>
+
+
+<div id="search-div">
 
     <form action="{{ url_for('results') }}" method="POST">
 
-        <label for="search-query" class="form-label">Search Songs</span></label><br>
-        <input type="text" id="search-query" name="search-query" class="form-textbox" placeholder="" aria-label="" required>
+        <label for="search-query" class="search-label">Search Songs</span></label><br>
+        <input type="text" id="search-query" name="search-query" class="search-textbox" placeholder="" aria-label="" required>
 
-        <input type="submit" value="search" class="form-button" aria-label="Click this button to generate a search query, make sure you have added all required fields above"><br><br>
+        <input type="submit" value="search" class="search-button" aria-label="Click this button to generate a search query, make sure you have added all required fields above"><br><br>
 
     </form>
 
-    <strong> Number of results: {{ number_of_results }} </strong><br><br>
+    <div class="results-div">
+        <strong> {{ number_of_results }} </strong><br><br>
+    </div>
 
-    <strong> {{ current_results }} </strong><br><br>
-
+    <div class="results-div">
+        <strong> {{ current_results }} </strong><br><br>
+    </div>
 
     {% for song in songs %}
 
-        <div style="color: black;">
+        <div class="search-results">
 
             {% set item = result_numbers[loop.index-1] %}
 
 
             <strong>Result# {{ item }}</strong><br>
 
-            Artist Name: {{ song.artist_name }} <br>
+            <div class="album-image" style="background-color: red; float: left; width: 150px;">
+                
+                <div class="image-frame">
+                    <img src="{{ song.album_image }}" alt="">
+                </div>
 
-            Song Name: {{ song.song_name }} <br>
+            </div>
 
-            Genre: {{ song.genre }} <br><br>
-        
+            <div class="song-div" style="float: left; width: calc(100% - 150px); box-sizing: border-box; padding: 0 20px;">
+                
+                <div class="song-info-desc">
+                    Artist Name:
+                </div>
+
+                <div class="song-info-value">
+                    {{ song.artist_name }}
+                </div>
+
+                <div class="song-info-desc">
+                    Song Name:
+                </div>
+
+                <div class="song-info-value">
+                    {{ song.song_name }}
+                </div>
+
+                <div class="song-info-desc">
+                    Genre:
+                </div>
+
+                <div class="song-info-value">
+                    {{ song.genre }}
+                </div>
+
+                <div class="song-info-desc">
+                    Release Date:
+                </div>
+
+                <div class="song-info-value">
+                    {{ song.release_year }}
+                </div>
+
+                <div class="song-info-desc">
+                    Album Name:
+                </div>
+
+                <div class="song-info-value">
+                    {{ song.album_name }}
+                </div>
+
+                <div class="song-info-desc">
+                    Song Length:
+                </div>
+
+                <div class="song-info-value">
+                    {{ song.song_length }}
+                </div>
+
+                <div class="song-info-desc">
+                    Uploaded Date:
+                </div>
+
+                <div class="song-info-value">
+                    {{ song.upload_date }}
+                </div>
+
+                <div class="song-info-desc">
+                    Edited Date:
+                </div>
+
+                <div class="song-info-value">
+                    {{ song.edit_date }}
+                </div>
+
+            </div>
+
         </div>
 
     {% endfor %}
 
-    <a href="{{ previous_page }}">{{ previous_page_text }}</a>
-        {{ separator }}
+    <div id="pagination-links">
+
+        <a href="{{ previous_page }}">{{ previous_page_text }}</a>
+            {{ separator }}
         <a href="{{ next_page }}">{{ next_page_text }}</a>
+
+    </div>
 
 </div>
 

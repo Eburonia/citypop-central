@@ -162,7 +162,7 @@ def results():
         # Pagination
 
         # Limit the amount of results per page
-        limit = 7
+        limit = 2
 
         # Determine number of pages needed for results
         number_of_pages = math.ceil(number_of_results / limit)
@@ -179,7 +179,7 @@ def results():
         
         if int(page) >= 1:
             previous_page = '/results?search=' + query + '&page=' + str(int(page) - 1)
-            previous_page_text = 'previous page'
+            previous_page_text = '<< previous page'
         else:
             previous_page = ''
             previous_page_text = ''
@@ -190,7 +190,7 @@ def results():
         
         if int(page) < number_of_pages - 1:
             next_page = '/results?search=' + query + '&page=' + str(int(page) + 1)
-            next_page_text = 'next page'
+            next_page_text = 'next page >>'
         else:
             next_page_text = ''
             next_page = ''
@@ -217,6 +217,9 @@ def results():
 
         for i in range(start_result, end_result + 1):
             result_numbers.append(i)
+
+
+        number_of_results = 'Number of results: ' + str(number_of_results)
 
         return render_template("results.html", songs=output, search=search, previous_page=previous_page, previous_page_text=previous_page_text, next_page=next_page, next_page_text=next_page_text, number_of_results=number_of_results, separator=separator, current_results=current_results, result_numbers=result_numbers)
     
