@@ -19,9 +19,9 @@ Date: November 2021
 
     </form>
 
-    <strong> {{ number_of_results }} </strong><br><br>
+    <strong> Number of results: {{ number_of_results }} </strong><br><br>
 
-    <strong> Result {{ current_results }} </strong><br><br>
+    <strong> {{ current_results }} </strong><br><br>
 
 
     {% for song in songs %}
@@ -31,7 +31,7 @@ Date: November 2021
             {% set item = result_numbers[loop.index-1] %}
 
 
-            <strong>Result # {{ item }}</strong><br>
+            <strong>Result# {{ item }}</strong><br>
 
             Artist Name: {{ song.artist_name }} <br>
 
