@@ -99,7 +99,5 @@ $('.more-info-button').on('click', function() {
     $(".hidden-info").eq(x).slideToggle('slow');
 
 
-    
-
 });
 
