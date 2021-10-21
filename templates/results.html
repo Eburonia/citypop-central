@@ -15,10 +15,11 @@ Date: November 2021
     color:black;
     text-decoration: none;
     background-color: rgba(10, 10, 10, 0.95);
-    width: 50%;
+    width: 40%;
     margin: 50px auto;
     box-sizing: border-box;
     padding: 20px;
+    border-radius: 10px;
 }
 
 
@@ -57,8 +58,19 @@ Date: November 2021
 }
 
 
+.number-results-div {
+    color: rgb(238, 238, 238);
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+
 .results-div {
     color: rgb(238, 238, 238);
+    box-sizing: border-box;
+    padding: 5px 25px;
+    font-size: 18px;
+
 }
 
 
@@ -66,7 +78,7 @@ Date: November 2021
     color: rgb(238, 238, 238);
     font-size: 18px;
     box-sizing: border-box;
-    padding: 10px;
+    padding: 0 20px;
     margin: 5px 0;
     overflow: hidden;
 }
@@ -87,27 +99,73 @@ Date: November 2021
 
 .song-info-desc {
     padding: 2px;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 800;
     box-sizing: border-box;
     float: left;
-    width: 200px;
+    width: 175px;
 }
 
 
 .song-info-value {
     padding: 2px;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 200;
     box-sizing: border-box;
     float: left;
-    width: calc(100% - 200px);
+    width: calc(100% - 175px);
 }
 
 
-.image-frame > img {
-    width: 150px;
+.image-frame img {
+    width: 120px;
+    vertical-align: bottom;
+    border-radius: 10px;
 }
+
+
+.album-image {
+    float: left;
+    width: 120px;
+    box-sizing: border-box;
+    padding: 5px 0;
+    vertical-align: bottom;
+}
+
+
+.song-title-bar {
+    width: calc(100% - 50px);
+    box-sizing: border-box;
+    padding: 5px 10px;
+    background-color: steelblue;
+    margin-bottom: 20px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    float: left;
+}
+
+
+.more-info-button {
+    box-sizing: border-box;
+    padding: 5px 10px;
+    background-color: rgb(1, 101, 184);
+    margin-bottom: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 50px;
+    text-align: center;
+    float: left;
+    cursor: pointer;
+}
+
+
+.more-info-button:hover {
+    background-color: mediumorchid;
+    transition: 1s;
+}
+
+
+
 
 </style>
 
@@ -123,12 +181,12 @@ Date: November 2021
 
     </form>
 
-    <div class="results-div">
-        <strong> {{ number_of_results }} </strong><br><br>
+    <div class="number-results-div">
+         {{ number_of_results }}
     </div>
 
     <div class="results-div">
-        <strong> {{ current_results }} </strong><br><br>
+        {{ current_results }} 
     </div>
 
     {% for song in songs %}
@@ -137,81 +195,111 @@ Date: November 2021
 
             {% set item = result_numbers[loop.index-1] %}
 
+            <div class="song-title-bar">
 
-            <strong>Result# {{ item }}</strong><br>
+                <strong>Result# {{ item }} - {{ song.artist_name }} - {{ song.song_name }}</strong><br>
 
-            <div class="album-image" style="background-color: red; float: left; width: 150px;">
+            </div>
+
+            <div class="more-info-button" title="Click to expand more info">
+                <i class="fas fa-question-circle"></i>
+            </div>
+
+            
+
+            <div class="album-image">
                 
                 <div class="image-frame">
-                    <img src="{{ song.album_image }}" alt="">
+                    <a href="{{ song.album_image }}" target="_blank">
+
+                        <img src="{{ song.album_image }}" alt="Album title {{ song.album_name }}" title="Click here to see the album image">
+            
+                    </a>
+                    
                 </div>
 
             </div>
 
             <div class="song-div" style="float: left; width: calc(100% - 150px); box-sizing: border-box; padding: 0 20px;">
-                
-                <div class="song-info-desc">
-                    Artist Name:
+      
+                <div class="visible-info">
+
+                    <div class="song-info-desc">
+                        Artist Name :
+                    </div>
+
+                    <div class="song-info-value">
+                        {{ song.artist_name }}
+                    </div>
+
+                    <div class="song-info-desc">
+                        Song Name :
+                    </div>
+
+                    <div class="song-info-value">
+                        {{ song.song_name }}
+                    </div>
+
+                    <div class="song-info-desc">
+                        Genre :
+                    </div>
+
+                    <div class="song-info-value">
+                        {{ song.genre }}
+                    </div>
+
+                    <div class="song-info-desc">
+                        Release Date :
+                    </div>
+
+                    <div class="song-info-value">
+                        {{ song.release_year }}
+                    </div>
+
+                    <div class="song-info-desc">
+                        Album Name :
+                    </div>
+
+                    <div class="song-info-value">
+                        {{ song.album_name }}
+                    </div>
+
                 </div>
 
-                <div class="song-info-value">
-                    {{ song.artist_name }}
-                </div>
+                <div class="hidden-info">
 
-                <div class="song-info-desc">
-                    Song Name:
-                </div>
+                    <div class="song-info-desc">
+                        Song Length :
+                    </div>
 
-                <div class="song-info-value">
-                    {{ song.song_name }}
-                </div>
+                    <div class="song-info-value">
+                        {{ song.song_length }}
+                    </div>
 
-                <div class="song-info-desc">
-                    Genre:
-                </div>
+                    <div class="song-info-desc">
+                        Uploaded By :
+                    </div>
 
-                <div class="song-info-value">
-                    {{ song.genre }}
-                </div>
+                    <div class="song-info-value">
+                        {{ song.uploaded_by }}
+                    </div>
 
-                <div class="song-info-desc">
-                    Release Date:
-                </div>
+                    <div class="song-info-desc">
+                        Uploaded Date :
+                    </div>
 
-                <div class="song-info-value">
-                    {{ song.release_year }}
-                </div>
+                    <div class="song-info-value">
+                        {{ song.upload_date }}
+                    </div>
 
-                <div class="song-info-desc">
-                    Album Name:
-                </div>
+                    <div class="song-info-desc">
+                        Edited Date :
+                    </div>
 
-                <div class="song-info-value">
-                    {{ song.album_name }}
-                </div>
+                    <div class="song-info-value">
+                        {{ song.edit_date }}
+                    </div>
 
-                <div class="song-info-desc">
-                    Song Length:
-                </div>
-
-                <div class="song-info-value">
-                    {{ song.song_length }}
-                </div>
-
-                <div class="song-info-desc">
-                    Uploaded Date:
-                </div>
-
-                <div class="song-info-value">
-                    {{ song.upload_date }}
-                </div>
-
-                <div class="song-info-desc">
-                    Edited Date:
-                </div>
-
-                <div class="song-info-value">
-                    {{ song.edit_date }}
                 </div>
 
             </div>

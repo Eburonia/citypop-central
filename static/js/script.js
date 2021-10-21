@@ -82,3 +82,24 @@ $(document).on('click', '#flash-messages', function() {
     
 
 });
+
+
+
+
+// hides toggle navigation menu awehen website is loaded
+$('.hidden-info').hide();
+
+
+// toggle navigation menu
+$('.more-info-button').on('click', function() {
+
+
+    let x = $('.more-info-button').index(this);
+
+    $(".hidden-info").eq(x).slideToggle('slow');
+
+
+    
+
+});
+
