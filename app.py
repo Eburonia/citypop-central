@@ -220,7 +220,6 @@ def results():
         for i in range(start_result, end_result + 1):
             result_numbers.append(i)
 
-
         number_of_results = 'Number of results : ' + str(number_of_results)
 
         return render_template("results.html", songs=output, search=search, previous_page=previous_page, previous_page_text=previous_page_text, next_page=next_page, next_page_text=next_page_text, number_of_results=number_of_results, separator=separator, current_results=current_results, result_numbers=result_numbers, title=title)
@@ -418,6 +417,20 @@ def delete_song(song_id):
     mongo.db.songs.remove({"_id": ObjectId(song_id)})
 
     return redirect(url_for("results"))
+
+
+@app.route("/userinfo")
+def userinfo():
+
+    user = request.args.get("user")
+
+    existing_user = mongo.db.users.find_one({"username": user})
+
+    if existing_user is None:
+        user = 'user does not exist'
+        return render_template("userinfo.html", user=user, existing_user=existing_user)
+
+    return render_template("userinfo.html", user=user, existing_user=existing_user)
 
 
 if __name__ == "__main__":

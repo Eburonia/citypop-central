@@ -1,0 +1,25 @@
+<!--
+File: user-info.html
+Author: Maurice Vossen
+Date: November 2021
+-->
+
+
+{% extends "base.html" %}
+{% block content %}
+
+    <div class="form-div">
+
+        <h3  class="form-h3">User info</h3>
+
+        {{ user }} <br>
+
+        Username: {{ existing_user.username }} <br>
+
+        Gender: {{ existing_user.gender }} <br>
+
+
+
+    </div>
+
+{% endblock %}
