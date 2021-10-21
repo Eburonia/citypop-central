@@ -20,6 +20,12 @@ Date: November 2021
         <label for="password" class="form-label">Password :</label>
         <input type="password" id="password" name="password" class="form-textbox" placeholder="" aria-label="" required>
 
+        <label for="password-confirm" class="form-label">Confirm password :</label>
+        <input type="password" id="password-confirm" name="password-confirm" class="form-textbox" placeholder="" aria-label="" required>
+
+        <label for="email" class="form-label">Email :</label>
+        <input type="email" id="email" name="email" class="form-textbox" placeholder="" aria-label="" required>
+
         <label for="country" class="form-label">Country :</label>
         <select id="country" name="country" class="form-textbox" aria-label="">
 
@@ -30,6 +36,18 @@ Date: November 2021
             {% endfor %}
 
         </select>
+
+        <label for="gender" class="form-label">Gender :</label>
+        <select id="gender" name="gender" class="form-textbox" aria-label="">
+
+            {% for gender in genders %}
+            
+                <option value="{{ gender.gender }}">{{ gender.gender }}</option>
+            
+            {% endfor %}
+
+        </select><br>
+
 
         <input type="submit" value="register" class="form-button" aria-label=""><br><br>
 

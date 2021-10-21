@@ -232,7 +232,11 @@ def results():
 def register():
 
     if request.method == "POST":
-        # check if username already exists in database
+        
+        if request.form.get("password") != request.form.get("password-confirm"):
+            flash('Passwords do not match')
+            return redirect(url_for("register"))
+
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
@@ -243,18 +247,22 @@ def register():
         regi = {
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password")),
-            "country_name": request.form.get("country").lower()
+            "email": request.form.get("email").lower(),
+            "country_name": request.form.get("country").lower(),
+            "gender": request.form.get("gender").lower()
         }
 
         mongo.db.users.insert_one(regi)
 
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
-        flash("Regristration succesful")
+        flash("Registration succesful")
         return redirect(url_for("profile", username=session["user"]))
 
     countries = mongo.db.countries.find().sort("country_name", 1)
-    return render_template("register.html", countries=countries)
+    genders = mongo.db.genders.find().sort("gender", 1)
+
+    return render_template("register.html", countries=countries, genders=genders)
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -321,6 +329,16 @@ def update_profile(username):
         flash("Profile Successfully Updated")
 
     return redirect(url_for("index"))
+
+
+@app.route("/delete-profile")
+def delete_profile():
+   
+    mongo.db.users.remove({"username": session["user"]})
+    session.pop("user")
+       
+    flash("Your profile has been deleted")
+    return redirect(url_for("register"))
 
 
 @app.route("/get_countries")

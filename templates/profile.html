@@ -9,6 +9,21 @@ Date: November 2021
 {% extends "base.html" %}
 {% block content %}
 
+<style>
+
+.delete-profile-button {
+    background-color:#D24946;
+}
+
+
+.delete-profile-button:hover {
+    background-color:#d40400;
+}
+
+
+</style>
+
+
 <div id="form-div">
 
     <h3 class="form-h3">Profile settings</h3>
@@ -36,6 +51,7 @@ Date: November 2021
 
         </select><br>
 
+        {{ settings.country }}
 
         <label for="gender" class="form-label">Gender :</label><br>
         <select id="gender" name="gender" class="form-textbox" aria-label="">
@@ -56,7 +72,17 @@ Date: November 2021
 
         <input type="submit" value="update" class="form-button" aria-label=""><br><br>
 
+        
+
     </form>
+
+
+        <h3 class="form-h3">Delete profile</h3>
+
+        <a href="/delete-profile">Delete profile</a>
+
+     
+
 
 </div>
     
