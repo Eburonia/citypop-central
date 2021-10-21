@@ -20,7 +20,6 @@ Date: November 2021
     box-sizing: border-box;
     padding: 20px;
     border-radius: 10px;
-    
 }
 
 
@@ -77,6 +76,9 @@ form {
     box-sizing: border-box;
     padding: 5px 25px;
     font-size: 18px;
+    float: left;
+    width: 50%;
+    text-align: right;
 }
 
 
@@ -85,6 +87,9 @@ form {
     box-sizing: border-box;
     padding: 5px 25px;
     font-size: 18px;
+    float: left;
+    width: 50%;
+    text-align: left;
 }
 
 
@@ -260,13 +265,13 @@ form {
 
     </form>
 
-    <div class="number-results-div">
-         {{ number_of_results }}
-    </div>
-
     <div class="results-div">
         {{ current_results }} 
     </div>
+
+    <div class="number-results-div">
+        {{ number_of_results }}
+   </div>
 
     {% for song in songs %}
 

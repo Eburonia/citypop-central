@@ -164,7 +164,7 @@ def results():
         # Pagination
 
         # Limit the amount of results per page
-        limit = 2
+        limit = 5
 
         # Determine number of pages needed for results
         number_of_pages = math.ceil(number_of_results / limit)
@@ -321,7 +321,7 @@ def update_profile(username):
         submit = {
             "$set": {"email": request.form.get(
                 "email"), "gender": request.form.get(
-                    "gender"), "country": request.form.get("country")}
+                    "gender"), "country_name": request.form.get("country")}
         }
 
         mongo.db.users.update({"username": username}, submit)
