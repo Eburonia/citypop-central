@@ -27,6 +27,9 @@ Date: November 2021
 form {
     box-sizing: border-box;
     padding: 20px;
+    background-color:#982062;
+    border-radius: 10px;
+    margin: 20px;
 }
 
 
@@ -36,10 +39,10 @@ form {
     padding: 4px 0 4px 8px;
     width: calc(100% - 100px);
     letter-spacing: 1px;
-    border: 1px solid #FFA646;
+    border: 1px solid rgb(238, 238, 238);
     box-sizing: border-box;
     background-color: transparent;
-    color:#FFA646;
+    color:rgb(238, 238, 238);
 }
 
 
@@ -48,12 +51,12 @@ form {
     letter-spacing: 1px;
     padding: 5px 10px;
     border-radius: 5px;
-    border: 1px solid #FFA646;
+    border: 1px solid rgb(238, 238, 238);
     margin-top: 5px;
     margin-left: 10px;
     background-color: transparent;
     font-weight: 500;
-    color: #FFA646;
+    color: rgb(238, 238, 238);
     cursor: pointer;
     width: 80px;
     box-sizing: border-box;
@@ -61,7 +64,7 @@ form {
 
 
 .search-label {
-    color: #FFA646;
+    color: rgb(238, 238, 238);
     padding-left: 4px;
     font-size: 18px;
     letter-spacing: 1px;
@@ -105,7 +108,7 @@ form {
 
 
 #pagination-links > a {
-    color: #FFA646;
+    color: #982062;
     text-decoration: none;
     font-size: 16px;
 }
@@ -137,6 +140,9 @@ form {
     width: 120px;
     vertical-align: bottom;
     border-radius: 10px;
+    font-size: 16px;
+    text-decoration: none;
+    color:rgb(238, 238, 238);
 }
 
 
@@ -150,7 +156,7 @@ form {
 
 
 .song-title-bar {
-    width: calc(100% - 100px);
+    width: 100%;
     box-sizing: border-box;
     padding: 5px 10px;
     background-color: #982062;
@@ -159,6 +165,7 @@ form {
     font-size: 18px;
     text-overflow: ellipsis;
     white-space: nowrap;
+    border-radius: 10px;
 }
 
 
@@ -205,10 +212,39 @@ form {
 }
 
 .youtube-icon {
-    font-size: 18px;
+    margin-top: 5px;
     color:rgb(238, 238, 238);
+    font-size: 20px;
 }
 
+.admin-icon {
+    margin-top: 5px;
+    float: right;
+    color:rgb(238, 238, 238);
+    font-size: 18px;
+    padding: 0 5px;
+}
+
+.expand-info {
+    margin-top: 5px;
+    float: right;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+
+.delete-song-check {
+    cursor: pointer;
+}
+
+
+.delete-link {
+    margin-top: 5px;
+    float: right;
+    color: red;
+    font-size: 18px;
+    padding: 0 5px;
+}
 
 </style>
 
@@ -238,21 +274,29 @@ form {
 
             {% set item = result_numbers[loop.index-1] %}
 
-            <div class="youtube-div">
-
-                <a class="youtube-icon" href="{{ song.youtube }}" target="_blank" title="Watch on YouTube"><i class="fab fa-youtube"></i></a>
-
-            </div>
-
-
             <div class="song-title-bar">
+
+                
+
+                <a href="{{ song.youtube }}" target="_blank" title="Watch on YouTube"><i class="youtube-icon fab fa-youtube"></i></a>
 
                 {{ item }}. {{ song.artist_name }} - {{ song.song_name }}
 
-            </div>
+                <i class="search-icon expand-info fas fa-question-circle" title="Expand for more information"></i>
 
-            <div class="more-info-button" title="Click to expand more info">
-                <i class="fas fa-question-circle"></i>
+                {% if session.user == song.uploaded_by %}
+            
+                <a href="{{ url_for('edit_song', song_id=song._id) }}" title="Edit song"><i class="admin-icon fas fa-edit"></i></a>
+
+                <i class="admin-icon delete-song-check fas fa-trash-alt" title="Delete song"></i>
+                <a href="{{ url_for('delete_song', song_id=song._id) }}"><i class="delete-link fas fa-trash-alt" title="Delete song"></i></a>
+    
+                
+            {% endif %}
+
+
+            
+
             </div>
 
             
@@ -261,7 +305,7 @@ form {
                 <div class="image-frame">
                     <a href="{{ song.album_image }}" target="_blank">
 
-                        <img src="{{ song.album_image }}" alt="Album title {{ song.album_name }}" title="Click here to see the album image">
+                        <img src="{{ song.album_image }}" alt="Album image" title="Click here to see the album image">
             
                     </a>
                     

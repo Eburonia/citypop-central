@@ -386,7 +386,7 @@ def edit_song(song_id):
 
         mongo.db.songs.update({"_id": ObjectId(song_id)}, submit)
         flash("Song Successfully Updated")
-        return redirect(url_for("index"))
+        return redirect(url_for("results"))
         
     genres = mongo.db.genres.find().sort("genre", 1)
     release_years = mongo.db.release_years.find().sort("release_year", 1)
@@ -399,7 +399,7 @@ def edit_song(song_id):
 def delete_song(song_id):
     mongo.db.songs.remove({"_id": ObjectId(song_id)})
 
-    return redirect(url_for("index"))
+    return redirect(url_for("results"))
 
 
 if __name__ == "__main__":

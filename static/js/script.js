@@ -91,10 +91,10 @@ $('.hidden-info').hide();
 
 
 // toggle navigation menu
-$('.more-info-button').on('click', function() {
+$('.expand-info').on('click', function() {
 
 
-    let x = $('.more-info-button').index(this);
+    let x = $('.expand-info').index(this);
 
     $(".hidden-info").eq(x).slideToggle('slow');
 
