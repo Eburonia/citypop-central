@@ -19,24 +19,24 @@ body {
     background: url('/static/img/hero-image.jpg') no-repeat center center;
     background-attachment: fixed;
     background-size: cover;
-    background-blend-mode: luminosity;
-    background-color: #1E152B;
+    background-blend-mode: luminosity, hard-light;
+    background-color: #000000;
 }
 
 
 header {
     overflow: hidden;
-    background-color: transparent;
-    border-bottom: 2px solid rgb(238, 238, 238);
-    background-color: rgba(10, 10, 10, 0.95);
+ 
 }
 
 
 #logo-top-span {
-    color:steelblue;
+    color:rgb(238, 238, 238);
     font-size: 54px;
     display: block;
     text-align: center;
+    font-weight: 800;
+    text-shadow: 2px 2px black;
 }
 
 
@@ -45,6 +45,8 @@ header {
     font-size: 20px;
     display: block;
     text-align: center;
+    font-weight: 800;
+    text-shadow: 2px 2px black;
 }
 
 
@@ -118,8 +120,8 @@ header {
     margin: 0;
     border: 2px solid steelblue;
     border-radius: 8px;
-    background-color: steelblue;
-    color:rgb(238, 238, 238);
+    background-color: #FBD5A8;
+    color:black;
     text-decoration: none;
 }
 
@@ -187,6 +189,13 @@ header {
 .toggle-menu-li {
     color: rgb(238, 238, 238);
 }
+
+
+.menu-item {
+    font-weight: 800;
+    text-shadow: 1px 1px black;
+}
+
 
 /* media queries for base.html only */
 

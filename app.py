@@ -40,7 +40,7 @@ def songs():
     page = int(request.args['page'])
 
     # limit = show amount of records on page
-    limit = 10
+    limit = 5
 
     starting_id = number.find().sort('_id', 1)
     last_id = starting_id[page*10]['_id']
@@ -132,7 +132,7 @@ def results():
         # Pagination
 
         # Limit the amount of results per page
-        limit = 5
+        limit = 3
 
         # Determine number of pages needed for results
         number_of_pages = math.ceil(number_of_results / limit)
@@ -149,7 +149,7 @@ def results():
         
         if int(page) >= 1:
             previous_page = '/results?search=' + query + '&page=' + str(int(page) - 1)
-            previous_page_text = '<< Prev'
+            previous_page_text = 'Prev Page'
         else:
             previous_page = ''
             previous_page_text = ''
@@ -160,7 +160,7 @@ def results():
         
         if int(page) < number_of_pages - 1:
             next_page = '/results?search=' + query + '&page=' + str(int(page) + 1)
-            next_page_text = 'Next >>'
+            next_page_text = 'Next Page'
         else:
             next_page_text = ''
             next_page = ''

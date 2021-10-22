@@ -35,14 +35,15 @@ Date: November 2021
 .search-textbox {
     margin-top: 4px;
     font-size: 18px;
-    padding: 4px 0 4px 8px;
+    padding: 4px 0 4px 16px;
     width: calc(100% - 100px);
     letter-spacing: 1px;
-    border: 1px solid rgb(238, 238, 238);
+    border: 1px solid #FBD5A8;
     box-sizing: border-box;
     background-color: transparent;
-    color:rgb(238, 238, 238);
+    color:#FBD5A8;
     outline: 0;
+    border-radius: 10px;
 }
 
 
@@ -104,19 +105,17 @@ Date: November 2021
     margin-bottom: 30px;
 }
 
-
 #pagination-links {
-    text-align: center;
     box-sizing: border-box;
-    padding: 5px;
-    color: rgb(238, 238, 238);
+    padding: 20px;
+    text-align: center;
+    color: #FBD5A8;
 }
 
-
 #pagination-links > a {
-    color: #AD2E49;
-    text-decoration: none;
-    font-size: 16px;
+    color: #FBD5A8;
+    text-align: center;
+    text-decoration: underline;
 }
 
 
@@ -144,6 +143,7 @@ Date: November 2021
 
 
 .song-info-value > a {
+    color:rgb(238, 238, 238);
     padding: 2px;
     font-size: 16px;
     font-weight: 300;
@@ -152,8 +152,6 @@ Date: November 2021
     width: calc(100% - 175px);
     text-overflow: ellipsis;
     white-space: nowrap;
-    color: orange;
-    margin: 0;
 }
 
 
@@ -430,9 +428,13 @@ Date: November 2021
 
     <div id="pagination-links">
 
-        <a href="{{ previous_page }}">{{ previous_page_text }}</a>
+
+            <a href="{{ previous_page }}"> {{ previous_page_text }} </a>
+
             {{ separator }}
-        <a href="{{ next_page }}">{{ next_page_text }}</a>
+
+            <a href="{{ next_page }}"> {{ next_page_text }} </a>
+  
 
     </div>
 

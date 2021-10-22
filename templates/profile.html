@@ -11,13 +11,27 @@ Date: November 2021
 
 <style>
 
-.delete-profile-button {
-    background-color:#D24946;
+#delete-profile-button {
+    text-decoration: none;
+    color: lightgrey;
+    cursor: pointer;
 }
 
 
-.delete-profile-button:hover {
-    background-color:#d40400;
+#delete-profile-button:hover {
+    text-decoration: underline;
+}
+
+
+
+#confirm-delete-profile-button {
+    color: red;
+    text-decoration: none;
+}
+
+
+#confirm-delete-profile-button:hover {
+    text-decoration: underline;
 }
 
 
@@ -78,10 +92,12 @@ Date: November 2021
 
         <h3 class="form-h3">Delete profile</h3>
 
-        <a href="/delete-profile">Delete profile</a>
+        <span id="delete-profile-button" title="Click on this link to delete your profile" arian-label="">click here to delete your profile</span><br><br>
 
-     
+        <a id="confirm-delete-profile-button" href="/delete-profile" title="Click on the link to confirm to delete your profile" arian-label="">confirm to delete your profile</a><br><br>
 
+
+ 
 
 </div>
     
