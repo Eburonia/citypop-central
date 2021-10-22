@@ -8,16 +8,57 @@ Date: November 2021
 {% extends "base.html" %}
 {% block content %}
 
+<style>
+
+    #userinfo {
+        width: 100%;
+    }
+
+    .userinfo-descr {
+        float: left;
+        box-sizing: border-box;
+        width: 150px;
+        padding: 5px 0;
+    }
+
+    .userinfo-value {
+        float: left;
+        box-sizing: border-box;
+        width: calc(100% - 150px);
+        padding: 5px 0;
+    }
+
+</style>
+
+
+
     <div class="form-div">
 
         <h3  class="form-h3">User info</h3>
 
-        {{ user }} <br>
+        {% if existing_user.username %}
 
-        Username: {{ existing_user.username }} <br>
+        <div id="userinfo">
 
-        Gender: {{ existing_user.gender }} <br>
+            <div class="userinfo-descr">Username :</div>
+            <div class="userinfo-value">{{ existing_user.username }}</div>
 
+            <div class="userinfo-descr">Gender :</div>
+            <div class="userinfo-value">{{ existing_user.gender }} </div>
+
+            <div class="userinfo-descr">Nationality :</div>
+            <div class="userinfo-value">{{ existing_user.country_name | capitalize}} </div>
+
+            <div class="userinfo-descr">Email :</div>
+            <div class="userinfo-value">{{ existing_user.email }} </div>
+
+        </div>
+
+        {% else %}
+
+        User does not exist!
+
+        {% endif %}
 
 
     </div>

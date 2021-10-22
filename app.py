@@ -167,7 +167,7 @@ def results():
 
         # Seperation pipe
         if previous_page_text and next_page_text:
-            separator = '|' 
+            separator = '|'
         else:
             separator = ''
 

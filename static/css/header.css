@@ -85,8 +85,8 @@ header {
     padding: 20px 0;
     font-size: 20px;
     text-align: center;
-    background-color: limegreen;
-    color:rgb(0, 80, 0);
+    background-color: #FBD5A8;
+    color:#995605;
     box-sizing: border-box;
     width: 100%;
     overflow: hidden;
@@ -94,12 +94,12 @@ header {
 
 
 #flash-message-close {
-    background-color: limegreen;
+    background-color: #FBD5A8;
     box-sizing: border-box;
     width: 100px;
     overflow: hidden;
     float: right;
-    color:rgb(0, 80, 0);
+    color:#995605;
     text-decoration: none;
 }
 

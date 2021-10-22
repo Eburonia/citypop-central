@@ -115,7 +115,7 @@ Date: November 2021
 #pagination-links > a {
     color: #FBD5A8;
     text-align: center;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 
@@ -162,6 +162,7 @@ Date: November 2021
     font-size: 16px;
     text-decoration: none;
     color:rgb(238, 238, 238);
+    border: 2px solid black;
 }
 
 
@@ -233,10 +234,10 @@ Date: November 2021
     font-size: 18px;
 }
 
-.youtube-icon {
-    margin-top: 5px;
+.youtube-link {
     color:#FBD5A8;
     font-size: 20px;
+    text-decoration: none;
     font-weight: 200;
 }
 
@@ -301,11 +302,9 @@ Date: November 2021
 
             <div class="song-title-bar">
 
-                
+                <a class="youtube-link" href="{{ song.youtube }}" target="_blank" title="Watch on YouTube"><i class="fab fa-youtube"></i>
 
-                <a href="{{ song.youtube }}" target="_blank" title="Watch on YouTube"><i class="youtube-icon fab fa-youtube"></i></a>
-
-                {{ item }}. {{ song.artist_name }} - {{ song.song_name }}
+                {{ item }}. {{ song.artist_name }} - {{ song.song_name }}</a>
 
                 <i class="search-icon expand-info fas fa-question-circle" title="Expand for more information"></i>
 
