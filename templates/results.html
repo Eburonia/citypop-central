@@ -11,7 +11,7 @@ Date: November 2021
 
 <style>
 
-#search-div {
+.search-div {
     color:black;
     text-decoration: none;
     background-color: rgba(10, 10, 10, 0.95);
@@ -20,13 +20,13 @@ Date: November 2021
     box-sizing: border-box;
     padding: 20px;
     border-radius: 10px;
+    border: 2px solid #FBD5A8;
 }
 
 
-form {
+.search-form {
     box-sizing: border-box;
     padding: 20px;
-    background-color:#982062;
     border-radius: 10px;
     margin: 20px;
 }
@@ -42,6 +42,7 @@ form {
     box-sizing: border-box;
     background-color: transparent;
     color:rgb(238, 238, 238);
+    outline: 0;
 }
 
 
@@ -50,12 +51,12 @@ form {
     letter-spacing: 1px;
     padding: 5px 10px;
     border-radius: 5px;
-    border: 1px solid rgb(238, 238, 238);
+    border: 1px solid ;
     margin-top: 5px;
     margin-left: 10px;
     background-color: transparent;
     font-weight: 500;
-    color: rgb(238, 238, 238);
+    color:rgb(238, 238, 238);
     cursor: pointer;
     width: 80px;
     box-sizing: border-box;
@@ -63,7 +64,7 @@ form {
 
 
 .search-label {
-    color: rgb(238, 238, 238);
+    color: #FBD5A8;
     padding-left: 4px;
     font-size: 18px;
     letter-spacing: 1px;
@@ -72,7 +73,7 @@ form {
 
 
 .number-results-div {
-    color: rgb(238, 238, 238);
+    color: #FBD5A8;
     box-sizing: border-box;
     padding: 5px 25px;
     font-size: 18px;
@@ -83,7 +84,7 @@ form {
 
 
 .results-div {
-    color: rgb(238, 238, 238);
+    color: #FBD5A8;
     box-sizing: border-box;
     padding: 5px 25px;
     font-size: 18px;
@@ -113,7 +114,7 @@ form {
 
 
 #pagination-links > a {
-    color: #982062;
+    color: #AD2E49;
     text-decoration: none;
     font-size: 16px;
 }
@@ -126,6 +127,7 @@ form {
     box-sizing: border-box;
     float: left;
     width: 175px;
+    color: #FBD5A8;
 }
 
 
@@ -138,6 +140,20 @@ form {
     width: calc(100% - 175px);
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+
+
+.song-info-value > a {
+    padding: 2px;
+    font-size: 16px;
+    font-weight: 300;
+    box-sizing: border-box;
+    float: left;
+    width: calc(100% - 175px);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: orange;
+    margin: 0;
 }
 
 
@@ -164,20 +180,21 @@ form {
     width: 100%;
     box-sizing: border-box;
     padding: 5px 10px;
-    background-color: #982062;
+    background-color: #6A1E2A;
     margin-bottom: 20px;
     float: left;
     font-size: 18px;
     text-overflow: ellipsis;
     white-space: nowrap;
     border-radius: 10px;
+    color: #FBD5A8;
 }
 
 
 .more-info-button {
     box-sizing: border-box;
     padding: 5px 10px;
-    background-color: #982062;
+    background-color: #AD2E49;
     margin-bottom: 10px;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -186,11 +203,13 @@ form {
     float: left;
     cursor: pointer;
     font-size: 18px;
-    color:rgb(238, 238, 238);
+    color:#FBD5A8;
+    font-weight: 200;
 }
 
 .more-info-button i {
     font-size: 16px;
+    font-weight: 200;
 }
 
 
@@ -205,29 +224,31 @@ form {
 .youtube-div {
     box-sizing: border-box;
     padding: 5px 10px;
-    background-color: #982062;
+    background-color: #AD2E49;
     margin-bottom: 10px;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     width: 50px;
     text-align: center;
     float: left;
-    color: #982062;
+    color: #AD2E49;
     font-size: 18px;
 }
 
 .youtube-icon {
     margin-top: 5px;
-    color:rgb(238, 238, 238);
+    color:#FBD5A8;
     font-size: 20px;
+    font-weight: 200;
 }
 
 .admin-icon {
     margin-top: 5px;
     float: right;
-    color:rgb(238, 238, 238);
+    color:#FBD5A8;
     font-size: 18px;
     padding: 0 5px;
+    font-weight: 200;
 }
 
 .expand-info {
@@ -249,14 +270,15 @@ form {
     color: red;
     font-size: 18px;
     padding: 0 5px;
+    font-weight: 200;
 }
 
 </style>
 
 
-<div id="search-div">
+<div class="search-div">
 
-    <form action="{{ url_for('results') }}" method="POST">
+    <form class="search-form" action="{{ url_for('results') }}" method="POST">
 
         <label for="search-query" class="search-label">Search Songs</span></label><br>
         <input type="text" id="search-query" name="search-query" class="search-textbox" placeholder="" aria-label="" required>
@@ -294,7 +316,7 @@ form {
                 <a href="{{ url_for('edit_song', song_id=song._id) }}" title="Edit song"><i class="admin-icon fas fa-edit"></i></a>
 
                 <i class="admin-icon delete-song-check fas fa-trash-alt" title="Delete song"></i>
-                <a href="{{ url_for('delete_song', song_id=song._id) }}"><i class="delete-link fas fa-trash-alt" title="Delete song"></i></a>
+                <a href="{{ url_for('delete_song', song_id=song._id) }}"><i class="delete-link fas fa-trash-alt" title="Confirm delete song"></i></a>
     
                 
             {% endif %}
@@ -379,7 +401,7 @@ form {
                     </div>
 
                     <div class="song-info-value">
-                       <a href="/userinfo?user={{ song.uploaded_by }}"> {{ song.uploaded_by }} </a>
+                       <a href="/userinfo?user={{ song.uploaded_by }}">{{ song.uploaded_by }}</a>
                     </div>
 
                     <div class="song-info-desc">

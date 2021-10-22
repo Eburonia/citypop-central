@@ -18,44 +18,12 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
-@app.route("/")
+@app.route("/", methods=["GET", "POST"])
 def index():
 
-    songs = mongo.db.songs.find()
-    return render_template("index.html", songs=songs)
+    title = 'Citypop Central | Home'
 
-
-
-@app.route("/search", methods=["GET", "POST"])
-def search():
-   
-    query = request.form.get("search-query")
-
-    if query:
-        
-        songs_query = mongo.db.songs.find({"$text": {"$search": query}})
-        songs_query.sort('artist_name')
-        maximum = songs_query.count()
-
-        songs_query = list(songs_query)
-        
-        # offset = starting point
-        page = 10
-
-        # limit = show amount of records on page
-        limit = 10
-
-        # numb = songs_query.find({'_id': {'$gte': last_id}}).sort('_id', 1).limit(limit)
-        output = []
-
-        for i in range(maximum):
-            output.append(songs_query[i])
-            
-
-        return render_template("songs.html", songs_query=output, maximum=maximum)
-    else:
-        return render_template("songs.html")
-
+    return render_template("results.html", title=title)
 
 
 @app.route("/songs", methods=["GET"])

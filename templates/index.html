@@ -5,275 +5,418 @@ Date: November 2021
 -->
 
 
-
 {% extends "base.html" %}
 {% block content %}
-  
+
+
 <style>
 
-    .edit-link {
-        color:rgb(238, 238, 238);
-        cursor: pointer;
-        font-weight: 200;
-    }
+#search-div {
+    color:black;
+    text-decoration: none;
+    background-color: rgba(10, 10, 10, 0.95);
+    width: 40%;
+    margin: 50px auto;
+    box-sizing: border-box;
+    padding: 20px;
+    border-radius: 10px;
+}
 
 
-    .delete-link {
-        color: red;
-        font-weight: 600;
-    }
+form {
+    box-sizing: border-box;
+    padding: 20px;
+    background-color:#982062;
+    border-radius: 10px;
+    margin: 20px;
+}
 
 
-    .delete-song-check {
-        cursor: pointer;
-        color:rgb(238, 238, 238);
-        font-weight: 300;
-    }
+.search-textbox {
+    margin-top: 4px;
+    font-size: 18px;
+    padding: 4px 0 4px 8px;
+    width: calc(100% - 100px);
+    letter-spacing: 1px;
+    border: 1px solid rgb(238, 238, 238);
+    box-sizing: border-box;
+    background-color: transparent;
+    color:rgb(238, 238, 238);
+}
 
 
-    .delete-song-confirmed {
-        cursor: pointer;
-        color:red;
-        font-weight: 300;
-    }
+.search-button {
+    font-size: 16px;
+    letter-spacing: 1px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(238, 238, 238);
+    margin-top: 5px;
+    margin-left: 10px;
+    background-color: transparent;
+    font-weight: 500;
+    color: rgb(238, 238, 238);
+    cursor: pointer;
+    width: 80px;
+    box-sizing: border-box;
+}
 
 
-    #search-bar {
-        box-sizing: border-box;
-        padding: 30px;
-        color: rgb(238, 238, 238);
-        background-color: rgba(10, 10, 10, 0.95);
-        width: 50%;
-        margin: 0 auto;
-        border: 2px solid rgb(238, 238, 238);
-        border-radius: 20px;
-    }
+.search-label {
+    color: rgb(238, 238, 238);
+    padding-left: 4px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
 
 
-    #search-query {
-        width: 80%;
-        box-sizing: border-box;
-        padding: 5px 10px;
-    }
+.number-results-div {
+    color: rgb(238, 238, 238);
+    box-sizing: border-box;
+    padding: 5px 25px;
+    font-size: 18px;
+    float: left;
+    width: 50%;
+    text-align: right;
+}
 
 
-    .song-record-div {
-        background-color: rgba(10, 10, 10, 0.95);
-        margin: 20px auto;
-        border: 2px solid rgb(238, 238, 238);
-        border-radius: 20px;
-        width: 50%;
-        box-sizing: border-box;
-        overflow: hidden;
-        padding: 20px;
-    }
+.results-div {
+    color: rgb(238, 238, 238);
+    box-sizing: border-box;
+    padding: 5px 25px;
+    font-size: 18px;
+    float: left;
+    width: 50%;
+    text-align: left;
+}
 
 
-    .artist-song-div {
-        float: left;
-        background-color: steelblue;
-        color:rgb(238, 238, 238);
-        box-sizing: border-box;
-        overflow: hidden;
-        padding: 10px 20px;
-        clear: right;
-        width: calc(100% - 50px);
-        margin-bottom: 10px;
-        border-top-left-radius: 10px;
-        border-bottom-left-radius: 10px;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-    }
+.search-results {
+    color: rgb(238, 238, 238);
+    font-size: 18px;
+    box-sizing: border-box;
+    padding: 0 20px;
+    margin: 5px 0;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
 
 
-    .expand-info {
-        float: left;
-        background-color: rgb(1, 101, 184);
-        padding: 10px;
-        width: 50px;
-        box-sizing: border-box;
-        overflow: hidden;
-        text-align: center;
-        color:rgb(238, 238, 238);
-        cursor: pointer;
-        border-top-right-radius: 10px;
-        border-bottom-right-radius: 10px;
-    }
+#pagination-links {
+    text-align: center;
+    box-sizing: border-box;
+    padding: 5px;
+    color: rgb(238, 238, 238);
+}
 
 
-    .album-div {
-        float: left;
-        box-sizing: border-box;
-        overflow: hidden;
-        padding: 10px 0;
-        width: 140px;
-    }
+#pagination-links > a {
+    color: #982062;
+    text-decoration: none;
+    font-size: 16px;
+}
 
 
-    .album-div img {
-        border: 2px solid black;
-        cursor: pointer;
-        border-radius: 10px;
-        box-sizing: border-box;
-    }
+.song-info-desc {
+    padding: 2px;
+    font-size: 16px;
+    font-weight: 800;
+    box-sizing: border-box;
+    float: left;
+    width: 175px;
+}
 
 
-    .song-info-visible, .song-info-toggle {
-        float: right;
-        color:rgb(238, 238, 238);
-        box-sizing: border-box;
-        overflow: hidden;
-        padding: 0;
-        width: calc(100% - 140px);
-    }
+.song-info-value {
+    padding: 2px;
+    font-size: 16px;
+    font-weight: 300;
+    box-sizing: border-box;
+    float: left;
+    width: calc(100% - 175px);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
 
 
-    .song-info-visible {
-        margin-top: 10px;
-    }
+.image-frame img {
+    width: 120px;
+    vertical-align: bottom;
+    border-radius: 10px;
+    font-size: 16px;
+    text-decoration: none;
+    color:rgb(238, 238, 238);
+}
 
 
-    .song-info-desc {
-        float: left;
-        width: 160px;
-        font-size: 18px;
-        box-sizing: border-box;
-        color: rgb(238, 238, 238);
-        font-weight: 600;
-        padding: 3px 0;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-    }
+.album-image {
+    float: left;
+    width: 120px;
+    box-sizing: border-box;
+    padding: 5px 0;
+    vertical-align: bottom;
+}
 
 
-    .song-info-value {
-        float: left;
-        width: calc(100% - 160px);
-        font-size: 18px;
-        box-sizing: border-box;
-        color: rgb(238, 238, 238);
-        padding: 3px 0;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-    }
+.song-title-bar {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px 10px;
+    background-color: #982062;
+    margin-bottom: 20px;
+    float: left;
+    font-size: 18px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border-radius: 10px;
+}
 
 
-    .song-info-value a {
-        text-decoration: none;
-        color: red;
-        font-size: 18px;
-    }
+.more-info-button {
+    box-sizing: border-box;
+    padding: 5px 10px;
+    background-color: #982062;
+    margin-bottom: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 50px;
+    text-align: center;
+    float: left;
+    cursor: pointer;
+    font-size: 18px;
+    color:rgb(238, 238, 238);
+}
+
+.more-info-button i {
+    font-size: 16px;
+}
 
 
-    #youtube-icon {
-        color:rgb(238, 238, 238);
-    }
+.song-div {
+    float: left;
+    width: calc(100% - 150px);
+    box-sizing: border-box;
+    padding: 0 20px;
+}
 
 
-    #youtube-icon:hover {
-        color:rgb(255, 0, 0);
-        transition: 1s;
-    }
+.youtube-div {
+    box-sizing: border-box;
+    padding: 5px 10px;
+    background-color: #982062;
+    margin-bottom: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    width: 50px;
+    text-align: center;
+    float: left;
+    color: #982062;
+    font-size: 18px;
+}
+
+.youtube-icon {
+    margin-top: 5px;
+    color:rgb(238, 238, 238);
+    font-size: 20px;
+}
+
+.admin-icon {
+    margin-top: 5px;
+    float: right;
+    color:rgb(238, 238, 238);
+    font-size: 18px;
+    padding: 0 5px;
+}
+
+.expand-info {
+    margin-top: 5px;
+    float: right;
+    font-size: 18px;
+    cursor: pointer;
+}
 
 
+.delete-song-check {
+    cursor: pointer;
+}
+
+
+.delete-link {
+    margin-top: 5px;
+    float: right;
+    color: red;
+    font-size: 18px;
+    padding: 0 5px;
+}
 
 </style>
 
 
-<div id="search-bar">
+<div id="search-div">
 
-    <form action="{{ url_for('search') }}" method="POST">
+    {{ query }}
 
-        <label for="search-query" class="form-label">Search Songs</span></label><br>
-        <input type="text" id="search-query" name="search-query" class="form-textbox" placeholder="" aria-label="" required>
+    <form action="{{ url_for('/') }}" method="POST">
 
-        <input type="submit" value="search" class="form-button" aria-label="Click this button to generate a search query, make sure you have added all required fields above"><br><br>
+        <label for="search-query" class="search-label">Search Songs</span></label><br>
+        <input type="text" id="search-query" name="search-query" class="search-textbox" placeholder="" aria-label="" required>
+
+        <input type="submit" value="search" class="search-button" aria-label="Click this button to generate a search query, make sure you have added all required fields above"><br><br>
 
     </form>
 
-    <div style="background-color: red;"><a href="/database?limit=10&offset=10">link</a></div>
+    <div class="results-div">
+        {{ current_results }} 
+    </div>
+
+    <div class="number-results-div">
+        {{ number_of_results }}
+   </div>
+
+    {% for song in songs %}
+
+        <div class="search-results">
+
+            {% set item = result_numbers[loop.index-1] %}
+
+            <div class="song-title-bar">
+
+                
+
+                <a href="{{ song.youtube }}" target="_blank" title="Watch on YouTube"><i class="youtube-icon fab fa-youtube"></i></a>
+
+                {{ item }}. {{ song.artist_name }} - {{ song.song_name }}
+
+                <i class="search-icon expand-info fas fa-question-circle" title="Expand for more information"></i>
+
+                {% if session.user == song.uploaded_by %}
+            
+                <a href="{{ url_for('edit_song', song_id=song._id) }}" title="Edit song"><i class="admin-icon fas fa-edit"></i></a>
+
+                <i class="admin-icon delete-song-check fas fa-trash-alt" title="Delete song"></i>
+                <a href="{{ url_for('delete_song', song_id=song._id) }}"><i class="delete-link fas fa-trash-alt" title="Delete song"></i></a>
+    
+                
+            {% endif %}
+
+
+            
+
+            </div>
+
+            
+            <div class="album-image">
+                
+                <div class="image-frame">
+                    <a href="{{ song.album_image }}" target="_blank">
+
+                        <img src="{{ song.album_image }}" alt="Album image" title="Click here to see the album image">
+            
+                    </a>
+                    
+                </div>
+
+            </div>
+
+            <div class="song-div">
+      
+                <div class="visible-info">
+
+                    <div class="song-info-desc">
+                        Artist Name :
+                    </div>
+
+                    <div class="song-info-value">
+                        {{ song.artist_name }}
+                    </div>
+
+                    <div class="song-info-desc">
+                        Song Name :
+                    </div>
+
+                    <div class="song-info-value">
+                        {{ song.song_name }}
+                    </div>
+
+                    <div class="song-info-desc">
+                        Genre :
+                    </div>
+
+                    <div class="song-info-value">
+                        {{ song.genre }}
+                    </div>
+
+                    <div class="song-info-desc">
+                        Release Date :
+                    </div>
+
+                    <div class="song-info-value">
+                        {{ song.release_year }}
+                    </div>
+
+                    <div class="song-info-desc">
+                        Album Name :
+                    </div>
+
+                    <div class="song-info-value">
+                        {{ song.album_name }}
+                    </div>
+
+                </div>
+
+                <div class="hidden-info">
+
+                    <div class="song-info-desc">
+                        Song Length :
+                    </div>
+
+                    <div class="song-info-value">
+                        {{ song.song_length }}
+                    </div>
+
+                    <div class="song-info-desc">
+                        Uploaded By :
+                    </div>
+
+                    <div class="song-info-value">
+                       <a href="/userinfo?user={{ song.uploaded_by }}"> {{ song.uploaded_by }} </a>
+                    </div>
+
+                    <div class="song-info-desc">
+                        Uploaded Date :
+                    </div>
+
+                    <div class="song-info-value">
+                        {{ song.upload_date }}
+                    </div>
+
+                    <div class="song-info-desc">
+                        Edited Date :
+                    </div>
+
+                    <div class="song-info-value">
+                        {{ song.edit_date }}
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    {% endfor %}
+
+    <div id="pagination-links">
+
+        <a href="{{ previous_page }}">{{ previous_page_text }}</a>
+            {{ separator }}
+        <a href="{{ next_page }}">{{ next_page_text }}</a>
+
+    </div>
 
 </div>
-
-
-
-{% for song in songs %}
-
-
-<div class="song-record-div">
-
-    <div class="artist-song-div">
-        
-        {% if session.user == song.uploaded_by %}
-            
-            <a  href="{{ url_for('edit_song', song_id=song._id) }}" title="edit song"><i class="edit-link fas fa-edit"></i></a>
-            <i class="delete-song-check fas fa-trash-alt" title="delete song"></i>
-            <a class="delete-link" href="{{ url_for('delete_song', song_id=song._id) }}"><i class="delete-song-confirmed fas fa-trash-alt" title="delete song"></i></a> | 
-
-        {% endif %}
-
-        <a id="youtube-icon" href="{{ song.youtube }}" target="_blank" title="Watch on YouTube"><i class="fab fa-youtube"></i></a> {{ song.artist_name }} - {{ song.song_name }}</div>
-
-    <div class="expand-info" title="More information about this song"><i class="fas fa-question-circle"></i></div>
-
-    <div class="album-div">
-
-        <a href="{{ song.album_image }}" target="_blank">
-
-            <img style="width: 120px; vertical-align: bottom;" src="{{ song.album_image }}" alt="Song's Album" title="Click here to see the album image">
-
-        </a>
-
-    </div>
-
-    <div class="song-info-visible">
-
-        <div class="song-info-desc">Artist Name :</div>
-        <div class="song-info-value">{{ song.artist_name }}</div>
-
-        <div class="song-info-desc">Song Name :</div>
-        <div class="song-info-value">{{ song.song_name }}</div>
-
-        <div class="song-info-desc">Genre :</div>
-        <div class="song-info-value">{{ song.genre }}</div>
-
-        <div class="song-info-desc">Release Year :</div>
-        <div class="song-info-value">{{ song.release_year }}</div>
-
-
-    </div>
-
-       <div class="song-info-toggle">
-
-        <div class="song-info-desc">Album Name :</div>
-        <div class="song-info-value">{{ song.album_name }}</div>
-
-        <div class="song-info-desc">Song Length :</div>
-        <div class="song-info-value">{{ song.song_length }}</div>
-
-        
-
-        <div class="song-info-desc">Uploaded By :</div>
-        <div class="song-info-value">{{ song.uploaded_by }}</div>
-
-        <div class="song-info-desc">Upload Date :</div>
-        <div class="song-info-value">{{ song.upload_date }}</div>
-
-        {% if song.edit_date %}
-
-            <div class="song-info-desc">Edit Date :</div>
-            <div class="song-info-value">{{ song.edit_date }}</div>
-
-        {% endif %}
-
-       </div>
-
-  </div>
-
-
-{% endfor %}
-
-
 
 
 {% endblock %}
