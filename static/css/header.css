@@ -10,43 +10,21 @@ Date: November 2021
     margin: 0;
     padding: 0;
     font-family: 'Nunito', sans-serif;
-    font-size: 20px;
     letter-spacing: 1px;
 }
 
 
 body {
-    background: url('/static/img/hero-image.jpg') no-repeat center center;
+    background: url('/static/img/hero-imageC.jpg');
     background-attachment: fixed;
     background-size: cover;
-    background-blend-mode: luminosity, hard-light;
-    background-color: #000000;
+    background-blend-mode: color-dodge;
+    background-color: rgba(0, 14, 12, 0.92);
 }
 
 
 header {
     overflow: hidden;
- 
-}
-
-
-#logo-top-span {
-    color:rgb(238, 238, 238);
-    font-size: 54px;
-    display: block;
-    text-align: center;
-    font-weight: 800;
-    text-shadow: 2px 2px black;
-}
-
-
-#logo-bottom-span {
-    color: rgb(238, 238, 238);
-    font-size: 20px;
-    display: block;
-    text-align: center;
-    font-weight: 800;
-    text-shadow: 2px 2px black;
 }
 
 
@@ -54,15 +32,61 @@ header {
     float: left;
     padding: 20px;
     box-sizing: border-box;
-    width: 450px;
+    width: 480px;
+}
+
+
+#logo-top-span {
+    float: left;
+    color:#FBD5A8;
+    font-size: 54px;
+    display: block;
+    font-weight: 800;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+
+#logo-top-span > span {
+    display: block;
+    position: relative;
+    top: 0px;
+    left: 0px;
+}
+
+
+#logo-bottom-span {
+    float: left;
+    color: lightgrey;
+    font-size: 16px;
+    letter-spacing: 4px;
+    display: block;
+    font-weight: 800;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+
+
+#logo-japanese-span {
+    float: left;
+    color: #D24946;
+    font-size: 26px;
+    display: block;
+    font-weight: 600;
+    letter-spacing: 5px;
+    position: relative;
+    left: 5px;
+    top: 8px;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
 
 
 #navigation-div {
-    float: left;
-    padding: 20px;
+    float: right;
+    padding: 40px;
     box-sizing: border-box;
-    width: calc(100% - 450px);
+    width: calc(100% - 480px);
 }
 
 
@@ -105,6 +129,7 @@ header {
 
 
 #register-button > a {
+    font-size: 24px;
     padding: 5px 10px;
     margin: 0;
     border: 2px solid #D24946;
@@ -112,17 +137,20 @@ header {
     background-color: #D24946;
     color: rgb(238, 238, 238);
     text-decoration: none;
+    border: 2px solid black;
 }
 
 
 #login-button > a, #logout-button > a {
+    font-size: 24px;
     padding: 5px 10px;
     margin: 0;
     border: 2px solid steelblue;
     border-radius: 8px;
-    background-color: #FBD5A8;
+    background-color: steelblue;
     color:black;
     text-decoration: none;
+    border: 2px solid black;
 }
 
 
@@ -130,6 +158,7 @@ header {
     background-color: black;
     color: steelblue;
     transition: 1s;
+    border: 2px solid steelblue;
 }
 
 
@@ -137,6 +166,7 @@ header {
     background-color: black;
     color: #D24946;
     transition: 1s;
+    border: 2px solid #D24946;
 }
 
 
@@ -194,6 +224,11 @@ header {
 .menu-item {
     font-weight: 800;
     text-shadow: 1px 1px black;
+}
+
+
+.menu-item > a {
+    font-size: 24px;
 }
 
 
