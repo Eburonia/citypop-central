@@ -71,17 +71,12 @@ Date: November 2021
                         <li id="register-button"><a href="{{ url_for('register') }}">Register</a></li>
                         <li id="login-button"><a href="{{ url_for('login') }}">Login</a></li>
                     {% endif %}
-
-
-                    <li class="menu-item"><a href="{{ url_for('index') }}">Home</a></li>
                 </ul>
 
             </div>
 
 
             <div id="toggle-menu">
-
-                <a class="toggle-menu-item" href="{{ url_for('index') }}">Home</a>
 
                 {% if session.user %}
                     <a class="toggle-menu-item" href="{{ url_for('profile', username=session.user) }}">Profile</a>

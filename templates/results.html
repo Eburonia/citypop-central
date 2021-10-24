@@ -296,7 +296,7 @@ Date: November 2021
                 <a href="{{ url_for('edit_song', song_id=song._id) }}" title="Edit song"><i class="admin-icon fas fa-edit"></i></a>
 
                 <i class="admin-icon delete-song-check fas fa-trash-alt" title="Delete song"></i>
-                <a href="{{ url_for('delete_song', song_id=song._id) }}"><i class="delete-link fas fa-trash-alt" title="Confirm delete song"></i></a>
+                <a href="{{ url_for('delete_song', song_id=song._id) }}"><i class="delete-link fas fa-trash-alt" title="Confirm to delete song"></i></a>
     
                 
             {% endif %}
@@ -389,6 +389,9 @@ Date: November 2021
                         {{ song.upload_date }}
                     </div>
 
+
+                    {% if song.edit_date %}
+
                     <div class="song-info-desc">
                         Edit Date :
                     </div>
@@ -396,6 +399,8 @@ Date: November 2021
                     <div class="song-info-value">
                         {{ song.edit_date }}
                     </div>
+
+                    {% endif %}
 
                 </div>
 

@@ -111,7 +111,7 @@ header {
     padding: 20px 0;
     font-size: 20px;
     text-align: center;
-    background-color: #FBD5A8;
+    background-color: rgb(251, 213, 168);
     color:#995605;
     box-sizing: border-box;
     width: 100%;
@@ -172,7 +172,7 @@ header {
     float: right;
     height: 40px;
     width: 40px;
-    border: 2px solid steelblue;
+    border: 2px solid rgb(255, 113, 151);
     background-color: transparent;
     border-radius: 6px;
     cursor: pointer;
@@ -180,7 +180,7 @@ header {
 
 
 #toggle-button > i {
-    color: steelblue;
+    color: rgb(255, 113, 151);
 }
 
 
@@ -195,8 +195,9 @@ header {
 
 
 #toggle-menu li {
+    font-size: 20px;
     list-style-type: none;
-    background-color: steelblue;
+    background-color: rgb(255, 113, 151);
     padding: 5px;
     margin: 2px;
     cursor: pointer;
@@ -247,13 +248,15 @@ header {
     }
 
     .toggle-menu-item {
+        font-size: 24px;
+        font-weight: 800;
         text-decoration: none;
         color:rgb(238, 238, 238);
         display: block;
-        background-color: steelblue;
+        background-color: rgba(0, 0, 0, 0.85);
         box-sizing: border-box;
         overflow: hidden;
-        padding: 5px 0;
+        padding: 10px 0;
         margin: 2px;
     }
 
