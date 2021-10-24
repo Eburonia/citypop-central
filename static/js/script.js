@@ -2,6 +2,23 @@
 // Author: Maurice Vossen
 // November 2021
 
+
+
+let x = Math.floor(Math.random() * 2);
+
+
+if(x == 0) {
+    $('body').css('background-image', 'url('+encodeURIComponent("/static/img/hero-imageD.jpg")+')');
+}
+else {
+    $('body').css('background-image', 'url('+encodeURIComponent("/static/img/hero-imageC.jpg")+')');
+}
+
+
+
+
+
+
 // hides toggle navigation menu awehen website is loaded
 $('#toggle-menu').hide();
 
