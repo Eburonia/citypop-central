@@ -18,14 +18,13 @@ body {
     background: url('/static/img/hero-imageC.jpg');
     background-attachment: fixed;
     background-size: cover;
-    background-blend-mode:luminosity;
-    background-color: rgba(1, 136, 109, 0.55);
+    background-blend-mode:color-dodge;
+    background-color: rgba(0, 0, 0, 0.9);
 }
 
 
 header {
     overflow: hidden;
-    border-top: 3px solid #d30cb8;
 }
 
 
@@ -34,12 +33,13 @@ header {
     padding: 20px;
     box-sizing: border-box;
     width: 480px;
+    cursor: pointer;
 }
 
 
 #logo-top-span {
     float: left;
-    color: #6df1d8;
+    color: rgb(251, 213, 168);
     font-size: 54px;
     display: block;
     font-weight: 800;
@@ -47,6 +47,7 @@ header {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    text-shadow: 0 0 10px rgb(150, 87, 10), 0 0 0px rgb(251, 213, 168), 0 0 0px rgb(251, 213, 168), 0 0 0px rgb(250, 168, 68), 0 0 0px rgb(248, 178, 93), 0 0 40px rgb(251, 213, 168), 0 0 50px rgb(251, 213, 168);
 }
 
 
@@ -71,7 +72,7 @@ header {
 
 #logo-japanese-span {
     float: left;
-    color: #d30cb8;
+    color: rgb(255, 113, 151);
     font-size: 26px;
     display: block;
     font-weight: 600;
@@ -133,14 +134,18 @@ header {
     font-size: 24px;
     padding: 5px 10px;
     margin: 0;
-    border: 2px solid #d30cb8;
+    border: 2px solid rgb(255, 113, 151);
     border-radius: 8px;
     background-color: transparent;
-    color: #d30cb8 !important;
+    color: rgb(255, 113, 151) !important;
     text-decoration: none;
-    border: 2px solid #d30cb8;
 }
 
+
+#register-button > a:hover {
+    text-shadow: 0 0 10px rgb(255, 113, 151), 0 0 20px rgb(255, 113, 151), 0 0 30px rgb(255, 113, 151), 0 0 40px rgb(255, 113, 151), 0 0 50px rgb(255, 113, 151), 0 0 60px rgb(255, 113, 151), 0 0 70px rgb(255, 113, 151);
+    transition: 1s;
+}
 
 #login-button > a, #logout-button > a {
     font-size: 24px;
@@ -148,25 +153,17 @@ header {
     margin: 0;
     border-radius: 8px;
     background-color: transparent;
-    color:#6df1d8 !important;
+    color:rgb(251, 213, 168) !important;
     text-decoration: none;
-    border: 2px solid #6df1d8;
+    border: 2px solid rgb(251, 213, 168);
 }
 
 
 #login-button > a:hover, #logout-button > a:hover {
-    background-color: black;
-    color: #6df1d8;
+    color:rgb(238, 238, 238) !important;
+    border-color: rgb(238, 238, 238);
+    text-shadow: 0 0 10px rgb(251, 213, 168), 0 0 20px rgb(251, 213, 168), 0 0 30px rgb(251, 213, 168), 0 0 40px rgb(251, 213, 168), 0 0 50px rgb(251, 213, 168), 0 0 60px rgb(251, 213, 168), 0 0 70px rgb(251, 213, 168);
     transition: 1s;
-    border: 2px solid #6df1d8;
-}
-
-
-#register-button > a:hover {
-    background-color: black;
-    color: #d30cb8;
-    transition: 1s;
-    border: 2px solid #d30cb8;
 }
 
 

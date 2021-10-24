@@ -132,7 +132,7 @@ def results():
         # Pagination
 
         # Limit the amount of results per page
-        limit = 3
+        limit = 5
 
         # Determine number of pages needed for results
         number_of_pages = math.ceil(number_of_results / limit)

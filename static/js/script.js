@@ -114,10 +114,4 @@ $(document).on('click', '#delete-profile-button', function() {
         $('#confirm-delete-profile-button').hide();
     }
     
-
 });
-
-
-
-
-
