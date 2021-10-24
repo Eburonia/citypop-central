@@ -30,12 +30,12 @@ footer i {
 
 footer a {
     text-decoration: none;
-    color: rgb(238, 238, 238);
+    color: #abf0e3;
 }
 
 
 footer a:hover {
-    color: steelblue;
+    color: #d30cb8;
 }
 
 footer > ul {

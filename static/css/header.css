@@ -18,13 +18,14 @@ body {
     background: url('/static/img/hero-imageC.jpg');
     background-attachment: fixed;
     background-size: cover;
-    background-blend-mode: color-dodge;
-    background-color: rgba(0, 14, 12, 0.92);
+    background-blend-mode:luminosity;
+    background-color: rgba(1, 136, 109, 0.55);
 }
 
 
 header {
     overflow: hidden;
+    border-top: 3px solid #d30cb8;
 }
 
 
@@ -38,7 +39,7 @@ header {
 
 #logo-top-span {
     float: left;
-    color:#FBD5A8;
+    color: #6df1d8;
     font-size: 54px;
     display: block;
     font-weight: 800;
@@ -59,9 +60,9 @@ header {
 
 #logo-bottom-span {
     float: left;
-    color: lightgrey;
-    font-size: 16px;
-    letter-spacing: 4px;
+    color:rgb(238, 238, 238);
+    font-size: 20px;
+    letter-spacing: 4.8px;
     display: block;
     font-weight: 800;
     text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
@@ -70,7 +71,7 @@ header {
 
 #logo-japanese-span {
     float: left;
-    color: #D24946;
+    color: #d30cb8;
     font-size: 26px;
     display: block;
     font-weight: 600;
@@ -132,12 +133,12 @@ header {
     font-size: 24px;
     padding: 5px 10px;
     margin: 0;
-    border: 2px solid #D24946;
+    border: 2px solid #d30cb8;
     border-radius: 8px;
-    background-color: #D24946;
-    color: rgb(238, 238, 238);
+    background-color: transparent;
+    color: #d30cb8 !important;
     text-decoration: none;
-    border: 2px solid black;
+    border: 2px solid #d30cb8;
 }
 
 
@@ -145,28 +146,27 @@ header {
     font-size: 24px;
     padding: 5px 10px;
     margin: 0;
-    border: 2px solid steelblue;
     border-radius: 8px;
-    background-color: steelblue;
-    color:black;
+    background-color: transparent;
+    color:#6df1d8 !important;
     text-decoration: none;
-    border: 2px solid black;
+    border: 2px solid #6df1d8;
 }
 
 
 #login-button > a:hover, #logout-button > a:hover {
     background-color: black;
-    color: steelblue;
+    color: #6df1d8;
     transition: 1s;
-    border: 2px solid steelblue;
+    border: 2px solid #6df1d8;
 }
 
 
 #register-button > a:hover {
     background-color: black;
-    color: #D24946;
+    color: #d30cb8;
     transition: 1s;
-    border: 2px solid #D24946;
+    border: 2px solid #d30cb8;
 }
 
 
