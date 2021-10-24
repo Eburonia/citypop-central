@@ -8,8 +8,13 @@ Date: November 2021
 footer {
     text-align: center;
     overflow: hidden;
-    color: rgb(255, 113, 151);
+    color: rgb(238, 238, 238);
     height: 150px;
+}
+
+
+footer > hr {
+    color: rgb(238, 238, 238);
 }
 
 
@@ -29,7 +34,7 @@ footer i {
 
 footer a {
     text-decoration: none;
-    color: rgb(255, 113, 151);
+    color: rgb(238, 238, 238);
 }
 
 
