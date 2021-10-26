@@ -288,6 +288,7 @@ def add_song():
 
 @app.route("/edit_song/<song_id>", methods=["GET", "POST"])
 def edit_song(song_id):
+    
     if request.method == "POST":
 
         x = datetime.datetime.now()
@@ -325,6 +326,8 @@ def delete_song(song_id):
 @app.route("/userinfo")
 def userinfo():
 
+    title = 'Citypop Central | User Information'
+
     user = request.args.get("user")
 
     existing_user = mongo.db.users.find_one({"username": user})
@@ -333,7 +336,17 @@ def userinfo():
         user = 'user does not exist'
         return render_template("userinfo.html", user=user, existing_user=existing_user)
 
-    return render_template("userinfo.html", user=user, existing_user=existing_user)
+    return render_template("userinfo.html", user=user, existing_user=existing_user, title=title)
+
+
+@app.route("/youtube")
+def youtube():
+
+    title = 'Citypop Central | Youtube'
+
+    link = request.args.get("link")
+
+    return render_template("youtube.html", title=title, link=link)
 
 
 if __name__ == "__main__":
