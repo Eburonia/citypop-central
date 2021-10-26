@@ -1,6 +1,6 @@
 import os
 from flask import (
-    Flask, flash, render_template, redirect, request, jsonify, session, url_for)
+    Flask, flash, render_template, redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -33,7 +33,6 @@ def results():
 
     query = request.form.get("search-query")
 
-
     # query variables
     # keyword to search for
     search = request.args.get('search')
@@ -45,9 +44,9 @@ def results():
         query = request.form.get("search-query")
     else:
         query = request.args.get('search')
-    
+
     if query:
-        
+
         songs_query = mongo.db.songs.find({"$text": {"$search": query}})
         songs_query.sort('artist_name')
         number_of_results = songs_query.count()
@@ -74,24 +73,29 @@ def results():
             for i in range(int(page) * limit, number_of_results):
                 output.append(songs_query[i])
 
-        
         # Determine previous page link for pagination
-        
+
         if int(page) >= 1:
-            previous_page = '/results?search=' + query + '&page=' + str(int(page) - 1)
+
+            previous_page = f"/results?search={query}\
+                &page={str(int(page) - 1)}"
             previous_page_text = 'Prev Page'
+
         else:
+
             previous_page = ''
             previous_page_text = ''
 
-
-        # determine next page link for pagination
+        # Determine next page link for pagination
         next_page_text = ''
-        
+
         if int(page) < number_of_pages - 1:
-            next_page = '/results?search=' + query + '&page=' + str(int(page) + 1)
+
+            next_page = f"/results?search={query}&page={str(int(page) + 1)}"
             next_page_text = 'Next Page'
+
         else:
+
             next_page_text = ''
             next_page = ''
 
@@ -109,7 +113,9 @@ def results():
             end_result = number_of_results
 
         if number_of_results != 0:
-            current_results = 'Result : ' + str(start_result) + ' to ' + str(end_result)
+
+            current_results = f"Result : {str(start_result)}\
+                 to {str(end_result)}"
         else:
             current_results = ''
 
@@ -120,8 +126,16 @@ def results():
 
         number_of_results = 'Number of results : ' + str(number_of_results)
 
-        return render_template("results.html", songs=output, search=search, previous_page=previous_page, previous_page_text=previous_page_text, next_page=next_page, next_page_text=next_page_text, number_of_results=number_of_results, separator=separator, current_results=current_results, result_numbers=result_numbers, title=title)
-    
+        return render_template("results.html", songs=output, search=search,
+                               previous_page=previous_page,
+                               previous_page_text=previous_page_text,
+                               next_page=next_page,
+                               next_page_text=next_page_text,
+                               number_of_results=number_of_results,
+                               separator=separator,
+                               current_results=current_results,
+                               result_numbers=result_numbers, title=title)
+
     return render_template("results.html")
 
 
@@ -131,8 +145,10 @@ def register():
     title = 'Citypop Central | Register'
 
     if request.method == "POST":
-        
-        if request.form.get("password") != request.form.get("password-confirm"):
+
+        if request.form.get("password") != \
+                request.form.get("password-confirm"):
+
             flash('Passwords do not match')
             return redirect(url_for("register"))
 
@@ -161,7 +177,8 @@ def register():
     countries = mongo.db.countries.find().sort("country_name", 1)
     genders = mongo.db.genders.find().sort("gender", 1)
 
-    return render_template("register.html", countries=countries, genders=genders, title=title)
+    return render_template("register.html", countries=countries,
+                           genders=genders, title=title)
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -196,8 +213,10 @@ def login():
     return render_template("login.html", title=title)
 
 
-@app.route("/profile/<username>", methods=["GET", "POST"])
-def profile(username):
+@app.route("/profile", methods=["GET", "POST"])
+def profile():
+
+    username = request.form.get("username")
 
     title = 'Citypop Central | Profile'
 
@@ -213,7 +232,8 @@ def profile(username):
         genders = mongo.db.genders.find().sort("gender", 1)
 
         return render_template(
-            "profile.html", username=username, settings=settings, countries=countries, genders=genders, title=title)
+            "profile.html", username=username, settings=settings,
+            countries=countries, genders=genders, title=title)
 
     return redirect(url_for("login"))
 
@@ -238,10 +258,10 @@ def update_profile(username):
 
 @app.route("/delete-profile")
 def delete_profile():
-   
+
     mongo.db.users.remove({"username": session["user"]})
     session.pop("user")
-       
+
     flash("Your profile has been deleted")
     return redirect(url_for("register"))
 
@@ -259,11 +279,12 @@ def add_song():
 
     title = 'Citypop Central | Add Song'
 
-    # add a song to the database
+    # Add a song to the database
     if request.method == "POST":
 
-        x = datetime.datetime.now()
-        date = str(x.day) + " " + str(x.strftime("%B")) + " " + str(x.year)
+        date_time_now = datetime.datetime.now()
+        date = str(date_time_now.day) + " " +\
+            str(date_time_now.strftime("%B")) + " " + str(date_time_now.year)
 
         song = {
             "artist_name": request.form.get("artist_name"),
@@ -283,12 +304,14 @@ def add_song():
 
     release_years = mongo.db.release_years.find().sort("release_year", 1)
     genres = mongo.db.genres.find().sort("genre", 1)
-    return render_template("add_song.html", genres=genres, release_years=release_years, title=title)
+
+    return render_template("add_song.html", genres=genres,
+                           release_years=release_years, title=title)
 
 
 @app.route("/edit_song/<song_id>", methods=["GET", "POST"])
 def edit_song(song_id):
-    
+
     if request.method == "POST":
 
         x = datetime.datetime.now()
@@ -297,22 +320,23 @@ def edit_song(song_id):
         submit = {
             "$set": {"artist_name": request.form.get(
                 "artist_name"), "song_name": request.form.get(
-                    "song_name"), "uploaded_by": session["user"], "genre": request.form.get(
-                        "genre"), "release_year": request.form.get(
-                            "release_year"), "album_name": request.form.get(
-                                "album_name"), "album_image": request.form.get(
-                                    "album_image"), "song_length": request.form.get(
-                                        "song_length"), "edit_date": date}
+                "song_name"), "uploaded_by": session["user"],
+                "genre": request.form.get(
+                "genre"), "release_year": request.form.get(
+                "release_year"), "album_name": request.form.get(
+                "album_name"), "album_image": request.form.get(
+                "album_image"), "song_length": request.form.get(
+                "song_length"), "edit_date": date}
         }
 
         mongo.db.songs.update({"_id": ObjectId(song_id)}, submit)
         flash("Song Successfully Updated")
         return redirect(url_for("results"))
-        
+
     genres = mongo.db.genres.find().sort("genre", 1)
     release_years = mongo.db.release_years.find().sort("release_year", 1)
     song = mongo.db.songs.find_one({"_id": ObjectId(song_id)})
-    return render_template("edit_song.html", song=song, genres=genres, 
+    return render_template("edit_song.html", song=song, genres=genres,
                            release_years=release_years)
 
 
@@ -334,9 +358,11 @@ def userinfo():
 
     if existing_user is None:
         user = 'user does not exist'
-        return render_template("userinfo.html", user=user, existing_user=existing_user)
+        return render_template("userinfo.html",
+                               user=user, existing_user=existing_user)
 
-    return render_template("userinfo.html", user=user, existing_user=existing_user, title=title)
+    return render_template("userinfo.html", user=user,
+                           existing_user=existing_user, title=title)
 
 
 @app.route("/youtube")
