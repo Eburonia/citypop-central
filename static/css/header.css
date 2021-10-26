@@ -37,8 +37,6 @@ header {
 }
 
 
-
-
 #logo-top-span {
     float: left;
     color: rgb(251, 213, 168);
@@ -104,13 +102,20 @@ header {
     list-style-type: none;
     padding: 0 10px;
     font-size: 30px;
-    
 }
 
 
 #navigation-div > ul > li > a {
+    font-size: 24px;
+    font-weight: 800;
     color: rgb(238, 238, 238);
     text-decoration: none;
+}
+
+
+#navigation-div > ul > li > a:hover {
+    text-shadow: 0 0 10px rgb(255, 113, 151), 0 0 20px rgb(255, 113, 151), 0 0 30px rgb(255, 113, 151), 0 0 40px rgb(255, 113, 151), 0 0 50px rgb(255, 113, 151), 0 0 60px rgb(255, 113, 151), 0 0 70px rgb(255, 113, 151);
+    transition: 1s;
 }
 
 
@@ -118,8 +123,8 @@ header {
     padding: 20px 0;
     font-size: 20px;
     text-align: center;
-    background-color: rgb(251, 213, 168);
-    color:#995605;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: rgb(251, 213, 168);
     box-sizing: border-box;
     width: 100%;
     overflow: hidden;
@@ -127,12 +132,12 @@ header {
 
 
 #flash-message-close {
-    background-color: #FBD5A8;
+    background-color: rgba(0, 0, 0, 0.75);
     box-sizing: border-box;
     width: 100px;
     overflow: hidden;
     float: right;
-    color:#995605;
+    color: rgb(251, 213, 168);
     text-decoration: none;
 }
 
@@ -212,8 +217,8 @@ header {
 
 
 #toggele-menu > ul > li > a {
-    text-decoration: none;
-    color: rgb(238, 238, 238);
+    text-decoration: underline;
+    color: red;
 }
 
 
@@ -223,17 +228,6 @@ header {
 
 .toggle-menu-li {
     color: rgb(238, 238, 238);
-}
-
-
-.menu-item {
-    font-weight: 800;
-    text-shadow: 1px 1px black;
-}
-
-
-.menu-item > a {
-    font-size: 24px;
 }
 
 

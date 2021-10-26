@@ -93,25 +93,28 @@ Date: November 2021
 
     </header>
 
-    <section>
+    
 
         <!-- flash messages -->
         {% with messages = get_flashed_messages() %}
 
             {% if messages %}
 
+                <section>
+
                 {% for message in messages %}
 
-                       <div id="flash-messages"><i class="fas fa-info">   </i> {{ message }} <a id="flash-message-close" href=""><i class="fas fa-times"></i></a></div>
-         
+                       <div id="flash-messages"><i class="fas fa-info">   </i> {{ message }} <a id="flash-message-close" href="" title="Close flash message"><i class="fas fa-times"></i></a></div>
 
                 {% endfor %}
+
+            </section>
 
             {% endif %}
 
         {% endwith %}
 
-    </section>
+    
 
 
     <main>

@@ -26,76 +26,6 @@ def index():
     return render_template("results.html", title=title)
 
 
-@app.route("/songs", methods=["GET"])
-def songs():
-
-    number = mongo.db.numbers
-
-    maximum = number.count()
-
-    if maximum == 0:
-        return render_template("songs.html")
-
-    # offset = starting point
-    page = int(request.args['page'])
-
-    # limit = show amount of records on page
-    limit = 5
-
-    starting_id = number.find().sort('_id', 1)
-    last_id = starting_id[page*10]['_id']
-
-    numb = number.find(
-        {'_id': {'$gte': last_id}}).sort('_id', 1).limit(limit)
-
-    output = []
-
-    for i in numb:
-        output.append(i['number'])
-
-    next_page = page + 1
-    previous_page = page - 1
-
-    print(next_page)
-    next_url = '/songs?page=' + str(next_page)
-    prev_url = '/songs?page=' + str(previous_page)
-
-    return render_template("songs.html", a=output, next_url=next_url,
-                           prev_url=prev_url, limit=limit, maximum=maximum, page=page)
-
-
-@app.route("/numbers", methods=["GET"])
-def numbers():
-
-    number = mongo.db.numbers
-
-    maxixum = number.count()
-
-    # offset = starting point
-    offset = int(request.args['offset'])
-
-    # limit = show amount of records on page
-    limit = int(request.args['limit']) 
-
-    starting_id = number.find().sort('_id', 1)
-    last_id = starting_id[offset]['_id']
-
-    numb = number.find(
-        {'_id': {'$gte': last_id}}).sort('_id', 1).limit(limit)
-
-    output = []
-
-    for i in numb:
-        output.append(i['number'])
-
-    next_url = '/numbers?limit=' + str(
-        limit) + '&offset=' + str(offset + limit)
-    prev_url = '/numbers?limit=' + str(
-        limit) + '&offset=' + str(offset - limit)
-
-    return render_template("numbers.html", a=output, next_url=next_url, prev_url=prev_url, offset=offset, limit=limit, max=maxixum)
-
-
 @app.route("/results", methods=["GET", "POST"])
 def results():
 
@@ -132,7 +62,7 @@ def results():
         # Pagination
 
         # Limit the amount of results per page
-        limit = 5
+        limit = 2
 
         # Determine number of pages needed for results
         number_of_pages = math.ceil(number_of_results / limit)
@@ -198,6 +128,8 @@ def results():
 @app.route("/register", methods=["GET", "POST"])
 def register():
 
+    title = 'Citypop Central | Register'
+
     if request.method == "POST":
         
         if request.form.get("password") != request.form.get("password-confirm"):
@@ -229,11 +161,14 @@ def register():
     countries = mongo.db.countries.find().sort("country_name", 1)
     genders = mongo.db.genders.find().sort("gender", 1)
 
-    return render_template("register.html", countries=countries, genders=genders)
+    return render_template("register.html", countries=countries, genders=genders, title=title)
 
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
+
+    title = 'Citypop Central | Login'
+
     if request.method == "POST":
         # check whether username exists in database
         existing_user = mongo.db.users.find_one(
@@ -258,11 +193,14 @@ def login():
             flash("Incorrect Username and/or Password")
             return redirect(url_for("login"))
 
-    return render_template("login.html")
+    return render_template("login.html", title=title)
 
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
+
+    title = 'Citypop Central | Profile'
+
     # grab the session user's username from database
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
@@ -275,7 +213,7 @@ def profile(username):
         genders = mongo.db.genders.find().sort("gender", 1)
 
         return render_template(
-            "profile.html", username=username, settings=settings, countries=countries, genders=genders)
+            "profile.html", username=username, settings=settings, countries=countries, genders=genders, title=title)
 
     return redirect(url_for("login"))
 
@@ -308,12 +246,6 @@ def delete_profile():
     return redirect(url_for("register"))
 
 
-@app.route("/get_countries")
-def show_countries():
-    countries = mongo.db.countries.find()
-    return render_template("register.html", countries=countries)
-
-
 @app.route("/logout")
 def logout():
     # remove user from session cookies
@@ -324,6 +256,9 @@ def logout():
 
 @app.route("/add_song", methods=["GET", "POST"])
 def add_song():
+
+    title = 'Citypop Central | Add Song'
+
     # add a song to the database
     if request.method == "POST":
 
@@ -348,7 +283,7 @@ def add_song():
 
     release_years = mongo.db.release_years.find().sort("release_year", 1)
     genres = mongo.db.genres.find().sort("genre", 1)
-    return render_template("add_song.html", genres=genres, release_years=release_years)
+    return render_template("add_song.html", genres=genres, release_years=release_years, title=title)
 
 
 @app.route("/edit_song/<song_id>", methods=["GET", "POST"])

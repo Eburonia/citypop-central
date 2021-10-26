@@ -31,8 +31,7 @@ Date: November 2021
 
 
 .search-label {
-    color: rgb(238, 238, 238);
-    padding-left: 4px;
+    color: rgb(251, 213, 168);
     font-size: 18px;
     letter-spacing: 1px;
     text-decoration: none;
@@ -40,16 +39,22 @@ Date: November 2021
 }
 
 
+.search-p {
+    font-size: 14px;
+    color: rgb(255, 113, 151);
+}
+
+
 .search-textbox {
-    margin-top: 8px;
     font-size: 18px;
-    padding: 8px 0 8px 16px;
-    width: 100%;
+    padding: 8px 0 8px 50px;
+    width: calc(90% - 100px);
     border: 1px solid rgb(238, 238, 238);
     box-sizing: border-box;
     background-color: transparent;
     color:rgb(238, 238, 238);
     outline: 0;
+    border-radius: 5px;
 }
 
 
@@ -262,9 +267,9 @@ Date: November 2021
 
     <form class="search-form" action="{{ url_for('results') }}" method="POST">
 
-        <label for="search-query" class="search-label">Search Songs (e.g. citypop, funk, disco, jazz)</span></label><br>
-        <input type="text" id="search-query" name="search-query" class="search-textbox" placeholder="" aria-label="" required>
-
+        <label for="search-query" class="search-label">Search Songs</span></label>
+        <p class="search-p">e.g. citypop, funk, disco, jazz</p>
+        <input type="text" id="search-query" name="search-query" class="search-textbox" aria-label="" required>
         <input type="submit" value="search" class="search-button" aria-label="Click this button to generate a search query, make sure you have added all required fields above"><br><br>
 
     </form>
