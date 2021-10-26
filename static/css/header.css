@@ -15,11 +15,8 @@ Date: November 2021
 
 
 body {
-    /* background: url('/static/img/hero-imageD.jpg'); */
     background-attachment: fixed;
     background-size: cover;
-    background-blend-mode:color-dodge;
-    background-color: rgba(0, 0, 0, 0.9);
 }
 
 

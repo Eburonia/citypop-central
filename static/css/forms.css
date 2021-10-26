@@ -13,7 +13,7 @@ Date: November 2021
     overflow: hidden;
     padding: 30px;
     border-radius: 20px;
-    border: 2px solid rgb(238, 238, 238);
+    border: 2px solid rgb(251, 213, 168);
 }
 
 
@@ -30,6 +30,7 @@ Date: November 2021
     font-size: 18px;
     letter-spacing: 1px;
     text-decoration: none;
+    color: rgb(251, 213, 168);
 }
 
 
@@ -40,8 +41,9 @@ Date: November 2021
     padding: 4px 0 4px 8px;
     width: 100%;
     letter-spacing: 1px;
-    border: 2px solid black;
+    border: 1px solid rgb(251, 213, 168);
     box-sizing: border-box;
+    background-color: transparent;
 }
 
 
@@ -50,11 +52,12 @@ Date: November 2021
     letter-spacing: 1px;
     padding: 4px 8px;
     border-radius: 5px;
-    border: 2px solid rgb(238, 238, 238);
+    border: 2px solid black;
     margin-top: 10px;
     background-color: rgb(255, 113, 151);
     font-weight: 300;
-    color: rgb(238, 238, 238);
+    color: black;
+    font-weight: 600;
     cursor: pointer;
 }
 
