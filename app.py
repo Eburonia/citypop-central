@@ -309,13 +309,31 @@ def add_song():
                            release_years=release_years, title=title)
 
 
-@app.route("/edit_song/<song_id>", methods=["GET", "POST"])
-def edit_song(song_id):
+@app.route("/edit_song", methods=["GET", "POST"])
+def edit_song():
+
+    title = 'Citypop Central | Edit Song'
+
+    song_id = request.args.get('editsong')
+
+    uploaded_by = mongo.db.songs.find_one({"_id": ObjectId(song_id)})["uploaded_by"]
+
+
+    if 'user' in session:
+        if uploaded_by == session["user"]:
+            flash("You are the owner of this song")
+        else:
+            flash("You are not allowed to update this song")
+            return redirect(url_for("results"))
+    else:
+        flash("You are not allowed to update this song")
+        return redirect(url_for("results"))
+
 
     if request.method == "POST":
 
-        x = datetime.datetime.now()
-        date = str(x.day) + " " + str(x.strftime("%B")) + " " + str(x.year)
+        date_time = datetime.datetime.now()
+        date = str(date_time.day) + " " + str(date_time.strftime("%B")) + " " + str(date_time.year)
 
         submit = {
             "$set": {"artist_name": request.form.get(
@@ -337,7 +355,7 @@ def edit_song(song_id):
     release_years = mongo.db.release_years.find().sort("release_year", 1)
     song = mongo.db.songs.find_one({"_id": ObjectId(song_id)})
     return render_template("edit_song.html", song=song, genres=genres,
-                           release_years=release_years)
+                           release_years=release_years, title=title, uploaded_by=uploaded_by)
 
 
 @app.route("/delete_song/<song_id>")
