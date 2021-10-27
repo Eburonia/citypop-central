@@ -23,7 +23,6 @@ Date: November 2021
 }
 
 
-
 #confirm-delete-profile-button {
     color: red;
     text-decoration: none;
@@ -32,6 +31,13 @@ Date: November 2021
 
 #confirm-delete-profile-button:hover {
     text-decoration: underline;
+}
+
+
+#form-username {
+    color: rgb(251, 213, 168);
+    font-size: 24px;
+    font-weight: 600;
 }
 
 
@@ -44,11 +50,10 @@ Date: November 2021
 
     <form action="{{ url_for('update_profile', username=session.user) }}" method="POST">
 
-        <label class="form-label" for="username">Username :</label>
-        <input type="text" id="username" name="username" value="{{ username }}" class="form-textbox" placeholder="" aria-label="" disabled><br>
+        <span id="form-username">Username : {{ username }}</span><br><br>
     
         <label class="form-label" for="email">Email :</label>
-        <input type="email" id="email" name="email" value="{{ settings.email }}" class="form-textbox" placeholder="" aria-label="" required><br>
+        <input type="email" id="email" name="email" value="{{ settings.email }}" class="form-textbox" aria-label="" required><br>
 
         <label for="country" class="form-label">Country :</label><br>
         <select id="country" name="country" class="form-textbox" aria-label="">
@@ -85,8 +90,6 @@ Date: November 2021
 
         <input type="submit" value="update" class="form-button" aria-label=""><br><br>
 
-        
-
     </form>
 
 
@@ -94,7 +97,7 @@ Date: November 2021
 
         <span id="delete-profile-button" title="Click on this link to delete your profile" arian-label="">Click here to delete your profile</span><br><br>
 
-        <a id="confirm-delete-profile-button" href="/delete-profile" title="Click on the link to confirm to delete your profile" arian-label="">confirm to delete your profile</a><br><br>
+        <a id="confirm-delete-profile-button" href="/delete-profile" title="Click on the link to confirm to delete your profile" arian-label="">Confirm to delete your profile</a><br><br>
 
 
  

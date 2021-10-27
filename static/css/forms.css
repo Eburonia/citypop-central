@@ -45,21 +45,27 @@ Date: November 2021
     box-sizing: border-box;
     background-color: transparent;
     color: rgb(251, 213, 168);
+    outline: 0;
 }
 
 
 .form-button {
     font-size: 16px;
-    letter-spacing: 1px;
-    padding: 4px 8px;
-    border-radius: 5px;
-    border: 2px solid black;
+    padding: 6px 12px;
     margin-top: 10px;
-    background-color: rgb(255, 113, 151);
-    font-weight: 300;
+    background-color: rgba(255, 113, 151, 0.8);
     color: black;
     font-weight: 600;
     cursor: pointer;
+    border: 0;
+    border-radius: 5px;
+}
+
+
+.form-button:hover {
+    box-shadow: 
+    0 0 5px rgb(255, 0, 68),
+    0 0 10px rgb(252, 64, 114);
 }
 
 
@@ -71,4 +77,9 @@ Date: November 2021
 
 .form-link:hover {
     text-decoration: underline;
+}
+
+
+select option{
+    background-color: rgb(0, 0, 0) !important;
 }

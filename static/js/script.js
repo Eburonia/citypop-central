@@ -4,6 +4,28 @@
 
 
 
+
+
+
+
+$('#confirm-delete-profile-button').hide();
+
+
+$(document).on('click', '#delete-profile-button', function() {
+
+    if($('#confirm-delete-profile-button').is(":hidden")) {
+        $('#confirm-delete-profile-button').show();
+    }
+    else {
+        $('#confirm-delete-profile-button').hide();
+    }
+    
+});
+
+
+
+
+
 let x = Math.floor(Math.random() * 2);
 
 
@@ -119,16 +141,3 @@ $('.expand-info').on('click', function() {
 });
 
 
-$('#confirm-delete-profile-button').hide();
-
-
-$(document).on('click', '#delete-profile-button', function() {
-
-    if($('#confirm-delete-profile-button').is(":hidden")) {
-        $('#confirm-delete-profile-button').show();
-    }
-    else {
-        $('#confirm-delete-profile-button').hide();
-    }
-    
-});
