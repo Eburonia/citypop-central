@@ -247,9 +247,44 @@ header {
 }
 
 /* media queries for base.html only */
-
 /* for tablets and phones */
+
+@media only screen and (max-width: 600px) {
+ 
+    #navigation-div {
+        padding: 20px 10px 0 0;
+    }
+
+
+    #logo-div {
+        padding: 10px 0 10px 10px;
+        width: 260px;
+    }
+
+
+    #logo-top-span {
+        font-size: 32px;
+    }
+
+
+    #logo-bottom-span {
+        font-size: 8px;
+    }
+
+
+    #logo-japanese-span {
+        font-size: 14px;
+    }
+
+    #flash-messages {
+        font-size: 14px;
+    } 
+
+}
+
+
 @media only screen and (max-width: 1000px) { 
+
 
     #toggle-button {
         display: block;
