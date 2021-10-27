@@ -9,10 +9,11 @@ Date: November 2021
     width: 40%;
     text-decoration: none;
     color: rgb(238, 238, 238);
-    background-color: rgba(10, 10, 10, 0.85);
+    background-color: rgba(10, 10, 10, 0.9);
     overflow: hidden;
     padding: 30px;
     border-radius: 20px;
+    border: 2px solid rgb(251, 213, 168);
 }
 
 

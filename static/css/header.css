@@ -22,6 +22,7 @@ body {
 
 header {
     overflow: hidden;
+    background: linear-gradient(rgba(0, 0, 0, 1.0), (rgba(0, 0, 0, 0)));
 }
 
 
@@ -31,6 +32,7 @@ header {
     box-sizing: border-box;
     width: 480px;
     cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.25);
 }
 
 
@@ -40,7 +42,6 @@ header {
     font-size: 54px;
     display: block;
     font-weight: 800;
-    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
     box-sizing: border-box;
     padding: 0;
     margin: 0;
@@ -48,7 +49,13 @@ header {
 
 
 #logo-top-span:hover {
-    text-shadow: 0 0 10px rgb(150, 87, 10), 0 0 0px rgb(251, 213, 168), 0 0 0px rgb(251, 213, 168), 0 0 0px rgb(250, 168, 68), 0 0 0px rgb(248, 178, 93), 0 0 40px rgb(251, 213, 168), 0 0 50px rgb(251, 213, 168);
+    
+    text-shadow: 
+    0 0 5px rgb(0, 0, 0),
+    0 0 10px rgb(197, 108, 0),
+    0 0 15px rgb(255, 140, 0),
+    0 0 20px rgb(248, 196, 133);
+    
     transition: 1s;
 }
 
@@ -68,7 +75,6 @@ header {
     letter-spacing: 4.8px;
     display: block;
     font-weight: 800;
-    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
 
 
@@ -82,13 +88,12 @@ header {
     position: relative;
     left: 5px;
     top: 8px;
-    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
 
 
 #navigation-div {
     float: right;
-    padding: 40px;
+    padding: 30px;
     box-sizing: border-box;
     width: calc(100% - 480px);
 }
@@ -97,8 +102,9 @@ header {
 #navigation-div > ul > li {
     float: right;
     list-style-type: none;
-    padding: 0 10px;
+    padding: 10px 10px;
     font-size: 30px;
+    background-color: rgba(0, 0, 0, 0.25);
 }
 
 
@@ -111,7 +117,11 @@ header {
 
 
 #navigation-div > ul > li > a:hover {
-    text-shadow: 0 0 10px rgb(255, 113, 151), 0 0 20px rgb(255, 113, 151), 0 0 30px rgb(255, 113, 151), 0 0 40px rgb(255, 113, 151), 0 0 50px rgb(255, 113, 151), 0 0 60px rgb(255, 113, 151), 0 0 70px rgb(255, 113, 151);
+    text-shadow: 
+    0 0 5px rgb(255, 0, 68),
+    0 0 10px rgb(252, 64, 114),
+    0 0 15px rgb(255, 106, 146),
+    0 0 20px rgb(255, 124, 124);
     transition: 1s;
 }
 
@@ -152,7 +162,12 @@ header {
 
 
 #register-button > a:hover {
-    text-shadow: 0 0 10px rgb(255, 113, 151), 0 0 20px rgb(255, 113, 151), 0 0 30px rgb(255, 113, 151), 0 0 40px rgb(255, 113, 151), 0 0 50px rgb(255, 113, 151), 0 0 60px rgb(255, 113, 151), 0 0 70px rgb(255, 113, 151);
+    text-shadow: 
+    0 0 15px rgb(0, 0, 0),
+    0 0 30px rgb(197, 108, 0),
+    0 0 45px rgb(255, 140, 0),
+    0 0 60px rgb(248, 196, 133);
+
     transition: 1s;
 }
 
