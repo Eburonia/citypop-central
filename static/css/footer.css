@@ -6,6 +6,8 @@ Date: November 2021
 
 
 footer {
+    float: left;
+    width: 100%;
     text-align: center;
     overflow: hidden;
     color: rgb(251, 213, 168);

@@ -15,6 +15,7 @@ Date: November 2021
     padding: 20px;
     border-radius: 30px;
     border: 2px solid rgb(251, 213, 168);
+    overflow: hidden;
 }
 
 
@@ -103,6 +104,7 @@ Date: November 2021
 
 
 .search-results {
+    float: left;
     color: rgb(238, 238, 238);
     font-size: 18px;
     box-sizing: border-box;
@@ -121,6 +123,9 @@ Date: November 2021
     float: left;
     width: 175px;
     color: rgb(238, 238, 238);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 
@@ -131,9 +136,10 @@ Date: November 2021
     box-sizing: border-box;
     float: left;
     width: calc(100% - 175px);
-    text-overflow: ellipsis;
-    white-space: nowrap;
     color: rgb(238, 238, 238);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 
@@ -177,10 +183,11 @@ Date: November 2021
     margin-bottom: 20px;
     float: left;
     font-size: 18px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
     border-radius: 10px;
     color:rgb(251, 213, 168);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 
@@ -226,7 +233,7 @@ Date: November 2021
     color:rgb(251, 213, 168);
     font-size: 18px;
     padding: 0 5px;
-    font-weight: 200;
+    font-weight: 300;
 }
 
 .expand-info {
@@ -257,11 +264,13 @@ Date: November 2021
 }
 
 #pagination-links {
+    float: left;
     box-sizing: border-box;
     padding: 20px;
     text-align: center;
     color: rgb(238, 238, 238);
     font-size: 16px;
+    width: 100%;
 }
 
 #pagination-links > a {
@@ -272,4 +281,117 @@ Date: November 2021
 
 #separator {
     color: rgb(255, 113, 151);
+}
+
+/* media queries for results.html only */
+/* for tablets and phones */
+
+@media only screen and (max-width: 700px) {
+
+    .search-textbox {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+
+    .search-button {
+        margin-left: 0;
+    }
+
+    .youtube-link {
+        float: left;
+        font-weight: 100;
+    }
+
+    .search-icon {
+        float: left;
+        clear: left;
+        font-size: 28px;
+        font-weight: 100;
+    }
+
+    .admin-icon, .delete-link {
+        float: left;
+        font-size: 28px;
+        font-weight: 100;
+    }
+
+    .song-title-bar {
+        border: 0;
+    }
+
+    .number-results-div {
+        float: left;
+        clear: left;
+        text-align: left;
+        width: 100%;
+    }
+
+
+    .results-div {
+        float: left;
+        width: 100%;
+    }
+
+    .youtube-link  {
+        font-size: 28px;
+    }
+
+    .album-image {
+        width: 100%;
+        float: left;
+        margin-bottom: 30px;
+    }
+
+    .image-frame img{
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .song-div {
+        float: left;
+        clear: left;
+        width: 100%;
+    }
+
+    .song-info-desc {
+        float: left;
+        width: 100%;
+        font-size: 20px;
+    }
+
+    .song-info-value {
+        width: 100%;
+        float: left;
+        clear: left;
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    #pagination-links {
+        width: 100%;
+    }
+
+    footer {
+        float: left;
+        width: 100%;
+    }
+
+}
+
+
+@media only screen and (max-width: 1100px) {
+    
+    .search-div {
+        width: calc(100% - 20px) !important;
+    }
+}
+
+
+@media only screen and (max-width: 1600px) {
+
+    .search-div {
+        width: 60%;
+    }
+
 }
