@@ -6,13 +6,19 @@ Date: November 2021
 
 <style>
 
+    #content-div {
+        width: 100%;
+    }
+
+
     .youtube-div {
         box-sizing: border-box;
         position: relative;
         overflow: hidden;
         width: 50%;
         padding-top: 56.25%;
-        margin: 0 auto;
+        margin: 30px auto;
+        box-sizing: border-box;
     }
 
 
@@ -24,12 +30,10 @@ Date: November 2021
         height: 50%;
         border-color: rgb(255, 113, 151);
         box-sizing: border-box;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.75);
+        border-radius: 20px;
     }
-
-    #yt-div {
-        width: 100%;
-    }
-
 
 </style>
 
@@ -38,15 +42,14 @@ Date: November 2021
 {% extends "base.html" %}
 {% block content %}
 
+{{ link }}
+    <div id="content-div">
 
-    <div id="yt-div">
+        <div class="youtube-div">
 
-    <div class="youtube-div">
+            <iframe id="youtube-iframe" src="{{ link }}"></iframe> 
 
-        <iframe id="youtube-iframe" src="https://www.youtube.com/embed/A_Q1fEyZRV4">
-        </iframe> 
-
-    </div>
+        </div>
 
     </div>  
 

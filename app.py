@@ -372,6 +372,9 @@ def youtube():
 
     link = request.args.get("link")
 
+    link = f"https://www.youtube.com/embed/{link}"
+
+
     return render_template("youtube.html", title=title, link=link)
 
 
