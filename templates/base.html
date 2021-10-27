@@ -67,17 +67,16 @@ Date: November 2021
 
                 <button id="toggle-button"><i class="fas fa-bars"></i></button>
 
-
-                <ul>
-                    {% if session.user %}
-                        <li id="logout-button"><a href="{{ url_for('logout') }}">Logout</a></li>
-                        <li class="menu-item"><a href="{{ url_for('add_song') }}">Add Song</a></li>
-                        <li class="menu-item"><a href="{{ url_for('profile', username=session.user) }}">Profile</a></li>
-                    {% else %}
-                        <li id="register-button"><a href="{{ url_for('register') }}">Register</a></li>
-                        <li id="login-button"><a href="{{ url_for('login') }}">Login</a></li>
-                    {% endif %}
-                </ul>
+                    <ul>
+                        {% if session.user %}
+                            <li id="logout-button"><a href="{{ url_for('logout') }}">Logout</a></li>
+                            <li class="menu-item"><a href="{{ url_for('add_song') }}">Add Song</a></li>
+                            <li class="menu-item"><a href="{{ url_for('profile', username=session.user) }}">Profile</a></li>
+                        {% else %}
+                            <li id="register-button"><a href="{{ url_for('register') }}">Register</a></li>
+                            <li id="login-button"><a href="{{ url_for('login') }}">Login</a></li>
+                        {% endif %}
+                    </ul>
 
             </div>
 

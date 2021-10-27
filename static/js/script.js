@@ -33,7 +33,7 @@ if(x == 0) {
     $('body').css('background-image', 'url('+encodeURIComponent("/static/img/hero-imageF.jpg")+')');
 }
 else {
-    $('body').css('background-image', 'url('+encodeURIComponent("/static/img/hero-imageF.jpg")+')');
+    $('body').css('background-image', 'url('+encodeURIComponent("/static/img/hero-imageD.jpg")+')');
 }
 
 

@@ -46,7 +46,6 @@ footer a:hover {
     0 0 20px rgb(252, 64, 114),
     0 0 30px rgb(255, 106, 146),
     0 0 40px rgb(255, 124, 124);
-    transition: 1s;
 }
 
 footer > ul {
