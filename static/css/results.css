@@ -155,22 +155,22 @@ Date: November 2021
 }
 
 
-.image-frame img {
-    width: 150px;
-    vertical-align: bottom;
-    border-radius: 10px;
-    font-size: 16px;
-    text-decoration: none;
-    color:rgb(238, 238, 238);
-}
-
-
 .album-image {
     float: left;
     width: 160px;
     box-sizing: border-box;
     padding: 5px 0;
     vertical-align: bottom;
+    overflow: hidden;
+}
+
+
+.image-frame img {
+    width: 100%;
+    vertical-align: bottom;
+    border-radius: 10px;
+    font-size: 16px;
+    text-decoration: none;
 }
 
 
@@ -288,7 +288,33 @@ Date: November 2021
 /* media queries for results.html only */
 /* for tablets and phones */
 
+@media only screen and (max-width: 1600px) {
+
+    .search-div {
+        width: 60%;
+    }
+
+}
+
+
+@media only screen and (max-width: 1100px) {
+    
+    .search-div {
+        width: calc(80% - 20px) !important;
+    }
+}
+
+
 @media only screen and (max-width: 700px) {
+
+    .search-div {
+        border: 0;
+        border-radius: 0;
+        padding: 0;
+        width: 100% !important;
+        margin: 0px auto;
+        background-color: rgba(0, 0, 0, 0.6);
+    }
 
     .search-textbox {
         width: 100%;
@@ -308,18 +334,25 @@ Date: November 2021
     .search-icon {
         float: left;
         clear: left;
-        font-size: 28px;
+        font-size: 18px;
         font-weight: 100;
     }
 
     .admin-icon, .delete-link {
         float: left;
-        font-size: 28px;
+        font-size: 18px;
         font-weight: 100;
     }
 
     .song-title-bar {
         border: 0;
+        white-space: normal;
+        text-overflow: unset;
+    }
+
+
+    .song-title-bar > a{
+        font-size: 22px;
     }
 
     .number-results-div {
@@ -327,47 +360,51 @@ Date: November 2021
         clear: left;
         text-align: left;
         width: 100%;
+        padding: 0 0 0 30px;
     }
 
 
     .results-div {
         float: left;
         width: 100%;
+        padding: 0 0 0 30px;
     }
 
-    .youtube-link  {
-        font-size: 28px;
-    }
 
     .album-image {
         width: 100%;
+        max-width: 400px;
         float: left;
         margin-bottom: 30px;
+        overflow: hidden;
     }
 
     .image-frame img{
         width: 100%;
-        max-width: 400px;
     }
+
 
     .song-div {
         float: left;
         clear: left;
         width: 100%;
+        padding: 0 10px;
     }
 
     .song-info-desc {
         float: left;
         width: 100%;
-        font-size: 20px;
+        font-size: 18px;
+        padding: 0;
     }
 
     .song-info-value {
         width: 100%;
         float: left;
         clear: left;
-        font-size: 20px;
-        margin-bottom: 10px;
+        font-size: 18px;
+        margin-bottom: 15px;
+        padding: 0;
     }
 
     #pagination-links {
@@ -382,18 +419,6 @@ Date: November 2021
 }
 
 
-@media only screen and (max-width: 1100px) {
-    
-    .search-div {
-        width: calc(100% - 20px) !important;
-    }
-}
 
 
-@media only screen and (max-width: 1600px) {
 
-    .search-div {
-        width: 60%;
-    }
-
-}

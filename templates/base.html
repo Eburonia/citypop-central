@@ -37,10 +37,6 @@ Date: November 2021
     <!-- Page title -->
     <title>{{ title }}</title>
 
-
-    <!-- load javascript for background -->
-    <script src="{{ url_for('static', filename='js/background.js') }}"></script>
-
 </head>
 
 
@@ -102,7 +98,9 @@ Date: November 2021
 
     </header>
 
+    <!-- transition between header and body -->
     <div id="transition-div"></div>
+
 
         <!-- flash messages -->
         {% with messages = get_flashed_messages() %}
@@ -111,13 +109,13 @@ Date: November 2021
 
                 <section>
 
-                {% for message in messages %}
+                    {% for message in messages %}
 
-                       <div class="flash-messages"><i class="fas fa-info">   </i> {{ message }} <a id="flash-message-close" href="" title="Close flash message"><i class="fas fa-times"></i></a></div>
+                       <div class="flash-messages"><i class="fas fa-info"></i>{{ message }}<i class="flash-message-close fas fa-times" title="Close flash message" aria-label=""></i></div>
 
-                {% endfor %}
+                    {% endfor %}
 
-            </section>
+                </section>
 
             {% endif %}
 

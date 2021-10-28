@@ -3,43 +3,15 @@
 // November 2021
 
 
-$('#confirm-delete-profile-button').hide();
+let randomBackgroundImage = Math.floor(Math.random() * 2);
 
-
-$(document).on('click', '#delete-profile-button', function() {
-
-    if($('#confirm-delete-profile-button').is(":hidden")) {
-        $('#confirm-delete-profile-button').show();
-    }
-    else {
-        $('#confirm-delete-profile-button').hide();
-    }
-    
-});
-
-
-
-let x = Math.floor(Math.random() * 2);
-
-
-if(x == 0) {
+if(randomBackgroundImage == 0) {
     $('body').css('background-image', 'url('+encodeURIComponent("/static/img/hero-imageF.jpg")+')');
 }
 else {
     $('body').css('background-image', 'url('+encodeURIComponent("/static/img/hero-imageD.jpg")+')');
 }
 
-
-// hides toggle navigation menu awehen website is loaded
-$('#toggle-menu').hide();
-
-
-// toggle navigation menu
-$('#toggle-button').on('click', function() {
-
-    $('#toggle-menu').slideToggle('slow');
-
-});
 
 
 $('.delete-link').hide();
@@ -61,6 +33,40 @@ $(document).on('click', '.delete-song-check', function(){
     }
 
 });
+
+
+
+
+
+$('#confirm-delete-profile-button').hide();
+
+
+$(document).on('click', '#delete-profile-button', function() {
+
+    if($('#confirm-delete-profile-button').is(":hidden")) {
+        $('#confirm-delete-profile-button').show();
+    }
+    else {
+        $('#confirm-delete-profile-button').hide();
+    }
+    
+});
+
+
+
+// hides toggle navigation menu awehen website is loaded
+$('#toggle-menu').hide();
+
+
+// toggle navigation menu
+$('#toggle-button').on('click', function() {
+
+    $('#toggle-menu').slideToggle('slow');
+
+});
+
+
+
 
 
 $( ".toggle-part" ).hide();
@@ -101,11 +107,11 @@ $(document).on('click', '.expand-info', function() {
 
 
 
-$(document).on('click', '#flash-messages', function() {
+$(document).on('click', '.fa-times', function() {
 
-    let x = $('.expand-info').index(this);
+    let flashMessage = $('.fa-times').index(this);
 
-    
+    $(".flash-messages").eq(flashMessage).hide();
 
 });
 
@@ -119,11 +125,9 @@ $('.hidden-info').hide();
 // toggle navigation menu
 $('.expand-info').on('click', function() {
 
-
     let x = $('.expand-info').index(this);
 
     $(".hidden-info").eq(x).slideToggle('slow');
-
 
 });
 
