@@ -123,7 +123,6 @@ header {
     font-size: 20px;
     font-weight: 800;
     color: rgb(238, 238, 238);
-    text-decoration: none;
 }
 
 
@@ -133,6 +132,7 @@ header {
     0 0 10px rgb(252, 64, 114),
     0 0 15px rgb(255, 106, 146),
     0 0 20px rgb(255, 124, 124);
+    text-decoration: underline;
 }
 
 
@@ -183,8 +183,8 @@ header {
 #toggle-button {
     display: none;
     float: right;
-    height: 40px;
-    width: 40px;
+    height: 36px;
+    width: 36px;
     border: 2px solid rgb(255, 113, 151);
     background-color: transparent;
     border-radius: 6px;
@@ -193,6 +193,7 @@ header {
 
 
 #toggle-button > i {
+    font-size: 18px;
     color: rgb(255, 113, 151);
 }
 
@@ -217,12 +218,6 @@ header {
 }
 
 
-#toggle-menu > ul > li > a {
-    text-decoration: underline;
-
-}
-
-
 #toggle-menu-home > a {
     color: rgb(238, 238, 238);
 }
@@ -232,7 +227,7 @@ header {
 }
 
 
-#flash-messages {
+.flash-messages {
     padding: 20px 0;
     font-size: 20px;
     text-align: center;
@@ -286,7 +281,7 @@ header {
         font-size: 14px;
     }
 
-    #flash-messages {
+    .flash-messages {
         font-size: 14px;
     } 
 

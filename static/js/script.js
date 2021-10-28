@@ -3,11 +3,6 @@
 // November 2021
 
 
-
-
-
-
-
 $('#confirm-delete-profile-button').hide();
 
 
@@ -24,8 +19,6 @@ $(document).on('click', '#delete-profile-button', function() {
 
 
 
-
-
 let x = Math.floor(Math.random() * 2);
 
 
@@ -35,10 +28,6 @@ if(x == 0) {
 else {
     $('body').css('background-image', 'url('+encodeURIComponent("/static/img/hero-imageD.jpg")+')');
 }
-
-
-
-
 
 
 // hides toggle navigation menu awehen website is loaded
@@ -87,10 +76,6 @@ $(document).on('click', '.song-toggle-button', function(){
 
 
 
-
-
-
-
 $('.song-info-toggle').hide();
 
 
@@ -117,6 +102,8 @@ $(document).on('click', '.expand-info', function() {
 
 
 $(document).on('click', '#flash-messages', function() {
+
+    let x = $('.expand-info').index(this);
 
     
 

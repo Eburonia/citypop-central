@@ -149,14 +149,14 @@ def register():
         if request.form.get("password") != \
                 request.form.get("password-confirm"):
 
-            flash('Passwords do not match')
+            flash('Passwords Do Not Match')
             return redirect(url_for("register"))
 
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
         if existing_user:
-            flash('Username already exists')
+            flash('Username Already Exists')
             return redirect(url_for("register"))
 
         regi = {
@@ -171,7 +171,7 @@ def register():
 
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
-        flash("Registration succesful")
+        flash("Registration Succesful")
         return redirect(url_for("profile", username=session["user"]))
 
     countries = mongo.db.countries.find().sort("country_name", 1)
@@ -195,14 +195,14 @@ def login():
             if check_password_hash(
                 existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
-                flash("Welcome back {}".format(
+                flash("Welcome Back {}".format(
                     request.form.get("username")))
                 return redirect(url_for(
                         "index", username=session["user"]))
 
             else:
                 # invalid password match
-                flash("Incorrect Username and/or password")
+                flash("Incorrect Username and/or Password")
                 return redirect(url_for("login"))
 
         else:
@@ -262,14 +262,14 @@ def delete_profile():
     mongo.db.users.remove({"username": session["user"]})
     session.pop("user")
 
-    flash("Your profile has been deleted")
+    flash("Your Profile Has Been Deleted")
     return redirect(url_for("register"))
 
 
 @app.route("/logout")
 def logout():
     # remove user from session cookies
-    flash("You have been logged out")
+    flash("You Have Been Logged Out")
     session.pop("user")
     return redirect(url_for("login"))
 
@@ -300,7 +300,7 @@ def add_song():
         }
 
         mongo.db.songs.insert_one(song)
-        flash('The song has been added to the database')
+        flash('The Song Has Been Added To The Database')
         return redirect(url_for("index"))
 
     release_years = mongo.db.release_years.find().sort("release_year", 1)
@@ -322,12 +322,12 @@ def edit_song():
 
     if 'user' in session:
         if uploaded_by == session["user"]:
-            flash("You are the owner of this song")
+            flash("You Are The Owner Of This Song")
         else:
-            flash("You are not allowed to update this song")
+            flash("You Are Not Allowed To Update This Song")
             return redirect(url_for("results"))
     else:
-        flash("You are not allowed to update this song")
+        flash("You Are Not Allowed To Update This Song")
         return redirect(url_for("results"))
 
 

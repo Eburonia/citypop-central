@@ -37,6 +37,10 @@ Date: November 2021
     <!-- Page title -->
     <title>{{ title }}</title>
 
+
+    <!-- load javascript for background -->
+    <script src="{{ url_for('static', filename='js/background.js') }}"></script>
+
 </head>
 
 
@@ -109,7 +113,7 @@ Date: November 2021
 
                 {% for message in messages %}
 
-                       <div id="flash-messages"><i class="fas fa-info">   </i> {{ message }} <a id="flash-message-close" href="" title="Close flash message"><i class="fas fa-times"></i></a></div>
+                       <div class="flash-messages"><i class="fas fa-info">   </i> {{ message }} <a id="flash-message-close" href="" title="Close flash message"><i class="fas fa-times"></i></a></div>
 
                 {% endfor %}
 
