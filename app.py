@@ -23,7 +23,9 @@ def index():
 
     title = 'Citypop Central | Home'
 
-    return render_template("results.html", title=title)
+    songs_cover = mongo.db.songs.find().sort("upload_date", -1).limit(8)
+
+    return render_template("results.html", title=title, songs_cover=songs_cover)
 
 
 @app.route("/results", methods=["GET", "POST"])
@@ -136,7 +138,7 @@ def results():
                                current_results=current_results,
                                result_numbers=result_numbers, title=title)
 
-    return render_template("results.html")
+    return render_template("results.html", title=title)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -364,6 +366,7 @@ def edit_song():
 def delete_song(song_id):
     mongo.db.songs.remove({"_id": ObjectId(song_id)})
 
+    flash('Song Has Been Delete From The Database')
     return redirect(url_for("results"))
 
 

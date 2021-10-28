@@ -1,0 +1,36 @@
+/*
+File: profile.css
+Author: Maurice Vossen
+Date: November 2021
+*/
+
+
+#delete-profile-button {
+    text-decoration: none;
+    color: lightgrey;
+    cursor: pointer;
+}
+
+
+#delete-profile-button:hover {
+    text-decoration: underline;
+}
+
+
+#confirm-delete-profile-button {
+    color: red;
+    text-decoration: none;
+}
+
+
+#confirm-delete-profile-button:hover {
+    text-decoration: underline;
+}
+
+
+#form-username {
+    color: rgb(251, 213, 168);
+    font-size: 24px;
+    font-weight: 600;
+}
+

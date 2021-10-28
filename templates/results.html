@@ -20,6 +20,23 @@ Date: November 2021
 
     </form>
 
+    <!-- random songs -->
+    <div id="random-songs-div" style="box-sizing: border-box; margin: 10px;">
+
+        <h3 style="color: rgb(251, 213, 168); font-size: 22px; padding-left: 15px;">Latest Songs</h3>
+
+        {% for song_cover in songs_cover %}
+        <div class="random-song" style="width: calc(25% - 20px); box-sizing: border-box; margin: 10px; float:left; height: 160px;">
+
+            <a href="/youtube?link={{ song_cover.youtube }}" title="{{song_cover.artist_name}} - {{song_cover.song_name}}" aria-label="Click here to listen to this random song">
+                <img style="width: 100%; vertical-align: bottom; border-radius: 10px;" src="{{song_cover.album_image}}" alt="">
+            </a>
+
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- search results -->
     <div class="results-div">
         {{ current_results }} 
     </div>
