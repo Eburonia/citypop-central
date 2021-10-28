@@ -300,6 +300,7 @@ def add_song():
         }
 
         mongo.db.songs.insert_one(song)
+        flash('The song has been added to the database')
         return redirect(url_for("index"))
 
     release_years = mongo.db.release_years.find().sort("release_year", 1)

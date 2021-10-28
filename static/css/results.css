@@ -28,7 +28,7 @@ Date: November 2021
 
 .search-label {
     color: rgb(251, 213, 168);
-    font-size: 18px;
+    font-size: 22px;
     letter-spacing: 1px;
     text-decoration: none;
     font-weight: 600;
@@ -37,7 +37,7 @@ Date: November 2021
 
 
 .search-p {
-    font-size: 14px;
+    font-size: 16px;
     color: rgb(255, 113, 151);
     margin-bottom: 8px;
     padding-left: 4px;
@@ -261,6 +261,9 @@ Date: November 2021
 .hr-pagination {
     margin: 10px 0;
     color: rgb(255, 113, 151);
+    border-color: rgb(255, 113, 151);
+    background-color: rgb(255, 113, 151);
+
 }
 
 #pagination-links {
