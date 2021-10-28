@@ -22,8 +22,16 @@ body {
 
 header {
     overflow: hidden;
-    background: linear-gradient(rgba(0, 0, 0, 1.0), (rgba(0, 0, 0, 0)));
-    padding-bottom: 50px;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+
+#transition-div {
+    float: left;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+    height: 30px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 
@@ -31,21 +39,14 @@ header {
     float: left;
     padding: 10px 20px;
     box-sizing: border-box;
-    width: 450px;
+    width: 320px;
     cursor: pointer;
-    background-color: rgba(0, 0, 0, 0.8);
     border-radius: 20px;
-    margin: 30px 0 0 30px;
-    transition: 2s;
+    margin: 10px 0 0 10px;
 }
 
 
 #logo-div:hover {
-    box-shadow: 
-    0 0 10px rgb(255, 0, 68),
-    0 0 20px rgb(252, 64, 114),
-    0 0 30px rgb(255, 106, 146),
-    0 0 40px rgb(255, 124, 124);
     text-shadow: 
     0 0 10px rgb(255, 0, 68),
     0 0 20px rgb(252, 64, 114),
@@ -57,7 +58,7 @@ header {
 #logo-top-span {
     float: left;
     color: rgb(251, 213, 168);
-    font-size: 54px;
+    font-size: 36px;
     display: block;
     font-weight: 800;
     box-sizing: border-box;
@@ -77,8 +78,8 @@ header {
 #logo-bottom-span {
     float: left;
     color:rgb(238, 238, 238);
-    font-size: 20px;
-    letter-spacing: 4.8px;
+    font-size: 13px;
+    letter-spacing: 3.5px;
     display: block;
     font-weight: 800;
 }
@@ -87,7 +88,7 @@ header {
 #logo-japanese-span {
     float: left;
     color: rgb(255, 113, 151);
-    font-size: 26px;
+    font-size: 16px;
     display: block;
     font-weight: 600;
     letter-spacing: 5px;
@@ -99,14 +100,13 @@ header {
 
 #navigation-div  {
     float: right;
-    padding: 30px;
+    padding: 10px;
     box-sizing: border-box;
     width: calc(100% - 510px);
 }
 
 #navigation-div > ul {
     float: right;
-    background-color: rgba(0, 0, 0, 0.8);
     border-radius: 20px;
     box-sizing: border-box;
     padding: 10px;
@@ -116,12 +116,11 @@ header {
     float: right;
     list-style-type: none;
     padding: 10px 10px;
-    font-size: 30px;
 }
 
 
 .menu-item > a {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 800;
     color: rgb(238, 238, 238);
     text-decoration: none;
@@ -138,7 +137,7 @@ header {
 
 
 #register-button > a {
-    font-size: 24px;
+    font-size: 20px;
     padding: 5px 10px;
     margin: 0;
     border: 2px solid rgb(255, 113, 151);
@@ -160,7 +159,7 @@ header {
 
 
 #login-button > a, #logout-button > a {
-    font-size: 24px;
+    font-size: 20px;
     padding: 5px 10px;
     margin: 0;
     border-radius: 8px;
