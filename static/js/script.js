@@ -38,6 +38,10 @@ $(document).on('click', '.delete-song-check', function(){
 
 
 
+
+
+
+
 $('#confirm-delete-profile-button').hide();
 
 
@@ -128,6 +132,36 @@ $('.expand-info').on('click', function() {
     let x = $('.expand-info').index(this);
 
     $(".hidden-info").eq(x).slideToggle('slow');
+
+});
+
+
+
+// Check whether the passwords are used
+$('#password').blur(function() {
+
+
+    if($('#password').val() != $('#password-confirm').val()) {
+        $(".form-message").css("display", "block");
+    }
+    else {
+        $(".form-message").css("display", "none");
+    }
+
+});
+
+
+
+// Check whether the passwords are used
+$('#password-confirm').blur(function() {
+
+
+    if($('#password').val() != $('#password-confirm').val()) {
+        $(".form-message").css("display", "block");
+    }
+    else {
+        $(".form-message").css("display", "none");
+    }
 
 });
 

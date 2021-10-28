@@ -37,7 +37,7 @@ Date: November 2021
 
 .form-textbox {
     margin-top: 4px;
-    margin-bottom: 16px;
+    margin-bottom: 30px;
     font-size: 18px;
     padding: 4px 0 4px 8px;
     width: 100%;
@@ -46,9 +46,19 @@ Date: November 2021
     box-sizing: border-box;
     background-color: rgba(255, 255, 255, 0.2);
     color: rgb(251, 213, 168);
-    outline: 0;
+    outline-color: rgb(255, 113, 151);
 }
 
+.form-info {
+    padding-left: 4px;
+    color: rgb(255, 113, 151);
+}
+
+.form-message {
+    padding-left: 4px;
+    color: skyblue;
+    display: none;
+}
 
 .form-button {
     font-size: 16px;
