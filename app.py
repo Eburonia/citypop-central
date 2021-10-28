@@ -344,7 +344,8 @@ def edit_song():
                 "release_year"), "album_name": request.form.get(
                 "album_name"), "album_image": request.form.get(
                 "album_image"), "song_length": request.form.get(
-                "song_length"), "edit_date": date}
+                "song_length"), "edit_date": date,
+                "youtube": request.form.get("youtube")}
         }
 
         mongo.db.songs.update({"_id": ObjectId(song_id)}, submit)

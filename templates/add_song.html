@@ -1,6 +1,11 @@
+<!--
+File: add_song.html
+Author: Maurice Vossen
+Date: November 2021
+-->
+
 {% extends "base.html" %}
 {% block content %}
-
 
     <div class="form-div">
 
@@ -25,15 +30,9 @@
 
             </select>
 
-            <label for="album_name" class="form-label">Album Name :</label>
-            <input type="text" id="album_name" name="album_name" class="form-textbox" aria-label="" required>
-
-            <label for="album_image" class="form-label">Album Image :</label><br>
-            <input type="text" id="album_image" name="album_image" class="form-textbox" aria-label="" required>
-
             <label for="release_year" class="form-label">Release Year :</label>
             <select id="release_year" name="release_year" class="form-textbox" aria-label="">
-    
+
                 {% for release_year in release_years %}
     
                         <option value="{{ release_year.release_year }}">{{ release_year.release_year }}</option>
@@ -41,6 +40,12 @@
                 {% endfor %}
     
             </select>
+
+            <label for="album_name" class="form-label">Album Name :</label>
+            <input type="text" id="album_name" name="album_name" class="form-textbox" aria-label="" required>
+
+            <label for="album_image" class="form-label">Album Image :</label><br>
+            <input type="text" id="album_image" name="album_image" class="form-textbox" aria-label="" required>
 
             <label for="song_length" class="form-label">Song Length :</label>
             <input type="text" id="song_length" name="song_length" class="form-textbox" aria-label="" required>
@@ -51,7 +56,6 @@
             <input type="submit" value="upload" class="form-button" aria-label="">
 
         </form>
-
 
     </div>
 
