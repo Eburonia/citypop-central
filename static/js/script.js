@@ -3,13 +3,26 @@
 // November 2021
 
 
-let randomBackgroundImage = Math.floor(Math.random() * 2);
+let randomBackgroundImage = Math.floor(Math.random() * 5);
 
 if(randomBackgroundImage == 0) {
-    $('body').css('background-image', 'url('+encodeURIComponent("/static/img/hero-imageF.jpg")+')');
+    $('body').css('background-image', 'url('+encodeURIComponent("/static/img/background1.jpg")+')');
 }
+
+else if(randomBackgroundImage == 1) {
+    $('body').css('background-image', 'url('+encodeURIComponent("/static/img/background2.jpg")+')');
+}
+
+else if(randomBackgroundImage == 2) {
+    $('body').css('background-image', 'url('+encodeURIComponent("/static/img/background3.jpg")+')');
+}
+
+else if(randomBackgroundImage == 3) {
+    $('body').css('background-image', 'url('+encodeURIComponent("/static/img/background4.jpg")+')');
+}
+
 else {
-    $('body').css('background-image', 'url('+encodeURIComponent("/static/img/hero-imageD.jpg")+')');
+    $('body').css('background-image', 'url('+encodeURIComponent("/static/img/background5.jpg")+')');
 }
 
 

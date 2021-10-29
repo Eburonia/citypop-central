@@ -23,8 +23,10 @@ Date: November 2021
 
 
 body {
+    background-color: black;
     background-attachment: fixed;
     background-size: cover;
+    background-position: center; 
 }
 
 
