@@ -13,11 +13,13 @@ Date: November 2021
 
         <form action="{{ url_for('add_song') }}" method="POST">
 
-            <label for="artist_name" class="form-label">Artist Name :</label><br>
-            <input type="text" id="artist_name" name="artist_name" class="form-textbox" aria-label="" required><br>
+            <label for="artist_name" class="form-label">Artist Name :</label>
+            <p class="form-info">First letter uppercase</p>
+            <input type="text" id="artist_name" name="artist_name" pattern="^[A-Z][a-z]{2,}" class="form-textbox" aria-label="" required><br>
 
-            <label for="song_name" class="form-label">Song Name :</label><br>
-            <input type="text" id="song_name" name="song_name" class="form-textbox" aria-label="" required><br>
+            <label for="song_name" class="form-label">Song Name :</label>
+            <p class="form-info">First letter uppercase</p>
+            <input type="text" id="song_name" name="song_name" pattern="^[A-Z][a-z]{2,}" class="form-textbox" aria-label="" required><br>
 
             <label for="genre" class="form-label">Genre :</label><br>
             <select id="genre" name="genre" class="form-textbox" aria-label="">
