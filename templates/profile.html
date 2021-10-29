@@ -56,6 +56,21 @@ Date: November 2021
 
     </form>
 
+    <h3 class="form-h3">Summary of my added songs</h3>
+
+    <div class="my-songs-div">
+
+        {% for my_song in my_songs %}
+
+        <div class="my-songs-item" title="Edit this song">
+            <a href="edit_song?editsong={{my_song._id}}">{{my_song.artist_name}} - {{my_song.song_name}}</a>
+        </div>
+
+        {% endfor %}
+    
+    </div>
+
+    <br>
 
         <h3 class="form-h3">Delete profile</h3>
 
@@ -63,9 +78,45 @@ Date: November 2021
 
         <a id="confirm-delete-profile-button" href="/delete-profile" title="Click on the link to confirm to delete your profile" arian-label="">Confirm to delete your profile</a><br><br>
 
-
- 
-
 </div>
-    
+
+<style>
+
+.my-songs-div { 
+    box-sizing: border-box;
+    font-size: 18px;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+
+.my-songs-item {
+    cursor: pointer;
+    border: 1px solid var(--white);
+    box-sizing: border-box;
+    float: left;
+    width: 100%;
+    padding: 5px 10px;
+    margin: 5px 5px 5px 0;
+    border-radius: 8px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+
+.my-songs-item > a {
+    color: var(--white);
+    text-decoration: none;
+} 
+
+</style>
+
+
+
+
+
+
+
+
 {% endblock %}

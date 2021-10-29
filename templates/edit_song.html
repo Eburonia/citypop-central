@@ -15,6 +15,13 @@ Date: November 2021
 
     <form action="" method="POST">
 
+        <div class="album-image-div">
+
+            <img src="{{ song.album_image }}" alt="Album cover: {{song.artist_name}} - {{song.album_name}}"
+            title="Album cover: {{song.artist_name}} - {{song.album_name}}">
+
+        </div>
+
         <label for="artist_name" class="form-label">Artist Name :</label><br>
         <input type="text" id="artist_name" name="artist_name" value="{{ song.artist_name }}" class="form-textbox" aria-label="please enter the artist name, this a required field" required><br>
 
@@ -54,8 +61,8 @@ Date: November 2021
         <label for="album_name" class="form-label">Album Name :</label><br>
         <input type="text" id="album_name" name="album_name" value="{{ song.album_name }}" class="form-textbox" aria-label="" required><br>
 
-        <label for="album_image" class="form-label">Album Image :</label><br>
-        <input type="text" id="album_image" name="album_image" value="{{ song.album_image }}" class="form-textbox" aria-label="" required><br>
+        <label for="album_image_edit" class="form-label">Album Image :</label><br>
+        <textarea name="album_image" id="album_image" class="form-textbox" aria-label="" required cols="30" rows="5">{{ song.album_image }}</textarea>
 
         <label for="song_length" class="form-label">Song Length :</label><br>
         <input type="text" id="song_length" name="song_length" value="{{ song.song_length }}" class="form-textbox" aria-label="" required><br>

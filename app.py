@@ -233,9 +233,11 @@ def profile():
         countries = mongo.db.countries.find().sort("country_name", 1)
         genders = mongo.db.genders.find().sort("gender", 1)
 
+        my_songs = mongo.db.songs.find({"uploaded_by": session["user"]}).sort("artist_name", 1)
+
         return render_template(
             "profile.html", username=username, settings=settings,
-            countries=countries, genders=genders, title=title)
+            countries=countries, genders=genders, title=title, my_songs=my_songs)
 
     return redirect(url_for("login"))
 
@@ -396,7 +398,6 @@ def youtube():
     link = request.args.get("link")
 
     link = f"https://www.youtube.com/embed/{link}"
-
 
     return render_template("youtube.html", title=title, link=link)
 
