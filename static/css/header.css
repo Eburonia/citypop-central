@@ -251,14 +251,14 @@ header {
 
 
 .flash-message-close {
-    background-color: rgba(0, 0, 0, 0.8);
     box-sizing: border-box;
-    width: 100px;
+    width: 30px;
     overflow: hidden;
     float: right;
     color: var(--yellow);
     text-decoration: none;
     cursor: pointer;
+    margin-right: 20px;
 }
 
 .fa-info {
@@ -299,6 +299,14 @@ header {
         font-size: 14px;
     } 
 
+}
+
+
+@media only screen and (max-width: 700px) {
+    
+    #transition-div {
+        background-color: red;
+    }
 }
 
 

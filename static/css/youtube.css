@@ -33,3 +33,14 @@ Date: November 2021
     background-color: rgba(0, 0, 0, 0.8);
     border-radius: 20px;
 }
+
+
+/* media queries for youtube.html only */
+/* for tablets and phones */
+
+@media only screen and (max-width: 700px) {
+
+    
+
+
+}
