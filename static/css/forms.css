@@ -8,18 +8,18 @@ Date: November 2021
     margin: 50px auto;
     width: 40%;
     text-decoration: none;
-    color: rgb(238, 238, 238);
-    background-color: rgba(10, 10, 10, 0.9);
+    color: var(--white);
+    background-color: rgba(10, 10, 10, 0.8);
     overflow: hidden;
     padding: 30px;
     border-radius: 20px;
-    border: 2px solid rgb(251, 213, 168);
+    border: 2px solid var(--yellow);
     box-sizing: border-box;
 }
 
 
 .form-h3 {
-    color: rgb(255, 113, 151);
+    color: var(--pink);
     font-size: 28px;
     padding-top: 10px;
     padding-bottom: 20px;
@@ -31,7 +31,7 @@ Date: November 2021
     font-size: 18px;
     letter-spacing: 1px;
     text-decoration: none;
-    color: rgb(251, 213, 168);
+    color: var(--yellow);
 }
 
 
@@ -42,17 +42,17 @@ Date: November 2021
     padding: 4px 0 4px 8px;
     width: 100%;
     letter-spacing: 1px;
-    border: 1px solid rgb(251, 213, 168);
+    border: 1px solid var(--yellow);
     box-sizing: border-box;
     background-color: rgba(255, 255, 255, 0.2);
-    color: rgb(251, 213, 168);
-    outline-color: rgb(255, 113, 151);
+    color: var(--yellow);
+    outline-color: var(--pink);
 }
 
 
 .form-info {
     padding-left: 4px;
-    color: rgb(255, 113, 151);
+    color: var(--pink);
 }
 
 
@@ -66,7 +66,7 @@ Date: November 2021
     font-size: 16px;
     padding: 6px 12px;
     margin-top: 10px;
-    background-color: rgba(255, 113, 151, 0.8);
+    background-color: var(--pink);
     color: black;
     font-weight: 600;
     cursor: pointer;
@@ -83,7 +83,7 @@ Date: November 2021
 
 
 .form-link {
-    color: rgb(255, 113, 151);
+    color: var(--pink);
     text-decoration: none;
 }
 

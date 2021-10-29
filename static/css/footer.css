@@ -10,13 +10,13 @@ footer {
     width: 100%;
     text-align: center;
     overflow: hidden;
-    color: rgb(251, 213, 168);
+    color: var(--yellow);
     height: 150px;
 }
 
 
 footer > hr {
-    color: rgb(251, 213, 168);
+    color: var(--yellow);
 }
 
 
@@ -36,7 +36,7 @@ footer i {
 
 footer a {
     text-decoration: none;
-    color: rgb(251, 213, 168);
+    color: var(--yellow);
 }
 
 

@@ -151,14 +151,14 @@ def register():
         if request.form.get("password") != \
                 request.form.get("password-confirm"):
 
-            flash('Passwords Do Not Match')
+            flash('Passwords do not match')
             return redirect(url_for("register"))
 
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
         if existing_user:
-            flash('Username Already Exists')
+            flash('Username already exists')
             return redirect(url_for("register"))
 
         regi = {
@@ -173,7 +173,7 @@ def register():
 
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
-        flash("Registration Succesful")
+        flash("Registration succesful")
         return redirect(url_for("profile", username=session["user"]))
 
     countries = mongo.db.countries.find().sort("country_name", 1)
@@ -197,19 +197,19 @@ def login():
             if check_password_hash(
                 existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
-                flash("Welcome Back {}".format(
+                flash("Welcome back {}".format(
                     request.form.get("username")))
                 return redirect(url_for(
                         "index", username=session["user"]))
 
             else:
                 # invalid password match
-                flash("Incorrect Username and/or Password")
+                flash("Incorrect username and/or password")
                 return redirect(url_for("login"))
 
         else:
             # username doesn't exist
-            flash("Incorrect Username and/or Password")
+            flash("Incorrect username and/or password")
             return redirect(url_for("login"))
 
     return render_template("login.html", title=title)
@@ -253,7 +253,7 @@ def update_profile(username):
 
         mongo.db.users.update({"username": username}, submit)
 
-        flash("Profile Successfully Updated")
+        flash("Profile successfully updated")
 
     return redirect(url_for("index"))
 
@@ -264,14 +264,14 @@ def delete_profile():
     mongo.db.users.remove({"username": session["user"]})
     session.pop("user")
 
-    flash("Your Profile Has Been Deleted")
+    flash("Your profile has been deleted")
     return redirect(url_for("register"))
 
 
 @app.route("/logout")
 def logout():
     # remove user from session cookies
-    flash("You Have Been Logged Out")
+    flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("login"))
 
@@ -302,7 +302,7 @@ def add_song():
         }
 
         mongo.db.songs.insert_one(song)
-        flash('The Song Has Been Added To The Database')
+        flash('Song has been added to the database')
         return redirect(url_for("index"))
 
     release_years = mongo.db.release_years.find().sort("release_year", 1)
@@ -324,12 +324,12 @@ def edit_song():
 
     if 'user' in session:
         if uploaded_by == session["user"]:
-            flash("You Are The Owner Of This Song")
+            flash("You maintain this song")
         else:
-            flash("You Are Not Allowed To Update This Song")
+            flash("You are not allowed to update this song")
             return redirect(url_for("results"))
     else:
-        flash("You Are Not Allowed To Update This Song")
+        flash("You are not allowed to update this song")
         return redirect(url_for("results"))
 
 
@@ -352,7 +352,7 @@ def edit_song():
         }
 
         mongo.db.songs.update({"_id": ObjectId(song_id)}, submit)
-        flash("Song Successfully Updated")
+        flash("Song successfully updated")
         return redirect(url_for("results"))
 
     genres = mongo.db.genres.find().sort("genre", 1)
@@ -366,7 +366,7 @@ def edit_song():
 def delete_song(song_id):
     mongo.db.songs.remove({"_id": ObjectId(song_id)})
 
-    flash('Song Has Been Delete From The Database')
+    flash('Song has been deleted from the database')
     return redirect(url_for("results"))
 
 

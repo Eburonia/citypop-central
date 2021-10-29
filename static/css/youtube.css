@@ -27,9 +27,9 @@ Date: November 2021
     bottom: 0;
     width: 100%;
     height: 50%;
-    border-color: rgb(251, 213, 168);
+    border-color: var(--yellow);
     box-sizing: border-box;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.8);
     border-radius: 20px;
 }

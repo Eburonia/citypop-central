@@ -31,7 +31,7 @@ Date: November 2021
         <div class="random-song" style="width: calc(25% - 20px); box-sizing: border-box; margin: 10px; float:left; height: 160px;">
 
             <a href="/youtube?link={{ song_cover.youtube }}" target="_blank" title="{{song_cover.artist_name}} - {{song_cover.song_name}}" aria-label="Click here to listen to this random song">
-                <img style="width: 100%; vertical-align: bottom; border-radius: 10px;" src="{{song_cover.album_image}}" alt="">
+                <img style="width: 100%; vertical-align: bottom; border-radius: 10px;" src="{{song_cover.album_image}}" alt="Album cover: {{song_cover.artist_name}} - {{song_cover.album_name}}">
             </a>
 
         </div>
@@ -79,7 +79,7 @@ Date: November 2021
                 <div class="image-frame">
                     <a href="{{ song.album_image }}" target="_blank">
 
-                        <img src="{{ song.album_image }}" alt="Album image" title="Click here to see the album image">
+                        <img src="{{ song.album_image }}" alt="Album cover: {{song.artist_name}} - {{song.album_name}}" title="Click here to see the album cover">
             
                     </a>
                     
