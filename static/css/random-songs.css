@@ -1,0 +1,58 @@
+/*
+File: random-songs.css
+Author: Maurice Vossen
+Date: November 2021
+*/
+
+#random-songs-h3 {
+    color: var(--yellow);
+    font-size: 22px;
+    font-weight: 600;
+    padding-left: 30px;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+
+#random-songs-div {
+    margin: 0 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+
+.random-song {
+    float: left;
+    width: calc(25% - 10px);
+    box-sizing: border-box;
+    margin: 5px;
+    overflow: hidden;
+}
+
+
+.random-song img {
+    width: 100%;
+    vertical-align: bottom;
+    border-radius: 10px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+
+/* media queries for random-songs.html only */
+/* for tablets and phones */
+
+@media only screen and (max-width: 700px) {
+
+    .random-song {
+        float: none;
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+
+    .random-song img {
+        width: 80%;
+    }
+
+}
