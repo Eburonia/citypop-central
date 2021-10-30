@@ -1,0 +1,32 @@
+/*
+File: error404.css
+Author: Maurice Vossen
+Date: November 2021
+*/
+
+
+#message-404 {
+    margin: 20px auto;
+    width: 50%;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 2px solid var(--yellow);
+    box-sizing: border-box;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+
+#message-404 > p {
+    font-size: 24px;
+    text-align: center;
+    font-weight: 600;
+    color: var(--yellow);
+    padding: 10px;
+}
+
+
+#message-404 > p > a {
+    padding: 20px;
+    color: var(--pink);
+    margin-bottom: 10px;
+}
