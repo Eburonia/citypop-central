@@ -16,27 +16,29 @@ Date: November 2021
 
         <label for="username" class="form-label">Username :</label>
         <p class="form-info">Your username must contain minimum 3 and maximum 15 characters all in lowercase</p>
-        <input type="text" id="username" name="username" pattern="[a-z0-9_]{3,15}" class="form-textbox" aria-label="" required>
+        <input type="text" id="username" name="username" pattern="[a-z0-9_]{3,15}" class="form-textbox" aria-label="Please enter a username, this a required field" required>
         
 
         <label for="password" class="form-label">Password :</label>
         <p class="form-info">Your password must contain at least one number, one uppercase and lowercase letter, and at least 8 or more characters</p>
         <p class="form-message">Passwords don't match</p>
-        <input type="password" id="password" name="password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" class="form-textbox" aria-label="" required>
+        <input type="password" id="password" name="password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" class="form-textbox" aria-label="Please enter a password, this a required field" required>
+
 
         <label for="password-confirm" class="form-label">Confirm password :</label>
-        <p class="form-info">Type your password one more time</p>
+        <p class="form-info">Repeat your password one more time</p>
         <p class="form-message">Passwords don't match</p>
-        <input type="password" id="password-confirm" name="password-confirm" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="form-textbox" aria-label="" required>
+        <input type="password" id="password-confirm" name="password-confirm" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="form-textbox" aria-label="Please repeat the password one more time, this a required field" required>
         
 
         <label for="email" class="form-label">Email :</label>
         <p class="form-info">Use a valid email address</p>
-        <input type="email" id="email" name="email" class="form-textbox" aria-label="" required>
+        <input type="email" id="email" name="email" class="form-textbox" aria-label="Please enter a valid email address, this a required field" required>
+
 
         <label for="country" class="form-label">Country :</label>
-        <p class="form-info">Select the country you are living in</p>
-        <select id="country" name="country" class="form-textbox" aria-label="">
+        <p class="form-info">Select the country you are currently living in</p>
+        <select id="country" name="country" class="form-textbox" aria-label="Please enter the country you are currently living in, this a required field">
 
             {% for country in countries %}
 
@@ -46,9 +48,10 @@ Date: November 2021
 
         </select>
 
+
         <label for="gender" class="form-label">Gender :</label>
         <p class="form-info">Select your gender</p>
-        <select id="gender" name="gender" class="form-textbox" aria-label="">
+        <select id="gender" name="gender" class="form-textbox" aria-label="Please enter your gender, this a required field">
 
             {% for gender in genders %}
             
@@ -59,7 +62,7 @@ Date: November 2021
         </select><br>
 
 
-        <input type="submit" value="register" class="form-button" aria-label=""><br><br>
+        <input type="submit" value="register" class="form-button" aria-label="Click this button to create your citypop central account, make sure you have added all required fields above"><br><br>
 
     </form>
 
@@ -68,8 +71,3 @@ Date: November 2021
 </div>  
 
 {% endblock %}
-
-
-
-
-
