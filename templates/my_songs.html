@@ -1,0 +1,68 @@
+<!--
+File: my_songs.html
+Author: Maurice Vossen
+Date: November 2021
+-->
+
+
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+
+    .my-songs-div { 
+        box-sizing: border-box;
+        font-size: 18px;
+        overflow: hidden;
+        text-decoration: none;
+        background-color: rgba(0, 0, 0, 0.9);
+        width: 50%;
+        margin: 0 auto;
+        padding: 30px;
+        border: 2px solid var(--yellow);
+        border-radius: 20px;
+    }
+    
+    
+    .my-songs-item {
+        cursor: pointer;
+        box-sizing: border-box;
+        float: left;
+        width: 100%;
+        margin: 5px 5px 5px 0;
+        border-radius: 8px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+    
+    
+    .my-songs-item > a {
+        color: var(--white);
+        text-decoration: none;
+    }
+
+
+    .my-songs-item > a:hover {
+        color: var(--pink);
+        text-decoration: underline;
+    }
+
+    </style>
+
+
+<div class="my-songs-div">
+
+    <h3 class="form-h3">My uploaded songs</h3>
+
+    {% for my_song in my_songs %}
+
+    <div class="my-songs-item" title="Edit this song">
+        <a href="edit_song?editsong={{my_song._id}}">{{my_song.artist_name}} - {{my_song.song_name}}</a>
+    </div>
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}

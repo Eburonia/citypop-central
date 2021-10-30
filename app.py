@@ -63,7 +63,7 @@ def results():
         # Pagination
 
         # Limit the amount of results per page
-        limit = 2
+        limit = 5
 
         # Determine number of pages needed for results
         number_of_pages = math.ceil(number_of_results / limit)
@@ -326,9 +326,8 @@ def edit_song():
 
     if 'user' in session:
         if uploaded_by == session["user"]:
-            flash("You maintain this song")
+            flash("You uploaded this song before")
         else:
-            flash("You are not allowed to update this song")
             return redirect(url_for("results"))
     else:
         flash("You are not allowed to update this song")
@@ -402,10 +401,24 @@ def youtube():
     return render_template("youtube.html", title=title, link=link)
 
 
+@app.route("/my_songs")
+def mysongs():
+
+    if 'user' in session:
+
+        my_songs = mongo.db.songs.find({"uploaded_by": session["user"]}).sort("artist_name", 1)
+
+    else:
+
+        return redirect(url_for("index"))
+
+    return render_template("my_songs.html", my_songs=my_songs)
+
+
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('404.html'), 404
-  
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

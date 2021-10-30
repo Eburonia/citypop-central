@@ -74,6 +74,7 @@ Date: November 2021
                         {% if session.user %}
                             <li id="logout-button"><a href="{{ url_for('logout') }}">Logout</a></li>
                             <li class="menu-item"><a href="{{ url_for('add_song') }}">Add Song</a></li>
+                            <li class="menu-item"><a href="{{ url_for('mysongs') }}">My songs</a></li>
                             <li class="menu-item"><a href="{{ url_for('profile', username=session.user) }}">Profile</a></li>
                         {% else %}
                             <li id="register-button"><a href="{{ url_for('register') }}">Register</a></li>
@@ -90,6 +91,7 @@ Date: November 2021
 
                 {% if session.user %}
                     <a class="toggle-menu-item" href="{{ url_for('profile', username=session.user) }}">Profile</a>
+                    <a class="toggle-menu-item" href="{{ url_for('mysongs') }}">My songs</a>
                     <a class="toggle-menu-item" href="{{ url_for('add_song') }}">Add Song</a>
                     <a class="toggle-menu-item" href="{{ url_for('logout') }}">Logout</a>
                 {% else %}
