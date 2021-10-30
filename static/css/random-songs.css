@@ -27,6 +27,7 @@ Date: November 2021
     box-sizing: border-box;
     margin: 5px;
     overflow: hidden;
+    padding: 10px;
 }
 
 
@@ -36,6 +37,7 @@ Date: November 2021
     border-radius: 10px;
     overflow: hidden;
     box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.5);
 }
 
 
