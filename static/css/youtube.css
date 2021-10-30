@@ -29,7 +29,7 @@ Date: November 2021
     border-color: var(--yellow);
     box-sizing: border-box;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.9);
     border-radius: 20px;
     height: calc((50% * 3) / 4);
 }
