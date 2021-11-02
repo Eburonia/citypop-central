@@ -15,6 +15,7 @@ Date: November 2021
 
 
 #random-songs-div {
+    display: table;
     margin: 0 20px;
     box-sizing: border-box;
     overflow: hidden;
@@ -22,17 +23,17 @@ Date: November 2021
 
 
 .random-song {
-    float: left;
+    display: inline-block;
     width: calc(25% - 10px);
     box-sizing: border-box;
-    margin: 5px;
-    overflow: hidden;
     padding: 10px;
 }
 
 
 .random-song img {
+    margin: 0 auto;
     width: 100%;
+    text-align: center;
     vertical-align: bottom;
     border-radius: 10px;
     overflow: hidden;

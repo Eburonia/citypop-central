@@ -23,7 +23,7 @@ def index():
 
     title = 'Citypop Central | Home'
 
-    songs_cover = mongo.db.songs.find().sort("upload_date", -1).limit(8)
+    songs_cover = mongo.db.songs.find().sort("upload_date", 1).limit(8)
 
     return render_template("results.html", title=title, songs_cover=songs_cover)
 
@@ -136,7 +136,7 @@ def results():
                                number_of_results=number_of_results,
                                separator=separator,
                                current_results=current_results,
-                               result_numbers=result_numbers, title=title, cascade=cascade)
+                               result_numbers=result_numbers, title=title)
 
     return render_template("results.html", title=title)
 
