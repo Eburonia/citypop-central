@@ -25,7 +25,8 @@ def index():
 
     songs_cover = mongo.db.songs.find().sort("upload_date", 1).limit(8)
 
-    return render_template("results.html", title=title, songs_cover=songs_cover)
+    return render_template("results.html", title=title,
+                           songs_cover=songs_cover)
 
 
 @app.route("/results", methods=["GET", "POST"])
@@ -194,13 +195,11 @@ def login():
             {"username": request.form.get("username").lower()})
 
         if existing_user:
-            if check_password_hash(
-                existing_user["password"], request.form.get("password")):
+            if check_password_hash(existing_user["password"], request.form.get(
+               "password")):
                 session["user"] = request.form.get("username").lower()
-                flash("Welcome back {}".format(
-                    request.form.get("username")))
-                return redirect(url_for(
-                        "index", username=session["user"]))
+                flash("Welcome back {}".format(request.form.get("username")))
+                return redirect(url_for("index", username=session["user"]))
 
             else:
                 # invalid password match
@@ -233,11 +232,13 @@ def profile():
         countries = mongo.db.countries.find().sort("country_name", 1)
         genders = mongo.db.genders.find().sort("gender", 1)
 
-        my_songs = mongo.db.songs.find({"uploaded_by": session["user"]}).sort("artist_name", 1)
+        my_songs = mongo.db.songs.find({"uploaded_by": session["user"]}).sort(
+                   "artist_name", 1)
 
         return render_template(
             "profile.html", username=username, settings=settings,
-            countries=countries, genders=genders, title=title, my_songs=my_songs)
+            countries=countries, genders=genders, title=title,
+            my_songs=my_songs)
 
     return redirect(url_for("login"))
 
@@ -321,8 +322,8 @@ def edit_song():
 
     song_id = request.args.get('editsong')
 
-    uploaded_by = mongo.db.songs.find_one({"_id": ObjectId(song_id)})["uploaded_by"]
-
+    uploaded_by = mongo.db.songs.find_one(
+                  {"_id": ObjectId(song_id)})["uploaded_by"]
 
     if 'user' in session:
         if uploaded_by != session["user"]:
@@ -331,11 +332,11 @@ def edit_song():
         flash("You are not allowed to update this song")
         return redirect(url_for("results"))
 
-
     if request.method == "POST":
 
         date_time = datetime.datetime.now()
-        date = str(date_time.day) + " " + str(date_time.strftime("%B")) + " " + str(date_time.year)
+        date = f"{str(date_time.day)} {str(date_time.strftime('%B'))} \
+                 {str(date_time.year)}"
 
         submit = {
             "$set": {"artist_name": request.form.get(
@@ -358,7 +359,8 @@ def edit_song():
     release_years = mongo.db.release_years.find().sort("release_year", 1)
     song = mongo.db.songs.find_one({"_id": ObjectId(song_id)})
     return render_template("edit_song.html", song=song, genres=genres,
-                           release_years=release_years, title=title, uploaded_by=uploaded_by)
+                           release_years=release_years, title=title,
+                           uploaded_by=uploaded_by)
 
 
 @app.route("/delete_song/<song_id>")
@@ -406,7 +408,8 @@ def mysongs():
 
     if 'user' in session:
 
-        my_songs = mongo.db.songs.find({"uploaded_by": session["user"]}).sort("artist_name", 1)
+        my_songs = mongo.db.songs.find({"uploaded_by": session["user"]}).sort(
+            "artist_name", 1)
 
     else:
 

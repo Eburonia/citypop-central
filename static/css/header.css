@@ -52,7 +52,7 @@ header {
     width: 320px;
     cursor: pointer;
     border-radius: 20px;
-    margin: 10px 0 0 10px;
+    margin: 10px 0 30px 10px;
 }
 
 
@@ -63,17 +63,6 @@ header {
     display: block;
     font-weight: 800;
     box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-}
-
-
-#logo-top-span:hover {
-    text-shadow: 
-    0 0 10px rgb(252, 142, 9),
-    0 0 20px rgb(255, 184, 97),
-    0 0 30px rgb(253, 206, 148),
-    0 0 40px rgb(255, 231, 202);
 }
 
 
@@ -105,7 +94,24 @@ header {
     position: relative;
     left: 5px;
     top: 8px;
+    animation: lightanimation 2s infinite alternate;
 }
+
+
+@keyframes lightanimation {
+
+    0% {
+        text-shadow: none;
+    }
+    100% {
+        text-shadow: 
+        0 0 5px rgb(196, 0, 52),
+        0 0 10px rgb(253, 0, 68),
+        0 0 15px rgb(255, 158, 184),
+        0 0 20px rgb(255, 193, 193);
+    }
+
+  }
 
 
 #navigation-div  {
