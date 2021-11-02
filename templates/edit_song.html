@@ -24,10 +24,10 @@ Date: November 2021
         </div>
 
         <label for="artist_name" class="form-label">Artist Name :</label><br>
-        <input type="text" id="artist_name" name="artist_name" value="{{ song.artist_name }}" class="form-textbox" aria-label="please enter the artist name, this a required field" required><br>
+        <input type="text" id="artist_name" name="artist_name" pattern="[A-Z][a-z'?!]*(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?" value="{{ song.artist_name }}" class="form-textbox" aria-label="please enter the artist name, this a required field" required><br>
 
         <label for="song_name" class="form-label">Song Name :</label><br>
-        <input type="text" id="song_name" name="song_name" value="{{ song.song_name }}" class="form-textbox" aria-label="please enter a song name, this a required field" required><br>
+        <input type="text" id="song_name" name="song_name" pattern="[A-Z][a-z'?!]*(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?" value="{{ song.song_name }}" class="form-textbox" aria-label="please enter a song name, this a required field" required><br>
 
         <label for="genre" class="form-label">Genre :</label><br>
         <select id="genre" name="genre" class="form-textbox" aria-label="">
@@ -60,7 +60,7 @@ Date: November 2021
         </select><br>
 
         <label for="album_name" class="form-label">Album Name :</label><br>
-        <input type="text" id="album_name" name="album_name" value="{{ song.album_name }}" class="form-textbox" aria-label="" required><br>
+        <input type="text" id="album_name" name="album_name" patter="[A-Z][a-z'?!]*(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?" value="{{ song.album_name }}" class="form-textbox" aria-label="" required><br>
 
         <label for="album_image_edit" class="form-label">Album Image :</label><br>
         <textarea name="album_image" id="album_image" class="form-textbox" aria-label="" required cols="30" rows="5">{{ song.album_image }}</textarea>

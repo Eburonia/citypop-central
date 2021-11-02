@@ -14,12 +14,12 @@ Date: November 2021
         <form action="{{ url_for('add_song') }}" method="POST">
 
             <label for="artist_name" class="form-label">Artist Name :</label>
-            <p class="form-info">Artist name the first letter to be uppercase.</p>
-            <input type="text" id="artist_name" name="artist_name" pattern="^[A-Z][a-z]{2,}" class="form-textbox" aria-label="" required><br>
+            <p class="form-info">All first letters to be uppercase (e.g. Junko Yagami).</p>
+            <input type="text" id="artist_name" name="artist_name" pattern="[A-Z][a-z'?!]*(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?" class="form-textbox" aria-label="" required><br>
 
             <label for="song_name" class="form-label">Song Name :</label>
-            <p class="form-info">First letter uppercase.</p>
-            <input type="text" id="song_name" name="song_name" pattern="^[A-Z][a-z]{2,}" class="form-textbox" aria-label="" required><br>
+            <p class="form-info">All first letters to be uppercase (e.g. Fly By Day).</p>
+            <input type="text" id="song_name" name="song_name" pattern="[A-Z][a-z'?!]*(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?" class="form-textbox" aria-label="" required><br>
 
             <label for="genre" class="form-label">Genre :</label><br>
             <p class="form-info">Select a genre.</p>
@@ -46,20 +46,20 @@ Date: November 2021
             </select>
 
             <label for="album_name" class="form-label">Album Name :</label>
-            <p class="form-info">Album name the first letter to be uppercase.</p>
-            <input type="text" id="album_name" name="album_name" class="form-textbox" aria-label="" required>
+            <p class="form-info">All first letters to be uppercase (e.g. Friday Magic).</p>
+            <input type="text" id="album_name" name="album_name" pattern="[A-Z][a-z'?!]*(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?" class="form-textbox" aria-label="" required>
 
             <label for="album_image" class="form-label">Album Image :</label><br>
-            <p class="form-info">Add the album cover image hyperlink (preferably from discogs.com).</p>
-            <textarea name="album_image" id="album_image" patter="https://img.discogs.com/.+" class="form-textbox" placeholder="https://img.discogs.com/..." aria-label="" required cols="30" rows="5"></textarea>
+            <p class="form-info">Add the album cover image hyperlink (only upload covers from discogs.com).</p>
+            <textarea name="album_image" id="album_image" pattern="https://img.discogs.com/.+" class="form-textbox" placeholder="https://img.discogs.com/..." aria-label="" required cols="30" rows="5"></textarea>
 
             <label for="song_length_minutes" class="form-label">Song Length :</label>
-            <p class="form-info">Select the song length (e.g. 3:46), minimum song length: 1:00 maximum 9:59.</p>
+            <p class="form-info">Select the song length (e.g. 3:46, minimum song length: 1:00 maximum 9:59).</p>
             <input type="text" id="song_length" name="song_length" pattern="[1-9]+:[0-5][0-9]" class="form-textbox" aria-label="" required>
 
             <label for="youtube" class="form-label">YouTube Link :</label>
-            <p class="form-info">Add the Youtube link ID (e.g.: giuqEH91Rvg)</p>
-            <input type="text" id="youtube" name="youtube" class="form-textbox" aria-label="" required>
+            <p class="form-info">Add the Youtube link ID (e.g.: https://www.youtube.com/watch?v=pE2D3LWADFg)</p>
+            <input type="text" id="youtube" name="youtube" placeholder="pE2D3LWADFg" class="form-textbox" aria-label="" required>
 
             <input type="submit" value="upload" class="form-button" aria-label="">
 
