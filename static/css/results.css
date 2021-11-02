@@ -171,7 +171,8 @@ Date: November 2021
     border-radius: 10px;
     font-size: 16px;
     text-decoration: none;
-    border: 2px solid rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(10, 10, 10, 0.9);
+    box-sizing: border-box;
 }
 
 

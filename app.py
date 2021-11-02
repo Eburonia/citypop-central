@@ -136,7 +136,7 @@ def results():
                                number_of_results=number_of_results,
                                separator=separator,
                                current_results=current_results,
-                               result_numbers=result_numbers, title=title)
+                               result_numbers=result_numbers, title=title, cascade=cascade)
 
     return render_template("results.html", title=title)
 
@@ -218,9 +218,9 @@ def login():
 @app.route("/profile", methods=["GET", "POST"])
 def profile():
 
-    username = request.form.get("username")
-
     title = 'Citypop Central | Profile'
+
+    username = request.form.get("username")
 
     # grab the session user's username from database
     username = mongo.db.users.find_one(
@@ -404,6 +404,8 @@ def youtube():
 @app.route("/my_songs")
 def mysongs():
 
+    title = 'Citypop Central | My Songs'
+
     if 'user' in session:
 
         my_songs = mongo.db.songs.find({"uploaded_by": session["user"]}).sort("artist_name", 1)
@@ -412,12 +414,15 @@ def mysongs():
 
         return redirect(url_for("index"))
 
-    return render_template("my_songs.html", my_songs=my_songs)
+    return render_template("my_songs.html", my_songs=my_songs, title=title)
 
 
 @app.errorhandler(404)
 def page_not_found(e):
-    return render_template('404.html'), 404
+
+    title = 'Citypop Central | 404 error'
+
+    return render_template('404.html', title=title), 404
 
 
 if __name__ == "__main__":

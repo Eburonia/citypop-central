@@ -1,0 +1,44 @@
+/*
+File: my_songs.css
+Author: Maurice Vossen
+Date: November 2021
+*/
+
+
+.my-songs-div { 
+    box-sizing: border-box;
+    font-size: 18px;
+    overflow: hidden;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 50%;
+    margin: 0 auto;
+    padding: 30px;
+    border: 2px solid var(--yellow);
+    border-radius: 20px;
+}
+
+
+.my-songs-item {
+    cursor: pointer;
+    box-sizing: border-box;
+    float: left;
+    width: 100%;
+    margin: 5px 5px 5px 0;
+    border-radius: 8px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+
+.my-songs-item > a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+
+.my-songs-item > a:hover {
+    color: var(--pink);
+    text-decoration: underline;
+}
