@@ -107,9 +107,12 @@ select option{
 }
 
 
-.album-image-div > img {
+.album-image-div img {
     width: 100%;
-    border-radius: 10px;
+    border-radius: 20px;
+    border: 2px solid var(--yellow);
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
 

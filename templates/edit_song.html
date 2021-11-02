@@ -17,8 +17,9 @@ Date: November 2021
 
         <div class="album-image-div">
 
-            <img src="{{ song.album_image }}" alt="Album cover: {{song.artist_name}} - {{song.album_name}}"
-            title="Album cover: {{song.artist_name}} - {{song.album_name}}">
+            <a href="{{ song.album_image }}">
+                <img src="{{ song.album_image }}" alt="Album cover: {{song.artist_name}} - {{song.album_name}}" title="Album cover: {{song.artist_name}} - {{song.album_name}}">
+            </a>
 
         </div>
 
@@ -65,12 +66,14 @@ Date: November 2021
         <textarea name="album_image" id="album_image" class="form-textbox" aria-label="" required cols="30" rows="5">{{ song.album_image }}</textarea>
 
         <label for="song_length" class="form-label">Song Length :</label><br>
-        <input type="text" id="song_length" name="song_length" value="{{ song.song_length }}" class="form-textbox" aria-label="" required><br>
+        <input type="text" id="song_length" name="song_length" pattern="[1-9]+:[0-5][0-9]" value="{{ song.song_length }}" class="form-textbox" aria-label="" required><br>
 
         <label for="youtube" class="form-label">YouTube Link :</label>
         <input type="text" id="youtube" name="youtube" value="{{ song.youtube }}" class="form-textbox" aria-label="" required>
 
-        <input type="submit" value="edit song" class="form-button" aria-label="Click this button to submit the song, make sure you have added all required fields above"><br><br>
+        <input type="submit" value="edit song" class="form-button" title="Edit this song" aria-label="Click this button to submit the song, make sure you have added all required fields above"><br><br>
+
+        <input type="submit" value="delete song" class="form-button" title="Delete this song" aria-label="Click this button to delete the song, make sure you have added all required fields above"><br><br>
 
     </form>
 

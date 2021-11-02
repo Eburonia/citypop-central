@@ -325,9 +325,7 @@ def edit_song():
 
 
     if 'user' in session:
-        if uploaded_by == session["user"]:
-            flash("You uploaded this song before")
-        else:
+        if uploaded_by != session["user"]:
             return redirect(url_for("results"))
     else:
         flash("You are not allowed to update this song")
