@@ -9,7 +9,7 @@ Date: November 2021
 
     <div class="form-div">
 
-        <h3 class="form-h3">Add a new song to the database</h3>
+        <h1 class="form-heading">Add a new song to the database</h1>
 
         <form action="{{ url_for('add_song') }}" method="POST">
 
@@ -61,7 +61,7 @@ Date: November 2021
             <p class="form-info">Add the Youtube link ID (e.g.: https://www.youtube.com/watch?v=pE2D3LWADFg)</p>
             <input type="text" id="youtube" name="youtube" placeholder="pE2D3LWADFg" class="form-textbox" aria-label="" required>
 
-            <input type="submit" value="upload" class="form-button" aria-label="">
+            <input type="submit" value="add song" title="Click here to add a song to our database" class="form-button" aria-label="Click this button to add a song to our database, make sure you have added all required fields above">
 
         </form>
 

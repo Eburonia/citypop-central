@@ -8,55 +8,62 @@ Date: November 2021
 {% extends "base.html" %}
 {% block content %}
 
-
+<!-- search division -->
 <div class="search-div">
 
-    <form class="search-form" action="{{ url_for('results') }}" method="POST">
+    <!-- search form -->
+    <form class="search-form" action="{{url_for('results')}}" method="POST">
+
+        <h1 class="form-heading">Welcome to Citypop Central</h1>
 
         <label for="search-query" class="search-label">Search Songs</span></label>
         <p class="search-p">e.g. genre (citypop, funk, jazz), release year, artist, song, or album.</p>
-        <input type="text" id="search-query" name="search-query" class="search-textbox" aria-label="" required>
-        <input type="submit" value="search" class="search-button" title="Search" aria-label="Click this button to generate a search query, make sure you have added all required fields above"><br><br>
+        <input type="text" id="search-query" name="search-query" class="search-textbox" aria-label="Please enter a keyword in this textbox to search our songs database, this a required field" required>
+        <input type="submit" value="search" class="search-button" title="Search" aria-label="Click this button to search in our songs database, make sure you have added at least one keyword to the search textbox"><br><br>
 
     </form>
 
-    <!-- random songs -->
-  
 
-        {% if songs_cover %}
-            <h3 id="random-songs-h3">Latest Songs</h3>
-        {% endif %}
+    <!-- header latest songs -->
+    {% if songs_cover %}
+        <h3 id="random-songs-h3">Latest Songs</h3>
+    {% endif %}
 
-            <div id="random-songs-div">
+    <!-- show latest uploaded songs -->
+    <div id="random-songs-div">
 
-                {% for song_cover in songs_cover %}
+        {% for song_cover in songs_cover %}
 
-                    <div class="random-song">
+            <div class="random-song">
 
-                        <a href="/youtube?link={{ song_cover.youtube }}" target="_blank" title="{{song_cover.artist_name}} - {{song_cover.song_name}}" aria-label="Click here to listen to this random song">
+                <a href="/youtube?link={{ song_cover.youtube }}" target="_blank" title="{{song_cover.artist_name}} - {{song_cover.song_name}}" aria-label="Click here to listen to this random song">
 
-                            <img src="{{song_cover.album_image}}" alt="Album cover: {{song_cover.artist_name}} - {{song_cover.album_name}}">
+                    <img src="{{song_cover.album_image}}" alt="Album cover: {{song_cover.artist_name}} - {{song_cover.album_name}}">
 
-                        </a>
-
-                    </div>
-
-                {% endfor %}
+                </a>
 
             </div>
 
-    <!-- search results -->
+        {% endfor %}
+
+    </div>
+
+
+    <!-- show number of results -->
     <div class="results-div">
         {{ number_of_results }}
     </div>
 
+
+    <!-- show limited results -->
     <div class="number-results-div">
         {{ current_results }} 
    </div>
 
-    {% for song in songs %}
 
-        <div class="search-results">
+    <!-- search summary -->
+    {% for song in songs %}
+    <div class="search-results">
 
             {% set item = result_numbers[loop.index-1] %}
 
@@ -182,10 +189,11 @@ Date: November 2021
 
             </div>
 
-        </div>
-
+    </div>
     {% endfor %}
 
+
+    <!-- pagination -->
     <div id="pagination-links">
 
         {% if previous_page_text or next_page_text%}
@@ -202,22 +210,21 @@ Date: November 2021
 
     </div>
 
-        <!-- footer -->
-        <footer>
 
-            <span id="follow-socials">follow us on social media</span>
+    <!-- footer -->
+    <footer>
+        <span id="follow-socials">follow us on social media</span>
     
-            <ul>
-                <li><a href="https://www.twitter.com/" target="_blank" title="Go to our twitter page"><i class="fab fa-twitter"></i></a></li>
-                <li><a href="https://www.pinterest.com/" target="_blank" title="Go to our pinterest page"><i class="fab fa-pinterest"></i></a></li>
-                <li><a href="https://www.facebook.com/" target="_blank" title="Go to our facebook page"><i class="fab fa-facebook"></i></a></li>
-            </ul>
+        <ul>
+            <li><a href="https://www.twitter.com/" target="_blank" title="Go to our twitter page" aria-label="Go to our twitter page by clicking this link (opens in new tab)"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://www.pinterest.com/" target="_blank" title="Go to our pinterest page" aria-label="Go to our pinterest page by clicking this link (opens in new tab)"><i class="fab fa-pinterest"></i></a></li>
+            <li><a href="https://www.facebook.com/" target="_blank" title="Go to our facebook page" aria-label="Go to our facebook page by clicking this link (opens in new tab)"><i class="fab fa-facebook"></i></a></li>
+        </ul>
     
-            <span id="copyright">© CityPop Central 2021</span>
+        <span id="copyright">© CityPop Central 2021</span>
     
-        </footer>
+     </footer>
 
 </div>
-
 
 {% endblock %}

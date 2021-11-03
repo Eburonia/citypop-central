@@ -10,17 +10,17 @@ Date: November 2021
 
 <div class="form-div">
 
-    <h3 class="form-h3">Profile settings</h3>
+    <h1 class="form-heading">Profile settings</h1>
 
     <form action="{{ url_for('update_profile', username=session.user) }}" method="POST">
 
         <span id="form-username">Username : {{ username }}</span><br><br>
     
         <label class="form-label" for="email">Email :</label>
-        <input type="email" id="email" name="email" value="{{ settings.email }}" class="form-textbox" aria-label="" required>
+        <input type="email" id="email" name="email" value="{{ settings.email }}" class="form-textbox" aria-label="Please enter your e-mail address, this a required field" required>
 
         <label for="country" class="form-label">Country :</label>
-        <select id="country" name="country" class="form-textbox" aria-label="">
+        <select id="country" name="country" class="form-textbox" aria-label="Please select the country you are currently living in">
 
             {% for country in countries %}
 
@@ -35,19 +35,18 @@ Date: November 2021
         </select><br>
 
         <label for="gender" class="form-label" >Gender :</label>
-        <input type="textbox" id="gender" name="gender" value="{{ settings.gender }}" class="form-textbox" aria-label="" disabled>
+        <input type="textbox" id="gender" name="gender" value="{{ settings.gender }}" class="form-textbox" aria-label="This textfield indicates your gender and cannot be adjusted" disabled>
 
-
-        <input type="submit" value="update" class="form-button" aria-label=""><br><br>
+        <input type="submit" value="update" class="form-button" title="Click here to update your profile" aria-label="Click this button to update your profile, make sure you have added all required fields above"><br><br>
 
     </form>
 
 
-        <h3 class="form-h3">Delete profile</h3>
+        <h3 class="form-heading">Delete profile</h3>
 
-        <span id="delete-profile-button" title="Click on this link to delete your profile" arian-label="">Click here to delete your profile</span><br><br>
+        <span id="delete-profile-button" title="Click on this link to delete your profile" arian-label="Click on this link to delete your profile">Click here to delete your profile</span><br><br>
 
-        <a id="confirm-delete-profile-button" href="/delete-profile" title="Click on the link to confirm to delete your profile" arian-label="">Confirm to delete your profile</a><br><br>
+        <a id="confirm-delete-profile-button" href="/delete-profile" title="Click on the link to confirm to delete your profile" arian-label="Click on the link to confirm to delete your profile">Confirm to delete your profile</a><br><br>
 
 </div>
 
