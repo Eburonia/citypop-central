@@ -29,6 +29,14 @@ def index():
                            songs_cover=songs_cover)
 
 
+@app.route('/about')
+def about():
+
+    title = 'Citypop Central | About'
+
+    return render_template("about.html", title=title)
+
+
 @app.route("/results", methods=["GET", "POST"])
 def results():
 

@@ -1,0 +1,57 @@
+/*
+File: about.css
+Author: Maurice Vossen
+Date: November 2021
+*/
+
+
+#about-div {
+    margin: 50px auto;
+    width: 40%;
+    text-decoration: none;
+    color: var(--white);
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow: hidden;
+    padding: 30px;
+    border-radius: 20px;
+    border: 2px solid var(--yellow);
+    box-sizing: border-box;
+}
+
+
+#about-h3 {
+    color: var(--pink);
+    font-size: 28px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+
+.about-p {
+    color: var(--yellow);
+    font-size: 20px;
+}
+
+
+/* media queries for base.html only */
+/* for tablets and phones */
+
+@media only screen and (max-width: 600px) { 
+
+    #about-div {
+        width: 100% !important;
+        border-radius: 0;
+        border: 0;
+        margin: 0 !important;
+    }
+
+}
+
+
+@media only screen and (max-width: 1400px) { 
+
+    #about-div {
+        width: 70%;
+    }
+
+}
