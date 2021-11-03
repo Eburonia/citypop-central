@@ -15,12 +15,12 @@ Date: November 2021
 
         <label for="artist_name" class="form-label">Artist Name :</label>
         <p class="form-info">All first letters to be uppercase (e.g. Junko Yagami).</p>
-        <input type="text" id="artist_name" name="artist_name" value="{{song.artist_name}}" class="form-textbox" aria-label="Please enter the artist's name, this a required field" required><br>
+        <input type="text" id="artist_name" name="artist_name" pattern="[A-Z][a-z'?!]*(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?" value="{{song.artist_name}}" class="form-textbox" aria-label="Please enter the artist's name, this a required field" required><br>
 
 
         <label for="song_name" class="form-label">Song Name :</label>
         <p class="form-info">All first letters to be uppercase (e.g. Fly By Day).</p>
-        <input type="text" id="song_name" name="song_name" value="{{ song.song_name }}" class="form-textbox" aria-label="Please enter the song name, this a required field" required><br>
+        <input type="text" id="song_name" name="song_name" pattern="[A-Z][a-z'?!]*(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?" value="{{ song.song_name }}" class="form-textbox" aria-label="Please enter the song name, this a required field" required><br>
 
 
         <label for="genre" class="form-label">Genre :</label>
@@ -59,7 +59,7 @@ Date: November 2021
 
         <label for="album_name" class="form-label">Album Name :</label>
         <p class="form-info">All first letters to be uppercase (e.g. Friday Magic).</p>
-        <input type="text" id="album_name" name="album_name" value="{{ song.album_name }}" class="form-textbox" aria-label="Please enter the album name, this a required field" required>
+        <input type="text" id="album_name" name="album_name" pattern="[A-Z][a-z'?!]*(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?" value="{{ song.album_name }}" class="form-textbox" aria-label="Please enter the album name, this a required field" required>
 
 
         <label for="album_image_edit" class="form-label">Album Image :</label>
