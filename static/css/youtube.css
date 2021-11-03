@@ -44,11 +44,11 @@ Date: November 2021
         width: 100%;
     }
 
+    
     #youtube-iframe {
         border: 0;
         border-radius: 0;
         height: calc((100% * 3) / 4);
     }
-
 
 }

@@ -4,7 +4,7 @@ Author: Maurice Vossen
 Date: November 2021
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;600;800&display=swap');
 
 * {
     margin: 0;
@@ -61,7 +61,7 @@ header {
     color: var(--yellow);
     font-size: 36px;
     display: block;
-    font-weight: 800;
+    font-weight: 600;
     box-sizing: border-box;
 }
 
@@ -80,7 +80,7 @@ header {
     font-size: 13px;
     letter-spacing: 3.5px;
     display: block;
-    font-weight: 800;
+    font-weight: 600;
 }
 
 
@@ -89,7 +89,7 @@ header {
     color: var(--pink);
     font-size: 16px;
     display: block;
-    font-weight: 600;
+    font-weight: 800;
     letter-spacing: 5px;
     position: relative;
     left: 5px;
@@ -121,12 +121,14 @@ header {
     width: calc(100% - 510px);
 }
 
+
 #navigation-div > ul {
     float: right;
     border-radius: 20px;
     box-sizing: border-box;
     padding: 10px;
 }
+
 
 #navigation-div > ul > li {
     float: right;
@@ -137,7 +139,7 @@ header {
 
 .menu-item > a {
     font-size: 20px;
-    font-weight: 800;
+    font-weight: 600;
     color: var(--white);
     text-decoration: none;
 }
@@ -239,6 +241,7 @@ header {
     color: var(--white);
 }
 
+
 .toggle-menu-li {
     color: var(--white);
 }
@@ -269,9 +272,11 @@ header {
     margin-right: 20px;
 }
 
+
 .fa-info {
     margin-right: 10px;
 }
+
 
 /* media queries for header.html only */
 /* for tablets and phones */

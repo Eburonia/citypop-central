@@ -117,7 +117,7 @@ Date: November 2021
 .song-info-desc {
     padding: 4px;
     font-size: 16px;
-    font-weight: 800;
+    font-weight: 400;
     box-sizing: border-box;
     float: left;
     width: 175px;
@@ -206,6 +206,7 @@ Date: November 2021
     font-weight: 200;
 }
 
+
 .more-info-button i {
     font-size: 16px;
     font-weight: 200;
@@ -227,14 +228,16 @@ Date: November 2021
     font-weight: 200;
 }
 
+
 .admin-icon {
     margin-top: 5px;
     float: right;
     color:var(--yellow);
     font-size: 18px;
     padding: 0 5px;
-    font-weight: 300;
+    font-weight: 200;
 }
+
 
 .expand-info {
     margin-top: 5px;
@@ -258,13 +261,14 @@ Date: November 2021
     font-weight: 200;
 }
 
+
 .hr-pagination {
     margin: 10px 0;
     color: var(--pink);
     border-color: var(--pink);
     background-color: var(--pink);
-
 }
+
 
 #pagination-links {
     float: left;
@@ -276,15 +280,18 @@ Date: November 2021
     width: 100%;
 }
 
+
 #pagination-links > a {
     color: var(--pink);
     text-align: center;
     text-decoration: none;
 }
 
+
 #separator {
     color: var(--pink);
 }
+
 
 /* media queries for results.html only */
 /* for tablets and phones */
@@ -317,6 +324,7 @@ Date: November 2021
         background-color: rgba(0, 0, 0, 0.9);
     }
 
+
     .search-textbox {
         width: 100%;
         margin-bottom: 20px;
@@ -327,10 +335,12 @@ Date: November 2021
         margin-left: 0;
     }
 
+
     .youtube-link {
         float: left;
         font-weight: 100;
     }
+
 
     .search-icon {
         float: left;
@@ -339,11 +349,13 @@ Date: November 2021
         font-weight: 100;
     }
 
+
     .admin-icon, .delete-link {
         float: left;
         font-size: 18px;
         font-weight: 100;
     }
+
 
     .song-title-bar {
         border: 0;
@@ -355,6 +367,7 @@ Date: November 2021
     .song-title-bar > a{
         font-size: 22px;
     }
+
 
     .number-results-div {
         float: left;
@@ -380,6 +393,7 @@ Date: November 2021
         overflow: hidden;
     }
 
+    
     .image-frame img{
         width: 100%;
     }
@@ -392,12 +406,14 @@ Date: November 2021
         padding: 0 10px;
     }
 
+
     .song-info-desc {
         float: left;
         width: 100%;
         font-size: 18px;
         padding: 0;
     }
+
 
     .song-info-value {
         width: 100%;
@@ -408,9 +424,11 @@ Date: November 2021
         padding: 0;
     }
 
+
     #pagination-links {
         width: 100%;
     }
+
 
     footer {
         float: left;
@@ -418,8 +436,3 @@ Date: November 2021
     }
 
 }
-
-
-
-
-

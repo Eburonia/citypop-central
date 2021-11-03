@@ -19,11 +19,12 @@ Date: November 2021
 }
 
 
-#about-h3 {
+#about-heading {
     color: var(--pink);
     font-size: 28px;
     padding-top: 10px;
     padding-bottom: 20px;
+    font-weight: 400;
 }
 
 

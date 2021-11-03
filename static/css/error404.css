@@ -30,3 +30,27 @@ Date: November 2021
     color: var(--pink);
     margin-bottom: 10px;
 }
+
+
+/* media queries for 404.html only */
+/* for tablets and phones */
+
+@media only screen and (max-width: 600px) { 
+
+    #message-404 {
+        width: 100% !important;
+        border-radius: 0;
+        border: 0;
+        margin: 0 !important;
+    }
+
+}
+
+
+@media only screen and (max-width: 1400px) { 
+
+    #message-404 {
+        width: 70%;
+    }
+
+}
