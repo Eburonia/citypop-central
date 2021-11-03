@@ -20,6 +20,7 @@ Date: November 2021
 
 
 .my-songs-item {
+    color: var(--white);
     cursor: pointer;
     box-sizing: border-box;
     float: left;
@@ -35,10 +36,40 @@ Date: November 2021
 .my-songs-item > a {
     color: var(--white);
     text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 
 .my-songs-item > a:hover {
     color: var(--pink);
     text-decoration: underline;
+}
+
+
+
+
+
+/* media queries for my_songs.html only */
+/* for tablets and phones */
+
+@media only screen and (max-width: 600px) { 
+
+    .my-songs-div {
+        width: 100% !important;
+        border-radius: 0;
+        border: 0;
+        margin: 0 !important;
+    }
+
+}
+
+
+@media only screen and (max-width: 1400px) { 
+
+    .my-songs-div {
+        width: 70%;
+    }
+
 }

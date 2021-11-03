@@ -258,8 +258,7 @@ def update_profile(username):
 
         submit = {
             "$set": {"email": request.form.get(
-                "email"), "gender": request.form.get(
-                    "gender"), "country_name": request.form.get("country")}
+                "email"), "country_name": request.form.get("country")}
         }
 
         mongo.db.users.update({"username": username}, submit)
