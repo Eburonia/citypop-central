@@ -15,7 +15,7 @@ Date: November 2021
     {% for my_song in my_songs %}
 
     <div class="my-songs-item" title="Edit this song">
-        <a href="edit_song?editsong={{my_song._id}}">{{my_song.artist_name}} - {{my_song.song_name}}</a>
+        <a href="edit_song?editsong={{my_song._id}}" aria-label="Click here to edit this song">{{my_song.artist_name}} - {{my_song.song_name}}</a>
     </div>
 
     {% endfor %}

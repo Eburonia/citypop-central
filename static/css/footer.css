@@ -11,7 +11,6 @@ footer {
     text-align: center;
     overflow: hidden;
     color: var(--yellow);
-    height: 150px;
 }
 
 
@@ -54,6 +53,7 @@ footer a:hover {
     0 0 30px rgb(255, 106, 146),
     0 0 40px rgb(255, 124, 124);
 }
+
 
 footer > ul {
     margin-bottom: 20px;

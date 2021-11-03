@@ -11,6 +11,7 @@ Date: November 2021
 
 <div class="form-div">
 
+
     <h1 class="form-heading">Edit song</h1>
 
     <form action="" method="POST">
@@ -23,14 +24,20 @@ Date: November 2021
 
         </div>
 
-        <label for="artist_name" class="form-label">Artist Name :</label><br>
-        <input type="text" id="artist_name" name="artist_name" pattern="[A-Z][a-z'?!]*(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?" value="{{ song.artist_name }}" class="form-textbox" aria-label="please enter the artist name, this a required field" required><br>
 
-        <label for="song_name" class="form-label">Song Name :</label><br>
-        <input type="text" id="song_name" name="song_name" pattern="[A-Z][a-z'?!]*(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?" value="{{ song.song_name }}" class="form-textbox" aria-label="please enter a song name, this a required field" required><br>
+        <label for="artist_name" class="form-label">Artist Name :</label>
+        <p class="form-info">All first letters to be uppercase (e.g. Junko Yagami).</p>
+        <input type="text" id="artist_name" name="artist_name" pattern="[A-Z][a-z'?!]*(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?" value="{{ song.artist_name }}" class="form-textbox" aria-label="Please enter the artist's name, this a required field" required><br>
 
-        <label for="genre" class="form-label">Genre :</label><br>
-        <select id="genre" name="genre" class="form-textbox" aria-label="">
+
+        <label for="song_name" class="form-label">Song Name :</label>
+        <p class="form-info">All first letters to be uppercase (e.g. Fly By Day).</p>
+        <input type="text" id="song_name" name="song_name" pattern="[A-Z][a-z'?!]*(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?" value="{{ song.song_name }}" class="form-textbox" aria-label="Please enter the song name, this a required field" required><br>
+
+
+        <label for="genre" class="form-label">Genre :</label>
+        <p class="form-info">Select a genre.</p>
+        <select id="genre" name="genre" class="form-textbox" aria-label="Please select the song's genre">
 
             {% for genre in genres %}
 
@@ -42,10 +49,11 @@ Date: November 2021
 
             {% endfor %}
 
-        </select><br>
+        </select>
 
-        <label for="release_year" class="form-label">Release Year :</label><br>
-        <select id="release_year" name="release_year" class="form-textbox" aria-label="">
+        <label for="release_year" class="form-label">Release Year :</label>
+        <p class="form-info">Select a release year.</p>
+        <select id="release_year" name="release_year" class="form-textbox" aria-label="Please select the song's release year">
 
             {% for release_year in release_years %}
 
@@ -57,30 +65,30 @@ Date: November 2021
 
             {% endfor %}
 
-        </select><br>
+        </select>
 
-        <label for="album_name" class="form-label">Album Name :</label><br>
-        <input type="text" id="album_name" name="album_name" patter="[A-Z][a-z'?!]*(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?" value="{{ song.album_name }}" class="form-textbox" aria-label="" required><br>
+        <label for="album_name" class="form-label">Album Name :</label>
+        <p class="form-info">All first letters to be uppercase (e.g. Friday Magic).</p>
+        <input type="text" id="album_name" name="album_name" pattern="[A-Z][a-z'?!]*(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?" value="{{ song.album_name }}" class="form-textbox" aria-label="Please enter the album name, this a required field" required>
 
-        <label for="album_image_edit" class="form-label">Album Image :</label><br>
-        <textarea name="album_image" id="album_image" class="form-textbox" aria-label="" required cols="30" rows="5">{{ song.album_image }}</textarea>
+        <label for="album_image_edit" class="form-label">Album Image :</label>
+        <p class="form-info">Add the album cover image hyperlink (only upload covers from discogs.com).</p>
+        <textarea name="album_image" id="album_image" class="form-textbox" aria-label="Please enter the album's image from discogs.com, this a required field" required cols="30" rows="5">{{ song.album_image }}</textarea>
 
-        <label for="song_length" class="form-label">Song Length :</label><br>
-        <input type="text" id="song_length" name="song_length" pattern="[1-9]+:[0-5][0-9]" value="{{ song.song_length }}" class="form-textbox" aria-label="" required><br>
+        <label for="song_length" class="form-label">Song Length :</label>
+        <p class="form-info">Select the song length (e.g. 3:46, minimum song length: 1:00 maximum 9:59).</p>
+        <input type="text" id="song_length" name="song_length" pattern="[1-9]+:[0-5][0-9]" value="{{ song.song_length }}" class="form-textbox" aria-label="Please enter the song's length, this a required field" required>
 
         <label for="youtube" class="form-label">YouTube Link :</label>
-        <input type="text" id="youtube" name="youtube" value="{{ song.youtube }}" class="form-textbox" aria-label="" required>
+        <p class="form-info">Add the Youtube link ID (e.g.: https://www.youtube.com/watch?v=pE2D3LWADFg)</p>
+        <input type="text" id="youtube" name="youtube" value="{{ song.youtube }}" class="form-textbox" aria-label="Please enter the Youtube link ID, this a required field" required>
 
-        <input type="submit" value="edit song" class="form-button" title="Edit this song" aria-label="Click this button to submit the song, make sure you have added all required fields above"><br><br>
-
-        <input type="submit" value="delete song" class="form-button" title="Delete this song" aria-label="Click this button to delete the song, make sure you have added all required fields above"><br><br>
+        <input type="submit" value="edit song" class="form-button" title="Edit this song" aria-label="Click this button to add a song to our database, make sure you have added all required fields above">
+        <input type="submit" value="delete song" class="form-button" title="Delete this song" aria-label="Click this button to delete this song in the database, make sure you have added all required fields above">
 
     </form>
 
 
 </div>
-
-
-
 
 {% endblock %}
