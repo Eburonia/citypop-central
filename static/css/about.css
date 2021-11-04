@@ -29,10 +29,17 @@ Date: November 2021
 
 
 .about-p {
+    font-weight: 200;
     color: var(--yellow);
     font-size: 20px;
+    padding-bottom: 30px;
 }
 
+
+.youtube-iframe {
+    width: 100%;
+    height: 100%;
+}
 
 /* media queries for about.html only */
 /* for tablets and phones */
