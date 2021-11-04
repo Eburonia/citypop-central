@@ -16,6 +16,7 @@ Date: November 2021
 
 
 :root {
+    --black: rgb(0, 0, 0, 0.9);
     --yellow: rgb(251, 213, 168);
     --pink: rgb(255, 113, 151);
     --white: rgb(238, 238, 238);
