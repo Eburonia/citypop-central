@@ -117,12 +117,13 @@ For more information about Citypop, check the following videos on YouTube:
 
 #### Colour Scheme
 The following colours were used throughout the webpage:
-- rgba(): black, used as background colour in the header and forms, and buttons.
+- rgba(0, 0, 0, 0.9): black transparent, used as background colour in the header and forms, and buttons.
 - rgba(251, 213, 168, 1): gold, used for logo, login button, division frame borders, textfields, form texts, and socials.
 - rgba(255, 113, 151, 1): pink, used for logo, headings, comments forms, register button, hover colour, pagination, buttons.
 - rgba(238, 238, 238, 1): white, used for logo, search record information fields, comments on forms.
-- rgba(): gray, used in textfields background colour.
-- rgba(): red,
+- rgba(255, 255, 255, 0.2): gray transparent, used in textfields background colour.
+- rgba(255, 0, 0, 1): red, used on critial links e.g. deleting your profile or deleting a song.
+- rgba(135, 206, 235, 1): skyblue, used for flash messages in case passwords don't match on the register page. 
 
 <img src="" alt="Colour scheme"><br>
 <sub>Colour scheme</sub>
@@ -146,7 +147,7 @@ Sans-serif has been set as back-up font.
 Wireframes beloning to the website's project have been made in [Adobe XD](https://www.adobe.com/products/xd.html).
 The wireframes are implemeted in markdown files and can be found over here:
 - Wireframes of the 'Index' Page - [link]()
-- - Wireframes of the 'Results' Page - [link]()
+- Wireframes of the 'Results' Page - [link]()
 - Wireframes of the 'Register' Page - [link]()
 - Wireframes of the 'Login' Page - [link]()
 - Wireframes of the 'About' Page - [link]()
