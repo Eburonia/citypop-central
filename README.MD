@@ -112,6 +112,21 @@ For more information about Citypop, check the following videos on YouTube:
    + Every song record has an information field in the expanded information section of the record stating who uploaded the song record 'Uploaded by'. Visitors and Users can click on the 'Uploaded by' link to see more information about the person. Here is the e-mail of the person who uploaded the song is indicated.
 
 
+
+### Colour Scheme
+The following colours were used throughout the webpage:
+- rgba(): black, used as background colour in the header and forms, and buttons.
+- rgba(251, 213, 168, 1): gold, used for logo, login button, division frame borders, textfields, form texts, and socials.
+- rgba(255, 113, 151, 1): pink, used for logo, headings, comments forms, register button, hover colour, pagination, buttons.
+- rgba(238, 238, 238, 1): white, used for logo, search record information fields, comments on forms.
+- rgba(): gray, used in textfields background colour.
+- rgba(): red,
+
+
+    --yellow: rgb(251, 213, 168);
+    --pink: rgb(255, 113, 151);
+    --white: rgb(238, 238, 238);
+
 <!-- User Experience (UX) -->
 <a id="features"></a>
 ## Features
