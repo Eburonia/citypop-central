@@ -10,7 +10,7 @@ Date: November 2021
     font-size: 18px;
     overflow: hidden;
     text-decoration: none;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: var(--black);
     width: 50%;
     margin: 0 auto;
     padding: 30px;

@@ -16,7 +16,8 @@ Date: November 2021
 
 
 :root {
-    --black: rgb(0, 0, 0, 0.9);
+    --black: rgba(0, 0, 0, 0.9);
+    --gray: rgba(255, 255, 255, 0.2);
     --yellow: rgb(251, 213, 168);
     --pink: rgb(255, 113, 151);
     --white: rgb(238, 238, 238);
@@ -33,13 +34,13 @@ body {
 
 header {
     overflow: hidden;
-    background: rgba(0, 0, 0, 0.9);
+    background: var(--black);
 }
 
 
 #transition-div {
     float: left;
-    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0));
+    background: linear-gradient(var(--black), rgba(0, 0, 0, 0));
     height: 30px;
     width: 100%;
     box-sizing: border-box;
@@ -252,7 +253,7 @@ header {
     padding: 20px 0;
     font-size: 20px;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: var(--black);
     color: var(--yellow);
     box-sizing: border-box;
     width: 100%;
@@ -344,7 +345,7 @@ header {
         text-decoration: none;
         color:var(--white);
         display: block;
-        background-color: rgba(0, 0, 0, 0.9);
+        background-color: var(--black);
         box-sizing: border-box;
         overflow: hidden;
         padding: 10px 0;
@@ -357,7 +358,7 @@ header {
 @media only screen and (max-width: 700px) {
 
     #transition-div, header {
-        background: rgba(0, 0, 0, 0.9);
+        background: var(--black);
     }
 
 }

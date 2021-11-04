@@ -8,7 +8,7 @@ Date: November 2021
 .search-div {
     color:black;
     text-decoration: none;
-    background-color: rgba(10, 10, 10, 0.9);
+    background-color: var(--black);
     width: 40%;
     margin: 50px auto;
     box-sizing: border-box;
@@ -50,7 +50,7 @@ Date: November 2021
     width: calc(100% - 106px);
     border: 1px solid;
     box-sizing: border-box;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: var(--gray);
     color:var(--yellow);
     outline: 0;
 }
@@ -321,7 +321,7 @@ Date: November 2021
         padding: 0;
         width: 100% !important;
         margin: 0px auto;
-        background-color: rgba(0, 0, 0, 0.9);
+        background-color: var(--black);
     }
 
 
