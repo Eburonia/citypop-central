@@ -77,7 +77,7 @@ def results():
         # Pagination
 
         # Limit the amount of results per page
-        limit = 5
+        limit = 4
 
         # Determine number of pages needed for results
         number_of_pages = math.ceil(number_of_results / limit)
@@ -95,7 +95,7 @@ def results():
 
             previous_page = f"/results?search={query}\
                 &page={str(int(page) - 1)}"
-            previous_page_text = 'Prev Page'
+            previous_page_text = 'Prev page'
 
         else:
 
@@ -108,7 +108,7 @@ def results():
         if int(page) < number_of_pages - 1:
 
             next_page = f"/results?search={query}&page={str(int(page) + 1)}"
-            next_page_text = 'Next Page'
+            next_page_text = 'Next page'
 
         else:
 
@@ -263,7 +263,8 @@ def update_profile(username):
 
         submit = {
             "$set": {"email": request.form.get(
-                "email"), "country_name": request.form.get("country")}
+                "email"), "country_name": request.form.get("country"),
+                    "share_email": request.form.get("share-email")}
         }
 
         mongo.db.users.update({"username": username}, submit)

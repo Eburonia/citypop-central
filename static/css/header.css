@@ -339,7 +339,7 @@ header {
 
     .toggle-menu-item {
         font-size: 20px;
-        font-weight: 800;
+        font-weight: 200;
         text-decoration: none;
         color:var(--white);
         display: block;

@@ -27,6 +27,13 @@ Date: November 2021
 }
 
 
+.form-p {
+    color: var(--white);
+    padding: 5px 3px;
+    font-size: 18px;
+}
+
+
 .form-label {
     padding-left: 4px;
     font-size: 18px;
@@ -87,6 +94,7 @@ Date: November 2021
 .form-link {
     color: var(--pink);
     text-decoration: none;
+    padding: 5px 3px;
 }
 
 

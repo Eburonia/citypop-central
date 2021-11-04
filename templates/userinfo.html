@@ -26,14 +26,22 @@ Date: November 2021
             <div class="userinfo-descr">Nationality :</div>
             <div class="userinfo-value">{{ existing_user.country_name | capitalize}} </div>
 
-            <div class="userinfo-descr">Email :</div>
-            <div class="userinfo-value">{{ existing_user.email }} </div>
+            {% if session.user %}
+
+                {% if existing_user.share_email == 'yes' %}
+
+                    <div class="userinfo-descr">Email :</div>
+                    <div class="userinfo-value">{{ existing_user.email }} </div>
+
+                {% endif %}
+
+            {% endif %}
 
         </div>
 
         {% else %}
 
-        User does not exist!
+            User does not exist!
 
         {% endif %}
 

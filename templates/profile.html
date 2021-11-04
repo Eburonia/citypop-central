@@ -34,8 +34,22 @@ Date: November 2021
 
         </select><br>
 
-        <label for="gender" class="form-label" >Gender :</label>
+        <label for="gender" class="form-label">Gender :</label>
         <input type="textbox" id="gender" name="gender" value="{{ settings.gender }}" class="form-textbox" aria-label="This textfield indicates your gender and cannot be adjusted" disabled>
+
+        <label for="share-email" class="form-label">Share your email address with other users :</label>
+        <select id="share-email" name="share-email" class="form-textbox" aria-label="Please select if you want to share your email address to other users">
+
+            {% if settings.share_email == 'yes' %}
+                <option value="yes" selected>yes</option>
+                <option value="no">no</option>
+            {% else %}
+                <option value="yes">yes</option>
+                <option value="no" selected>no</option>
+            {% endif %}
+
+
+        </select>
 
         <input type="submit" value="update" class="form-button" title="Click here to update your profile" aria-label="Click this button to update your profile, make sure you have added all required fields above"><br><br>
 

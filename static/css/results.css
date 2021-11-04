@@ -12,7 +12,7 @@ Date: November 2021
     width: 40%;
     margin: 50px auto;
     box-sizing: border-box;
-    padding: 20px;
+    padding: 0 20px;
     border-radius: 30px;
     border: 2px solid var(--yellow);
     overflow: hidden;
@@ -276,7 +276,7 @@ Date: November 2021
     padding: 20px;
     text-align: center;
     color: var(--white);
-    font-size: 16px;
+    font-size: 20px;
     width: 100%;
 }
 

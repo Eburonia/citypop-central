@@ -12,6 +12,8 @@ Date: November 2021
 
     <h1 class="form-heading">Create a Citypop Central account</h1>
 
+    <p class="form-p">Register to Citypop Central in case you want to add your own favorite Citypop songs to our database.</p><br>
+
     <form method="POST" action="{{ url_for('register') }}">
 
         <label for="username" class="form-label">Username :</label>
@@ -62,11 +64,11 @@ Date: November 2021
         </select><br>
 
 
-        <input type="submit" value="register" class="form-button" aria-label="Click this button to create your citypop central account, make sure you have added all required fields above"><br><br>
+        <input type="submit" value="register" class="form-button" aria-label="Click this button to create your citypop central user account, make sure you have added all required fields above" title="Click this button to create your citypop central user account"><br><br>
 
     </form>
 
-    <p id="form-p">Already have a Citypop Central Account? Login <a class="form-link" href="{{ url_for('login') }}">Here</a></p>
+    <p class="form-p">Already have a Citypop Central Account? Login <a class="form-link" href="{{ url_for('login') }}" aria-label="Click this link in case you already have a Citypop Central user account" title="Click this link in case you already have a Citypop Central user account">Here</a></p>
 
 </div>  
 
