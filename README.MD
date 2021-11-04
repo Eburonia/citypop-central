@@ -8,6 +8,7 @@
 View the Live project on Heroku [link](https://citypop-central.herokuapp.com/)<br>
 View the GitHub Respository [link](https://github.com/Eburonia/citypop-central/)
 
+
 <!-- About -->
 ## About
 Citypop Central is a database storing information about Japanese songs. Most of the songs stored in our database are a mix of Japanese Jazz, Soul, Funk, Disco, or Synth-Pop from the '70s and '80s. These songs are better known under the genre Citypop. 
@@ -155,9 +156,58 @@ The wireframes are implemeted in markdown files and can be found over here:
 - Wireframes of the 'Userinfo' Page - [link]()
 
 
+All wireframes were designed for three different devices:
+- Desktop - Web: maximum viewport width 1920px
+- iPad - Nexus 9: maximum viewport width 768px
+- iPhone - 12 Pro Max: maximum viewport width 428px
+
+
+#### Mockups
+Due to the limited available time of the web developer, mockups have not been created.
+Instead, an image of the responsive design has been added on top of this README file.
+
+
 <!-- User Experience (UX) -->
 <a id="features"></a>
 ## Features
+
+
+### Header
+A header has been added on top of every page and exists out of the website logo, and a navigation bar. The background colour used for the header is a black transparent colour as described in the colour scheme section in this README file. The navigation bar will change to a 'hamburger-style' navigation menu on smaller devices (e.g. iPad or smartphone). By hovering the navigation bar anchor links, the links will highlight and make it clear to the end-user this is a clickable link.
+The company logo on the top left-hand side of the header has a clickable anchor link assigned to it which will always redirect the website to the index page. The Company logo will automatically resize for smaller devices. 
+
+
+### Footer
+A footer has been added on the bottom of the 'Index' and 'Results' page and exists out of social media links, and a copyright notice. The social media links are styled in gold colour. By hovering the social media link icons, the colour will highlight in pink colour as described in the colour scheme section of this README file and makes it clear to the end-user these are clickable links. The icons used for the social media links are directly loaded from the [fontawesome](https://www.fontawesome.com) website. All social media links will be opened on a new blank page. A clear copyright notice is visible at the bottom of the footer.
+
+
+### About Page
+The 'About' page gives information about the purpose of the website. Some history and background information about the Citypop genre are stated on this page. Also embedded are two YouTube videos about the history of Citypop and a video of Western tourists buying Citypop records at a local used record store in the Shibuya district of Tokyo. 
+
+
+### Index Page
+The 'Index' page is the most important page on the website and starts with a welcoming statement to every visitor. Below the statement, a search bar indicated to search songs. To help new visitors to add correct keywords in the search bar, example search keywords are indicated above the search bar.  Then a summary of the 8 latest songs added to the database is shown to the visitor. These are clickable and will open a new blank page to the YouTube embedded video. The bottom of the page ends with links to the website's socials pages.
+
+### Results Page
+The 'Results' page will show up at the moment a visitor has added a search query. The results found in the database will then show up on the screen. Pagination implemented limiting the number of search results to 10 search records per page. The top of the page indicates the number of results found in the database. The current indicated results are shown on-screen also. All search records show the following information: Artist Name, Song Name, Genre, Release Year, Album Name. An expanded information button (question mark icon) to show more additional information about the song is introduced. By clicking this icon more information will show up on the screen. This information is: Song Length, Uploaded By, Upload Date, Edit Date. By clicking the Artist Name and Song Title at the top of every search query, the visitor will be automatically redirected to the YouTube song page which will run the song automatically. An image of the Album Cover of the song's album is indicted. By clicking the album image a larger image will show op on screen.
+
+
+
+### Register Page
+
+### Login Page
+
+### Profile Page
+
+### My Songs Page
+
+### Add Song Page
+
+### User Info Page
+
+### Flash Messages
+
+
 
 
 <!-- Data Scheme -->
@@ -190,6 +240,10 @@ The wireframes are implemeted in markdown files and can be found over here:
 ## Credits
 
 
+
+### Acknowledgements
+- Thanks to my personal mentor Victor Miclovich for answering my questions and giving feedback to this project.
+- The many free coding forums on the internet, especially [Stackoverflow.com](https://www.stackoverflow.com/) for providing answers to my coding questions. Most of my questions were already asked by other users of the stackoverflow website, making it easy to find quick answers.
 
 
 
