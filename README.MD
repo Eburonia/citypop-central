@@ -113,7 +113,8 @@ For more information about Citypop, check the following videos on YouTube:
 
 
 
-### Colour Scheme
+
+#### Colour Scheme
 The following colours were used throughout the webpage:
 - rgba(): black, used as background colour in the header and forms, and buttons.
 - rgba(251, 213, 168, 1): gold, used for logo, login button, division frame borders, textfields, form texts, and socials.
@@ -122,10 +123,37 @@ The following colours were used throughout the webpage:
 - rgba(): gray, used in textfields background colour.
 - rgba(): red,
 
+<img src="" alt="Colour scheme"><br>
+<sub>Colour scheme</sub>
 
-    --yellow: rgb(251, 213, 168);
-    --pink: rgb(255, 113, 151);
-    --white: rgb(238, 238, 238);
+
+
+#### Typography
+The '[Nunito](https://fonts.google.com/specimen/Nunito)' font was implemented from the Google Fonts website and used throughout the whole website including the website logo.
+Sans-serif has been set as back-up font.
+
+<img src="" alt="Nunito font-type"><br>
+<sub>Nunito font-type</sub>
+
+
+#### Imagery
+- Five different implemented background images. Background images are all street scenes from Tokyo made by the website owner. Colours adjusted in such a way it won't distract the information in the foreground.
+- All Album Cover images are implemented from the Discogs.com website. This is not a proper way of doing this because we are using somebody else its data, but because we don't have a server where we can upload and read images it's the only solution for the moment.
+
+
+#### Wireframes
+Wireframes beloning to the website's project have been made in [Adobe XD](https://www.adobe.com/products/xd.html).
+The wireframes are implemeted in markdown files and can be found over here:
+- Wireframes of the 'Index' Page - [link]()
+- - Wireframes of the 'Results' Page - [link]()
+- Wireframes of the 'Register' Page - [link]()
+- Wireframes of the 'Login' Page - [link]()
+- Wireframes of the 'About' Page - [link]()
+- Wireframes of the 'Profile' Page - [link]()
+- Wireframes of the 'My Songs' Page - [link]()
+- Wireframes of the 'Add Song' Page - [link]()
+- Wireframes of the 'Userinfo' Page - [link]()
+
 
 <!-- User Experience (UX) -->
 <a id="features"></a>
