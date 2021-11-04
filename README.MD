@@ -60,6 +60,7 @@ For more information about Citypop, check the following videos on YouTube:
    + A link to the 'About Citypop Central' page has been added, here the visitor can find more information about the Citypop genre.
    + The Login and Register buttons in the header's upper right corner, tell the visitor this is a website you have to login to add your own songs to the database.
 
+
 2. As a first-time visitor of the website, I want to navigate easily throughout the website, so I don't get frustrated not knowing where to click.
    + A navigation bar is available on every webpage, in the upper right corner.
    + The website is easily usable for visitors who are only searching for songs. It only has one search page and links to YouTube songs will be opened on a blank page.
@@ -71,11 +72,44 @@ For more information about Citypop, check the following videos on YouTube:
    + Visitors can search under the following keywords: Artist name, Song name, Genre, Release Year, Album Name, Uploaded By, and Upload Date.
 
 
+4. As a first-time visitor of the website, I not only want to find information about songs, but I also want to listen to the songs in a convenient way.
+   + Every search record indicates the Artist's name and Song name at the top of every search record. A YouTube icon in front of the Artist's name has been implemented telling the      + visitor this is a clickable link. This link will redirect you to the song's Youtube page.
+   + The visitor stays on the website and will be redirected to a blank Citypop Central webpage including the embedded YouTube video. Every song automatically starts so visitors don't have to press the YouTube play button.
+
+
+5. As a first-time visitor of the website, I want to see the album cover.
+   + For every search record, you can press the album image and a larger size image will appear on the screen.
+
+
+6. As a first-time visitor of the website, I might want to contact the website owner, so I can ask them a question or give them some recommendations.
+   + On the bottom of the index page, inside the search function division, links to the website's social media accounts are indicated. By clicking on the links the visitor will be      + redirected to them on a blank page. Here the visitor can send direct messages to the website owner.
 
 
 
+#### Returning Visitor Goals
+1. As a returning visitor of the website, I want to be able to not only search song information, but also add my own (favorite) songs to the database.
+   + Every visitor first needs to create their own user account in order to add and manage songs. In the upper right corner of the header, it clearly states a 'Register' button. By clicking on this button, a visitor can create his own user account.
+   + When registered, visitors become users and are now able to maintain their profile information, add songs, edit songs, delete songs. This means only songs you have added to the database, not songs uploaded by other users. 
 
 
+2. As a returning visitor of the website, I want to log out from my user account for safety reasons.
+   + When logged in into your user account, it clearly states a logout button in the header's upper right corner.
+
+
+3. As a returning visitor of the website, I want to know which songs I have uploaded in the past.
+   + When logged in, in the upper right side of the navigation bar, a link to 'My Songs' will be available. By clicking this link the user will be redirected to a page that gives a summary of all your added songs in the past.
+
+
+4. As a returning visitor of the website, I want to delete my profile whenever I want.
+   + When logged in, at the bottom of your 'Profile' page, a link has been added which gives you the option to delete your user account. A second link has to be clicked to confirm you want to delete your profile. Your profile will be deleted, but the songs you added to the database will stay inside the database.
+
+
+5. As a returning visitor of the website, I want to be able to update my user account in case some information about me (e.g. location) has been changed.
+   + When logged in, on the 'Profile' page you are able to update your e-mail and the country you live in.
+
+
+6. As a returning visitor of the website, I want to be able to see information about other users of the website and contact them when needed.
+   + Every song record has an information field in the expanded information section of the record stating who uploaded the song record 'Uploaded by'. Visitors and Users can click on the 'Uploaded by' link to see more information about the person. Here is the e-mail of the person who uploaded the song is indicated.
 
 
 <!-- User Experience (UX) -->
