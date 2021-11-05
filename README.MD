@@ -265,9 +265,26 @@ The 'Results' page will show up at the moment a visitor has added a search query
 - Check the responsiveness on smaller devices (min. 320px width).
 
 
+#### About Page
+- Check spelling of the page.
+- Check responsiveness of page.
+- Check sizing of the embedded Youtube videos.
+- Check funtionality of videos.
+- Check the video description.
+
+
 #### Index Page
 - Check responsiveness of page.
 - Check latest song links function and open in new screen.
+
+
+#### C.R.U.D. Index Page
+- Check whether records show up when searching the following keywords: Artist Name, Song Name, Genre, Release Year, Album Name, Uploaded By, Upload Date.
+- Check whether a song added to the database show up to the latest songs summary.
+
+
+#### Results Page
+- Check responsiveness of page.
 - Check whether the 'Expand for more information' icon (question mark) functions properly.
 - Check whether 'Uploaded By' link opens a new blank page.
 - Check whether all show song information is correct.
@@ -276,27 +293,50 @@ The 'Results' page will show up at the moment a visitor has added a search query
 - Check whether 'Edit' and 'Delete' icon show up when logged in and check whether the function properly.
 
 
-#### C.R.U.D. Index Page
-- Check whether records show up when searching the following keywords: Artist Name, Song Name, Genre, Release Year, Album Name, Uploaded By, Upload Date.
+#### C.R.U.D. Results Page
 - Check number of results (records) indicated match the real shown results on screen.
 - Check pagination functions properly.
 - Check whether maximum 10 records show up on screen.
 - Check whether 'Edit Date' shows up when the song has been edited.
-- Check whether 8 latest added songs to the database show up.
-- Check whether a song added to the database show op to the latest songs summary.
-- Check manipulation of the searchbar search keys won't give wrong results or errors.
+- Check manipulation of the searchbar search keys won't give wrong results or errors. 
 
-
-#### About Page
-
-
-#### Results Page
+<img src="" alt="Edit and Delete Icons"><br>
+<sub>Edit and Delete Icons</sub>
 
 
 #### Profile Page
+- Check responsiveness of page.
+- Check all country names are capitalized and alphabatically sorted.
+- Check the defensive pattern functions properly for the email textfield.
+-
+
+#### C.R.U.D. Profile Page
+- Check correct username shows up.
+- Check whether delete you profile function works properly.
+- Check whether all fields are updated in the database when changed.
+
+<img src="" alt="Profile Page"><br>
+<sub>Edit and Delete Icons</sub>
 
 
 #### My Songs Page
+- Check responsiveness of page.
+- Check whether Artist Name and Songs Name are properly indicated.
+- Check whether upload date and edit date are indicated.
+- Check colour changes when hovering.
+- Check alphabetical sort.
+
+
+#### C.R.U.D. My Songs Page
+- Check whether all your songs show up.
+- Check whether links open in new blank page and loads the correct information form the database.
+
+
+<img src="" alt="My Songs Page"><br>
+<sub>My Songs Page</sub>
+
+
+
 
 
 #### Add Song Page
