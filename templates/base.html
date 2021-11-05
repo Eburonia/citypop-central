@@ -114,6 +114,7 @@ Date: November 2021
 
                     <!-- navigation links -->
                     <ul>
+
                         {% if session.user %}
                             <li id="logout-button"><a href="{{ url_for('logout') }}" aria-label="Click here to go to logout" title="Click here to go to logout">Logout</a></li>
                             <li class="menu-item"><a href="{{ url_for('add_song') }}" aria-label="Click here to go to add a song to the database" title="Click here to go to add a song to the database">Add Song</a></li>
@@ -122,8 +123,10 @@ Date: November 2021
                         {% else %}
                             <li id="register-button"><a href="{{ url_for('register') }}" aria-label="Click here to go to register" title="Click here to go to register">Register</a></li>
                             <li id="login-button"><a href="{{ url_for('login') }}" aria-label="Click here to login" title="Click here to login">Login</a></li>
-                            <li class="menu-item"><a href="{{ url_for('about') }}" aria-label="Click here to go to the about page" title="Click here to go to the about page">About</a></li>
                         {% endif %}
+
+                        <li class="menu-item"><a href="{{ url_for('about') }}" aria-label="Click here to go to the about page" title="Click here to go to the about page">About</a></li>
+
                     </ul>
 
             </div>
@@ -132,13 +135,14 @@ Date: November 2021
             <!-- toggle navigation -->
             <div id="toggle-menu">
 
+                <a class="toggle-menu-item" href="{{ url_for('about') }}" aria-label="Click here to go to the about page">About</a>
+
                 {% if session.user %}
                     <a class="toggle-menu-item" href="{{ url_for('profile', username=session.user) }}" aria-label="Click here to see your profile information">Profile</a>
-                    <a class="toggle-menu-item" href="{{ url_for('mysongs') }}" aria-label="Click here to see a summary of your added songs">My songs</a>
+                    <a class="toggle-menu-item" href="{{ url_for('mysongs') }}" aria-label="Click here to see a summary of your added songs">My Songs</a>
                     <a class="toggle-menu-item" href="{{ url_for('add_song') }}" aria-label="Click here to go to add a song to the database">Add Song</a>
                     <a class="toggle-menu-item" href="{{ url_for('logout') }}" aria-label="Click here to go to logout">Logout</a>
                 {% else %}
-                    <a class="toggle-menu-item" href="{{ url_for('about') }}" aria-label="Click here to go to the about page">About</a>
                     <a class="toggle-menu-item" href="{{ url_for('login') }}" aria-label="Click here to login">Login</a>
                     <a class="toggle-menu-item" href="{{ url_for('register') }}" aria-label="Click here to go to register">Register</a>
                 {% endif %}
