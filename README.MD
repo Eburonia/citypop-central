@@ -232,10 +232,10 @@ The 'Results' page will show up at the moment a visitor has added a search query
 **(checked)**
 
 - Check aria labels.
-- Check aria labels start with capitalized letter.
+- Check aria labels start with a capitalized letter.
 - Check alternative 'alt' text images.
 - Check available title tags.
-- Check title tags all start with capitalized letter.
+- Check title tags all start with a capitalized letter.
 - Check whether page titles are loaded correctly.
 - Check all needed CSS files are imported properly.
 - Check ghost CSS code.
@@ -245,26 +245,26 @@ The 'Results' page will show up at the moment a visitor has added a search query
 
 
 #### Background Images
-- Check whether background images size are around 500 kB.
-- Check whether all 5 background images randomize will show up.
+- Check whether background image sizing is around 500 kB.
+- Check whether all 5 background randomized images will show up.
 - Check whether background images show up properly show up on smaller devices.
 
 
-#### Header/Navigation Var
-- Check whether the header is always on top of the page.
-- Check whether website logo links back to the index page.
+#### Header/Navigation Bar
+- Check whether the header is always on top of the pages.
+- Check whether the website logo links back to the index page.
 - Check for dead links.
 - Check the responsiveness of the navigation bar (change to hamburger-style navigation for minimum 320px width).
 - Check whether there is overflow while reducing the screen size.
-- Check navigation hover links.
-- Check 'About' link always shows up.
-- Check 'Profile', 'My Songs', 'Add Song' links show up when logged in.
-- Check 'Logout' button shows up when logged in.
-- Check whether toggle button functions.
+- Check navigation hover-links.
+- Check the 'About' link always shows up.
+- Check the 'Profile,' 'My Songs,' 'Add Song' links show up when logged in.
+- Check the 'Logout' button shows up when logged in.
+- Check whether the toggle button functions properly.
 
 
 #### Footer
-- Check whether footer is on the bottom of the 'Index' and 'Results' page.
+- Check whether the footer is on the bottom of the 'Index' and 'Results' page.
 - Check whether all social media links are working properly and are opening a new blank page.
 - Check whether the social links change colour when hovering.
 - Check for dead links.
@@ -272,10 +272,10 @@ The 'Results' page will show up at the moment a visitor has added a search query
 
 
 #### About Page
-- Check spelling of the page.
-- Check responsiveness of page.
-- Check sizing of the embedded Youtube videos.
-- Check funtionality of videos.
+- Check the spelling of the page.
+- Check the responsiveness of the page.
+- Check the sizing of the embedded Youtube videos.
+- Check the functionality of the videos.
 - Check the video description.
 
 <img src="" alt="About Page"><br>
@@ -283,87 +283,87 @@ The 'Results' page will show up at the moment a visitor has added a search query
 
 
 #### Index Page
-- Check responsiveness of page.
-- Check latest song links function and open in new screen.
+- Check the responsiveness of the page.
+- Check the latest song links function and open in a new screen.
 
 
 #### C.R.U.D. Index Page
 - Check whether records show up when searching the following keywords: Artist Name, Song Name, Genre, Release Year, Album Name, Uploaded By, Upload Date.
-- Check whether a song added to the database show up to the latest songs summary.
+- Check whether a song added to the database shows up to the latest songs summary.
 
 <img src="" alt="Index Page"><br>
 <sub>Index Page</sub>
 
 
 #### Results Page
-- Check responsiveness of page.
+- Check the responsiveness of the page.
 - Check whether the 'Expand for more information' icon (question mark) functions properly.
-- Check whether 'Uploaded By' link opens a new blank page.
+- Check whether the 'Uploaded By' link opens a new blank page.
 - Check whether all show song information is correct.
-- Check whether there is no text overflow.
+- Check whether there is no text-overflow.
 - Check whether the Youtube link functions and opens a new blank page.
-- Check whether 'Edit' and 'Delete' icon show up when logged in and check whether the function properly.
+- Check whether the 'Edit' and 'Delete' icons show up when logged in and check whether they function properly.
 
 
 #### C.R.U.D. Results Page
-- Check number of results (records) indicated match the real shown results on screen.
+- Check the number of results (records) indicated to match the real shown results on the screen.
 - Check pagination functions properly.
-- Check whether maximum 10 records show up on screen.
+- Check whether a maximum of 10 records shows up on the screen.
 - Check whether 'Edit Date' shows up when the song has been edited.
-- Check manipulation of the searchbar search keys won't give wrong results or errors. 
+- Check manipulation of the search bar search keys won't give wrong results or errors. 
 
 <img src="" alt="Edit and Delete Icons"><br>
 <sub>Edit and Delete Icons</sub>
 
 
 #### Profile Page
-- Check responsiveness of page.
-- Check all country names are capitalized and alphabatically sorted.
-- Check the regular expression functions properly for the email textfield.
--
+- Check the responsiveness of the page.
+- Check all country names are capitalized and alphabetically sorted.
+- Check the regular expression functions properly for the email text field.
+
 
 #### C.R.U.D. Profile Page
 - Check correct username shows up.
-- Check whether delete you profile function works properly.
+- Check whether the 'Delete your profile' link function works properly.
 - Check whether all fields are updated in the database when changed.
 
 <img src="" alt="Profile Page"><br>
-<sub>Edit and Delete Icons</sub>
+<sub>Profile Page</sub>
 
 
 #### My Songs Page
-- Check responsiveness of page.
+- Check the responsiveness of the page.
 - Check whether Artist Name and Songs Name are properly indicated.
-- Check whether upload date and edit date are indicated.
+- Check whether the upload date and edit date are indicated.
 - Check colour changes when hovering.
 - Check alphabetical sort.
 
 
 #### C.R.U.D. My Songs Page
 - Check whether all your songs show up.
-- Check whether links open in new blank page and loads the correct information form the database.
+- Check whether links open on a new blank page and loads the correct information form the database.
 
 <img src="" alt="My Songs Page"><br>
 <sub>My Songs Page</sub>
 
 
 #### Add Song Page
-- Check responsiveness of page.
+- Check the responsiveness of the page.
 - Check whether the input fields match with the Edit Songs Page.
-- Check field description is understandable for visitor.
+- Check field description is understandable for a visitor.
 - Check the regular expressions.
 
 
 #### C.R.U.D. Add Song Page
-- Check whether song is added properly to the database.
+- Check whether the added song is in the database.
 
 <img src="" alt="Add Song Page"><br>
 <sub>Add Song Page</sub>
 
 
 #### Login Page
-- Check responsiveness of page.
-- Check link to Register page functions.
+- Check the responsiveness of the page.
+- Check the link to the Register page functions.
 
 
 #### C.R.U.D. Login Page
@@ -374,41 +374,47 @@ The 'Results' page will show up at the moment a visitor has added a search query
 
 
 #### Register Page
-- Check responsiveness of page.
-- Check link to Login page functions.
+- Check the responsiveness of the page.
+- Check the link to the Login page functions.
 - Check the regular expressions.
 - Check password match functionality.
 
+<img src="" alt="Register Page"><br>
+<sub>Register Page</sub>
+
 
 #### Youtube Page
-- Check responsiveness of page.
+- Check the responsiveness of the page.
 - Check song autoplay.
+
+<img src="" alt="Youtube Page"><br>
+<sub>Youtube Page</sub>
 
 
 #### Userinfo Page
-- Check responsiveness of page.
+- Check the responsiveness of the page.
 - Check all showed information is correct.
-- Check e-mail is hidden for non-users (visitors).
-- Check e-mail is hidden when user turned it off on the Profile page.
-- Check non-existing user message.
+- Check e-mail address is hidden for non-users (visitors).
+- Check e-mail address is hidden when the user turned it off on the Profile page.
+- Check non-existing user return message.
 
 <img src="" alt="Userinfo Page"><br>
 <sub>Userinfo Page</sub>
 
 
 #### Flash Messages
-- Check responsiveness of flash messages.
-- Check flash messages all start with capatilized letter.
+- Check the responsiveness of the flash messages.
+- Check flash messages all start with a capitalized letter.
 - Check close message is functioning.
-- Check whether flash messages are appearing after user action. 
+- Check whether flash messages appear after a user action. 
 
 <img src="" alt="Flash messages">
 <span>Flash Messages</span>
 
 
-#### 404 Page
-- Check responsiveness of page.
-- Check 404 page loads when non-existing page is loaded.
+#### 404-Page
+- Check the responsiveness of the page.
+- Check 404-page loads when a non-existing page is loaded.
 - Check of link redirects to homepage.
 
 <img src="" alt="404 Page">
