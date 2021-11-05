@@ -272,6 +272,9 @@ The 'Results' page will show up at the moment a visitor has added a search query
 - Check funtionality of videos.
 - Check the video description.
 
+<img src="" alt="About Page"><br>
+<sub>About Page</sub>
+
 
 #### Index Page
 - Check responsiveness of page.
@@ -281,6 +284,9 @@ The 'Results' page will show up at the moment a visitor has added a search query
 #### C.R.U.D. Index Page
 - Check whether records show up when searching the following keywords: Artist Name, Song Name, Genre, Release Year, Album Name, Uploaded By, Upload Date.
 - Check whether a song added to the database show up to the latest songs summary.
+
+<img src="" alt="Index Page"><br>
+<sub>Index Page</sub>
 
 
 #### Results Page
@@ -331,15 +337,24 @@ The 'Results' page will show up at the moment a visitor has added a search query
 - Check whether all your songs show up.
 - Check whether links open in new blank page and loads the correct information form the database.
 
-
 <img src="" alt="My Songs Page"><br>
 <sub>My Songs Page</sub>
 
 
-
-
-
 #### Add Song Page
+- Check responsiveness of page.
+- Check whether the input fields match with the Edit Songs Page.
+- Check field description is understandable for visitor.
+- Check the defensive pattern is functioning.
+- 
+
+
+#### C.R.U.D. Add Song Page
+
+
+<img src="" alt="Add Song Page"><br>
+<sub>Add Song Page</sub>
+
 
 
 #### Login Page
