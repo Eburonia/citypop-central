@@ -180,7 +180,8 @@ def register():
             "password": generate_password_hash(request.form.get("password")),
             "email": request.form.get("email").lower(),
             "country_name": request.form.get("country").lower(),
-            "gender": request.form.get("gender").lower()
+            "gender": request.form.get("gender").lower(),
+            "share_email": request.form.get("share-email")
         }
 
         mongo.db.users.insert_one(regi)

@@ -156,13 +156,18 @@ Date: November 2021
                         {{ song.song_length }}
                     </div>
 
-                    <div class="song-info-desc">
-                        Uploaded By :
-                    </div>
 
-                    <div class="song-info-value">
-                       <a href="/userinfo?user={{ song.uploaded_by }}" title="View user profile">{{ song.uploaded_by }}</a>
-                    </div>
+                    {% if session.user %}
+
+                        <div class="song-info-desc">
+                            Uploaded By :
+                        </div>
+
+                        <div class="song-info-value">
+                            <a href="/userinfo?user={{ song.uploaded_by }}" title="View user profile">{{ song.uploaded_by }}</a>
+                        </div>
+
+                    {% endif %}
 
                     <div class="song-info-desc">
                         Upload Date :
