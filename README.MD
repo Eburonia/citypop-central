@@ -225,6 +225,38 @@ The 'Results' page will show up at the moment a visitor has added a search query
 <a id="testing"></a>
 ## Testing
 
+### Functionality Checklist
+
+#### Common
+
+**(checked)**
+
+- Check aria labels.
+- Check aria labels start with capitalized letter.
+- Check alternative 'alt' text images.
+- Check available title tags.
+- Check title tags all start with capitalized letter.
+
+
+#### Header/Navigation Var
+- Check whether the header is always on top of the page.
+- Check whether website logo links back to the index page.
+- Check for dead links.
+- Check the responsiveness of the navigation bar (change to hamburger-style navigation for minimum 320px width).
+- Check whether there is overflow while reducing the screen size.
+- Check navigation hover links.
+- Check 'About' link always shows up.
+- Check 'Profile', 'My Songs', 'Add Song' links show up when logged in.
+- Check 'Logout' button shows up when logged in.
+- Check whether toggle button functions.
+
+
+#### Flash Messages
+
+<img src="" alt="">
+<span>Show header result image here</span>
+
+
 
 <!-- Known Bugs -->
 <a id="bugs"></a>
