@@ -236,6 +236,12 @@ The 'Results' page will show up at the moment a visitor has added a search query
 - Check alternative 'alt' text images.
 - Check available title tags.
 - Check title tags all start with capitalized letter.
+- Check whether page titles are loaded correctly.
+- Check all needed CSS files are imported properly.
+- Check ghost CSS code.
+- Check commented out code.
+- Check comments added to code files.
+- Check for non-functioning Python code.
 
 
 #### Background Images
@@ -313,7 +319,7 @@ The 'Results' page will show up at the moment a visitor has added a search query
 #### Profile Page
 - Check responsiveness of page.
 - Check all country names are capitalized and alphabatically sorted.
-- Check the defensive pattern functions properly for the email textfield.
+- Check the regular expression functions properly for the email textfield.
 -
 
 #### C.R.U.D. Profile Page
@@ -345,35 +351,68 @@ The 'Results' page will show up at the moment a visitor has added a search query
 - Check responsiveness of page.
 - Check whether the input fields match with the Edit Songs Page.
 - Check field description is understandable for visitor.
-- Check the defensive pattern is functioning.
-- 
+- Check the regular expressions.
 
 
 #### C.R.U.D. Add Song Page
-
+- Check whether song is added properly to the database.
 
 <img src="" alt="Add Song Page"><br>
 <sub>Add Song Page</sub>
 
 
-
 #### Login Page
+- Check responsiveness of page.
+- Check link to Register page functions.
+
+
+#### C.R.U.D. Login Page
+- Check whether login functions.
+
+<img src="" alt="Login Page"><br>
+<sub>Login Page</sub>
 
 
 #### Register Page
+- Check responsiveness of page.
+- Check link to Login page functions.
+- Check the regular expressions.
+- Check password match functionality.
 
 
 #### Youtube Page
+- Check responsiveness of page.
+- Check song autoplay.
 
 
 #### Userinfo Page
+- Check responsiveness of page.
+- Check all showed information is correct.
+- Check e-mail is hidden for non-users (visitors).
+- Check e-mail is hidden when user turned it off on the Profile page.
+- Check non-existing user message.
+
+<img src="" alt="Userinfo Page"><br>
+<sub>Userinfo Page</sub>
 
 
 #### Flash Messages
+- Check responsiveness of flash messages.
+- Check flash messages all start with capatilized letter.
+- Check close message is functioning.
+- Check whether flash messages are appearing after user action. 
 
-<img src="" alt="">
-<span>Show header result image here</span>
+<img src="" alt="Flash messages">
+<span>Flash Messages</span>
 
+
+#### 404 Page
+- Check responsiveness of page.
+- Check 404 page loads when non-existing page is loaded.
+- Check of link redirects to homepage.
+
+<img src="" alt="404 Page">
+<span>404 Page</span>
 
 
 <!-- Known Bugs -->
