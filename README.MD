@@ -238,6 +238,12 @@ The 'Results' page will show up at the moment a visitor has added a search query
 - Check title tags all start with capitalized letter.
 
 
+#### Background Images
+- Check whether background images size are around 500 kB.
+- Check whether all 5 background images randomize will show up.
+- Check whether background images show up properly show up on smaller devices.
+
+
 #### Header/Navigation Var
 - Check whether the header is always on top of the page.
 - Check whether website logo links back to the index page.
@@ -249,6 +255,63 @@ The 'Results' page will show up at the moment a visitor has added a search query
 - Check 'Profile', 'My Songs', 'Add Song' links show up when logged in.
 - Check 'Logout' button shows up when logged in.
 - Check whether toggle button functions.
+
+
+#### Footer
+- Check whether footer is on the bottom of the 'Index' and 'Results' page.
+- Check whether all social media links are working properly and are opening a new blank page.
+- Check whether the social links change colour when hovering.
+- Check for dead links.
+- Check the responsiveness on smaller devices (min. 320px width).
+
+
+#### Index Page
+- Check responsiveness of page.
+- Check latest song links function and open in new screen.
+- Check whether the 'Expand for more information' icon (question mark) functions properly.
+- Check whether 'Uploaded By' link opens a new blank page.
+- Check whether all show song information is correct.
+- Check whether there is no text overflow.
+- Check whether the Youtube link functions and opens a new blank page.
+- Check whether 'Edit' and 'Delete' icon show up when logged in and check whether the function properly.
+
+
+#### C.R.U.D. Index Page
+- Check whether records show up when searching the following keywords: Artist Name, Song Name, Genre, Release Year, Album Name, Uploaded By, Upload Date.
+- Check number of results (records) indicated match the real shown results on screen.
+- Check pagination functions properly.
+- Check whether maximum 10 records show up on screen.
+- Check whether 'Edit Date' shows up when the song has been edited.
+- Check whether 8 latest added songs to the database show up.
+- Check whether a song added to the database show op to the latest songs summary.
+- Check manipulation of the searchbar search keys won't give wrong results or errors.
+
+
+#### About Page
+
+
+#### Results Page
+
+
+#### Profile Page
+
+
+#### My Songs Page
+
+
+#### Add Song Page
+
+
+#### Login Page
+
+
+#### Register Page
+
+
+#### Youtube Page
+
+
+#### Userinfo Page
 
 
 #### Flash Messages
