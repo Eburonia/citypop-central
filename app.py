@@ -332,6 +332,8 @@ def add_song():
 @app.route("/edit_song", methods=["GET", "POST"])
 def edit_song():
 
+    title = 'Citypop Central | Edit Song'
+
     song_id = request.args.get('song_id')
 
     song = mongo.db.songs.find_one({"_id": ObjectId(song_id)})
@@ -350,7 +352,7 @@ def edit_song():
     release_years = mongo.db.release_years.find().sort("release_year", 1)
 
     return render_template("edit_song.html", song=song, genres=genres,
-                           release_years=release_years)
+                           release_years=release_years, title=title)
 
 
 @app.route("/update_song/<song_id>", methods=["GET", "POST"])

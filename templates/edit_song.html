@@ -11,6 +11,16 @@ Date: November 2021
 
 <div class="form-div">
 
+    <h1 class="form-heading">Edit Song</h1>
+
+    <p class="form-p">Uploaded: {{ song.upload_date }}</p>
+
+    {% if song.edit_date %}
+
+        <p class="form-p">Last time edited: {{ song.edit_date }}</p><br>
+
+    {% endif %}
+
     <form action="{{ url_for('update_song', song_id=song._id) }}" method="POST">
 
         <label for="artist_name" class="form-label">Artist Name :</label>
@@ -78,7 +88,13 @@ Date: November 2021
 
 
         <input type="submit" value="edit song" class="form-button" title="Edit this song" aria-label="Click this button to add a song to our database, make sure you have added all required fields above">
-        <input type="submit" value="delete song" class="form-button" title="Delete this song" aria-label="Click this button to delete this song in the database, make sure you have added all required fields above">
+
+        <br><br>
+
+        <h2 class="form-heading">Delete Song</h1>
+
+        <a href="" class="delete-song-link">Click here to delete this song</a>
+
 
     </form>
 

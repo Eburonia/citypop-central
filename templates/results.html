@@ -77,12 +77,12 @@ Date: November 2021
 
                 {% if session.user == song.uploaded_by %}
             
-                <a href="/edit_song?editsong={{ song._id }}" title="Edit song"><i class="admin-icon fas fa-edit"></i></a>
+                <a href="/edit_song?song_id={{ song._id }}" title="Edit song"><i class="admin-icon fas fa-edit"></i></a>
 
                 <i class="admin-icon delete-song-check fas fa-trash-alt" title="Delete song"></i>
                 <a href="{{ url_for('delete_song', song_id=song._id) }}"><i class="delete-link fas fa-trash-alt" title="Confirm to delete song"></i></a>
-    
-                
+
+
             {% endif %}
 
             </div>
