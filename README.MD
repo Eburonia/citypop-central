@@ -435,7 +435,11 @@ The 'Results' page will show up at the moment a visitor has added a search query
 <a id="credits"></a>
 ## Credits
 
+https://www.youtube.com/watch?v=FF3fuYLnApQ
 
+https://www.youtube.com/watch?v=Lnt6JqtzM7I
+
+<!-- Credit: https://www.html5pattern.com/Passwords -->
 
 ### Acknowledgements
 - Thanks to my personal mentor Victor Miclovich for answering my questions and giving feedback to this project.
@@ -443,4 +447,4 @@ The 'Results' page will show up at the moment a visitor has added a search query
 
 
 
-<!-- Credit: https://www.html5pattern.com/Passwords -->
+

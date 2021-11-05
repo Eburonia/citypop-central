@@ -105,6 +105,7 @@ header {
     0% {
         text-shadow: none;
     }
+    
     100% {
         text-shadow: 
         0 0 5px rgb(196, 0, 52),

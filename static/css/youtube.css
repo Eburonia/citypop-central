@@ -5,34 +5,65 @@ Date: November 2021
 */
 
 
-#content-div {
-    width: 100%;
-}
-
-
 .youtube-div {
+    padding-top: 30px;
     box-sizing: border-box;
-    position: relative;
     overflow: hidden;
     width: 50%;
-    padding-top: 80%;
     margin: 30px auto;
     box-sizing: border-box;
 }
 
 
+#tv-screen-div {
+    background-color: rgba(0, 0, 0, 0.9);
+    box-sizing: border-box;
+    padding: 30px;
+    overflow: hidden;
+    border-radius: 30px;
+    border: 2px solid var(--yellow);
+}
+
 #youtube-iframe {
-    position: absolute;
-    top: 0;
-    bottom: 0;
     width: 100%;
     border-color: var(--yellow);
     box-sizing: border-box;
-    padding: 20px;
     background-color: var(--black);
-    border-radius: 20px;
-    height: calc((50% * 3) / 4);
+    height: 100%;
+    aspect-ratio: 16/9;
+    border: 1px solid rgb(37, 37, 37);
 }
+
+
+#tv-text {
+    font-size: 28px;
+    color: var(--pink);
+    text-align: center;
+    margin: 0 auto;
+    font-weight: 600;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    animation: lightanimation 2s infinite alternate;
+}
+
+
+@keyframes lightanimation {
+
+    0% {
+        text-shadow: none;
+    }
+
+    100% {
+        text-shadow: 
+        0 0 5px rgb(235, 4, 65),
+        0 0 10px rgb(247, 0, 66),
+        0 0 15px rgb(255, 63, 114),
+        0 0 20px rgb(255, 109, 109);
+        color: rgb(255, 226, 226);
+    }
+
+  }
+
 
 
 /* media queries for youtube.html only */
@@ -40,15 +71,21 @@ Date: November 2021
 
 @media only screen and (max-width: 700px) {
 
+    #content-div {
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+
+
     .youtube-div {
         width: 100%;
     }
 
     
-    #youtube-iframe {
+    #tv-screen-div {
         border: 0;
         border-radius: 0;
         height: calc((100% * 3) / 4);
+        background-color: rgba(0, 0, 0, 0);
     }
 
 }
