@@ -192,19 +192,26 @@ def register():
 
     if request.method == "POST":
 
+        # Check whether both passwords textfield the same password is given
         if request.form.get("password") != \
                 request.form.get("password-confirm"):
 
+            # Flash message failed, return register page
             flash('Passwords do not match')
             return redirect(url_for("register"))
 
+        # Check whether given username already exist in the database
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
+        # If username already exist
         if existing_user:
+
+            # Flash message username already exist
             flash('Username already exists')
             return redirect(url_for("register"))
 
+        # If username does not exist, create user
         regi = {
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password")),
@@ -214,13 +221,19 @@ def register():
             "share_email": request.form.get("share-email")
         }
 
+        # Add new user to database
         mongo.db.users.insert_one(regi)
 
-        # put the new user into 'session' cookie
+        # Put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
+
+        # Flash message registration succesful
         flash("Registration succesful")
+
+        # Return to newly created profile page
         return redirect(url_for("profile", username=session["user"]))
 
+    # Load available country names and gender from database to register page
     countries = mongo.db.countries.find().sort("country_name", 1)
     genders = mongo.db.genders.find().sort("gender", 1)
 
@@ -236,25 +249,42 @@ def login():
     title = 'Citypop Central | Login'
 
     if request.method == "POST":
-        # check whether username exists in database
+
+        # Check whether username exists in database
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
+        # In case username exists in database
         if existing_user:
+
+            # Check login password
             if check_password_hash(existing_user["password"], request.form.get(
                "password")):
+
+                # Password correct, set session cookie
                 session["user"] = request.form.get("username").lower()
+
+                # Flash message login succesful
                 flash("Welcome back {}".format(request.form.get("username")))
+
+                # Return to the index page
                 return redirect(url_for("index", username=session["user"]))
 
             else:
-                # invalid password match
+                # Invalid password given
+                # Flash message password or username not correct
                 flash("Incorrect username and/or password")
+
+                # Return to login page
                 return redirect(url_for("login"))
 
         else:
-            # username doesn't exist
+
+            # In case username does not exist in database
+            # Flash message password or username not correct
             flash("Incorrect username and/or password")
+
+            # Return to login page
             return redirect(url_for("login"))
 
     # Return information to front-end of website
@@ -264,22 +294,29 @@ def login():
 @app.route("/profile", methods=["GET", "POST"])
 def profile():
 
-    # Set page title
-    title = 'Citypop Central | Profile'
+    # Is user is logged in
+    if 'user' in session:
 
-    username = request.form.get("username")
+        # Set page title
+        title = 'Citypop Central | Profile'
 
-    # grab the session user's username from database
-    username = mongo.db.users.find_one(
+        # Set username front-end
+        username = request.form.get("username")
+
+        # Get username from database
+        username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
 
-    if session["user"]:
-
+        # Get all user settings from database
         settings = mongo.db.users.find_one({"username": session["user"]})
 
+        # Get all countries from database
         countries = mongo.db.countries.find().sort("country_name", 1)
+
+        # Get all genders from database
         genders = mongo.db.genders.find().sort("gender", 1)
 
+        # Get all uploaded songs by user from database
         my_songs = mongo.db.songs.find({"uploaded_by": session["user"]}).sort(
                    "artist_name", 1)
 
@@ -289,6 +326,7 @@ def profile():
             countries=countries, genders=genders, title=title,
             my_songs=my_songs)
 
+    # In case not logged in go to login page
     return redirect(url_for("login"))
 
 
@@ -297,34 +335,50 @@ def update_profile(username):
 
     if request.method == "POST":
 
+        # Update profile settings
         submit = {
             "$set": {"email": request.form.get(
                 "email"), "country_name": request.form.get("country"),
-                    "share_email": request.form.get("share-email")}
-        }
+                "share_email": request.form.get("share-email")}
+                }
 
+        # Update profile settings in the database
         mongo.db.users.update({"username": username}, submit)
 
+        # Flash message profile has been updated successfully
         flash("Profile successfully updated")
 
+    # Return to the index page
     return redirect(url_for("index"))
 
 
 @app.route("/delete-profile")
 def delete_profile():
 
+    # Delete user from database
     mongo.db.users.remove({"username": session["user"]})
+
+    # Remove session cookie
     session.pop("user")
 
+    # Flash message profile has been deleted
     flash("Your profile has been deleted")
+
+    # Return to register page
     return redirect(url_for("register"))
 
 
 @app.route("/logout")
 def logout():
-    # remove user from session cookies
+
+    # Remove user from session cookies
+    # Flash message you have been logged out
     flash("You have been logged out")
+
+    # Remove session cookie
     session.pop("user")
+
+    # Redirect to the login page
     return redirect(url_for("login"))
 
 
@@ -334,13 +388,16 @@ def add_song():
     # Set page title
     title = 'Citypop Central | Add Song'
 
-    # Add a song to the database
     if request.method == "POST":
 
+        # Get date of today
         date_time_now = datetime.datetime.now()
+
+        # Convert to '13 November 2019'
         date = str(date_time_now.day) + " " +\
             str(date_time_now.strftime("%B")) + " " + str(date_time_now.year)
 
+        # Create data memory for song
         song = {
             "artist_name": request.form.get("artist_name"),
             "song_name": request.form.get("song_name"),
@@ -354,11 +411,19 @@ def add_song():
             "song_length": request.form.get("song_length")
         }
 
+        # Insert the song into the database
         mongo.db.songs.insert_one(song)
+
+        # Flash message song added succesfully
         flash('Song has been added to the database')
+
+        # Return to index page
         return redirect(url_for("index"))
 
+    # Add allowable release years from database to front-end
     release_years = mongo.db.release_years.find().sort("release_year", 1)
+
+    # Add allowable gender names from database to front-end
     genres = mongo.db.genres.find().sort("genre", 1)
 
     # Return information to front-end of website
@@ -372,21 +437,38 @@ def edit_song():
     # Set page title
     title = 'Citypop Central | Edit Song'
 
+    # Get song id from address bar
     song_id = request.args.get('song_id')
 
+    # Get the song from the database
     song = mongo.db.songs.find_one({"_id": ObjectId(song_id)})
 
+    # Song uploaded by this user before
     uploaded_by = song["uploaded_by"]
 
+    # If user is logged in
     if 'user' in session:
+
+        # logged in user is not the same as user who uploaded the song
         if uploaded_by != session["user"]:
+
+            # Flash message not allowed to update song
             flash("You are not allowed to update this song")
+
+            # Redirect to the index page
             return redirect(url_for("index"))
     else:
+
+        # Flash message not allowed to update song for non-logged in persons
         flash("You are not allowed to update this song")
+
+        # Redirect to the index page
         return redirect(url_for("index"))
 
+    # Add allowable genre names from database to front-end
     genres = mongo.db.genres.find().sort("genre", 1)
+
+    # Add allowable release names from database to front-end
     release_years = mongo.db.release_years.find().sort("release_year", 1)
 
     # Return information to front-end of website

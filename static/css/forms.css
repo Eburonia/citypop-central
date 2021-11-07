@@ -58,7 +58,7 @@ Date: November 2021
 }
 
 
-.form-info {
+.form-info, .form-info a {
     padding-left: 4px;
     color: var(--pink);
 }
