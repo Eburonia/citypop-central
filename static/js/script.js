@@ -51,6 +51,20 @@ $(document).on('click', '.delete-song-check', function(){
 
 
 
+$('#confirm-delete-song').hide();
+
+$(document).on('click', '#delete-song-link', function() {
+
+    if($('#confirm-delete-song').is(":hidden")) {
+        $('#confirm-delete-song').show();
+    }
+    else {
+        $('#confirm-delete-song').hide();
+    }
+    
+});
+
+
 
 
 

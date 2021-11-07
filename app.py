@@ -385,7 +385,7 @@ def delete_song(song_id):
     mongo.db.songs.remove({"_id": ObjectId(song_id)})
 
     flash('Song has been deleted from the database')
-    return redirect(url_for("results"))
+    return redirect(url_for("index"))
 
 
 @app.route("/userinfo")

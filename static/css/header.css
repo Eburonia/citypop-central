@@ -51,9 +51,8 @@ header {
     float: left;
     padding: 10px 20px;
     box-sizing: border-box;
-    width: 320px;
+    width: 400px;
     cursor: pointer;
-    border-radius: 20px;
     margin: 10px 0 30px 10px;
 }
 
@@ -61,7 +60,7 @@ header {
 #logo-top-span {
     float: left;
     color: var(--yellow);
-    font-size: 36px;
+    font-size: 45px;
     display: block;
     font-weight: 600;
     box-sizing: border-box;
@@ -79,7 +78,7 @@ header {
 #logo-bottom-span {
     float: left;
     color:var(--white);
-    font-size: 13px;
+    font-size: 18px;
     letter-spacing: 3.5px;
     display: block;
     font-weight: 600;
@@ -89,7 +88,7 @@ header {
 #logo-japanese-span {
     float: left;
     color: var(--pink);
-    font-size: 16px;
+    font-size: 21px;
     display: block;
     font-weight: 800;
     letter-spacing: 5px;
@@ -105,23 +104,24 @@ header {
     0% {
         text-shadow: none;
     }
-    
+
     100% {
         text-shadow: 
-        0 0 5px rgb(196, 0, 52),
-        0 0 10px rgb(253, 0, 68),
-        0 0 15px rgb(255, 158, 184),
-        0 0 20px rgb(255, 193, 193);
+        0 0 5px rgb(235, 4, 65),
+        0 0 10px rgb(247, 0, 66),
+        0 0 15px rgb(255, 63, 114),
+        0 0 20px rgb(255, 109, 109);
+        color: rgb(255, 226, 226);
     }
 
   }
 
-
+  
 #navigation-div  {
     float: right;
     padding: 10px;
     box-sizing: border-box;
-    width: calc(100% - 510px);
+    width: calc(100% - 420px);
 }
 
 

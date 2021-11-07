@@ -131,6 +131,22 @@ select option{
 }
 
 
+#delete-song-link {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+#delete-song-link:hover {
+    text-decoration: underline;
+}
+
+
+#confirm-delete-song {
+    color: red;
+}
+
+
 /* media queries for forms.html only */
 /* for tablets and phones */
 
