@@ -26,62 +26,79 @@ mongo = PyMongo(app)
 @app.route("/", methods=["GET", "POST"])
 def index():
 
+    # Set page title
     title = 'Citypop Central | Home'
 
-    songs_cover = mongo.db.songs.find().sort("_id", -1).limit(8)
+    # Load the 8 latest songs from the database
+    random_songs = mongo.db.songs.find().sort("_id", -1).limit(8)
 
+    # Return information to front-end of website
     return render_template("results.html", title=title,
-                           songs_cover=songs_cover)
+                           random_songs=random_songs)
 
 
 @app.route('/about')
 def about():
 
+    # Set page title
     title = 'Citypop Central | About'
 
+    # Return information to front-end of website
     return render_template("about.html", title=title)
 
 
 @app.route("/results", methods=["GET", "POST"])
 def results():
 
+    # Set page title
     title = 'Citypop Central | Results'
 
+    # Get search keyword(s) from textfield
     query = request.form.get("search-query")
 
-    # query variables
-    # keyword to search for
+    # Get search keyword(s) from address bar
     search = request.args.get('search')
 
-    # page number of results
+    # Get page number from address bar
     page = request.args.get('page')
 
+    # Determine whether search keyword is coming from textfield or address bar
     if search is None:
         query = request.form.get("search-query")
     else:
         query = request.args.get('search')
 
+    # If search keyword is given
     if query:
 
+        # Search in database
         songs_query = mongo.db.songs.find({"$text": {"$search": query}})
+
+        # Sort result(s) by Artist Name
         songs_query.sort('artist_name')
+
+        # Count the number of the records found in database
         number_of_results = songs_query.count()
 
+        # Convert to list
         songs_query = list(songs_query)
 
+        # Declare search records data
         output = []
 
+        # Start from page 0
         if page is None:
             page = 0
 
-        # Pagination
+    # Pagination from here
 
-        # Limit the amount of results per page
-        limit = 4
+        # Set the number of records per page
+        limit = 5
 
         # Determine number of pages needed for results
         number_of_pages = math.ceil(number_of_results / limit)
 
+        # Append the limited search records to a specific page, e.g. first 10 results on page 0, next 10 results on page 1
         if((int(page) + 1) * limit < number_of_results):
             for i in range(int(page) * limit, (int(page) * limit) + limit):
                 output.append(songs_query[i])
@@ -89,47 +106,56 @@ def results():
             for i in range(int(page) * limit, number_of_results):
                 output.append(songs_query[i])
 
-        # Determine previous page link for pagination
-
+        # Set the pagination anchor link for the previous page
         if int(page) >= 1:
 
+            # set link for address bar
             previous_page = f"/results?search={query}\
                 &page={str(int(page) - 1)}"
+
+            # Set link text front-end
             previous_page_text = 'Prev page'
 
         else:
 
+            # Set link for address bar and link front-end not needed for page 0
             previous_page = ''
             previous_page_text = ''
 
-        # Determine next page link for pagination
+        # Set the pagination anchor link for the next page
         next_page_text = ''
 
         if int(page) < number_of_pages - 1:
 
+            # set link for address bar
             next_page = f"/results?search={query}&page={str(int(page) + 1)}"
+
+            # Set link text front-end
             next_page_text = 'Next page'
 
         else:
 
+            # Set link for address bar and link front-end not needed for last page
             next_page_text = ''
             next_page = ''
 
-        # Seperation pipe
+        # Set separation pipe front-end, only when there is a previous and next page
         if previous_page_text and next_page_text:
             separator = '|'
         else:
             separator = ''
 
+        # Set the start record number, depending on which page you are
         start_result = (int(page) * limit) + 1
 
+        # Set the end record number, depending on which page you are
         if((int(page) + 1) * limit < number_of_results):
             end_result = start_result + (limit - 1)
         else:
             end_result = number_of_results
 
+        # Set the shown search records (depending on page), to be shown in front-end
         if number_of_results != 0:
-
             current_results = f"Result : {str(start_result)}\
                  to {str(end_result)}"
         else:
@@ -140,9 +166,11 @@ def results():
         for i in range(start_result, end_result + 1):
             result_numbers.append(i)
 
+        # Set the number of records found in database, to be shown in front-end
         number_of_results = 'Number of results : ' + str(number_of_results)
 
-        return render_template("results.html", songs=output, search=search,
+        # Return information to front-end of website
+        return render_template("results.html", songs=output,
                                previous_page=previous_page,
                                previous_page_text=previous_page_text,
                                next_page=next_page,
@@ -152,12 +180,14 @@ def results():
                                current_results=current_results,
                                result_numbers=result_numbers, title=title)
 
-    return render_template("results.html", title=title)
+    # Return information to front-end of website
+    return redirect(url_for("index"))
 
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
 
+    # Set page title
     title = 'Citypop Central | Register'
 
     if request.method == "POST":
@@ -194,6 +224,7 @@ def register():
     countries = mongo.db.countries.find().sort("country_name", 1)
     genders = mongo.db.genders.find().sort("gender", 1)
 
+    # Return information to front-end of website
     return render_template("register.html", countries=countries,
                            genders=genders, title=title)
 
@@ -201,6 +232,7 @@ def register():
 @app.route("/login", methods=["GET", "POST"])
 def login():
 
+    # Set page title
     title = 'Citypop Central | Login'
 
     if request.method == "POST":
@@ -225,12 +257,14 @@ def login():
             flash("Incorrect username and/or password")
             return redirect(url_for("login"))
 
+    # Return information to front-end of website
     return render_template("login.html", title=title)
 
 
 @app.route("/profile", methods=["GET", "POST"])
 def profile():
 
+    # Set page title
     title = 'Citypop Central | Profile'
 
     username = request.form.get("username")
@@ -249,6 +283,7 @@ def profile():
         my_songs = mongo.db.songs.find({"uploaded_by": session["user"]}).sort(
                    "artist_name", 1)
 
+        # Return information to front-end of website
         return render_template(
             "profile.html", username=username, settings=settings,
             countries=countries, genders=genders, title=title,
@@ -296,6 +331,7 @@ def logout():
 @app.route("/add_song", methods=["GET", "POST"])
 def add_song():
 
+    # Set page title
     title = 'Citypop Central | Add Song'
 
     # Add a song to the database
@@ -325,6 +361,7 @@ def add_song():
     release_years = mongo.db.release_years.find().sort("release_year", 1)
     genres = mongo.db.genres.find().sort("genre", 1)
 
+    # Return information to front-end of website
     return render_template("add_song.html", genres=genres,
                            release_years=release_years, title=title)
 
@@ -332,6 +369,7 @@ def add_song():
 @app.route("/edit_song", methods=["GET", "POST"])
 def edit_song():
 
+    # Set page title
     title = 'Citypop Central | Edit Song'
 
     song_id = request.args.get('song_id')
@@ -351,6 +389,7 @@ def edit_song():
     genres = mongo.db.genres.find().sort("genre", 1)
     release_years = mongo.db.release_years.find().sort("release_year", 1)
 
+    # Return information to front-end of website
     return render_template("edit_song.html", song=song, genres=genres,
                            release_years=release_years, title=title)
 
@@ -391,6 +430,7 @@ def delete_song(song_id):
 @app.route("/userinfo")
 def userinfo():
 
+    # Set page title
     title = 'Citypop Central | User Information'
 
     user = request.args.get("user")
@@ -399,9 +439,12 @@ def userinfo():
 
     if existing_user is None:
         user = 'user does not exist'
+
+        # Return information to front-end of website
         return render_template("userinfo.html",
                                user=user, existing_user=existing_user)
 
+    # Return information to front-end of website
     return render_template("userinfo.html", user=user,
                            existing_user=existing_user, title=title)
 
@@ -409,18 +452,21 @@ def userinfo():
 @app.route("/youtube")
 def youtube():
 
+    # Set page title
     title = 'Citypop Central | Youtube'
 
     link = request.args.get("link")
 
     link = f"https://www.youtube.com/embed/{link}"
 
+    # Return information to front-end of website
     return render_template("youtube.html", title=title, link=link)
 
 
 @app.route("/my_songs")
 def mysongs():
 
+    # Set page title
     title = 'Citypop Central | My Songs'
 
     if 'user' in session:
@@ -432,14 +478,17 @@ def mysongs():
 
         return redirect(url_for("index"))
 
+    # Return information to front-end of website
     return render_template("my_songs.html", my_songs=my_songs, title=title)
 
 
 @app.errorhandler(404)
 def page_not_found(e):
 
+    # Set page title
     title = 'Citypop Central | 404 error'
 
+    # Return information to front-end of website
     return render_template('404.html', title=title), 404
 
 

@@ -29,16 +29,17 @@ Date: November 2021
         <h3 id="random-songs-h3">Latest Songs</h3>
     {% endif %}
 
+
     <!-- show latest uploaded songs -->
     <div id="random-songs-div">
 
-        {% for song_cover in songs_cover %}
+        {% for random_song in random_songs %}
 
             <div class="random-song">
 
-                <a href="/youtube?link={{ song_cover.youtube }}" target="_blank" title="{{song_cover.artist_name}} - {{song_cover.song_name}}" aria-label="Click here to listen to this random song">
+                <a href="/youtube?link={{ random_song.youtube }}" target="_blank" title="{{random_song.artist_name}} - {{random_song.song_name}}" aria-label="Click here to listen to this random song">
 
-                    <img src="{{song_cover.album_image}}" alt="Album cover: {{song_cover.artist_name}} - {{song_cover.album_name}}">
+                    <img src="{{random_song.album_image}}" alt="Album cover: {{random_song.artist_name}} - {{random_song.album_name}}">
 
                 </a>
 
