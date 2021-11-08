@@ -10,16 +10,21 @@ Date: November 2021
 
 <div class="form-div">
 
+    <!-- heading -->
     <h1 class="form-heading">Profile settings</h1>
 
+    <!-- profile form -->
     <form action="{{ url_for('update_profile', username=session.user) }}" method="POST">
 
+        <!-- username -->
         <span id="form-username">Username : {{ username }}</span><br><br>
     
+        <!-- email -->
         <label class="form-label" for="email">Email :</label>
         <p class="form-info">Use a valid email address.</p>
         <input type="email" id="email" name="email" value="{{ settings.email }}" class="form-textbox" aria-label="Please enter your e-mail address, this a required field" required>
 
+        <!-- country -->
         <label for="country" class="form-label">Country :</label>
         <p class="form-info">Select the country you are currently living in.</p>
         <select id="country" name="country" class="form-textbox" aria-label="Please select the country you are currently living in">
@@ -36,10 +41,12 @@ Date: November 2021
 
         </select><br>
 
+        <!-- gender -->
         <label for="gender" class="form-label">Gender :</label>
         <p class="form-info">Your gender cannot be updated.</p>
         <input type="textbox" id="gender" name="gender" value="{{ settings.gender }}" class="form-textbox" aria-label="This textfield indicates your gender and cannot be adjusted" disabled>
 
+        <!-- share your email with other users -->
         <label for="share-email" class="form-label">Share your email address with other users :</label>
         <p class="form-info">By selecting yes, other users can see you email address on your userinfo page.</p>
         <select id="share-email" name="share-email" class="form-textbox" aria-label="Please select if you want to share your email address to other users">
@@ -52,19 +59,21 @@ Date: November 2021
                 <option value="no" selected>no</option>
             {% endif %}
 
-
         </select>
 
+        <!-- submit button -->
         <input type="submit" value="update" class="form-button" title="Click here to update your profile" aria-label="Click this button to update your profile, make sure you have added all required fields above"><br><br>
 
     </form>
 
+    <!-- heading -->
+    <h3 class="form-heading">Delete profile</h3>
 
-        <h3 class="form-heading">Delete profile</h3>
+    <!-- delete profile link -->
+    <span id="delete-profile-button" title="Click on this link to delete your profile" arian-label="Click on this link to delete your profile">Click here to delete your profile</span><br><br>
 
-        <span id="delete-profile-button" title="Click on this link to delete your profile" arian-label="Click on this link to delete your profile">Click here to delete your profile</span><br><br>
-
-        <a id="confirm-delete-profile-button" href="/delete-profile" title="Click on the link to confirm to delete your profile" arian-label="Click on the link to confirm to delete your profile">Confirm to delete your profile</a><br><br>
+    <!-- confirm delete profile link -->
+    <a id="confirm-delete-profile-button" href="/delete-profile" title="Click on the link to confirm to delete your profile" arian-label="Click on the link to confirm to delete your profile">Confirm to delete your profile</a><br><br>
 
 </div>
 

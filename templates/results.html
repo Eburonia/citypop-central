@@ -78,19 +78,19 @@ Date: November 2021
 
                 {% if session.user == song.uploaded_by %}
             
-                <a href="/edit_song?song_id={{ song._id }}" title="Edit song"><i class="admin-icon fas fa-edit"></i></a>
+                    <a href="/edit_song?song_id={{ song._id }}" title="Edit song"><i class="admin-icon fas fa-edit"></i></a>
 
-                <i class="admin-icon delete-song-check fas fa-trash-alt" title="Delete song"></i>
-                <a href="{{ url_for('delete_song', song_id=song._id) }}"><i class="delete-link fas fa-trash-alt" title="Confirm to delete song"></i></a>
+                    <i class="admin-icon delete-song-check fas fa-trash-alt" title="Delete song"></i>
+                    <a href="{{ url_for('delete_song', song_id=song._id) }}"><i class="delete-link fas fa-trash-alt" title="Confirm to delete song"></i></a>
 
-
-            {% endif %}
+                {% endif %}
 
             </div>
             
             <div class="album-image">
                 
                 <div class="image-frame">
+
                     <a href="{{ song.album_image }}" target="_blank">
 
                         <img src="{{ song.album_image }}" alt="Album cover: {{song.artist_name}} - {{song.album_name}}" title="Click here to see the album cover">
@@ -157,7 +157,6 @@ Date: November 2021
                         {{ song.song_length }}
                     </div>
 
-
                     {% if session.user %}
 
                         <div class="song-info-desc">
@@ -177,7 +176,6 @@ Date: November 2021
                     <div class="song-info-value">
                         {{ song.upload_date }}
                     </div>
-
 
                     {% if song.edit_date %}
 

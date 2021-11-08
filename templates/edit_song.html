@@ -27,11 +27,9 @@ Date: November 2021
         <p class="form-info">All first letters to be uppercase (e.g. Junko Yagami).</p>
         <input type="text" id="artist_name" name="artist_name" pattern="[A-Z][a-z'?!]*(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?" value="{{song.artist_name}}" class="form-textbox" aria-label="Please enter the artist's name, this a required field" required><br>
 
-
         <label for="song_name" class="form-label">Song Name :</label>
         <p class="form-info">All first letters to be uppercase (e.g. Fly By Day).</p>
         <input type="text" id="song_name" name="song_name" pattern="[A-Z][a-z'?!]*(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?" value="{{ song.song_name }}" class="form-textbox" aria-label="Please enter the song name, this a required field" required><br>
-
 
         <label for="genre" class="form-label">Genre :</label>
         <p class="form-info">Select a genre.</p>
@@ -71,21 +69,17 @@ Date: November 2021
         <p class="form-info">All first letters to be uppercase (e.g. Friday Magic).</p>
         <input type="text" id="album_name" name="album_name" pattern="[A-Z][a-z'?!]*(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?" value="{{ song.album_name }}" class="form-textbox" aria-label="Please enter the album name, this a required field" required>
 
-
         <label for="album_image_edit" class="form-label">Album Image :</label>
         <p class="form-info">Add the album cover image hyperlink (only upload covers from<a href="https://www.discogs.com/" target="_blank">discogs.com</a>).</p>
         <textarea name="album_image" id="album_image" class="form-textbox" aria-label="Please enter the album's image from discogs.com, this a required field" required cols="30" rows="5">{{ song.album_image }}</textarea>
-
 
         <label for="song_length" class="form-label">Song Length :</label>
         <p class="form-info">Select the song length (e.g. 3:46, minimum song length: 1:00 maximum 9:59).</p>
         <input type="text" id="song_length" name="song_length" pattern="[1-9]+:[0-5][0-9]" value="{{ song.song_length }}" class="form-textbox" aria-label="Please enter the song's length, this a required field" required>
 
-
         <label for="youtube" class="form-label">YouTube Link :</label>
         <p class="form-info">Add the Youtube link ID (e.g.: https://www.youtube.com/watch?v=pE2D3LWADFg)</p>
         <input type="text" id="youtube" name="youtube" value="{{ song.youtube }}" class="form-textbox" aria-label="Please enter the Youtube link ID, this a required field" required>
-
 
         <input type="submit" value="edit song" class="form-button" title="Edit this song" aria-label="Click this button to add a song to our database, make sure you have added all required fields above">
 
@@ -97,13 +91,8 @@ Date: November 2021
 
         <a id="confirm-delete-song" href="{{ url_for('delete_song', song_id=song._id) }}" title="Click on the link to confirm to delete this song" arian-label="Click on the link to confirm to delete this song">Confirm to delete this song</a><br><br>
 
-
     </form>
 
-
 </div>
-
-
-
 
 {% endblock %}

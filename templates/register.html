@@ -10,34 +10,38 @@ Date: November 2021
 
 <div class="form-div">
 
+    <!-- heading -->
     <h1 class="form-heading">Create a Citypop Central account</h1>
 
+    
     <p class="form-p">Register to Citypop Central in case you want to add your own favorite Citypop songs to our database.</p><br>
 
+    <!-- register form -->
     <form method="POST" action="{{ url_for('register') }}">
 
+        <!-- username -->
         <label for="username" class="form-label">Username :</label>
         <p class="form-info">Your username must contain minimum 3 and maximum 15 characters all in lowercase.</p>
         <input type="text" id="username" name="username" pattern="[a-z0-9_]{3,15}" class="form-textbox" aria-label="Please enter a username, this a required field" required>
         
-
+        <!-- password -->
         <label for="password" class="form-label">Password :</label>
         <p class="form-info">Your password must contain at least one number, one uppercase and lowercase letter, and at least 8 or more characters.</p>
         <p class="form-message">Passwords don't match</p>
         <input type="password" id="password" name="password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" class="form-textbox" aria-label="Please enter a password, this a required field" required>
 
-
+        <!-- confirm password -->
         <label for="password-confirm" class="form-label">Confirm password :</label>
         <p class="form-info">Repeat your password one more time.</p>
         <p class="form-message">Passwords don't match</p>
         <input type="password" id="password-confirm" name="password-confirm" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="form-textbox" aria-label="Please repeat the password one more time, this a required field" required>
         
-
+        <!-- email -->
         <label for="email" class="form-label">Email :</label>
         <p class="form-info">Use a valid email address.</p>
         <input type="email" id="email" name="email" class="form-textbox" aria-label="Please enter a valid email address, this a required field" required>
 
-
+        <!-- country -->
         <label for="country" class="form-label">Country :</label>
         <p class="form-info">Select the country you are currently living in.</p>
         <select id="country" name="country" class="form-textbox" aria-label="Please enter the country you are currently living in, this a required field">
@@ -50,7 +54,7 @@ Date: November 2021
 
         </select>
 
-
+        <!-- gender -->
         <label for="gender" class="form-label">Gender :</label>
         <p class="form-info">Select your gender.</p>
         <select id="gender" name="gender" class="form-textbox" aria-label="Please enter your gender, this a required field">
@@ -63,7 +67,7 @@ Date: November 2021
 
         </select><br>
 
-
+        <!-- share your email with other users -->
         <label for="share-email" class="form-label">Share your email address with other users :</label>
         <p class="form-info">By selecting yes, other users can see you email address on your userinfo page.</p>
         <select id="share-email" name="share-email" class="form-textbox" aria-label="Please select if you want to share your email address to other users">
@@ -71,14 +75,14 @@ Date: November 2021
                 <option value="no" selected>no</option>
                 <option value="yes">yes</option>
                 
-
         </select>
 
-
+        <!-- submit button -->
         <input type="submit" value="register" class="form-button" aria-label="Click this button to create your citypop central user account, make sure you have added all required fields above" title="Click this button to create your citypop central user account"><br><br>
 
     </form>
 
+    <!-- link to login page -->
     <p class="form-p">Already have a Citypop Central Account? Login <a class="form-link" href="{{ url_for('login') }}" aria-label="Click this link in case you already have a Citypop Central user account" title="Click this link in case you already have a Citypop Central user account">Here</a></p>
 
 </div>  

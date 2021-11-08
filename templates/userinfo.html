@@ -9,42 +9,43 @@ Date: November 2021
 {% block content %}
 
 
-    <div class="form-div">
+<div class="form-div">
 
-        <h1 class="form-heading">User information</h1>
+    <!-- heading -->
+    <h1 class="form-heading">User information</h1>
 
-        {% if existing_user.username %}
+    {% if existing_user.username %}
 
-        <div id="userinfo">
+    <!-- userinfo -->
+    <div id="userinfo">
 
-            <div class="userinfo-descr">Username :</div>
-            <div class="userinfo-value">{{ existing_user.username }}</div>
+        <div class="userinfo-descr">Username :</div>
+        <div class="userinfo-value">{{ existing_user.username }}</div>
 
-            <div class="userinfo-descr">Gender :</div>
-            <div class="userinfo-value">{{ existing_user.gender }} </div>
+        <div class="userinfo-descr">Gender :</div>
+        <div class="userinfo-value">{{ existing_user.gender }} </div>
 
-            <div class="userinfo-descr">Nationality :</div>
-            <div class="userinfo-value">{{ existing_user.country_name | capitalize}} </div>
+        <div class="userinfo-descr">Nationality :</div>
+        <div class="userinfo-value">{{ existing_user.country_name | capitalize}} </div>
 
-            {% if session.user %}
+        {% if session.user %}
 
-                {% if existing_user.share_email == 'yes' %}
+            {% if existing_user.share_email == 'yes' %}
 
-                    <div class="userinfo-descr">Email :</div>
-                    <div class="userinfo-value">{{ existing_user.email }} </div>
-
-                {% endif %}
+                <div class="userinfo-descr">Email :</div>
+                <div class="userinfo-value">{{ existing_user.email }} </div>
 
             {% endif %}
 
-        </div>
-
-        {% else %}
-
-            User does not exist!
-
         {% endif %}
 
+    </div>
+
+    {% else %}
+
+        User does not exist!
+
+    {% endif %}
 
     </div>
 
