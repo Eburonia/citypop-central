@@ -449,7 +449,7 @@ def edit_song():
     # If user is logged in
     if 'user' in session:
 
-        # logged in user is not the same as user who uploaded the song
+        # Logged in user is not the same as user who uploaded the song
         if uploaded_by != session["user"]:
 
             # Flash message not allowed to update song
@@ -481,6 +481,7 @@ def update_song(song_id):
 
     if request.method == "POST":
 
+        # Import data from form
         submit = {
             "$set": {
                 "artist_name": request.form.get("artist_name"),
@@ -494,18 +495,26 @@ def update_song(song_id):
                     }
                 }
 
+        # Update song in database
         mongo.db.songs.update({"_id": ObjectId(song_id)}, submit)
 
+        #Flash message song successfully updated
         flash("Song successfully updated")
 
+    # Return to index page
     return redirect(url_for("index"))
 
 
 @app.route("/delete_song/<song_id>")
 def delete_song(song_id):
+
+    # Delete song from database
     mongo.db.songs.remove({"_id": ObjectId(song_id)})
 
+    # Flash message song deleted from database
     flash('Song has been deleted from the database')
+
+    #Return to index page
     return redirect(url_for("index"))
 
 
@@ -515,10 +524,13 @@ def userinfo():
     # Set page title
     title = 'Citypop Central | User Information'
 
+    # Get user name from address bar
     user = request.args.get("user")
 
+    # Find user name from address bar in database
     existing_user = mongo.db.users.find_one({"username": user})
 
+    # If user does not exist
     if existing_user is None:
         user = 'user does not exist'
 
@@ -526,7 +538,7 @@ def userinfo():
         return render_template("userinfo.html",
                                user=user, existing_user=existing_user)
 
-    # Return information to front-end of website
+    # Return user information to front-end of website
     return render_template("userinfo.html", user=user,
                            existing_user=existing_user, title=title)
 
@@ -537,8 +549,10 @@ def youtube():
     # Set page title
     title = 'Citypop Central | Youtube'
 
+    # Get Youtube link ID from address bar
     link = request.args.get("link")
 
+    # Create YouTube link to open video
     link = f"https://www.youtube.com/embed/{link}"
 
     # Return information to front-end of website
@@ -551,13 +565,16 @@ def mysongs():
     # Set page title
     title = 'Citypop Central | My Songs'
 
+    # If user is logged in
     if 'user' in session:
 
+        # Import my uploaded songs from database
         my_songs = mongo.db.songs.find({"uploaded_by": session["user"]}).sort(
             "artist_name", 1)
 
     else:
 
+        #If no user is logged in return to index page
         return redirect(url_for("index"))
 
     # Return information to front-end of website
