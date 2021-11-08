@@ -17,9 +17,11 @@ Date: November 2021
         <span id="form-username">Username : {{ username }}</span><br><br>
     
         <label class="form-label" for="email">Email :</label>
+        <p class="form-info">Use a valid email address.</p>
         <input type="email" id="email" name="email" value="{{ settings.email }}" class="form-textbox" aria-label="Please enter your e-mail address, this a required field" required>
 
         <label for="country" class="form-label">Country :</label>
+        <p class="form-info">Select the country you are currently living in.</p>
         <select id="country" name="country" class="form-textbox" aria-label="Please select the country you are currently living in">
 
             {% for country in countries %}
@@ -35,9 +37,11 @@ Date: November 2021
         </select><br>
 
         <label for="gender" class="form-label">Gender :</label>
+        <p class="form-info">Your gender cannot be updated.</p>
         <input type="textbox" id="gender" name="gender" value="{{ settings.gender }}" class="form-textbox" aria-label="This textfield indicates your gender and cannot be adjusted" disabled>
 
         <label for="share-email" class="form-label">Share your email address with other users :</label>
+        <p class="form-info">By selecting yes, other users can see you email address on your userinfo page.</p>
         <select id="share-email" name="share-email" class="form-textbox" aria-label="Please select if you want to share your email address to other users">
 
             {% if settings.share_email == 'yes' %}
