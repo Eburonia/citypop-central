@@ -39,7 +39,15 @@ Date: November 2021
 
                 <a href="/youtube?link={{ random_song.youtube }}" target="_blank" title="{{random_song.artist_name}} - {{random_song.song_name}}" aria-label="Click here to listen to this random song">
 
-                    <img src="{{random_song.album_image}}" alt="Album cover: {{random_song.artist_name}} - {{random_song.album_name}}">
+                    {% if random_song.album_image %}
+
+                        <img src="{{random_song.album_image}}" alt="Album cover: {{random_song.artist_name}} - {{random_song.album_name}}">
+
+                    {% else %}
+
+                        <img src="static/img/no-cover.jpg" alt="Album cover: No cover available">
+
+                    {% endif %}
 
                 </a>
 
