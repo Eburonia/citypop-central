@@ -1,5 +1,5 @@
 /*
-File: my_songs.css
+File: my-songs.css
 Author: Maurice Vossen
 Date: November 2021
 */
@@ -48,7 +48,7 @@ Date: November 2021
 }
 
 
-/* media queries for my_songs.html only */
+/* media queries for my-songs.html only */
 /* for tablets and phones */
 
 @media only screen and (max-width: 600px) { 
