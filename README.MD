@@ -556,13 +556,58 @@ No erros found.
 <!-- Known Bugs -->
 <a id="bugs"></a>
 ## Known Bugs
-
+No known bugs found so far.
 
 
 <!-- Deployment -->
 <a id="deployment"></a>
 ## Deployment
 
+### Publishing
+'Herokuapp' was used for publishing the website. The procedure was as follows:
+1. Login to the [GitHub](https://www.github.com/) website.
+2. On the left side of your screen, you can find a summary of all repositories. Select [Eburonia/i-remember](https://github.com/Eburonia/i-remember)
+3. You can find a ribbon on the top of your screen. In the ribbon, click on 'Settings'.
+4. In the selection menu on the left side of your screen, click on 'Pages'.
+5. Beneath 'Source' you will find a small pull-down menu. Click on it and select 'main', then press the 'Save' button.
+6. You will get automatically redirected to the 'GitHub Pages' page. There you will see a blue text box telling the site will be published.
+7. Refresh the page after a minute and when this text box turns green, the website has been published.
+8. Click the link in the green text box to go to your published website.
+
+<img src="assets/images-readme/publishing.png" alt="github pages publishing">
+
+
+### Forking
+If you want to make a copy of the repository you can Fork it without changing the original repository by following the next procedure:
+1. Login to the [GitHub](https://www.github.com/) website.
+2. On the left side of your screen, you can find a summary of all repositories. Select [Eburonia/citypop-central](https://github.com/Eburonia/citypop-central)
+3. On the right side of your screen, next to 'Unwatch' pull-down menu, and the 'Star' button, you can find the 'Fork' button.
+4. By clicking this button, it will create a copy of the website in your repository.
+
+<img src="static/readme-images/forking.png" alt="forking webpage">
+
+
+### Cloning
+You can clone the repository by following the next procedure:
+1. Login to the [GitHub](https://www.github.com/) website.
+2. On the left side of your screen, you can find a summary of all repositories. Select [Eburonia/citypop-central](https://github.com/Eburonia/citypop-central)
+3. Click on the 'Code' button next to the Green 'GitPod' button.
+4. Click on 'HTTPS' and copy the hyperlink below it.
+5. Go to the repository where you want to make a clone of the website. Or create a new repository.
+6. When in this repository, select the folder or create a folder where you want to clone the directory.
+7. Go to the terminal and type: 'Git Clone (copied link)' and press enter. The directory has been cloned now.
+
+<img src="static/readme-images/cloning.png" alt="cloning webpage">
+
+
+### Downloading
+You can download the repository by following the next procedure:
+1. Login to the [GitHub](https://www.github.com/) website.
+2. On the left side of your screen, you can find a summary of all repositories. Select [Eburonia/citypop-central](https://github.com/Eburonia/citypop-central)
+3. Click on the 'Code' button next to the Green 'GitPod' button and then click on 'Download ZIP'.
+4. A .zip file of the repository content will be downloaded. 
+
+<img src="static/readme-images/downloading.png" alt="downloading webpage">
 
 <!-- Credits -->
 <a id="credits"></a>
