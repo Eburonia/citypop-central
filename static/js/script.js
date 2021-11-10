@@ -173,3 +173,18 @@ $('#album_image').blur(function() {
     $('#album-cover-img').attr("src", "https://img.discogs.com/Z_SZTPoyahu-UB2y_IsuaIWsURE=/fit-in/600x593/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-6870389-1444305354-8612.jpeg.jpg");
 
 });
+
+
+// Show album image when leaving album image field
+$('#album_image').blur(function() {
+
+    x = $('#album_image').val();
+
+    if(x == '') {
+        $('#album_image_added > img').attr("src","static/img/no-cover.jpg");
+    }
+    else {
+        $('#album_image_added > img').attr("src", x);
+    }
+
+});

@@ -53,6 +53,24 @@ Date: November 2021
             <p class="form-info">Add the album cover image hyperlink (only upload covers from<a href="https://www.discogs.com/" target="_blank">discogs.com</a>).</p>
             <textarea name="album_image" id="album_image" class="form-textbox" placeholder="https://img.discogs.com/..." aria-label="Please enter the album's image from discogs.com, this a required field" required cols="30" rows="5"></textarea>
 
+
+            <style>
+
+                #album_image_added > img {
+                    width: 50%;
+                    margin-bottom: 20px;
+                }
+
+            </style>
+
+
+            <div id="album_image_added">
+             
+                <img src="" alt="">
+                
+            </div>
+
+
             <label for="song_length" class="form-label">Song Length :</label>
             <p class="form-info">Select the song length (e.g. 3:46, minimum song length: 1:00 maximum 9:59).</p>
             <input type="text" id="song_length" name="song_length" pattern="[1-9]+:[0-5][0-9]" class="form-textbox" aria-label="Please enter the song's length, this a required field" required>
