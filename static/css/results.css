@@ -318,10 +318,21 @@ Date: November 2021
     .search-div {
         border: 0;
         border-radius: 0;
-        padding: 0;
+        padding: 0 !important;
         width: 100% !important;
-        margin: 0px auto;
-        background-color: var(--black);
+        margin: 0px auto !important;
+        /*background-color: var(--black);*/
+    }
+
+
+    #transition-div {
+        display: none;
+    }
+
+
+    .search-form {
+        margin: 0 25px;
+        padding: 0;
     }
 
 
@@ -387,7 +398,6 @@ Date: November 2021
 
     .album-image {
         width: 100%;
-        max-width: 400px;
         float: left;
         margin-bottom: 30px;
         overflow: hidden;

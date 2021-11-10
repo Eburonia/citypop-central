@@ -19,6 +19,7 @@ Date: November 2021
     margin: 0 20px;
     box-sizing: border-box;
     overflow: hidden;
+    text-align: center;
 }
 
 
@@ -49,7 +50,7 @@ Date: November 2021
 
     .random-song {
         float: none;
-        width: 80%;
+        width: 100%;
         margin-bottom: 20px;
     }
 

@@ -286,8 +286,10 @@ header {
 
 @media only screen and (max-width: 600px) {
  
+
     #navigation-div {
         padding: 20px 10px 0 0;
+
     }
 
 
@@ -298,17 +300,17 @@ header {
 
 
     #logo-top-span {
-        font-size: 32px;
+        font-size: 30px;
     }
 
 
     #logo-bottom-span {
-        font-size: 11px;
+        font-size: 10px;
     }
 
 
     #logo-japanese-span {
-        font-size: 14px;
+        font-size: 12px;
     }
 
     .flash-messages {
