@@ -268,7 +268,7 @@ The MongoDB Data Scheme Citypop Central
 - [Git](https://git-scm.com/) - Git was used for version control and code change tracking of the website project. The terminal in Gitpod was used to commit and to push the project to the Github repository.
 - [Github](https://github.com/) - The project code has been stored on the Github website.
 - [GitPod](https://www.gitpod.io/) - GitPod was used for creating the code, testing of the website, commiting, and pushing the code to the github repository.
-- [Heroku](https://www.heroku.com/) - The project has been imported from the Github website to the Heroku website.
+- [Heroku](https://www.heroku.com/) - The project has been imported from the Github website to the Heroku website which allows Python related projects.
 - [Adobe XD](https://www.adobe.com/products/xd.html) - Adobe XD was used to create the website's Wireframes. To see the Wireframes, go to the Design section above to see the results.
 - [Photopea.com](https://www.photopea.com/) - The Photopea website is used for creating the website logo, 'Manual' page images and README images.
 - [Flask](https://en.wikipedia.org/wiki/Flask_(web_framework)) - Flask is a micro web framework written in Python used for interaction between front-end and back-end of the website.
@@ -565,14 +565,25 @@ No known bugs found so far.
 
 ### Publishing
 'Herokuapp' was used for publishing the website. The procedure was as follows:
-1. Login to the [GitHub](https://www.github.com/) website.
-2. On the left side of your screen, you can find a summary of all repositories. Select [Eburonia/i-remember](https://github.com/Eburonia/i-remember)
-3. You can find a ribbon on the top of your screen. In the ribbon, click on 'Settings'.
-4. In the selection menu on the left side of your screen, click on 'Pages'.
-5. Beneath 'Source' you will find a small pull-down menu. Click on it and select 'main', then press the 'Save' button.
-6. You will get automatically redirected to the 'GitHub Pages' page. There you will see a blue text box telling the site will be published.
-7. Refresh the page after a minute and when this text box turns green, the website has been published.
-8. Click the link in the green text box to go to your published website.
+1. Login to the [Heroku](https://www.heroku.com/) website.
+2. Click the 'Create New App' button.
+3. Give your app a new unique name, choose your region and then click the 'Create App' button.
+4. The app dashboard will appear now.
+5. Click the 'GitHub' button in the 'Deployment Method' section.
+6. Add your repository name in the 'Search for a Repository to Connect to' text field, then click the 'Search' button. When your repository appears, click the 'Connect' button.
+7. Click on the 'Settings' tab, then click on the 'Reveal Config Vars' button.
+8. Add the following KEY-VALUES:
+- IP -> 0.0.0.0
+- PORT -> 5000
+- SECRET_KEY -> Copy from env.py file
+- MONGO_URI -> Copy from env.py file
+- MONGO_DBNAME -> Add from your mongoDB database
+9. Make sure there is a 'Procfile' and a 'requirements.txt' file pushed into your GitHub repository.
+10. Click on the 'Deploy' tab.
+11. Click on the 'Enable Automatic Deploys' button.
+12. Click on the 'Deploy Branch' button.
+13. Wait until the website got deployed.
+14. Click the 'View' button to see your deployed website on Heroku.
 
 <img src="assets/images-readme/publishing.png" alt="github pages publishing">
 
