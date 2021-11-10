@@ -624,11 +624,29 @@ You can download the repository by following the next procedure:
 <a id="credits"></a>
 ## Credits
 
-https://www.youtube.com/watch?v=FF3fuYLnApQ
+### Code
+- Most of all HTML, CSS, jQuery, JavaScript, Python, and Jinja code was written by the website creator: Maurice Vossen.
+- Regular Expressions. [link](https://www.html5pattern.com/Passwords)
+- Pagination example code for Flask and MongoDB. [link](https://www.youtube.com/watch?v=Lnt6JqtzM7I)
+- Understanding how aspect-ratio works in CSS for the iframe Youtube Video Screen. [link](https://www.youtube.com/watch?v=FF3fuYLnApQ)
 
-https://www.youtube.com/watch?v=Lnt6JqtzM7I
+### Content
 
-<!-- Credit: https://www.html5pattern.com/Passwords -->
+#### README file
+For consistency reasons, the README file of the website creator's previous project [Japanese Restaurant Shibuya](https://github.com/Eburonia/japanese-restaurant-shibuya) was used as a basis for the README file of this project.
+
+#### About Page
+All content on the 'About' page was written by the website creator.
+
+### Media
+
+#### Images
+- The website logo was created by the website creator.
+- All album images are directly loaded from the [discogs.com](https://www.discogs.com/) website.
+- All images in this README file were created by the website creator.
+
+<img src="assets/images/logo.png" alt="website logo"><br>
+<sub>Logo of the website</sub>
 
 ### Acknowledgements
 - Thanks to my personal mentor Victor Miclovich for answering my questions and giving feedback to this project.
