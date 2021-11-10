@@ -223,9 +223,31 @@ The 'User Information' page gives information about a user to other users and is
 Flash messages will pop up with useful information for the user and can be closed by clicking the cross button.
 
 
+### 404 Page
+The 404 page is a simple-looking page stating the 404 error message and link to re-direct the visitor/user back to the index page.
+
+
+### Responsiveness
+All pages are responsive on all devices. Designed for minimum viewport width of: 320px.
+
+
+### Accessibility
+* All images have been foreseen with an alternative (alt) text in case the image cannot be loaded. This also helps the screen readers.
+* Aria-labels have been introduced where needed to give important information to the screen readers.
+
+
+### Future Features
+* A message function for users to communicate with each other.
+* Implementation of an image database instead of loading album images from the discogs.com website.
+
+
 <!-- Data Scheme -->
 <a id="scheme"></a>
 ## Data Scheme
+
+The MongoDB Data Scheme Citypop Central
+<img src="static/readme-images/data-scheme.jpg" alt="Data Scheme">
+
 
 
 <!-- Technologies Used -->
