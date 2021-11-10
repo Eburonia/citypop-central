@@ -249,10 +249,33 @@ The MongoDB Data Scheme Citypop Central
 <img src="static/readme-images/data-scheme.jpg" alt="Data Scheme">
 
 
-
 <!-- Technologies Used -->
 <a id="technologies"></a>
 ## Technologies Used
+
+### Languages Used
+- [HTML5](https://en.wikipedia.org/wiki/HTML5)
+- [CSS3](https://en.wikipedia.org/wiki/CSS)
+- [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+- [jQuery](https://en.wikipedia.org/wiki/JQuery)
+- [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+- [Jinja](https://en.wikipedia.org/wiki/Jinja_(template_engine))
+
+
+### Frameworks, Libraries and Programs Used
+- [jQuery v3.5.1](https://jquery.com/download/) - jQuery which is a JavaScript Library mainly used for manipulating the HTML DOM tree, is used throughout the website especially on the 'Practice' and 'Editor' page.
+- [Font Awesome](https://www.fontawesome.com/) - Font Awesome icons are used on the website for linking to the social media pages and in h2 headings.
+- [Git](https://git-scm.com/) - Git was used for version control and code change tracking of the website project. The terminal in Gitpod was used to commit and to push the project to the Github repository.
+- [Github](https://github.com/) - The project code has been stored on the Github website.
+- [GitPod](https://www.gitpod.io/) - GitPod was used for creating the code, testing of the website, commiting, and pushing the code to the github repository.
+- [Heroku](https://www.heroku.com/) - The project has been imported from the Github website to the Heroku website.
+- [Adobe XD](https://www.adobe.com/products/xd.html) - Adobe XD was used to create the website's Wireframes. To see the Wireframes, go to the Design section above to see the results.
+- [Photopea.com](https://www.photopea.com/) - The Photopea website is used for creating the website logo, 'Manual' page images and README images.
+- [Flask](https://en.wikipedia.org/wiki/Flask_(web_framework)) - Flask is a micro web framework written in Python used for interaction between front-end and back-end of the website.
+
+
+### Database
+- [MongoDB](https://en.wikipedia.org/wiki/MongoDB) - The website uses the document-oriented database MongoDB.
 
 
 <!-- Testing -->
@@ -455,9 +478,85 @@ The MongoDB Data Scheme Citypop Central
 <span>404 Page</span>
 
 
+### Usability Testing
+- Family and friends were asked to test the website and to navigate through all website pages. Buttons, links, and contact form were tested by them.
+
+
+### Compatibility Testing
+The following browsers were used for compatibility testing:
+- Firefox
+- Google Chrome
+- Microsoft Edge
+
+
+### Further Testing
+The following devices were used for testing the website:
+- Desktop: Asus ZenBook (viewport: 1920px * 1080px) 
+- Smartphone: Samsung S9+ (viewport: 360px * 740px)
+- Smartphone: iPhone 11 (viewport: 414px * 896px)
+
+During the building of the website, [Google Chrome DevTools](https://developer.chrome.com/) was used to simulate different viewport sizes.
+The website is designed for a minimum viewport width of 320px (iPhone 5 size).
+
+
+### Testing Code
+The following online validators were used to check whether the website generated any Javascript, html and CSS syntax errors:
+
+#### W3C Markup Validator
+
+Checking html pages can only be done by direct code input into the W3C Markup Validator.
+
+W3C Markup Validator, the following pages were checked:
+* about
+* add_song
+* edit_song
+* login
+* my_songs
+* profile
+* register
+* index / results
+* userinfo
+* youtube
+* 404
+
+All pages generate Jinja related errors (Validator does not recognize Jinja code).
+
+
+#### W3C CSS Validator
+
+W3C CSS Validator, the following files were checked:
+* [about.css](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fcitypop-central.herokuapp.com%2Fstatic%2Fcss%2Fabout.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+* [error404.css](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fcitypop-central.herokuapp.com%2Fstatic%2Fcss%2Ferror404.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+* [footer.css](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fcitypop-central.herokuapp.com%2Fstatic%2Fcss%2Ffooter.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+* [forms.css](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fcitypop-central.herokuapp.com%2Fstatic%2Fcss%2Fforms.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+* [header.css](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fcitypop-central.herokuapp.com%2Fstatic%2Fcss%2Fheader.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+* [my_songs.css](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fcitypop-central.herokuapp.com%2Fstatic%2Fcss%2Fmy_songs.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+* [profile.css](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fcitypop-central.herokuapp.com%2Fstatic%2Fcss%2Fprofile.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+* [random-songs.css](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fcitypop-central.herokuapp.com%2Fstatic%2Fcss%2Frandom-songs.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+* [results.css](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fcitypop-central.herokuapp.com%2Fstatic%2Fcss%2Fresults.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+* [userinfo.css](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fcitypop-central.herokuapp.com%2Fstatic%2Fcss%2Fuserinfo.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+* [youtube.css](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fcitypop-central.herokuapp.com%2Fstatic%2Fcss%2Fyoutube.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+
+Errors found:
+Validator does not recognize CSS variables.
+
+
+#### JSHint Validator
+
+JSHint Validator, the following file was checked:
+* script.js
+
+No erros found.
+
+
+### Testing Grammar and Spelling 
+- [Grammarly.com](https://www.grammarly.com/) was used to check grammar and spelling.
+
+
 <!-- Known Bugs -->
 <a id="bugs"></a>
 ## Known Bugs
+
 
 
 <!-- Deployment -->
