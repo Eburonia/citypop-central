@@ -3,8 +3,11 @@
 // November 2021
 
 
+// Random number between 0 and 4
 let randomBackgroundImage = Math.floor(Math.random() * 5);
 
+
+// Set one of the five random background images
 if(randomBackgroundImage == 0) {
     $('body').css('background-image', 'url('+encodeURIComponent("/static/img/background1.jpg")+')');
 }
@@ -26,22 +29,23 @@ else {
 }
 
 
-
+// Hides delete song link
 $('.delete-link').hide();
 
 
+// Shows conformation link to delete the song (trash icon)
 $(document).on('click', '.delete-song-check', function(){
 
-    let x = $('.delete-song-check').index(this);
+    let clickedSongToDelete = $('.delete-song-check').index(this);
 
     if($('.delete-link').is(':visible')) {
 
-        $('.delete-link').eq(x).hide();
+        $('.delete-link').eq(clickedSongToDelete).hide();
     }
 
     else {
 
-        $('.delete-link').eq(x).show();
+        $('.delete-link').eq(clickedSongToDelete).show();
 
     }
 
@@ -49,10 +53,11 @@ $(document).on('click', '.delete-song-check', function(){
 
 
 
-
-
+// Hides confirmation delete song link
 $('#confirm-delete-song').hide();
 
+
+// Shows conformation delete song link
 $(document).on('click', '#delete-song-link', function() {
 
     if($('#confirm-delete-song').is(":hidden")) {
@@ -65,31 +70,28 @@ $(document).on('click', '#delete-song-link', function() {
 });
 
 
+// Hides confirmation delete profile link
+$('#confirm-delete-profile-link').hide();
 
 
-
-
-$('#confirm-delete-profile-button').hide();
-
-
+// Shows conformation delete profile link
 $(document).on('click', '#delete-profile-button', function() {
 
-    if($('#confirm-delete-profile-button').is(":hidden")) {
-        $('#confirm-delete-profile-button').show();
+    if($('#confirm-delete-profile-link').is(":hidden")) {
+        $('#confirm-delete-profile-link').show();
     }
     else {
-        $('#confirm-delete-profile-button').hide();
+        $('#confirm-delete-profile-link').hide();
     }
     
 });
 
 
-
-// hides toggle navigation menu awehen website is loaded
+// Hides toggle navigation menu when website is loaded
 $('#toggle-menu').hide();
 
 
-// toggle navigation menu
+// Toggle navigation menu
 $('#toggle-button').on('click', function() {
 
     $('#toggle-menu').slideToggle('slow');
@@ -97,47 +99,24 @@ $('#toggle-button').on('click', function() {
 });
 
 
-
-
-
-$( ".toggle-part" ).hide();
-
-
-$(document).on('click', '.song-toggle-button', function(){
-
-    let x = $('.song-toggle-button').index(this);
-
-    $(".toggle-part").eq(x).slideToggle();
-
-});
-
-
-
-$('.song-info-toggle').hide();
-
-
+// Toggle more information about song on results page
 $(document).on('click', '.expand-info', function() {
 
-
     $('.song-info-toggle').hide();
+    let clickedIcon = $('.expand-info').index(this);
 
-  let x = $('.expand-info').index(this);
+    if($('.song-info-toggle').is(':visible')) {
+        $('.song-info-toggle').eq(clickedIcon).hide();
+        }
 
-  if($('.song-info-toggle').is(':visible')) {
-      $('.song-info-toggle').eq(x).hide();
-      }
-  else {
-   
-      $('.song-info-toggle').eq(x).show();
-      
+    else {
+        $('.song-info-toggle').eq(clickedIcon).show();
       }
 
 });
 
 
-
-
-
+// hides flash message when close icon is clicked
 $(document).on('click', '.fa-times', function() {
 
     let flashMessage = $('.fa-times').index(this);
@@ -147,9 +126,7 @@ $(document).on('click', '.fa-times', function() {
 });
 
 
-
-
-// hides toggle navigation menu awehen website is loaded
+// hides toggle navigation menu when a website is loaded
 $('.hidden-info').hide();
 
 
@@ -161,7 +138,6 @@ $('.expand-info').on('click', function() {
     $(".hidden-info").eq(x).slideToggle('slow');
 
 });
-
 
 
 // Check whether the passwords are used
@@ -178,10 +154,8 @@ $('#password').blur(function() {
 });
 
 
-
 // Check whether the passwords are used
 $('#password-confirm').blur(function() {
-
 
     if($('#password').val() != $('#password-confirm').val()) {
         $(".form-message").css("display", "block");
@@ -193,12 +167,9 @@ $('#password-confirm').blur(function() {
 });
 
 
-
 // Check whether the passwords are used
 $('#album_image').blur(function() {
 
     $('#album-cover-img').attr("src", "https://img.discogs.com/Z_SZTPoyahu-UB2y_IsuaIWsURE=/fit-in/600x593/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-6870389-1444305354-8612.jpeg.jpg");
 
 });
-
-

@@ -17,13 +17,13 @@ Date: November 2021
 }
 
 
-#confirm-delete-profile-button {
+#confirm-delete-profile-link {
     color: red;
     text-decoration: none;
 }
 
 
-#confirm-delete-profile-button:hover {
+#confirm-delete-profile-link:hover {
     text-decoration: underline;
 }
 
