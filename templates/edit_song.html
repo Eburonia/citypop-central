@@ -70,8 +70,14 @@ Date: November 2021
         <input type="text" id="album_name" name="album_name" pattern="[A-Z][a-z'?!]*(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?" value="{{ song.album_name }}" class="form-textbox" aria-label="Please enter the album name, this a required field" required>
 
         <label for="album_image_edit" class="form-label">Album Image :</label>
-        <p class="form-info">Add the album cover image hyperlink (only upload covers from<a href="https://www.discogs.com/" target="_blank">discogs.com</a>).</p>
+        <p class="form-info">Add the album cover image hyperlink (only upload covers from<a href="https://www.discogs.com/" target="_blank">discogs.com</a>). Keep this field empty in case no album cover is available.</p>
         <textarea name="album_image" id="album_image" class="form-textbox" aria-label="Please enter the album's image from discogs.com, this a required field" required cols="30" rows="5">{{ song.album_image }}</textarea>
+
+        <div id="album_image_added">
+             
+            <img src="" alt="Album cover: {{ song.artist_name }} - {{ song.song_name }}" title="{{ song.artist_name }} - {{ song.song_name }}" aria-label="Album cover: {{ song.artist_name }} - {{ song.song_name }}">
+            
+        </div>
 
         <label for="song_length" class="form-label">Song Length :</label>
         <p class="form-info">Select the song length (e.g. 3:46, minimum song length: 1:00 maximum 9:59).</p>

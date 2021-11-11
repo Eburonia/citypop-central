@@ -147,6 +147,15 @@ select option{
 }
 
 
+#album_image_added {
+    margin-bottom: 40px;
+}
+
+#album_image_added > img {
+    width: 50%;
+}
+
+
 /* media queries for forms.html only */
 /* for tablets and phones */
 

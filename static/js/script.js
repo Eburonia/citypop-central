@@ -175,16 +175,21 @@ $('#album_image').blur(function() {
 });
 
 
+// Load album image when loading the edit or add song page
+album_image = $('#album_image').val();
+$('#album_image_added > img').attr("src", album_image);
+
+
 // Show album image when leaving album image field
 $('#album_image').blur(function() {
 
-    x = $('#album_image').val();
+    album_image = $('#album_image').val();
 
-    if(x == '') {
+    if(album_image == '') {
         $('#album_image_added > img').attr("src","static/img/no-cover.jpg");
     }
     else {
-        $('#album_image_added > img').attr("src", x);
+        $('#album_image_added > img').attr("src", album_image);
     }
 
 });
