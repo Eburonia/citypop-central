@@ -99,17 +99,30 @@ def results():
         if page is None:
             page = 0
 
+    # Check user input from the address bar
+        # If non-numeric pages are selected from the address bar by direct user input
+        if not str(page).isnumeric():
+            return redirect(url_for("index"))
+
+        # If pages lower than 0 are selected
+        if int(page) < 0:
+            return redirect(url_for("index"))
+
     # Pagination from here
 
         # Set the number of records per page
-        limit = 5
+        limit = 2
 
         # Determine number of pages needed for results
         number_of_pages = math.ceil(number_of_results / limit)
 
+        #If user selects higher page number than available
+        if int(page) >= number_of_pages:
+            return redirect(url_for("index"))
+
         # Append the limited search records to a specific page, e.g. first 10
         # results on page 0, next 10 results on page 1
-        if int(page) + 1 * limit < number_of_results:
+        if (int(page) + 1) * limit < number_of_results:
             for i in range(int(page) * limit, (int(page) * limit) + limit):
                 output.append(songs_query[i])
         else:
@@ -161,7 +174,7 @@ def results():
         start_result = (int(page) * limit) + 1
 
         # Set the end record number, depending on which page you are
-        if int(page) + 1 * limit < number_of_results:
+        if (int(page) + 1) * limit < number_of_results:
             end_result = start_result + (limit - 1)
         else:
             end_result = number_of_results
@@ -421,6 +434,22 @@ def logout():
 
     # Redirect to the login page
     return redirect(url_for("login"))
+
+
+
+@app.route("/test", methods=["GET", "POST"])
+def test():
+
+    song_id = request.args.get('song_id')
+
+    if str(song_id).isalpha():
+        flash('select numbers not letters')
+
+    return render_template("test.html", song_id=song_id)
+
+
+
+
 
 
 @app.route("/add_song", methods=["GET", "POST"])
