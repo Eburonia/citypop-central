@@ -4,13 +4,13 @@
 
 
 import os
+import datetime
+import math
 from flask import (
     Flask, flash, render_template, redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
-import datetime
-import math
 
 if os.path.exists("env.py"):
     import env
@@ -25,6 +25,9 @@ mongo = PyMongo(app)
 
 @app.route("/", methods=["GET", "POST"])
 def index():
+    '''
+    This function loads the index page which loads the results.html page
+    '''
 
     # Set page title
     title = 'Citypop Central | Home'
@@ -39,6 +42,9 @@ def index():
 
 @app.route('/about')
 def about():
+    '''
+    This function loads the about.html page
+    '''
 
     # Set page title
     title = 'Citypop Central | About'
@@ -49,6 +55,9 @@ def about():
 
 @app.route("/results", methods=["GET", "POST"])
 def results():
+    '''
+    This function loads the index and results page
+    '''
 
     # Set page title
     title = 'Citypop Central | Results'
@@ -98,8 +107,9 @@ def results():
         # Determine number of pages needed for results
         number_of_pages = math.ceil(number_of_results / limit)
 
-        # Append the limited search records to a specific page, e.g. first 10 results on page 0, next 10 results on page 1
-        if((int(page) + 1) * limit < number_of_results):
+        # Append the limited search records to a specific page, e.g. first 10
+        # results on page 0, next 10 results on page 1
+        if int(page) + 1 * limit < number_of_results:
             for i in range(int(page) * limit, (int(page) * limit) + limit):
                 output.append(songs_query[i])
         else:
@@ -135,11 +145,13 @@ def results():
 
         else:
 
-            # Set link for address bar and link front-end not needed for last page
+            # Set link for address bar and link front-end not
+            # needed for last page
             next_page_text = ''
             next_page = ''
 
-        # Set separation pipe front-end, only when there is a previous and next page
+        # Set separation pipe front-end, only when
+        # there is a previous and next page
         if previous_page_text and next_page_text:
             separator = '|'
         else:
@@ -149,12 +161,13 @@ def results():
         start_result = (int(page) * limit) + 1
 
         # Set the end record number, depending on which page you are
-        if((int(page) + 1) * limit < number_of_results):
+        if int(page) + 1 * limit < number_of_results:
             end_result = start_result + (limit - 1)
         else:
             end_result = number_of_results
 
-        # Set the shown search records (depending on page), to be shown in front-end
+        # Set the shown search records (depending on page),
+        # to be shown in front-end
         if number_of_results != 0:
             current_results = f"Result : {str(start_result)}\
                  to {str(end_result)}"
@@ -186,7 +199,9 @@ def results():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
-
+    '''
+    This function loads and handles the register.html page
+    '''
     # Set page title
     title = 'Citypop Central | Register'
 
@@ -255,6 +270,9 @@ def register():
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
+    '''
+    This function loads and handles the login.html page
+    '''
 
     # Set page title
     title = 'Citypop Central | Login'
@@ -304,6 +322,9 @@ def login():
 
 @app.route("/profile", methods=["GET", "POST"])
 def profile():
+    '''
+    This function loads the profile.html page
+    '''
 
     # Is user is logged in
     if 'user' in session:
@@ -316,7 +337,7 @@ def profile():
 
         # Get username from database
         username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
+            {"username": session["user"]})["username"]
 
         # Get all user settings from database
         settings = mongo.db.users.find_one({"username": session["user"]})
@@ -343,6 +364,9 @@ def profile():
 
 @app.route("/update_profile/<username>", methods=["GET", "POST"])
 def update_profile(username):
+    '''
+    This function updates the profile.html page
+    '''
 
     if request.method == "POST":
 
@@ -365,6 +389,9 @@ def update_profile(username):
 
 @app.route("/delete-profile")
 def delete_profile():
+    '''
+    This function deletes your profile page
+    '''
 
     # Delete user from database
     mongo.db.users.remove({"username": session["user"]})
@@ -381,6 +408,9 @@ def delete_profile():
 
 @app.route("/logout")
 def logout():
+    '''
+    Thus function logges you out
+    '''
 
     # Remove user from session cookies
     # Flash message you have been logged out
@@ -395,6 +425,10 @@ def logout():
 
 @app.route("/add_song", methods=["GET", "POST"])
 def add_song():
+    '''
+    This function loads the add_song.html page and
+    adds a song into the database
+    '''
 
     # Set page title
     title = 'Citypop Central | Add Song'
@@ -444,6 +478,9 @@ def add_song():
 
 @app.route("/edit_song", methods=["GET", "POST"])
 def edit_song():
+    '''
+    This function loads the song you want to edit from the database
+    '''
 
     # Set page title
     title = 'Citypop Central | Edit Song'
@@ -489,6 +526,9 @@ def edit_song():
 
 @app.route("/update_song/<song_id>", methods=["GET", "POST"])
 def update_song(song_id):
+    '''
+    This function updates a specific song in the database
+    '''
 
     if request.method == "POST":
 
@@ -509,7 +549,7 @@ def update_song(song_id):
         # Update song in database
         mongo.db.songs.update({"_id": ObjectId(song_id)}, submit)
 
-        #Flash message song successfully updated
+        # Flash message song successfully updated
         flash("Song successfully updated")
 
     # Return to index page
@@ -518,6 +558,9 @@ def update_song(song_id):
 
 @app.route("/delete_song/<song_id>")
 def delete_song(song_id):
+    '''
+    This function deletes a specific song in the database
+    '''
 
     # Delete song from database
     mongo.db.songs.remove({"_id": ObjectId(song_id)})
@@ -525,12 +568,15 @@ def delete_song(song_id):
     # Flash message song deleted from database
     flash('Song has been deleted from the database')
 
-    #Return to index page
+    # Return to index page
     return redirect(url_for("index"))
 
 
 @app.route("/userinfo")
 def userinfo():
+    '''
+    This function loads the userinfo.html page of a specific user
+    '''
 
     # Set page title
     title = 'Citypop Central | User Information'
@@ -556,6 +602,9 @@ def userinfo():
 
 @app.route("/youtube")
 def youtube():
+    '''
+    This function opens a specific YouTube song
+    '''
 
     # Set page title
     title = 'Citypop Central | Youtube'
@@ -572,6 +621,9 @@ def youtube():
 
 @app.route("/my_songs")
 def mysongs():
+    '''
+    This function opens the my_songs.html page
+    '''
 
     # Set page title
     title = 'Citypop Central | My Songs'
@@ -585,7 +637,7 @@ def mysongs():
 
     else:
 
-        #If no user is logged in return to index page
+        # If no user is logged in return to index page
         return redirect(url_for("index"))
 
     # Return information to front-end of website
@@ -594,6 +646,9 @@ def mysongs():
 
 @app.errorhandler(404)
 def page_not_found(e):
+    '''
+    This function handles 404 errors
+    '''
 
     # Set page title
     title = 'Citypop Central | 404 error'
