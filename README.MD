@@ -11,13 +11,14 @@ View the GitHub Respository [link](https://github.com/Eburonia/citypop-central/)
 
 <!-- About -->
 ## About
-Citypop Central is a database storing information about Japanese songs. Most of the songs stored in our database are a mix of Japanese Jazz, Soul, Funk, Disco, or Synth-Pop from the '70s and '80s. These songs are better known under the genre Citypop. 
+The Citypop Central website contains information about Japanese songs and a link to the song's YouTube page. In our database, you find songs that are a mix of Jazz, Soul, Funk, Disco, or Synth-Pop from the '70s and '80s.  Combined with Japanese lyrics is this genre is better known under the name 'Citypop.'
 
-Back in the '80s, Japan had a very strong economy and this era was known as the 'Bubble economy' after. Everybody had a good income, poverty almost did not exist and a lot of money was spent during those years. Life was good, especially in the nightlife districts of Tokyo and other big Japanese cities. It was during those years that the Citypop genre became very popular. 
+Back in the '70s and '80s, Japan had a strong economy that eventually would collapse. This era was better known as the 'Bubble economy.' Everybody had a good income, poverty almost did not exist, and a lot of money was made and spent during those years. Life was good, especially in the nightlife districts of Tokyo and other big Japanese cities. It was during those years that 'Citypop' became very popular in Japan.
 
-The lyrics in a Citypop song translated the spirit of the Japanese people at that time. Most songs are about a bright future, optimism, and a glamorous lifestyle. This all ended around the year 1991 when the Tokyo stock exchange, the Nikkei had plummeted to half. The glamorous lifestyle of the 80s was over and many Japanese people had lost their job and did not know what the future would bring. Together with this economic crash, the City pop genre disappeared making space for new types of music genres at that time.
+The lyrics in a typical 'Citypop' song translated the spirit of the Japanese people at that time. The songs are about a bright future, optimism, and a glamorous lifestyle. All this ended around 1991 when the Tokyo stock exchange, the 'Nikkei' had plummeted to half. The glamorous lifestyle of the '80s was over. Many Japanese people lost their job, many lost money in a housing crisis,  and most did not know what the future would bring. Together with this economic tragedy, the 'Citypop' genre disappeared from the mainstream, making space for new types of music genres.
 
-Citypop was never popular in the Western world in the '80s. But thanks to Youtube these days, people from the West are discovering this music genre in the last couple of years. This database was mainly made to target these people who want to know more about the Citypop genre.
+The 'Citypop' genre was never popular in the Western world in the '70s and '80s. But thanks to Youtube, people from the West are discovering this music genre. The purpose of this website is to target those people who want to know more about the 'Citypop' genre and who want to listen to typical 'Citypop' songs.
+
 
 #### More Information
 For more information about Citypop, check the following videos on YouTube:  
@@ -299,6 +300,7 @@ The MongoDB Data Scheme Citypop Central
 - Check commented out code.
 - Check comments added to code files.
 - Check for non-functioning Python code.
+- Turn off Flask debug mode.
 
 
 #### Background Images
