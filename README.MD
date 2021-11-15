@@ -505,26 +505,32 @@ The website is designed for a minimum viewport width of 320px (iPhone 5 size).
 The following online validators were used to check whether the website generated any Javascript, html and CSS syntax errors:
 
 #### W3C Markup Validator
+[website](https://validator.w3.org/)
 
-Checking html pages can only be done by direct code input into the W3C Markup Validator.
+Make sure you are logged in as Admin onto the website when clicking on the links below.
 
 W3C Markup Validator, the following pages were checked:
-* about
-* add_song
-* edit_song
-* login
-* my_songs
-* profile
-* register
-* index / results
-* userinfo
-* youtube
-* 404
+* [about](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcitypop-central.herokuapp.com%2Fabout)
+* [add_song](https://validator.w3.org/nu/?doc=http%3A%2F%2Fcitypop-central.herokuapp.com%2Fadd_song)
+* [edit_song](https://validator.w3.org/nu/?doc=http%3A%2F%2Fcitypop-central.herokuapp.com%2F)
+* [login](https://validator.w3.org/nu/?doc=http%3A%2F%2Fcitypop-central.herokuapp.com%2Flogin)
+* [my_songs]()
+* [profile]()
+* [register](https://validator.w3.org/nu/?doc=http%3A%2F%2Fcitypop-central.herokuapp.com%2Fregister)
+* [index](https://validator.w3.org/nu/?doc=http%3A%2F%2Fcitypop-central.herokuapp.com%2F)
+* [results](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcitypop-central.herokuapp.com%2Fresults%3Fsearch%3Dcitypop%26page%3D0)
+* [userinfo](https://validator.w3.org/nu/?doc=http%3A%2F%2Fcitypop-central.herokuapp.com%2Fuserinfo%3Fuser%3Dmaurice)
+* [youtube](https://validator.w3.org/nu/?doc=http%3A%2F%2Fcitypop-central.herokuapp.com%2Fyoutube%3Flink%3DA_Q1fEyZRV4)
+* 404 Checked by direct input into the validator.
 
+* base is loaded into all webpages
+
+Errors found:
 All pages generate Jinja related errors (Validator does not recognize Jinja code).
 
 
 #### W3C CSS Validator
+[website](https://jigsaw.w3.org/css-validator/)
 
 W3C CSS Validator, the following files were checked:
 * [about.css](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fcitypop-central.herokuapp.com%2Fstatic%2Fcss%2Fabout.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
@@ -544,12 +550,23 @@ Validator does not recognize CSS variables.
 
 
 #### JSHint Validator
+[website](https://www.jshint.com/)
 
 JSHint Validator, the following file was checked:
 * script.js
 
-No erros found.
+Errors found:
+No important errors found.
 
+
+#### PEP8 Online Check [link](http://pep8online.com)
+[website](http://www.pep8online.com/)
+
+PEP8 Online Check, the following file was checked:
+* app.py
+
+Errors found:
+No important errors found.
 
 ### Testing Grammar and Spelling 
 - [Grammarly.com](https://www.grammarly.com/) was used to check grammar and spelling.
