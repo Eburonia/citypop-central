@@ -24,7 +24,7 @@ Date: November 2021
 
                 <div class="user-item">
 
-                    {{user.username}} - <a class="delete-user">Delete user</a> <a class="confirm-delete-user" href="{{ url_for('delete_user', user_id=user._id) }}">Conform delete user</a>
+                    <i class="delete-user fas fa-trash-alt" title="Delete user"></i><a href="{{ url_for('delete_user', user_id=user._id) }}"><i class="confirm-delete-user fas fa-trash-alt" title="Confirm to delete user"></i></a> {{user.username}}
 
                 </div>
 

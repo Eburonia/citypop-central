@@ -19,12 +19,11 @@ Date: November 2021
 
 
 .user-item {
+    width: 100%;
     color: var(--white);
     cursor: pointer;
     box-sizing: border-box;
     float: left;
-    width: calc(100% - 200px);
-    border-radius: 8px;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -32,21 +31,35 @@ Date: November 2021
 }
 
 
-.user-item > a {
-    color: var(--pink);
-    text-decoration: none;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-}
-
-
-.user-item > a:hover {
-    color: var(--pink);
-    text-decoration: underline;
+.delete-user, .confirm-delete-user {
+    padding: 0 5px;
 }
 
 
 .confirm-delete-user {
     color: red !important;
+}
+
+
+/* media queries for users.html only */
+/* for tablets and phones */
+
+@media only screen and (max-width: 600px) { 
+
+    .users-div {
+        width: 100% !important;
+        border-radius: 0;
+        border: 0;
+        margin: 0 !important;
+    }
+
+}
+
+
+@media only screen and (max-width: 1400px) { 
+
+    .my-songs-div {
+        width: 70%;
+    }
+
 }
