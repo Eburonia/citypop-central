@@ -669,9 +669,12 @@ def mysongs():
     # If user is logged in
     if 'user' in session:
 
-        # Import my uploaded songs from database
-        my_songs = mongo.db.songs.find({"uploaded_by": session["user"]}).sort(
-            "artist_name", 1)
+        if session["user"] == 'admin':
+            # Import all songs when logged in as admin
+            my_songs = mongo.db.songs.find().sort("artist_name", 1)
+        else:
+            # Import my uploaded songs from database
+            my_songs = mongo.db.songs.find({"uploaded_by": session["user"]}).sort("artist_name", 1)
 
     else:
 
