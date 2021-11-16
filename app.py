@@ -88,6 +88,10 @@ def results():
         # Count the number of the records found in database
         number_of_results = songs_query.count()
 
+        if number_of_results == 0:
+            flash("No results found")
+            return redirect(url_for("index"))
+
         # Convert to list
         songs_query = list(songs_query)
 
