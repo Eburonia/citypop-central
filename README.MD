@@ -107,19 +107,19 @@ Sans-serif has been set as back-up font.
 #### Wireframes
 Wireframes beloning to the website's project have been made in [Adobe XD](https://www.adobe.com/products/xd.html).
 The wireframes are implemeted in markdown files and can be found over here:
-- Wireframes of the '404' Page - [link]()
-- Wireframes of the 'About' Page - [link]()
-- Wireframes of the 'Add Song' Page - [link]()
-- Wireframes of the 'Edit Song' Page - [link]()
-- Wireframes of the 'Login' Page - [link]()
-- Wireframes of the 'My Songs' Page - [link]()
-- Wireframes of the 'Profile' Page - [link]()
-- Wireframes of the 'Register' Page - [link]()
-- Wireframes of the 'Results/Index' Page - [link]()
-- Wireframes of the 'Settings' Page - [link]()
-- Wireframes of the 'Userinfo' Page - [link]()
-- Wireframes of the 'Users' Page - [link]()
-- Wireframes of the 'Youtube' Page - [link]()
+- Wireframes of the '404' Page - [link](static/readme-images/wireframes/wireframes-404.md)
+- Wireframes of the 'About' Page - [link](static/readme-images/wireframes/wireframes-about.md)
+- Wireframes of the 'Add Song' Page - [link](static/readme-images/wireframes/wireframes-addsong.md)
+- Wireframes of the 'Edit Song' Page - [link](static/readme-images/wireframes/wireframes-editsong.md)
+- Wireframes of the 'Login' Page - [link](static/readme-images/wireframes/wireframes-login.md)
+- Wireframes of the 'My Songs' Page - [link](static/readme-images/wireframes/wireframes-mysongs.md)
+- Wireframes of the 'Profile' Page - [link](static/readme-images/wireframes/wireframes-profile.md)
+- Wireframes of the 'Register' Page - [link](static/readme-images/wireframes/wireframes-register.md)
+- Wireframes of the 'Results/Index' Page - [link](static/readme-images/wireframes/wireframes-results.md)
+- Wireframes of the 'Settings' Page - [link](static/readme-images/wireframes/wireframes-settings.md)
+- Wireframes of the 'Userinfo' Page - [link](static/readme-images/wireframes/wireframes-userinfo.md)
+- Wireframes of the 'Users' Page - [link](static/readme-images/wireframes/wireframes-users.md)
+- Wireframes of the 'Youtube' Page - [link](static/readme-images/wireframes/wireframes-youtube.md)
 
 
 All wireframes were designed for three different devices:
