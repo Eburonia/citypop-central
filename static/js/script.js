@@ -176,7 +176,7 @@ $('#album_image').blur(function() {
 
 
 // Load album image when loading the edit or add song page
-album_image = $('#album_image').val();
+let album_image = $('#album_image').val();
 $('#album_image_added > img').attr("src", album_image);
 
 

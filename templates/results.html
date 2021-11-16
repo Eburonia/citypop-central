@@ -84,7 +84,7 @@ Date: November 2021
 
                 <i class="search-icon expand-info fas fa-question-circle" title="Expand for more information"></i>
 
-                {% if session.user == song.uploaded_by %}
+                {% if session.user == song.uploaded_by or 'admin' %}
             
                     <a href="/edit_song?song_id={{ song._id }}" title="Edit song"><i class="admin-icon fas fa-edit"></i></a>
 
