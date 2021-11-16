@@ -1,7 +1,7 @@
 <h1 align="center">Citypop Central - Japanese Songs Database</h1>
 
 <!-- Responsive Image -->
-<img src="assets/images-readme/responsive.png" alt="Responsive design of the website">
+<img src="static/readme-images/responsive.jpg" alt="Responsive design of the website">
 
 
 <!-- Links -->
@@ -86,7 +86,7 @@ The following colours were used throughout the webpage:
 - rgba(255, 0, 0, 1): red, used on critial links e.g. deleting your profile or deleting a song.
 - rgba(135, 206, 235, 1): skyblue, used for flash messages in case passwords don't match on the register page. 
 
-<img src="" alt="Colour scheme"><br>
+<img src="static/readme-images/colour-scheme.jpg" alt="Colour scheme"><br>
 <sub>Colour scheme</sub>
 
 
@@ -95,7 +95,7 @@ The following colours were used throughout the webpage:
 The '[Nunito](https://fonts.google.com/specimen/Nunito)' font was implemented from the Google Fonts website and used throughout the whole website including the website logo.
 Sans-serif has been set as back-up font.
 
-<img src="" alt="Nunito font-type"><br>
+<img src="static/readme-images/font-type.jpg" alt="Nunito font-type"><br>
 <sub>Nunito font-type</sub>
 
 
@@ -107,15 +107,19 @@ Sans-serif has been set as back-up font.
 #### Wireframes
 Wireframes beloning to the website's project have been made in [Adobe XD](https://www.adobe.com/products/xd.html).
 The wireframes are implemeted in markdown files and can be found over here:
-- Wireframes of the 'Index' Page - [link]()
-- Wireframes of the 'Results' Page - [link]()
-- Wireframes of the 'Register' Page - [link]()
-- Wireframes of the 'Login' Page - [link]()
+- Wireframes of the '404' Page - [link]()
 - Wireframes of the 'About' Page - [link]()
-- Wireframes of the 'Profile' Page - [link]()
-- Wireframes of the 'My Songs' Page - [link]()
 - Wireframes of the 'Add Song' Page - [link]()
+- Wireframes of the 'Edit Song' Page - [link]()
+- Wireframes of the 'Login' Page - [link]()
+- Wireframes of the 'My Songs' Page - [link]()
+- Wireframes of the 'Profile' Page - [link]()
+- Wireframes of the 'Register' Page - [link]()
+- Wireframes of the 'Results/Index' Page - [link]()
+- Wireframes of the 'Settings' Page - [link]()
 - Wireframes of the 'Userinfo' Page - [link]()
+- Wireframes of the 'Users' Page - [link]()
+- Wireframes of the 'Youtube' Page - [link]()
 
 
 All wireframes were designed for three different devices:
