@@ -356,14 +356,14 @@ Date: November 2021
     .search-icon {
         float: left;
         clear: left;
-        font-size: 18px;
+        font-size: 30px;
         font-weight: 100;
     }
 
 
     .admin-icon, .delete-link {
         float: left;
-        font-size: 18px;
+        font-size: 30px;
         font-weight: 100;
     }
 
@@ -394,7 +394,6 @@ Date: November 2021
         width: 100%;
         padding: 0 0 0 30px;
     }
-
 
     .album-image {
         width: 100%;
@@ -434,6 +433,9 @@ Date: November 2021
         padding: 0;
     }
 
+    .song-info-value > a{
+        font-size: 18px;
+    }
 
     #pagination-links {
         width: 100%;
