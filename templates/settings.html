@@ -20,7 +20,8 @@ Date: November 2021
         <h2 class="settings-heading form-heading">Country settings</h2>
 
         <label for="remove-country" class="form-label">Remove country from database :</label>
-        <select id="remove-country" name="remove-country" class="form-textbox" aria-label="Please select the country you want to remove from the database">
+        <p class="form-info">Select country you want to delete from the database.</p>
+        <select id="remove-country" name="remove-country" class="settings-textbox form-textbox" aria-label="Please select the country you want to remove from the database">
 
             {% for country in countries %}
                 <option value="{{country.country_name}}">{{country.country_name}}</option>
@@ -28,7 +29,7 @@ Date: November 2021
 
         </select>
 
-        <input type="submit" value="delete country" class="form-button" title="Click here to remove the selected country from the database" aria-label="Click here to remove the selected country from the database">
+        <input type="submit" value="delete country" class="settings-button form-button" title="Click here to remove the selected country from the database" aria-label="Click here to remove the selected country from the database">
 
     </form>
 
@@ -36,11 +37,14 @@ Date: November 2021
     <form class="settings-form" action="{{ url_for('add_country') }}" method="POST">
 
         <label for="add-country" class="form-label">Add country to database :</label>
-        <input type="text" id="add-country" name="add-country" class="form-textbox" aria-label="Please enter new country name"><br>
+        <p class="form-info">All first letters to be uppercase (e.g. Burkina Faso).</p>
+        <input type="text" id="add-country" name="add-country" pattern="[A-Z][a-z'?!]*(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?" class="settings-textbox form-textbox" aria-label="Please enter new country name"><br>
 
-        <input type="submit" value="add country" class="form-button" title="Click here to add a new country to the database" aria-label="Click here to add a new country to the database">
+        <input type="submit" value="add country" class="settings-button form-button" title="Click here to add a new country to the database" aria-label="Click here to add a new country to the database">
 
     </form>
+
+    <hr class="hr-settings">
 
     <!-- remove gender from database -->
     <form class="settings-form" action="{{ url_for('delete_gender') }}" method="POST">
@@ -49,7 +53,8 @@ Date: November 2021
         <h2 class="settings-heading form-heading">Gender settings</h2>
 
         <label for="remove-gender" class="form-label">Remove gender from database :</label>
-        <select id="remove-gender" name="remove-gender" class="form-textbox" aria-label="Please select the gender you want to remove from the database">
+        <p class="form-info">Select gender you want to delete from the database.</p>
+        <select id="remove-gender" name="remove-gender" class="settings-textbox form-textbox" aria-label="Please select the gender you want to remove from the database">
 
             {% for gender in genders %}
                 <option value="{{gender.gender}}">{{gender.gender}}</option>
@@ -57,20 +62,88 @@ Date: November 2021
 
         </select>
 
-        <input type="submit" value="delete gender" class="form-button" title="Click here to remove the selected gender from the database" aria-label="Click here to remove the selected gender from the database">
+        <input type="submit" value="delete gender" class="settings-button form-button" title="Click here to remove the selected gender from the database" aria-label="Click here to remove the selected gender from the database">
 
     </form>
+
 
     <!-- add gender to database -->
     <form class="settings-form" action="{{ url_for('add_gender') }}" method="POST">
 
     <label for="add-gender" class="form-label">Add gender to database :</label>
-    <input type="text" id="add-gender" name="add-gender" class="form-textbox" aria-label="Please enter new gender"><br>
+    <p class="form-info">Gender must contain minimum 3 and maximum 15 characters all in lowercase.</p>
+    <input type="text" id="add-gender" name="add-gender" pattern="[a-z0-9_]{3,15}" class="settings-textbox form-textbox" aria-label="Please enter new gender"><br>
 
-    <input type="submit" value="add gender" class="form-button" title="Click here to add a new gender to the database" aria-label="Click here to add a new gender to the database">
+    <input type="submit" value="add gender" class="settings-button form-button" title="Click here to add a new gender to the database" aria-label="Click here to add a new gender to the database">
 
-</form>
+    </form>
 
+    <hr class="hr-settings">
+
+    <!-- remove genre from database -->
+    <form class="settings-form" action="{{ url_for('delete_genre') }}" method="POST">
+
+        <!-- heading -->
+        <h2 class="settings-heading form-heading">Genre settings</h2>
+
+        <label for="remove-genre" class="form-label">Remove genre from database :</label>
+        <select id="remove-genre" name="remove-genre" class="settings-textbox form-textbox" aria-label="Please select the genre you want to remove from the database">
+
+            {% for genre in genres %}
+                <option value="{{genre.genre}}">{{genre.genre}}</option>
+            {% endfor %}
+
+        </select>
+
+        <input type="submit" value="delete genre" class="settings-button form-button" title="Click here to remove the selected genre from the database" aria-label="Click here to remove the selected genre from the database">
+
+    </form>
+
+
+    <!-- add genre to database -->
+    <form class="settings-form" action="{{ url_for('add_genre') }}" method="POST">
+
+        <label for="add-genre" class="form-label">Add genre to database :</label>
+        <p class="form-info">All first letters to be uppercase (e.g. Citypop).</p>
+        <input type="text" id="add-genre" name="add-genre" pattern="[A-Z][a-z'?!]*(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?" class="settings-textbox form-textbox" aria-label="Please enter new genre"><br>
+    
+        <input type="submit" value="add genre" class="settings-button form-button" title="Click here to add a new genre to the database" aria-label="Click here to add a new genre to the database">
+    
+    </form>
+
+
+<hr class="hr-settings">
+
+
+    <!-- remove release years from database -->
+    <form class="settings-form" action="{{ url_for('delete_release_year') }}" method="POST">
+
+        <!-- heading -->
+        <h2 class="settings-heading form-heading">Release year settings</h2>
+
+        <label for="remove-release-year" class="form-label">Remove release year from database :</label>
+        <select id="remove-release-year" name="remove-release-year" class="settings-textbox form-textbox" aria-label="Please select the release year you want to remove from the database">
+
+            {% for release_year in release_years %}
+                <option value="{{release_year.release_year}}">{{release_year.release_year}}</option>
+            {% endfor %}
+
+        </select>
+
+        <input type="submit" value="delete release year" class="settings-button form-button" title="Click here to remove the selected release year from the database" aria-label="Click here to remove the selected release year from the database">
+
+    </form>
+
+    <!-- add release year to database -->
+    <form class="settings-form" action="{{ url_for('add_release_year') }}" method="POST">
+
+        <label for="add-release-year" class="form-label">Add release year to database :</label>
+        <p class="form-info">Add a release year.</p>
+        <input type="text" id="add-release-year" name="add-release-year" pattern="[0-9]{4}" class="settings-textbox form-textbox" aria-label="Please enter new genre"><br>
+    
+        <input type="submit" value="add release year" class="settings-button form-button" title="Click here to add a new release year to the database" aria-label="Click here to add a new release year to the database">
+    
+    </form>
 
 
 </div>

@@ -734,14 +734,20 @@ def settings():
     # Get all the genders from the database
     genders = mongo.db.genders.find().sort("gender", 1)
 
+    # Get all the genres from the database
+    genres = mongo.db.genres.find().sort("genre", 1)
+
+    # Get all the release years from the database
+    release_years = mongo.db.release_years.find().sort("release_year", 1)
+
     # Return information to front-end of website
-    return render_template("settings.html", countries=countries, genders=genders, title=title)
+    return render_template("settings.html", countries=countries, genders=genders, genres=genres, release_years=release_years, title=title)
 
 
 @app.route("/delete_country", methods=["GET", "POST"])
 def delete_country():
     '''
-    This function removed a specific country from the database
+    This function removes a specific country from the database
     '''
 
     if request.method == "POST":
@@ -759,7 +765,7 @@ def delete_country():
 @app.route("/delete_gender", methods=["GET", "POST"])
 def delete_gender():
     '''
-    This function removed a specific gender from the database
+    This function removes a specific gender from the database
     '''
 
     if request.method == "POST":
@@ -773,6 +779,41 @@ def delete_gender():
         # Return to index page
         return redirect(url_for("settings"))
 
+
+@app.route("/delete_genre", methods=["GET", "POST"])
+def delete_genre():
+    '''
+    This function removes a specific genre from the database
+    '''
+
+    if request.method == "POST":
+
+        # Delete genre from database
+        mongo.db.genres.remove({"genre": request.form.get("remove-genre")})
+
+        # Flash message genre removed from database
+        flash("Genre removed from the database")
+
+        # Return to index page
+        return redirect(url_for("settings"))
+
+
+@app.route("/delete_release_year", methods=["GET", "POST"])
+def delete_release_year():
+    '''
+    This function removes a specific release year from the database
+    '''
+
+    if request.method == "POST":
+
+        # Delete release year from database
+        mongo.db.release_years.remove({"release_year": request.form.get("remove-release-year")})
+
+        # Flash message release year removed from database
+        flash("Release year removed from the database")
+
+        # Return to index page
+        return redirect(url_for("settings"))
 
 
 @app.route("/add_country", methods=["GET", "POST"])
@@ -816,6 +857,52 @@ def add_gender():
 
         # Flash message gender added to database
         flash("Gender added to the database")
+
+        # Return to index page
+        return redirect(url_for("settings"))
+
+
+@app.route("/add_genre", methods=["GET", "POST"])
+def add_genre():
+    '''
+    This function adds a new genre to the database
+    '''
+
+    if request.method == "POST":
+
+        # Create data memory for genre
+        new_genre = {
+            "genre": request.form.get("add-genre")
+        }
+
+        # Insert the genre into the database
+        mongo.db.genres.insert_one(new_genre)
+
+        # Flash message genre added to database
+        flash("Genre added to the database")
+
+        # Return to index page
+        return redirect(url_for("settings"))
+
+
+@app.route("/add_release_year", methods=["GET", "POST"])
+def add_release_year():
+    '''
+    This function adds a new release year to the database
+    '''
+
+    if request.method == "POST":
+
+        # Create data memory for release year
+        new_release_year = {
+            "release_year": request.form.get("add-release-year")
+        }
+
+        # Insert the release year into the database
+        mongo.db.release_years.insert_one(new_release_year)
+
+        # Flash message release year added to database
+        flash("Release year added to the database")
 
         # Return to index page
         return redirect(url_for("settings"))

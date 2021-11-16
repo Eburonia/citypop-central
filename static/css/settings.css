@@ -9,6 +9,27 @@ Date: November 2021
     margin-bottom: 50px;
 }
 
+
 .settings-heading {
     font-size: 22px;
+    padding-bottom: 10px;
+    padding-left: 3px;
+}
+
+
+.settings-textbox {
+    margin-bottom: 20px;
+}
+
+
+.settings-button {
+    margin: 0 !important;
+}
+
+
+.hr-settings {
+    margin: 10px 0;
+    color: var(--yellow);
+    border-color: var(--yellow);
+    background-color: var(--yellow);
 }
