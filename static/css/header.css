@@ -51,7 +51,7 @@ header {
     float: left;
     padding: 10px 20px;
     box-sizing: border-box;
-    width: 400px;
+    width: 380px;
     cursor: pointer;
     margin: 10px 0 30px 10px;
 }
@@ -120,8 +120,9 @@ header {
 #navigation-div  {
     float: right;
     padding: 10px;
+    padding-left: 0;
     box-sizing: border-box;
-    width: calc(100% - 420px);
+    width: calc(100% - 390px);
 }
 
 
@@ -131,6 +132,7 @@ header {
     border-radius: 20px;
     box-sizing: border-box;
     padding: 10px;
+    padding-left: 0;
 }
 
 
@@ -142,7 +144,7 @@ header {
 
 
 .menu-item > a {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
     color: var(--white);
     text-decoration: none;
@@ -159,7 +161,7 @@ header {
 
 
 #register-button > a {
-    font-size: 20px;
+    font-size: 18px;
     padding: 5px 10px;
     margin: 0;
     border: 2px solid var(--pink);
@@ -181,7 +183,7 @@ header {
 
 
 #login-button > a, #logout-button > a {
-    font-size: 20px;
+    font-size: 18px;
     padding: 5px 10px;
     margin: 0;
     border-radius: 8px;
@@ -203,7 +205,7 @@ header {
 
 
 #login-username {
-    font-size: 20px;
+    font-size: 18px;
     color: var(--pink);
     float: right;
     clear: right;
