@@ -611,14 +611,37 @@ def delete_song(song_id):
     This function deletes a specific song in the database
     '''
 
-    # Delete song from database
-    mongo.db.songs.remove({"_id": ObjectId(song_id)})
+    # Get the song from the database
+    song = mongo.db.songs.find_one({"_id": ObjectId(song_id)})
 
-    # Flash message song deleted from database
-    flash('Song has been deleted from the database')
+    # Song uploaded by this user before
+    uploaded_by = song["uploaded_by"]
 
-    # Return to index page
-    return redirect(url_for("index"))
+    # If user is logged in
+    if 'user' in session:
+
+        if session['user'] != 'admin':
+
+            # Logged in user is not the same as user who uploaded the song
+            if uploaded_by != session["user"]:
+
+                # Flash message not allowed to update song
+                flash("You are not allowed to delete this song")
+
+                # Redirect to the index page
+                return redirect(url_for("index"))
+
+            else:
+                # Delete song from database
+                # mongo.db.songs.remove({"_id": ObjectId(song_id)})
+
+                # Flash message song deleted from database
+                flash('Song has been deleted from the database')
+
+    else:
+
+        # Return to index page
+        return redirect(url_for("index"))
 
 
 @app.route("/userinfo")
