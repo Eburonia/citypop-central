@@ -52,68 +52,28 @@ For more information about Citypop, check the following videos on YouTube:
 
 ### User Stories
 
-#### First-time Visitor Goals
+#### Visitor User Goals
 
-1. As a first-time visitor of the website, I want to understand what the website's purpose is, so I have an idea of whether I ended up in the right place.
-   + In the upper left corner of the website's header, the website logo tells the visitor the website name: 'Citypop Central 70's and 80's Japanese Music'.
-   + For Japanese visitors or people who can read Japanese, also the Citypop Central was written in Hiragana: 'シティ・ポップ・セントラル.'
-   + The search songs text field together with the search button on the index page tells the visitor he can search for songs on the website.
-   + Certain keywords are added above the search songs text field to help the visitor use the search function on the website.
-   + A link to the 'About Citypop Central' page has been added, here the visitor can find more information about the Citypop genre.
-   + The Login and Register buttons in the header's upper right corner, tell the visitor this is a website you have to login to add your own songs to the database.
-
-
-2. As a first-time visitor of the website, I want to navigate easily throughout the website, so I don't get frustrated not knowing where to click.
-   + A navigation bar is available on every webpage, in the upper right corner.
-   + The website is easily usable for visitors who are only searching for songs. It only has one search page and links to YouTube songs will be opened on a blank page.
-   + Search results are limited to a maximum of 10 songs per page. Pagination has been introduced to switch to the next or previous pages.
-   + Every search result has a (?) button that expands less relevant information about the song.
+1. As a visitor of the website, I want to understand what the website's purpose is.
+2. As a visitor of the website, I want to navigate easily throughout the website, so I don't get frustrated not knowing where to click.
+3. As a visitor of the website, I want to target specific songs, so I don't get lost when I have to scroll through all available songs on the website.
+4. As a visitor of the website, I not only want to find information about the songs, but I also want to listen to the songs.
+5. As a visitor of the website, I want to see the album cover of the song.
+6. As a visitor of the website, I might want to contact the website owner, so I can ask a question or give some feedback.
 
 
-3. As a first-time visitor of the website, I want to target specific songs, so I don't need to scroll through a whole list of songs before I find my desired end result.
-   + Visitors can search under the following keywords: Artist name, Song name, Genre, Release Year, Album Name, Uploaded By, and Upload Date.
-
-
-4. As a first-time visitor of the website, I not only want to find information about songs, but I also want to listen to the songs in a convenient way.
-   + Every search record indicates the Artist's name and Song name at the top of every search record. A YouTube icon in front of the Artist's name has been implemented telling the      + visitor this is a clickable link. This link will redirect you to the song's Youtube page.
-   + The visitor stays on the website and will be redirected to a blank Citypop Central webpage including the embedded YouTube video. Every song automatically starts so visitors don't have to press the YouTube play button.
-
-
-5. As a first-time visitor of the website, I want to see the album cover.
-   + For every search record, you can press the album image and a larger size image will appear on the screen.
-
-
-6. As a first-time visitor of the website, I might want to contact the website owner, so I can ask them a question or give them some recommendations.
-   + On the bottom of the index page, inside the search function division, links to the website's social media accounts are indicated. By clicking on the links the visitor will be      + redirected to them on a blank page. Here the visitor can send direct messages to the website owner.
-
-
-
-#### Returning Visitor Goals
-1. As a returning visitor of the website, I want to be able to not only search song information, but also add my own (favorite) songs to the database.
-   + Every visitor first needs to create their own user account in order to add and manage songs. In the upper right corner of the header, it clearly states a 'Register' button. By clicking on this button, a visitor can create his own user account.
-   + When registered, visitors become users and are now able to maintain their profile information, add songs, edit songs, delete songs. This means only songs you have added to the database, not songs uploaded by other users. 
-
-
+#### Returning Visitor User Goals
+1. As a returning visitor of the website, I want to be able to not only search for song information or listen to the songs but also want to add my own (favorite) songs to the database.
 2. As a returning visitor of the website, I want to log out from my user account for safety reasons.
-   + When logged in into your user account, it clearly states a logout button in the header's upper right corner.
-
-
 3. As a returning visitor of the website, I want to know which songs I have uploaded in the past.
-   + When logged in, in the upper right side of the navigation bar, a link to 'My Songs' will be available. By clicking this link the user will be redirected to a page that gives a summary of all your added songs in the past.
-
-
 4. As a returning visitor of the website, I want to delete my profile whenever I want.
-   + When logged in, at the bottom of your 'Profile' page, a link has been added which gives you the option to delete your user account. A second link has to be clicked to confirm you want to delete your profile. Your profile will be deleted, but the songs you added to the database will stay inside the database.
-
-
 5. As a returning visitor of the website, I want to be able to update my user account in case some information about me (e.g. location) has been changed.
-   + When logged in, on the 'Profile' page you are able to update your e-mail and the country you live in.
-
-
 6. As a returning visitor of the website, I want to be able to see information about other users of the website and contact them when needed.
-   + Every song record has an information field in the expanded information section of the record stating who uploaded the song record 'Uploaded by'. Visitors and Users can click on the 'Uploaded by' link to see more information about the person. Here is the e-mail of the person who uploaded the song is indicated.
 
 
+#### Administrator User Goals
+1. As an administrator of the website, I want to be able to adjust all uploaded songs, so I can change them for whatever reason.
+2. As an administrator of the website, I want to adjust other information which is relevant to the website.
 
 
 #### Colour Scheme
@@ -238,8 +198,9 @@ All pages are responsive on all devices. Designed for minimum viewport width of:
 
 
 ### Future Features
-* A message function for users to communicate with each other.
+* A message function for users to communicate with each other instead of using e-mail communication.
 * Implementation of an image database instead of loading album images from the discogs.com website.
+* Sub-divide the JavaScript code, all code is now loaded on all pages.
 
 
 <!-- Data Scheme -->
@@ -507,23 +468,24 @@ The following online validators were used to check whether the website generated
 #### W3C Markup Validator
 [website](https://validator.w3.org/)
 
-Make sure you are logged in as Admin onto the website when clicking on the links below.
-
 W3C Markup Validator, the following pages were checked:
-* [about](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcitypop-central.herokuapp.com%2Fabout)
+Make sure you are logged in as Admin onto the website when clicking on the links below.
+* [about](https://validator.w3.org/nu/?doc=http%3A%2F%2Fcitypop-central.herokuapp.com%2Fadd_song)
 * [add_song](https://validator.w3.org/nu/?doc=http%3A%2F%2Fcitypop-central.herokuapp.com%2Fadd_song)
-* [edit_song](https://validator.w3.org/nu/?doc=http%3A%2F%2Fcitypop-central.herokuapp.com%2F)
+* [edit_song](https://validator.w3.org/nu/?doc=http%3A%2F%2Fcitypop-central.herokuapp.com%2Fedit_song%3Fsong_id%3D617bc16c312ed7617ea2acb4)
 * [login](https://validator.w3.org/nu/?doc=http%3A%2F%2Fcitypop-central.herokuapp.com%2Flogin)
-* [my_songs]()
-* [profile]()
+* [my_songs](https://validator.w3.org/nu/?doc=http%3A%2F%2Fcitypop-central.herokuapp.com%2Fmy_songs)
+* [profile](https://validator.w3.org/nu/?doc=http%3A%2F%2Fcitypop-central.herokuapp.com%2Fprofile%3Fusername%3Dadmin)
 * [register](https://validator.w3.org/nu/?doc=http%3A%2F%2Fcitypop-central.herokuapp.com%2Fregister)
-* [index](https://validator.w3.org/nu/?doc=http%3A%2F%2Fcitypop-central.herokuapp.com%2F)
+* [index](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcitypop-central.herokuapp.com%2F)
 * [results](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcitypop-central.herokuapp.com%2Fresults%3Fsearch%3Dcitypop%26page%3D0)
+* [settings](https://validator.w3.org/nu/?doc=http%3A%2F%2Fcitypop-central.herokuapp.com%2Fsettings)
 * [userinfo](https://validator.w3.org/nu/?doc=http%3A%2F%2Fcitypop-central.herokuapp.com%2Fuserinfo%3Fuser%3Dmaurice)
-* [youtube](https://validator.w3.org/nu/?doc=http%3A%2F%2Fcitypop-central.herokuapp.com%2Fyoutube%3Flink%3DA_Q1fEyZRV4)
+* [users](https://validator.w3.org/nu/?doc=http%3A%2F%2Fcitypop-central.herokuapp.com%2Fusers)
+* [youtube](https://validator.w3.org/nu/?doc=http%3A%2F%2Fcitypop-central.herokuapp.com%2Fyoutube%3Flink%3Dv6VmbmlUyww)
 * 404 Checked by direct input into the validator.
 
-* base is loaded into all webpages
+The 'base'html page is loaded into all webpages.
 
 Errors found:
 All pages generate Jinja related errors (Validator does not recognize Jinja code).
@@ -542,6 +504,8 @@ W3C CSS Validator, the following files were checked:
 * [profile.css](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fcitypop-central.herokuapp.com%2Fstatic%2Fcss%2Fprofile.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 * [random-songs.css](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fcitypop-central.herokuapp.com%2Fstatic%2Fcss%2Frandom-songs.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 * [results.css](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fcitypop-central.herokuapp.com%2Fstatic%2Fcss%2Fresults.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+* [settings](https://jigsaw.w3.org/css-validator/validator?uri=http%3A%2F%2Fcitypop-central.herokuapp.com%2Fstatic%2Fcss%2Fsettings.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+* [users](https://jigsaw.w3.org/css-validator/validator?uri=http%3A%2F%2Fcitypop-central.herokuapp.com%2Fstatic%2Fcss%2Fusers.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 * [userinfo.css](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fcitypop-central.herokuapp.com%2Fstatic%2Fcss%2Fuserinfo.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 * [youtube.css](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fcitypop-central.herokuapp.com%2Fstatic%2Fcss%2Fyoutube.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 
@@ -570,6 +534,74 @@ No important errors found.
 
 ### Testing Grammar and Spelling 
 - [Grammarly.com](https://www.grammarly.com/) was used to check grammar and spelling.
+
+
+### Testing User Stories from User Experience (UX) Section
+
+#### Visitor User Goals
+
+1. As a visitor of the website, I want to understand what the website's purpose is.
+   * In the upper left corner of the website's header, the website logo tells the visitor the website name: 'Citypop Central 70's and 80's Japanese Music'.
+   * For Japanese visitors or people who can read Japanese, also Citypop Central was written in Japanese Hiragana: 'シティ・ポップ・セントラル.'
+   * The 'Search songs in our database' search field and button on the 'Index' page tells it is possible to search for songs on the website.
+   * Certain keywords are added above the search songs field to help the visitor use the correct keywords.
+   * A link to the 'About the citypop central website' page has been added. Here the visitor finds information about the Citypop genre.
+   * The 'Register' page tells the visitor you can add your songs into the database.
+
+2. As a visitor of the website, I want to navigate easily throughout the website, so I don't get frustrated not knowing where to click.
+   * A navigation bar is available on every page in the upper right corner.
+   * The website is easily usable for visitors who are only searching for songs. All links and buttons are foreseen with a title explaining the purpose which can be excessed when hovering.
+   * Search results are limited to a maximum of 10 songs per page. Pagination has been introduced to switch to the next or previous pages.
+   *Every search result has a (?) button that expands less relevant information about each song.
+
+3. As a visitor of the website, I want to target specific songs, so I don't get lost when I have to scroll through all available songs on the website.
+   * Visitors can search under the following keywords: Artist name, Song name, Genre, Release Year, Album Name, Uploaded By, and Upload Date.
+
+4. As a visitor of the website, I not only want to find information about the songs, but I also want to listen to the songs.
+   * At the top of every search record, the Artist's name and Song name are indicated. A YouTube icon in front of the Artist's name has been implemented telling the visitor this is a clickable link. By clicking this link, the visitor will be redirected to a blank page that includes the embedded Youtube video. For convenience reasons, all records will play automatically. By hovering the link the text 'Watch on YouTube' will pop up.
+
+5. As a visitor of the website, I want to see the album cover of the song.
+   * For every search record, you can press the album image and a larger size image will appear on the screen.
+
+6. As a visitor of the website, I might want to contact the website owner, so I can ask a question or give some feedback.
+   * On the bottom, inside the search function division of the 'Index' and 'Youtube' pages, hyperlinks to the website's social media accounts are indicated. By clicking on one of the links, the visitor will be redirected to these social media accounts. Here the visitor can send direct messages to the website owner.
+
+#### Returning Visitor User Goals
+1. As a returning visitor of the website, I want to be able to not only search for song information or listen to the songs but also want to add my own (favorite) songs to the database.
+   * By clicking the 'Register' button, every visitor can create a user account. When done, the visitor will get access to an 'Add Song' form. Here the user can add all information needed to upload a song: Artist Name, Song Name, Genre, Release Year, Album Name, Song Length, and the YouTube video ID.
+   * Next to adding songs to the website, the user will also be able to 'Update' and 'Delete' the added songs.
+   * The username will appear below the navigation bar when the user is logged-in. 
+   * A summary of all uploaded songs is available on the 'My Songs' page. By clicking on one of the song's hyperlinks, the user will be automatically redirected to the page where the song can be edited.
+   * When a user account is created, visitors become users and will also have access to a 'Profile' page. Here some additional information about the user is added.
+   * When registered, visitors become users and are now able to maintain their profile information, add songs, edit songs, delete songs. This means only songs you have added to the database, not songs uploaded by other users.
+   * Regular expressions have been added where needed, to help the user understand what input is expected, additional information has been added above every data field.
+
+2. As a returning visitor of the website, I want to log out from my user account for safety reasons.
+   * When logged in into your user account, it clearly states a logout button in the header's upper right corner.
+
+3. As a returning visitor of the website, I want to know which songs I have uploaded in the past.
+   * When logged in, in the upper right side of the navigation bar, a link to 'My Songs' will be available. By clicking this link the user will be redirected to a page that gives a summary of all your added songs in the past.
+
+4. As a returning visitor of the website, I want to delete my profile whenever I want.
+   * When logged in, at the bottom of your 'Profile' page, a link has been added which gives you the option to delete your user account. A second link has to be clicked to confirm you want to delete your profile. Your profile will be deleted, but the songs you added to the website will stay on the website under your name.
+
+5. As a returning visitor of the website, I want to be able to update my user account in case some information about me (e.g. location) has been changed.
+   * When logged in, on the 'Profile' page you can update your e-mail and the country you live in.
+   *The option to change your password has been added.
+
+6. As a returning visitor of the website, I want to be able to see information about other users of the website and contact them when needed.
+   * Every song record has an information field in the expanded information section of the record stating who uploaded the song  'Uploaded by'. Only users can click on the 'Uploaded by' link to see more information about the other user. Here is the e-mail address of the user who uploaded the song is indicated. The user has the option to hide this e-mail address for other users on the 'Profile' page.
+
+
+#### Administrator User Goals
+1. As an administrator of the website, I want to be able to adjust all uploaded songs, so I can change them for whatever reason.
+   * The administrator has access to the 'All songs' page, here all songs on the website will be alphabetically summarized. The administrator can edit and delete all songs on the website.
+   * The administrator has access to the 'Users' page, here all users are alphabetically summarized. The administrator can delete every user who has access to the website.
+3. As an administrator of the website, I want to adjust other information which is relevant to the website.
+   * The administrator has access to the 'Settings' page, here it is possible to adjust the following information: Country settings, add or delete country names from the website. Country names are indicated on the user's profile page, telling in which country the user is currently living.
+   * The administrator can add or delete other genders to the website. For now only male and female are available. A gender has to be selected by a new user when creating a user account.
+   * The administrator can add or delete other genres to the website. For now, 10 different genres are available on the website. A genre is selected by a user when adding a song to the website.
+   * The administrator can add or delete other release years to the website. For now, only the years 1970 to 1990 can be selected on the website. A release year is selected by a user when adding a song to the website.
 
 
 <!-- Known Bugs -->
