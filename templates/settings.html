@@ -13,7 +13,7 @@ Date: November 2021
 <div class="form-div">
 
     <!-- heading -->
-    <h1 class="form-heading">Website settings</h1>
+    <h2 class="form-heading">Website settings</h2>
 
     <!-- remove country from database -->
     <form class="settings-form" action="{{ url_for('delete_country') }}" method="POST">
@@ -68,7 +68,6 @@ Date: November 2021
 
     </form>
 
-
     <!-- add gender to database -->
     <form class="settings-form" action="{{ url_for('add_gender') }}" method="POST">
 
@@ -101,7 +100,6 @@ Date: November 2021
 
     </form>
 
-
     <!-- add genre to database -->
     <form class="settings-form" action="{{ url_for('add_genre') }}" method="POST">
 
@@ -113,11 +111,9 @@ Date: November 2021
     
     </form>
 
+    <hr class="hr-settings">
 
-<hr class="hr-settings">
-
-
-    <!-- remove release years from database -->
+    <!-- remove release year from database -->
     <form class="settings-form" action="{{ url_for('delete_release_year') }}" method="POST">
 
         <!-- heading -->
@@ -146,7 +142,6 @@ Date: November 2021
         <input type="submit" value="add release year" class="settings-button form-button" title="Click here to add a new release year to the database" aria-label="Click here to add a new release year to the database">
     
     </form>
-
 
 </div>
 

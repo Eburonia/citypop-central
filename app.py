@@ -2,7 +2,6 @@
 # Author: Maurice Vossen
 # Date: November 2021
 
-
 import os
 import datetime
 import math
@@ -417,17 +416,24 @@ def delete_profile():
     This function deletes your profile page
     '''
 
-    # Delete user from database
-    mongo.db.users.remove({"username": session["user"]})
+    # Is user is logged in
+    if 'user' in session:
 
-    # Remove session cookie
-    session.pop("user")
+        # Delete user from database
+        mongo.db.users.remove({"username": session["user"]})
 
-    # Flash message profile has been deleted
-    flash("Your profile has been deleted")
+        # Remove session cookie
+        session.pop("user")
 
-    # Return to register page
-    return redirect(url_for("register"))
+        # Flash message profile has been deleted
+        flash("Your profile has been deleted")
+
+        # Return to register page
+        return redirect(url_for("register"))
+
+    else:
+        # Return to index page
+        return redirect(url_for("index"))
 
 
 @app.route("/logout")
@@ -436,15 +442,22 @@ def logout():
     Thus function logges you out
     '''
 
-    # Remove user from session cookies
-    # Flash message you have been logged out
-    flash("You have been logged out")
+    # Is user is logged in
+    if 'user' in session:
 
-    # Remove session cookie
-    session.pop("user")
+        # Remove user from session cookies
+        # Flash message you have been logged out
+        flash("You have been logged out")
 
-    # Redirect to the login page
-    return redirect(url_for("login"))
+        # Remove session cookie
+        session.pop("user")
+
+        # Redirect to the login page
+        return redirect(url_for("login"))
+
+    else:
+        # Redirect to the login page
+        return redirect(url_for("login"))
 
 
 @app.route("/add_song", methods=["GET", "POST"])
@@ -457,48 +470,54 @@ def add_song():
     # Set page title
     title = 'Citypop Central | Add Song'
 
-    if request.method == "POST":
+    # Is user is logged in
+    if 'user' in session:
 
-        # Get date of today
-        date_time_now = datetime.datetime.now()
+        if request.method == "POST":
 
-        # Convert to '13 November 2019'
-        date = str(date_time_now.day) + " " +\
-            str(date_time_now.strftime("%B")) + " " + str(date_time_now.year)
+            # Get date of today
+            date_time_now = datetime.datetime.now()
 
-        # Create data memory for song
-        song = {
-            "artist_name": request.form.get("artist_name"),
-            "song_name": request.form.get("song_name"),
-            "youtube": request.form.get("youtube"),
-            "uploaded_by": session["user"],
-            "genre": request.form.get("genre"),
-            "upload_date": str(date),
-            "album_name": request.form.get("album_name"),
-            "release_year": request.form.get("release_year"),
-            "album_image": request.form.get("album_image"),
-            "song_length": request.form.get("song_length")
-        }
+            # Convert to '13 November 2019'
+            date = str(date_time_now.day) + " " +\
+                str(date_time_now.strftime("%B")) + " " + str(date_time_now.year)
 
-        # Insert the song into the database
-        mongo.db.songs.insert_one(song)
+            # Create data memory for song
+            song = {
+                "artist_name": request.form.get("artist_name"),
+                "song_name": request.form.get("song_name"),
+                "youtube": request.form.get("youtube"),
+                "uploaded_by": session["user"],
+                "genre": request.form.get("genre"),
+                "upload_date": str(date),
+                "album_name": request.form.get("album_name"),
+                "release_year": request.form.get("release_year"),
+                "album_image": request.form.get("album_image"),
+                "song_length": request.form.get("song_length")
+            }
 
-        # Flash message song added succesfully
-        flash('Song has been added to the database')
+            # Insert the song into the database
+            mongo.db.songs.insert_one(song)
 
-        # Return to index page
+            # Flash message song added succesfully
+            flash('Song has been added to the database')
+
+            # Return to index page
+            return redirect(url_for("index"))
+
+        # Add allowable release years from database to front-end
+        release_years = mongo.db.release_years.find().sort("release_year", 1)
+
+        # Add allowable gender names from database to front-end
+        genres = mongo.db.genres.find().sort("genre", 1)
+
+        # Return information to front-end of website
+        return render_template("add_song.html", genres=genres,
+                        release_years=release_years, title=title)
+
+    else:
+        # Redirect to the index page
         return redirect(url_for("index"))
-
-    # Add allowable release years from database to front-end
-    release_years = mongo.db.release_years.find().sort("release_year", 1)
-
-    # Add allowable gender names from database to front-end
-    genres = mongo.db.genres.find().sort("genre", 1)
-
-    # Return information to front-end of website
-    return render_template("add_song.html", genres=genres,
-                           release_years=release_years, title=title)
-
 
 @app.route("/edit_song", methods=["GET", "POST"])
 def edit_song():
@@ -787,6 +806,13 @@ def delete_country():
         # Return to index page
         return redirect(url_for("settings"))
 
+    else:
+        # Flash message no access
+        flash("You have no access to this page")
+
+        # Return to main page
+        return redirect(url_for("index"))
+
 
 @app.route("/delete_gender", methods=["GET", "POST"])
 def delete_gender():
@@ -804,6 +830,13 @@ def delete_gender():
 
         # Return to index page
         return redirect(url_for("settings"))
+
+    else:
+        # Flash message no access
+        flash("You have no access to this page")
+
+        # Return to main page
+        return redirect(url_for("index"))
 
 
 @app.route("/delete_genre", methods=["GET", "POST"])
@@ -823,6 +856,13 @@ def delete_genre():
         # Return to index page
         return redirect(url_for("settings"))
 
+    else:
+        # Flash message no access
+        flash("You have no access to this page")
+
+        # Return to main page
+        return redirect(url_for("index"))
+
 
 @app.route("/delete_release_year", methods=["GET", "POST"])
 def delete_release_year():
@@ -839,8 +879,15 @@ def delete_release_year():
         # Flash message release year removed from database
         flash("Release year removed from the database")
 
-        # Return to index page
+        # Return to settings page
         return redirect(url_for("settings"))
+
+    else:
+        # Flash message no access
+        flash("You have no access to this page")
+
+        # Return to main page
+        return redirect(url_for("index"))
 
 
 @app.route("/add_country", methods=["GET", "POST"])
@@ -865,6 +912,13 @@ def add_country():
         # Return to index page
         return redirect(url_for("settings"))
 
+    else:
+        # Flash message no access
+        flash("You have no access to this page")
+
+        # Return to main page
+        return redirect(url_for("index"))
+
 
 @app.route("/add_gender", methods=["GET", "POST"])
 def add_gender():
@@ -887,6 +941,13 @@ def add_gender():
 
         # Return to index page
         return redirect(url_for("settings"))
+
+    else:
+        # Flash message no access
+        flash("You have no access to this page")
+
+        # Return to main page
+        return redirect(url_for("index"))
 
 
 @app.route("/add_genre", methods=["GET", "POST"])
@@ -911,6 +972,13 @@ def add_genre():
         # Return to index page
         return redirect(url_for("settings"))
 
+    else:
+        # Flash message no access
+        flash("You have no access to this page")
+
+        # Return to main page
+        return redirect(url_for("index"))
+
 
 @app.route("/add_release_year", methods=["GET", "POST"])
 def add_release_year():
@@ -933,6 +1001,13 @@ def add_release_year():
 
         # Return to index page
         return redirect(url_for("settings"))
+
+    else:
+        # Flash message no access
+        flash("You have no access to this page")
+
+        # Return to main page
+        return redirect(url_for("index"))
 
 
 @app.errorhandler(404)
