@@ -474,7 +474,7 @@ The following online validators were used to check whether the website generated
 
 W3C Markup Validator, the following pages were checked:
 Make sure you are logged in as Admin onto the website when clicking on the links below.
-* [about](https://validator.w3.org/nu/?doc=http%3A%2F%2Fcitypop-central.herokuapp.com%2Fadd_song)
+* [about](https://validator.w3.org/nu/?doc=http%3A%2F%2Fcitypop-central.herokuapp.com%2Fabout)
 * [add_song](https://validator.w3.org/nu/?doc=http%3A%2F%2Fcitypop-central.herokuapp.com%2Fadd_song)
 * [edit_song](https://validator.w3.org/nu/?doc=http%3A%2F%2Fcitypop-central.herokuapp.com%2Fedit_song%3Fsong_id%3D617bc16c312ed7617ea2acb4)
 * [login](https://validator.w3.org/nu/?doc=http%3A%2F%2Fcitypop-central.herokuapp.com%2Flogin)
