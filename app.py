@@ -535,14 +535,16 @@ def edit_song():
     # If user is logged in
     if 'user' in session:
 
-        # Logged in user is not the same as user who uploaded the song
-        if uploaded_by != session["user"]:
+        if session['user'] != 'admin':
 
-            # Flash message not allowed to update song
-            flash("You are not allowed to update this song")
+            # Logged in user is not the same as user who uploaded the song
+            if uploaded_by != session["user"]:
 
-            # Redirect to the index page
-            return redirect(url_for("index"))
+                # Flash message not allowed to update song
+                flash("You are not allowed to update this song")
+
+                # Redirect to the index page
+                return redirect(url_for("index"))
     else:
 
         # Flash message not allowed to update song for non-logged in persons
