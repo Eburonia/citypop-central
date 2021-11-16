@@ -127,6 +127,7 @@ header {
 
 #navigation-div > ul {
     float: right;
+    clear: right;
     border-radius: 20px;
     box-sizing: border-box;
     padding: 10px;
@@ -198,6 +199,18 @@ header {
     text-shadow: 
     0 0 5px rgb(255, 165, 55),
     0 0 10px rgb(251, 213, 168);
+}
+
+
+#login-username {
+    font-size: 20px;
+    color: var(--pink);
+    float: right;
+    clear: right;
+    margin-right: 20px;
+    box-sizing: border-box;
+    padding: 5px;
+    cursor: pointer;
 }
 
 
@@ -322,8 +335,8 @@ header {
 
 @media only screen and (max-width: 700px) {
     
-    #transition-div {
-        background-color: red;
+    #transition-div, header {
+        background: var(--black);
     }
 }
 
@@ -355,13 +368,8 @@ header {
         margin: 2px;
     }
 
-}
-
-
-@media only screen and (max-width: 700px) {
-
-    #transition-div, header {
-        background: var(--black);
+    #login-username {
+        display: none;
     }
 
 }
