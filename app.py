@@ -100,7 +100,8 @@ def results():
             page = 0
 
     # Check user input from the address bar
-        # If non-numeric pages are selected from the address bar by direct user input
+        # If non-numeric pages are selected from the address bar
+        # by direct user input
         if not str(page).isnumeric():
             return redirect(url_for("index"))
 
@@ -116,7 +117,7 @@ def results():
         # Determine number of pages needed for results
         number_of_pages = math.ceil(number_of_results / limit)
 
-        #If user selects higher page number than available
+        # If user selects higher page number than available
         if int(page) >= number_of_pages:
             return redirect(url_for("index"))
 
@@ -353,7 +354,7 @@ def profile():
             {"username": session["user"]})["username"]
 
         # Get all user settings from database
-        settings = mongo.db.users.find_one({"username": session["user"]})
+        user_settings = mongo.db.users.find_one({"username": session["user"]})
 
         # Get all countries from database
         countries = mongo.db.countries.find().sort("country_name", 1)
@@ -367,7 +368,7 @@ def profile():
 
         # Return information to front-end of website
         return render_template(
-            "profile.html", username=username, settings=settings,
+            "profile.html", username=username, settings=user_settings,
             countries=countries, genders=genders, title=title,
             my_songs=my_songs)
 
@@ -396,7 +397,8 @@ def update_profile(username):
             "$set": {"email": request.form.get(
                 "email"), "country_name": request.form.get("country"),
                 "share_email": request.form.get("share-email"),
-                "password": generate_password_hash(request.form.get("password"))}
+                "password": generate_password_hash(
+                    request.form.get("password"))}
                 }
 
         # Update profile settings in the database
@@ -660,7 +662,8 @@ def mysongs():
             my_songs = mongo.db.songs.find().sort("artist_name", 1)
         else:
             # Import my uploaded songs from database
-            my_songs = mongo.db.songs.find({"uploaded_by": session["user"]}).sort("artist_name", 1)
+            my_songs = mongo.db.songs.find(
+                {"uploaded_by": session["user"]}).sort("artist_name", 1)
 
     else:
 
@@ -674,7 +677,8 @@ def mysongs():
 @app.route("/users", methods=["GET", "POST"])
 def users():
     '''
-    This function opens the users.html page which is only accessible by the admin
+    This function opens the users.html page
+    which is only accessible by the admin
     '''
 
     # Set page title
@@ -728,20 +732,41 @@ def settings():
     # Set page title
     title = 'Citypop Central | Settings'
 
-    # Get all the countries from the database
-    countries = mongo.db.countries.find().sort("country_name", 1)
+    if 'user' in session:
+        if session["user"] == 'admin':
 
-    # Get all the genders from the database
-    genders = mongo.db.genders.find().sort("gender", 1)
+            # Load all settings on screen
 
-    # Get all the genres from the database
-    genres = mongo.db.genres.find().sort("genre", 1)
+            # Get all the countries from the database
+            countries = mongo.db.countries.find().sort("country_name", 1)
 
-    # Get all the release years from the database
-    release_years = mongo.db.release_years.find().sort("release_year", 1)
+            # Get all the genders from the database
+            genders = mongo.db.genders.find().sort("gender", 1)
+
+            # Get all the genres from the database
+            genres = mongo.db.genres.find().sort("genre", 1)
+
+            # Get all the release years from the database
+            release_years = mongo.db.release_years.find().sort(
+                "release_year", 1)
+
+        else:
+            # Flash message no acces for other users
+            flash("You have no access to this page")
+
+            # Return to main page
+            return redirect(url_for("index"))
+    else:
+        # Flash message no access for visitors
+        flash("You have no access to this page")
+
+        # Return to main page
+        return redirect(url_for("index"))
 
     # Return information to front-end of website
-    return render_template("settings.html", countries=countries, genders=genders, genres=genres, release_years=release_years, title=title)
+    return render_template("settings.html", countries=countries,
+                           genders=genders, genres=genres,
+                           release_years=release_years, title=title)
 
 
 @app.route("/delete_country", methods=["GET", "POST"])
@@ -753,7 +778,8 @@ def delete_country():
     if request.method == "POST":
 
         # Delete country from database
-        mongo.db.countries.remove({"country_name": request.form.get("remove-country")})
+        mongo.db.countries.remove(
+            {"country_name": request.form.get("remove-country")})
 
         # Flash message country removed from database
         flash("Country removed from the database")
@@ -807,7 +833,8 @@ def delete_release_year():
     if request.method == "POST":
 
         # Delete release year from database
-        mongo.db.release_years.remove({"release_year": request.form.get("remove-release-year")})
+        mongo.db.release_years.remove(
+            {"release_year": request.form.get("remove-release-year")})
 
         # Flash message release year removed from database
         flash("Release year removed from the database")

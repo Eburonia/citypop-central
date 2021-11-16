@@ -8,6 +8,8 @@ Date: November 2021
 {% extends "base.html" %}
 {% block content %}
 
+{% if session.user == 'admin' %}
+
 <div class="form-div">
 
     <!-- heading -->
@@ -147,5 +149,9 @@ Date: November 2021
 
 
 </div>
+
+{% else %}
+
+{% endif %}
 
 {% endblock %}
