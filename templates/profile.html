@@ -61,6 +61,21 @@ Date: November 2021
 
         </select>
 
+        <!-- heading -->
+        <h3 class="form-heading">Update password</h3>
+
+        <!-- update password -->
+        <label for="password" class="form-label">Password :</label>
+        <p class="form-info">Your password must contain at least one number, one uppercase and lowercase letter, and at least 8 or more characters.</p>
+        <p class="form-message">Passwords don't match</p>
+        <input type="password" id="password" name="password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" class="form-textbox" aria-label="Please enter a password, this a required field" required>
+
+        <!-- confirm password -->
+        <label for="password-confirm" class="form-label">Confirm password :</label>
+        <p class="form-info">Repeat your password one more time.</p>
+        <p class="form-message">Passwords don't match</p>
+        <input type="password" id="password-confirm" name="password-confirm" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="form-textbox" aria-label="Please repeat the password one more time, this a required field" required>
+
         <!-- submit button -->
         <input type="submit" value="update" class="form-button" title="Click here to update your profile" aria-label="Click this button to update your profile, make sure you have added all required fields above"><br><br>
 
