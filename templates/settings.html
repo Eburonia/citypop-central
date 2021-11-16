@@ -1,0 +1,78 @@
+<!--
+File: settings.html
+Author: Maurice Vossen
+Date: November 2021
+-->
+
+
+{% extends "base.html" %}
+{% block content %}
+
+<div class="form-div">
+
+    <!-- heading -->
+    <h1 class="form-heading">Website settings</h1>
+
+    <!-- remove country from database -->
+    <form class="settings-form" action="{{ url_for('delete_country') }}" method="POST">
+
+        <!-- heading -->
+        <h2 class="settings-heading form-heading">Country settings</h2>
+
+        <label for="remove-country" class="form-label">Remove country from database :</label>
+        <select id="remove-country" name="remove-country" class="form-textbox" aria-label="Please select the country you want to remove from the database">
+
+            {% for country in countries %}
+                <option value="{{country.country_name}}">{{country.country_name}}</option>
+            {% endfor %}
+
+        </select>
+
+        <input type="submit" value="delete country" class="form-button" title="Click here to remove the selected country from the database" aria-label="Click here to remove the selected country from the database">
+
+    </form>
+
+    <!-- add country to database -->
+    <form class="settings-form" action="{{ url_for('add_country') }}" method="POST">
+
+        <label for="add-country" class="form-label">Add country to database :</label>
+        <input type="text" id="add-country" name="add-country" class="form-textbox" aria-label="Please enter new country name"><br>
+
+        <input type="submit" value="add country" class="form-button" title="Click here to add a new country to the database" aria-label="Click here to add a new country to the database">
+
+    </form>
+
+    <!-- remove gender from database -->
+    <form class="settings-form" action="{{ url_for('delete_gender') }}" method="POST">
+
+        <!-- heading -->
+        <h2 class="settings-heading form-heading">Gender settings</h2>
+
+        <label for="remove-gender" class="form-label">Remove gender from database :</label>
+        <select id="remove-gender" name="remove-gender" class="form-textbox" aria-label="Please select the gender you want to remove from the database">
+
+            {% for gender in genders %}
+                <option value="{{gender.gender}}">{{gender.gender}}</option>
+            {% endfor %}
+
+        </select>
+
+        <input type="submit" value="delete gender" class="form-button" title="Click here to remove the selected gender from the database" aria-label="Click here to remove the selected gender from the database">
+
+    </form>
+
+    <!-- add gender to database -->
+    <form class="settings-form" action="{{ url_for('add_gender') }}" method="POST">
+
+    <label for="add-gender" class="form-label">Add gender to database :</label>
+    <input type="text" id="add-gender" name="add-gender" class="form-textbox" aria-label="Please enter new gender"><br>
+
+    <input type="submit" value="add gender" class="form-button" title="Click here to add a new gender to the database" aria-label="Click here to add a new gender to the database">
+
+</form>
+
+
+
+</div>
+
+{% endblock %}

@@ -76,6 +76,13 @@ Date: November 2021
         <link rel="stylesheet" href="{{ url_for('static', filename='css/users.css') }}" type="text/css">
     {% endif %}
 
+
+    {% if title == 'Citypop Central | Settings' %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/settings.css') }}" type="text/css">
+    {% endif %}
+
+
+
     <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}" type="text/css">
     
 
@@ -126,7 +133,7 @@ Date: November 2021
 
                             {% if session.user == 'admin' %}
                                 <li class="menu-item"><a href="{{ url_for('users') }}" aria-label="Click here to see all users" title="Click here to see all users">Users</a></li>
-                                <li class="menu-item"><a href="" aria-label="Click here to see the website settings" title="Click here to see the website settings">Settings</a></li>
+                                <li class="menu-item"><a href="{{ url_for('settings') }}" aria-label="Click here to see the website settings" title="Click here to see the website settings">Settings</a></li>
                             {% endif %}
 
                             <li class="menu-item"><a href="{{ url_for('profile', username=session.user) }}" aria-label="Click here to see your profile information" title="Click here to see your profile information">Profile</a></li>
@@ -158,25 +165,29 @@ Date: November 2021
 
                 {% if session.user %}
 
-                    {% if session.user == 'admin' %}
-                        <a class="toggle-menu-item" href="{{ url_for('users') }}" aria-label="Click here to see all users">Users</a>
-                    {% endif %}
-
-                    <a class="toggle-menu-item" href="{{ url_for('profile', username=session.user) }}" aria-label="Click here to see your profile information">Profile</a>
-
+                    <a class="toggle-menu-item" href="{{ url_for('add_song') }}" aria-label="Click here to go to add a song to the database">Add Song</a>
+                    
                     {% if session.user == 'admin' %}
                         <a class="toggle-menu-item" href="{{ url_for('mysongs') }}" aria-label="Click here to see a summary of all songs in database">All Songs</a>
                     {% else %}
                         <a class="toggle-menu-item" href="{{ url_for('mysongs') }}" aria-label="Click here to see a summary of your added songs">My Songs</a>
                     {% endif %}
 
-                    <a class="toggle-menu-item" href="{{ url_for('mysongs') }}" aria-label="Click here to see a summary of your added songs">My Songs</a>
-                    <a class="toggle-menu-item" href="{{ url_for('add_song') }}" aria-label="Click here to go to add a song to the database">Add Song</a>
+                    <a class="toggle-menu-item" href="{{ url_for('profile', username=session.user) }}" aria-label="Click here to see your profile information">Profile</a>
+
+                    {% if session.user == 'admin' %}
+                        <a class="toggle-menu-item" href="{{ url_for('settings') }}" aria-label="Click here to see the website settings">Settings</a>    
+                        <a class="toggle-menu-item" href="{{ url_for('users') }}" aria-label="Click here to see all users">Users</a>
+                    {% endif %}
+
                     <a class="toggle-menu-item" href="{{ url_for('logout') }}" aria-label="Click here to go to logout">Logout</a>
+
                 {% else %}
+
                     <a class="toggle-menu-item" href="{{ url_for('about') }}" aria-label="Click here to go to the about page">About</a>
                     <a class="toggle-menu-item" href="{{ url_for('login') }}" aria-label="Click here to login">Login</a>
                     <a class="toggle-menu-item" href="{{ url_for('register') }}" aria-label="Click here to go to register">Register</a>
+
                 {% endif %}
 
             </div>

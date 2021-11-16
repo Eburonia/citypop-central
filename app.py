@@ -719,6 +719,108 @@ def delete_user(user_id):
     return redirect(url_for("users"))
 
 
+@app.route("/settings")
+def settings():
+    '''
+    This function shows all settings to the admin
+    '''
+
+    # Set page title
+    title = 'Citypop Central | Settings'
+
+    # Get all the countries from the database
+    countries = mongo.db.countries.find().sort("country_name", 1)
+
+    # Get all the genders from the database
+    genders = mongo.db.genders.find().sort("gender", 1)
+
+    # Return information to front-end of website
+    return render_template("settings.html", countries=countries, genders=genders, title=title)
+
+
+@app.route("/delete_country", methods=["GET", "POST"])
+def delete_country():
+    '''
+    This function removed a specific country from the database
+    '''
+
+    if request.method == "POST":
+
+        # Delete country from database
+        mongo.db.countries.remove({"country_name": request.form.get("remove-country")})
+
+        # Flash message country removed from database
+        flash("Country removed from the database")
+
+        # Return to index page
+        return redirect(url_for("settings"))
+
+
+@app.route("/delete_gender", methods=["GET", "POST"])
+def delete_gender():
+    '''
+    This function removed a specific gender from the database
+    '''
+
+    if request.method == "POST":
+
+        # Delete gender from database
+        mongo.db.genders.remove({"gender": request.form.get("remove-gender")})
+
+        # Flash message gender removed from database
+        flash("Gender removed from the database")
+
+        # Return to index page
+        return redirect(url_for("settings"))
+
+
+
+@app.route("/add_country", methods=["GET", "POST"])
+def add_country():
+    '''
+    This function adds a new country to the database
+    '''
+
+    if request.method == "POST":
+
+        # Create data memory for country
+        new_country = {
+            "country_name": request.form.get("add-country")
+        }
+
+        # Insert the country into the database
+        mongo.db.countries.insert_one(new_country)
+
+        # Flash message country added to database
+        flash("Country added to the database")
+
+        # Return to index page
+        return redirect(url_for("settings"))
+
+
+@app.route("/add_gender", methods=["GET", "POST"])
+def add_gender():
+    '''
+    This function adds a new gender to the database
+    '''
+
+    if request.method == "POST":
+
+        # Create data memory for gender
+        new_gender = {
+            "gender": request.form.get("add-gender")
+        }
+
+        # Insert the gender into the database
+        mongo.db.genders.insert_one(new_gender)
+
+        # Flash message gender added to database
+        flash("Gender added to the database")
+
+        # Return to index page
+        return redirect(url_for("settings"))
+
+
 @app.errorhandler(404)
 def page_not_found(e):
     '''
