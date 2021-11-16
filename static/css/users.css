@@ -1,0 +1,52 @@
+/*
+File: users.css
+Author: Maurice Vossen
+Date: November 2021
+*/
+
+
+.users-div { 
+    box-sizing: border-box;
+    font-size: 18px;
+    overflow: hidden;
+    background-color: var(--black);
+    width: 50%;
+    margin: 0 auto;
+    padding: 30px;
+    border: 2px solid var(--yellow);
+    border-radius: 20px;
+}
+
+
+.user-item {
+    color: var(--white);
+    cursor: pointer;
+    box-sizing: border-box;
+    float: left;
+    width: calc(100% - 200px);
+    border-radius: 8px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding: 10px 0;
+}
+
+
+.user-item > a {
+    color: var(--pink);
+    text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+
+.user-item > a:hover {
+    color: var(--pink);
+    text-decoration: underline;
+}
+
+
+.confirm-delete-user {
+    color: red !important;
+}

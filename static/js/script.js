@@ -193,3 +193,26 @@ $('#album_image').blur(function() {
     }
 
 });
+
+
+// Hides confirmation delete user
+$('.confirm-delete-user').hide();
+
+
+// Shows conformation to delete user
+$(document).on('click', '.delete-user', function() {
+
+    let clickedUsertoDelete = $('.delete-user').index(this);
+
+    if($('.confirm-delete-user').is(':visible')) {
+
+        $('.confirm-delete-user').eq(clickedUsertoDelete).hide();
+    }
+
+    else {
+
+        $('.confirm-delete-user').eq(clickedUsertoDelete).show();
+
+    }
+    
+});

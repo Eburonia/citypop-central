@@ -445,22 +445,6 @@ def logout():
     return redirect(url_for("login"))
 
 
-
-@app.route("/test", methods=["GET", "POST"])
-def test():
-
-    song_id = request.args.get('song_id')
-
-    if str(song_id).isalpha():
-        flash('select numbers not letters')
-
-    return render_template("test.html", song_id=song_id)
-
-
-
-
-
-
 @app.route("/add_song", methods=["GET", "POST"])
 def add_song():
     '''
@@ -685,6 +669,54 @@ def mysongs():
 
     # Return information to front-end of website
     return render_template("my_songs.html", my_songs=my_songs, title=title)
+
+
+@app.route("/users", methods=["GET", "POST"])
+def users():
+    '''
+    This function opens the users.html page which is only accessible by the admin
+    '''
+
+    # Set page title
+    title = 'Citypop Central | Users'
+
+    if 'user' in session:
+        if session["user"] == 'admin':
+
+            # Load all users on screen
+            all_users = mongo.db.users.find().sort("username", 1)
+
+        else:
+            # Flash message no acces for other users
+            flash("You have no access to this page")
+
+            # Return to main page
+            return redirect(url_for("index"))
+    else:
+        # Flash message no access for visitors
+        flash("You have no access to this page")
+
+        # Return to main page
+        return redirect(url_for("index"))
+
+    # Return information to front-end of website
+    return render_template("users.html", all_users=all_users, title=title)
+
+
+@app.route("/delete_user/<user_id>")
+def delete_user(user_id):
+    '''
+    This function deletes a specific user in the database
+    '''
+
+    # Delete user from database
+    mongo.db.users.remove({"_id": ObjectId(user_id)})
+
+    # Flash message user deleted from database
+    flash('User has been deleted from the database')
+
+    # Return to index page
+    return redirect(url_for("users"))
 
 
 @app.errorhandler(404)
