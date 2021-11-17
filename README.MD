@@ -74,6 +74,7 @@ For more information about Citypop, check the following videos on YouTube:
 #### Administrator User Goals
 1. As an administrator of the website, I want to be able to adjust all uploaded songs, so I can change them for whatever reason.
 2. As an administrator of the website, I want to adjust other information which is relevant to the website.
+3. As an administrator of the website, I want to know when songs were updated for the last time.
 
 
 #### Colour Scheme
@@ -294,59 +295,59 @@ The MongoDB Data Scheme Citypop Central
 
 
 #### About Page
-- Check the spelling of the page.
-- Check the responsiveness of the page.
-- Check the sizing of the embedded Youtube videos.
-- Check the functionality of the videos.
-- Check the video description.
+- Check the spelling of the page. **(checked)**
+- Check the responsiveness of the page. **(checked)**
+- Check the sizing of the embedded Youtube videos. **(checked)**
+- Check the functionality of the videos. **(checked)**
+- Check the video description. **(checked)**
 
 <img src="" alt="About Page"><br>
 <sub>About Page</sub>
 
 
 #### Index Page
-- Check the responsiveness of the page.
-- Check the latest song links function and open in a new screen.
+- Check the responsiveness of the page. **(checked)**
+- Check the latest song links function and open in a new screen. **(checked)**
 
 
 #### C.R.U.D. Index Page
-- Check whether records show up when searching the following keywords: Artist Name, Song Name, Genre, Release Year, Album Name, Uploaded By, Upload Date.
-- Check whether a song added to the database shows up to the latest songs summary.
+- Check whether records show up when searching the following keywords: Artist Name, Song Name, Genre, Release Year, Album Name, Uploaded By, Upload Date. **(checked)**
+- Check whether a song added to the database shows up to the latest songs summary. **(checked)**
 
 <img src="" alt="Index Page"><br>
 <sub>Index Page</sub>
 
 
 #### Results Page
-- Check the responsiveness of the page.
-- Check whether the 'Expand for more information' icon (question mark) functions properly.
-- Check whether the 'Uploaded By' link opens a new blank page.
-- Check whether all show song information is correct.
-- Check whether there is no text-overflow.
-- Check whether the Youtube link functions and opens a new blank page.
-- Check whether the 'Edit' and 'Delete' icons show up when logged in and check whether they function properly.
+- Check the responsiveness of the page. **(checked)**
+- Check whether the 'Expand for more information' icon (question mark) functions properly. **(checked)**
+- Check whether the 'Uploaded By' link opens a new blank page. **(checked)**
+- Check whether all show song information is correct. **(checked)**
+- Check whether there is no text-overflow. **(checked)**
+- Check whether the Youtube link functions and opens a new blank page. **(checked)**
+- Check whether the 'Edit' and 'Delete' icons show up when logged in and check whether they function properly. **(checked)**
 
 
 #### C.R.U.D. Results Page
-- Check the number of results (records) indicated to match the real shown results on the screen.
-- Check pagination functions properly.
-- Check whether a maximum of 10 records shows up on the screen.
-- Check whether 'Edit Date' shows up when the song has been edited.
-- Check manipulation of the search bar search keys won't give wrong results or errors. 
+- Check the number of results (records) indicated to match the real shown results on the screen. **(checked)**
+- Check pagination functions properly. **(checked)**
+- Check whether a maximum of 10 records shows up on the screen. **(checked)**
+- Check whether 'Edit Date' shows up when the song has been edited. **(checked)**
+- Check manipulation of the search bar search keys won't give wrong results or errors. **(checked)**
 
 <img src="" alt="Edit and Delete Icons"><br>
 <sub>Edit and Delete Icons</sub>
 
 
 #### Profile Page
-- Check the responsiveness of the page.
-- Check all country names are capitalized and alphabetically sorted.
-- Check the regular expression functions properly for the email text field.
+- Check the responsiveness of the page. **(checked)**
+- Check all country names are capitalized and alphabetically sorted. **(checked)**
+- Check the regular expression functions properly for the email text field. **(checked)**
 
 
 #### C.R.U.D. Profile Page
-- Check correct username shows up.
-- Check whether the 'Delete your profile' link function works properly.
+- Check correct username shows up. **(checked)**
+- Check whether the 'Delete your profile' link function works properly. **(checked)**
 - Check whether all fields are updated in the database when changed.
 
 <img src="" alt="Profile Page"><br>
@@ -599,17 +600,19 @@ No important errors found.
 1. As an administrator of the website, I want to be able to adjust all uploaded songs, so I can change them for whatever reason.
    * The administrator has access to the 'All songs' page, here all songs on the website will be alphabetically summarized. The administrator can edit and delete all songs on the website.
    * The administrator has access to the 'Users' page, here all users are alphabetically summarized. The administrator can delete every user who has access to the website.
-3. As an administrator of the website, I want to adjust other information which is relevant to the website.
+2. As an administrator of the website, I want to adjust other information which is relevant to the website.
    * The administrator has access to the 'Settings' page, here it is possible to adjust the following information: Country settings, add or delete country names from the website. Country names are indicated on the user's profile page, telling in which country the user is currently living.
    * The administrator can add or delete other genders to the website. For now only male and female are available. A gender has to be selected by a new user when creating a user account.
    * The administrator can add or delete other genres to the website. For now, 10 different genres are available on the website. A genre is selected by a user when adding a song to the website.
    * The administrator can add or delete other release years to the website. For now, only the years 1970 to 1990 can be selected on the website. A release year is selected by a user when adding a song to the website.
+3. As an administrator of the website, I want to know when songs were updated for the last time.
+   * Songs will get an extra data field when the song was updated for the last time. Click the expand more information (?) to see this field below the 'Upload Date' field.
 
 
 <!-- Known Bugs -->
 <a id="bugs"></a>
 ## Known Bugs
-No known bugs found so far.
+* When the Artist Name and Song title become too long wrapping is needed, this is not an elegant solution and needs to be fixed in the future.
 
 
 <!-- Deployment -->
