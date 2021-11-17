@@ -7,20 +7,26 @@ Date: November 2021
 {% extends "base.html" %}
 {% block content %}
 
+    <!-- frame -->
     <div class="form-div">
 
+        <!-- heading -->
         <h1 class="form-heading">Add a new song to the database</h1>
 
+        <!-- form -->
         <form action="{{url_for('add_song')}}" method="POST">
 
+            <!-- artist name -->
             <label for="artist_name" class="form-label">Artist Name :</label>
             <p class="form-info">All first letters to be uppercase (e.g. Junko Yagami).</p>
             <input type="text" id="artist_name" name="artist_name" pattern="[A-Z][a-z'?!]*(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?" class="form-textbox" aria-label="Please enter the artist's name, this a required field" required><br>
 
+            <!-- song name -->
             <label for="song_name" class="form-label">Song Name :</label>
             <p class="form-info">All first letters to be uppercase (e.g. Fly By Day).</p>
             <input type="text" id="song_name" name="song_name" pattern="[A-Z][a-z'?!]*(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?" class="form-textbox" aria-label="Please enter the song name, this a required field" required><br>
 
+            <!-- genre -->
             <label for="genre" class="form-label">Genre :</label><br>
             <p class="form-info">Select a genre.</p>
             <select id="genre" name="genre" class="form-textbox" aria-label="Please select the song's genre">
@@ -33,6 +39,7 @@ Date: November 2021
 
             </select>
 
+            <!-- release year -->
             <label for="release_year" class="form-label">Release Year :</label>
             <p class="form-info">Select a release year.</p>
             <select id="release_year" name="release_year" class="form-textbox" aria-label="Please select the song's release year">
@@ -45,28 +52,34 @@ Date: November 2021
     
             </select>
 
+            <!-- album name -->
             <label for="album_name" class="form-label">Album Name :</label>
             <p class="form-info">All first letters to be uppercase (e.g. Friday Magic).</p>
             <input type="text" id="album_name" name="album_name" pattern="[A-Z][a-z'?!]*(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?(\s[A-Z][a-z'?!]*)?" class="form-textbox" aria-label="Please enter the album name, this a required field" required>
 
+            <!-- album image -->
             <label for="album_image" class="form-label">Album Image :</label><br>
             <p class="form-info">Add the album cover image hyperlink (only upload covers from<a href="https://www.discogs.com/" target="_blank">discogs.com</a>). Keep this field empty in case no album cover is available.</p>
             <textarea name="album_image" id="album_image" class="form-textbox" placeholder="https://img.discogs.com/..." aria-label="Please enter the album's image from the discogs.com website, this a required field" required cols="30" rows="5"></textarea>
 
+            <!-- added album image -->
             <div id="album_image_added">
              
                 <img src="" alt="Selected album cover">
                 
             </div>
 
+            <!-- song length -->
             <label for="song_length" class="form-label">Song Length :</label>
             <p class="form-info">Select the song length (e.g. 3:46, minimum song length: 1:00 maximum 9:59).</p>
             <input type="text" id="song_length" name="song_length" pattern="[1-9]+:[0-5][0-9]" class="form-textbox" aria-label="Please enter the song's length, this a required field" required>
 
+            <!-- youtube link -->
             <label for="youtube" class="form-label">YouTube Link :</label>
             <p class="form-info">Add the Youtube link ID (e.g.: https://www.youtube.com/watch?v=pE2D3LWADFg)</p>
             <input type="text" id="youtube" name="youtube" placeholder="e.g. pE2D3LWADFg" class="form-textbox" aria-label="Please enter the Youtube link ID, this a required field" required>
 
+            <!-- submit button -->
             <input type="submit" value="add song" title="Click here to add a song to our database" class="form-button" aria-label="Click this button to add a song to our database, make sure you have added all required fields above">
 
         </form>

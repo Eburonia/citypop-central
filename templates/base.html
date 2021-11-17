@@ -29,66 +29,65 @@ Date: November 2021
     <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/forms.css') }}" type="text/css">
 
-
+    <!-- load style sheets index page -->
     {% if title == 'Citypop Central | Home' %}
         <link rel="stylesheet" href="{{ url_for('static', filename='css/random-songs.css') }}" type="text/css">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/results.css') }}" type="text/css">
     {% endif %}
 
-
+    <!-- load style sheets about page -->
     {% if title == 'Citypop Central | About' %}
         <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}" type="text/css">
     {% endif %}
 
-
+    <!-- load style sheets results page -->
     {% if title == 'Citypop Central | Results' %}
         <link rel="stylesheet" href="{{ url_for('static', filename='css/random-songs.css') }}" type="text/css">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/results.css') }}" type="text/css">
     {% endif %}
 
-
+    <!-- load style sheets my songs page -->
     {% if title == 'Citypop Central | My Songs' %}
         <link rel="stylesheet" href="{{ url_for('static', filename='css/my-songs.css') }}" type="text/css">
     {% endif %}
 
-
+    <!-- load style sheets user information page -->
     {% if title == 'Citypop Central | User Information' %}
         <link rel="stylesheet" href="{{ url_for('static', filename='css/userinfo.css') }}" type="text/css">
     {% endif %}
 
-
+    <!-- load style sheets youtube page -->
     {% if title == 'Citypop Central | Youtube' %}
         <link rel="stylesheet" href="{{ url_for('static', filename='css/youtube.css') }}" type="text/css">
     {% endif %}
 
-
+    <!-- load style sheets profile page -->
     {% if title == 'Citypop Central | Profile' %}
         <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}" type="text/css">
     {% endif %}
 
-
+    <!-- load style sheets 404 page -->
     {% if title == 'Citypop Central | 404 error' %}
         <link rel="stylesheet" href="{{ url_for('static', filename='css/error404.css') }}" type="text/css">
     {% endif %}
 
-
+    <!-- load style sheets users page -->
     {% if title == 'Citypop Central | Users' %}
         <link rel="stylesheet" href="{{ url_for('static', filename='css/users.css') }}" type="text/css">
     {% endif %}
 
-
+    <!-- load style sheets settings page -->
     {% if title == 'Citypop Central | Settings' %}
         <link rel="stylesheet" href="{{ url_for('static', filename='css/settings.css') }}" type="text/css">
     {% endif %}
 
-
+    <!-- load style sheets index, youtube, results, about page -->
     {% if title == 'Citypop Central | Home' or title == 'Citypop Central | Youtube' or title == 'Citypop Central | Results' or title == 'Citypop Central | About' %}
         <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}" type="text/css">
     {% endif %}
 
     <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
 
     <!-- page title -->
     <title>{{ title }}</title>
@@ -104,7 +103,7 @@ Date: November 2021
         <!-- navigation bar -->
         <nav>   
                 
-            <!-- page logo -->
+            <!-- website logo -->
             <div id="logo-div">
                 
                 <a href="/" title="Click here to go to the homepage" aria-label="Click here to go to the homepage">
@@ -195,7 +194,7 @@ Date: November 2021
     </header>
 
 
-    <!-- transition bar between header and body -->
+    <!-- transition bar between header and content -->
     <div id="transition-div"></div>
 
         <!-- flash messages -->

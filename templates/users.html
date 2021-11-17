@@ -8,32 +8,25 @@ Date: November 2021
 {% extends "base.html" %}
 {% block content %}
     
-    {% if session.user == 'admin' %}
+{% if session.user == 'admin' %}
 
-        <div class="users-div">
+<div class="users-div">
 
-            <!-- heading -->
-            <h1 class="form-heading">Users</h1>
+    <!-- heading -->
+    <h1 class="form-heading">Users</h1>
     
-            <!-- profile form -->
-            <form action="" method="POST">
+        {% for user in all_users %}
 
-            </form>
+            <!-- all users -->
+            <div class="user-item">
 
-            {% for user in all_users %}
+                <i class="delete-user fas fa-trash-alt" title="Delete user" aria-label="Please click here to delete this user"></i><a href="{{ url_for('delete_user', user_id=user._id) }}"><i class="confirm-delete-user fas fa-trash-alt" title="Confirm to delete user"></i></a> {{user.username}}
 
-                <div class="user-item">
+            </div>
 
-                    <i class="delete-user fas fa-trash-alt" title="Delete user" aria-label="Please click here to delete this user"></i><a href="{{ url_for('delete_user', user_id=user._id) }}"><i class="confirm-delete-user fas fa-trash-alt" title="Confirm to delete user"></i></a> {{user.username}}
+        {% endfor %}
 
-                </div>
-
-            {% endfor %}
-
-
-    {% else %}
-
-    {% endif %}
+{% endif %}
 
 
 {% endblock %}

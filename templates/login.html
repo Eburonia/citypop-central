@@ -8,23 +8,29 @@ Date: November 2021
 {% extends "base.html" %}
 {% block content %}
 
+<!-- frame -->
 <div class="form-div">
 
+    <!-- heading -->
     <h1 class="form-heading">Login to your Citypop Central account</h1>
 
+    <!-- form -->
     <form method="POST" action="{{ url_for('login') }}">
 
+        <!-- username -->
         <label for="username" class="form-label">Username :</label><br>
         <input type="text" id="username" name="username" class="form-textbox" aria-label="Please enter your username here, this a required field" required><br>
 
+        <!-- password -->
         <label for="password" class="form-label">Password :</label><br>
         <input type="password" id="password" name="password" class="form-textbox" aria-label="Please enter your password here, this a required field" required><br>
 
+        <!-- submit button -->
         <input type="submit" value="login" class="form-button" aria-label="Click this button to login into your citypop central account, make sure you have added all required fields above" title="Click this button to login into your citypop central account"><br><br>
 
     </form>
 
-    <!-- link to new account page -->
+    <!-- link to register page -->
     <p class="form-p">New to Citypop Central? Create a new account <a class="form-link" href="{{ url_for('register') }}" aria-label="Click this link in case you don't have a Citypop Central user account" title="Click this link in case you don't have a Citypop Central user account">Here</a></p>
 
 </div>   

@@ -8,8 +8,10 @@ Date: November 2021
 {% extends "base.html" %}
 {% block content %}
 
+<!-- frame -->
 <div class="my-songs-div">
 
+    <!-- heading -->
     {% if session.user == 'admin' %}
         <h1 class="form-heading">All songs in database</h1>
     {% else%}
@@ -18,6 +20,7 @@ Date: November 2021
 
     {% for my_song in my_songs %}
 
+    <!-- summary of my songs -->
     <div class="my-songs-item" title="Edit this song">
         <a href="edit_song?song_id={{my_song._id}}" title="Click here to edit this song" aria-label="Click here to edit this song">{{my_song.artist_name}} - {{my_song.song_name}}</a>
     </div>

@@ -8,23 +8,27 @@ Date: November 2021
 {% extends "base.html" %}
 {% block content %}
 
-<!-- search division -->
+<!-- frame -->
 <div class="search-div">
 
     <!-- search form -->
     <form class="search-form" action="{{url_for('results')}}" method="POST">
 
+        <!-- heading -->
         <h1 class="form-heading">Welcome to Citypop Central</h1>
 
+        <!-- search textbox -->
         <label for="search-query" class="search-label">Search songs in our database</label>
         <p class="search-p">e.g. artist, song, album, genre (citypop, funk, jazz), or release year.</p>
         <input type="text" id="search-query" name="search-query" class="search-textbox" aria-label="Please enter a keyword in this textbox to search into our songs database, this a required field" required>
+
+        <!-- search button -->
         <input type="submit" value="search" class="search-button" title="Search" aria-label="Click this button to search into our songs database, make sure you have added at least one keyword to the search textbox"><br><br>
 
     </form>
 
 
-    <!-- header latest songs -->
+    <!-- heading -->
     {% if random_songs %}
         <h3 id="random-songs-h3">Latest uploaded songs</h3>
     {% endif %}
@@ -37,6 +41,7 @@ Date: November 2021
 
             <div class="random-song">
 
+                <!-- album cover -->
                 <a href="/youtube?link={{ random_song.youtube }}" target="_blank" title="{{random_song.artist_name}} - {{random_song.song_name}}" aria-label="Click here to listen to this random song on YouTube">
 
                     {% if random_song.album_image %}
@@ -58,13 +63,13 @@ Date: November 2021
     </div>
 
 
-    <!-- show number of results -->
+    <!-- show number of results found in db-->
     <div class="results-div">
         {{ number_of_results }}
     </div>
 
 
-    <!-- show limited results -->
+    <!-- show limited results per page-->
     <div class="number-results-div">
         {{ current_results }} 
    </div>
@@ -78,16 +83,20 @@ Date: November 2021
 
             <div class="song-title-bar">
 
+                <!-- artist name and song name link to youtube -->
                 <a class="youtube-link" href="/youtube?link={{ song.youtube }}" target="_blank" title="Watch on YouTube" aria-label="Click here to listen this song on YouTube"><i class="fab fa-youtube"></i>
 
                 {{ item }}. {{ song.artist_name }} - {{ song.song_name }}</a>
 
+                <!-- expand button (icon) for more information about song -->
                 <i class="search-icon expand-info fas fa-question-circle" title="Expand for more information" aria-label="Click here for more information about the song"></i>
 
                 {% if session.user == song.uploaded_by or session.user == 'admin' %}
             
+                    <!-- edit song button (icon) -->
                     <a href="/edit_song?song_id={{ song._id }}" title="Edit song"><i class="admin-icon fas fa-edit" aria-label="Click here to edit this song"></i></a>
 
+                    <!-- delete song button (icon) -->
                     <i class="admin-icon delete-song-check fas fa-trash-alt" title="Delete song" aria-label="Click here to delete this song"></i>
                     <a href="{{ url_for('delete_song', song_id=song._id) }}"><i class="delete-link fas fa-trash-alt" title="Confirm to delete song" aria-label="Click here to confirm to delete this song"></i></a>
 
@@ -99,6 +108,7 @@ Date: November 2021
                 
                 <div class="image-frame">
 
+                    <!-- album image -->
                     <a href="{{ song.album_image }}" target="_blank">
 
                         <img src="{{ song.album_image }}" alt="Album cover: {{song.artist_name}} - {{song.album_name}}" title="Click here to see the album cover" aria-label="Click here to see the album cover">
@@ -109,6 +119,7 @@ Date: November 2021
 
             </div>
 
+            <!-- song information visible -->
             <div class="song-div">
       
                 <div class="visible-info">
@@ -155,6 +166,7 @@ Date: November 2021
 
                 </div>
 
+                <!-- song information hidden -->
                 <div class="hidden-info">
 
                     <div class="song-info-desc">
@@ -210,12 +222,16 @@ Date: November 2021
 
         {% if previous_page_text or next_page_text%}
 
+            <!-- hr line -->
             <hr class="hr-pagination">
 
+            <!-- previous page -->
             <a href="{{ previous_page }}" title="Go to the previous results page" aria-label="Click here to go to the previous page"> {{ previous_page_text }} </a>
 
+            <!-- seperator pipe -->
             <span id="separator"> {{ separator }} </span>
 
+            <!-- next page -->
             <a href="{{ next_page }}" title="Go to the next results page" aria-label="Click here to go to the next page"> {{ next_page_text }} </a>
 
         {% endif %}
@@ -226,6 +242,7 @@ Date: November 2021
     <!-- footer -->
     <footer>
 
+        <!-- socials -->
         <span id="follow-socials">follow us on social media</span>
         
         <ul>
@@ -234,6 +251,7 @@ Date: November 2021
             <li><a href="https://www.facebook.com/" target="_blank" title="Go to our facebook page" aria-label="Go to our facebook page by clicking this link (opens in new tab)"><i class="fab fa-facebook"></i></a></li>
         </ul>
     
+        <!-- copyright -->
         <span id="copyright">© CityPop Central 2021</span>
     
      </footer>
