@@ -286,11 +286,11 @@ The MongoDB Data Scheme Citypop Central
 
 
 #### Footer
-- Check whether the footer is on the bottom of the 'Index' and 'Results' page.
-- Check whether all social media links are working properly and are opening a new blank page.
-- Check whether the social links change colour when hovering.
-- Check for dead links.
-- Check the responsiveness on smaller devices (min. 320px width).
+- Check whether the footer is on the bottom of the 'Index,''Results,' 'Youtube' and 'About' page. **(checked)**
+- Check whether all social media links are working properly and are opening a new blank page. **(checked)**
+- Check whether the social links change colour when hovering. **(checked)**
+- Check for dead links. **(checked)**
+- Check the responsiveness on smaller devices (min. 320px width). **(checked)**
 
 
 #### About Page
