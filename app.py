@@ -137,8 +137,7 @@ def results():
         if int(page) >= 1:
 
             # set link for address bar
-            previous_page = f"/results?search={query}\
-                &page={str(int(page) - 1)}"
+            previous_page = f"/results?search={query}&page={str(int(page) - 1)}"
 
             # Set link text front-end
             previous_page_text = 'Prev page'
