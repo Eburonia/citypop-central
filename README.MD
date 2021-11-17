@@ -415,30 +415,30 @@ The MongoDB Data Scheme Citypop Central
 
 
 #### Userinfo Page
-- Check the responsiveness of the page.
-- Check all showed information is correct.
-- Check e-mail address is hidden for non-users (visitors).
-- Check e-mail address is hidden when the user turned it off on the Profile page.
-- Check non-existing user return message.
+- Check the responsiveness of the page. **(checked)**
+- Check all showed information is correct. **(checked)**
+- Check e-mail address is hidden for non-users (visitors). **(checked)**
+- Check e-mail address is hidden when the user turned it off on the Profile page. **(checked)**
+- Check non-existing user return message. **(checked)**
 
 <img src="" alt="Userinfo Page"><br>
 <sub>Userinfo Page</sub>
 
 
 #### Flash Messages
-- Check the responsiveness of the flash messages.
-- Check flash messages all start with a capitalized letter.
-- Check close message is functioning.
-- Check whether flash messages appear after a user action. 
+- Check the responsiveness of the flash messages. **(checked)**
+- Check flash messages all start with a capitalized letter. **(checked)**
+- Check close message is functioning. **(checked)**
+- Check whether flash messages appear after a user action. **(checked)**
 
 <img src="" alt="Flash messages">
 <span>Flash Messages</span>
 
 
 #### 404-Page
-- Check the responsiveness of the page.
-- Check 404-page loads when a non-existing page is loaded.
-- Check of link redirects to homepage.
+- Check the responsiveness of the page. **(checked)**
+- Check 404-page loads when a non-existing page is loaded. **(checked)**
+- Check of link redirects to homepage. **(checked)**
 
 <img src="" alt="404 Page">
 <span>404 Page</span>
