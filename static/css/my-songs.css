@@ -25,8 +25,7 @@ Date: November 2021
     cursor: pointer;
     box-sizing: border-box;
     float: left;
-    width: calc(100% - 200px);
-    border-radius: 8px;
+    width: 100%;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
