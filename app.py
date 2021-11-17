@@ -187,7 +187,7 @@ def results():
         # to be shown in front-end
         if number_of_results != 0:
             current_results = f"Result : {str(start_result)}\
-                 to {str(end_result)}"
+                 - {str(end_result)}"
         else:
             current_results = ''
 
