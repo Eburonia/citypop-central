@@ -273,16 +273,16 @@ The MongoDB Data Scheme Citypop Central
 
 
 #### Header/Navigation Bar
-- Check whether the header is always on top of the pages.
-- Check whether the website logo links back to the index page.
-- Check for dead links.
-- Check the responsiveness of the navigation bar (change to hamburger-style navigation for minimum 320px width).
-- Check whether there is overflow while reducing the screen size.
-- Check navigation hover-links.
-- Check the 'About' link always shows up.
-- Check the 'Profile,' 'My Songs,' 'Add Song' links show up when logged in.
-- Check the 'Logout' button shows up when logged in.
-- Check whether the toggle button functions properly.
+- Check whether the header is always on top of the pages. **(checked)**
+- Check whether the website logo links back to the index page. **(checked)**
+- Check for dead links. **(checked)**
+- Check the responsiveness of the navigation bar (change to hamburger-style navigation for minimum 320px width). **(checked)**
+- Check whether there is overflow while reducing the screen size. **(checked)**
+- Check navigation hover-links. **(checked)**
+- Check the 'About' link always shows up when logged out. **(checked)**
+- Check the 'Profile,' 'My Songs,' 'Add Song' links show up when logged in. **(checked)**
+- Check the 'Logout' button shows up when logged in. **(checked)**
+- Check whether the toggle button functions properly. **(checked)**
 
 
 #### Footer
