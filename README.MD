@@ -75,6 +75,7 @@ For more information about Citypop, check the following videos on YouTube:
 1. As an administrator of the website, I want to be able to adjust all uploaded songs, so I can change them for whatever reason.
 2. As an administrator of the website, I want to adjust other information which is relevant to the website.
 3. As an administrator of the website, I want to know when songs were updated for the last time.
+4. As an administrator of the website, I want to be able to delete unwanted users.
 
 
 #### Colour Scheme
@@ -349,7 +350,27 @@ The MongoDB Data Scheme Citypop Central
 <sub>Profile Page</sub>
 
 
-#### My Songs Page
+#### Settings Page (for admin only)
+- Check the responsiveness of the page. **(checked)**
+- Check whether only admin has access to this page. **(checked)**
+- Check whether it is possible to delete a country from the database. **(checked)**
+- Check whether it is possible to add a country from the database. **(checked)**
+- Check whether it is possible to delete a gender from the database. **(checked)**
+- Check whether it is possible to add a gender from the database. **(checked)**
+- Check whether it is possible to delete a genre from the database. **(checked)**
+- Check whether it is possible to add a genre from the database. **(checked)**
+- Check regular expression. **(checked)**
+- Check unwanted user input from the address bar. **(checked)**
+
+
+#### Users (for admin only)
+- Check the responsiveness of the page. **(checked)**
+- Check whether only admin has access to this page. **(checked)**
+- Check whether all users show up from database. **(checked)**
+- Check whether it is possible to delete a user. **(checked)**
+
+
+#### My Songs Page (all songs for admin)
 - Check the responsiveness of the page. **(checked)**
 - Check whether Artist Name and Songs Name are properly indicated. **(checked)**
 - Check colour changes when hovering. **(checked)**
@@ -607,7 +628,8 @@ No important errors found.
    * The administrator can add or delete other release years to the website. For now, only the years 1970 to 1990 can be selected on the website. A release year is selected by a user when adding a song to the website.
 3. As an administrator of the website, I want to know when songs were updated for the last time.
    * Songs will get an extra data field when the song was updated for the last time. Click the expand more information (?) to see this field below the 'Upload Date' field.
-
+4. As an administrator of the website, I want to be able to delete unwanted users.
+   * A special 'Users' page has been added for the administrator. Here he can delete every user by as simple mouseclick.
 
 <!-- Known Bugs -->
 <a id="bugs"></a>
