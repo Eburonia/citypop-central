@@ -400,8 +400,7 @@ def update_profile(username):
             "$set": {"email": request.form.get(
                 "email"), "country_name": request.form.get("country"),
                 "share_email": request.form.get("share-email"),
-                "password": generate_password_hash(
-                    request.form.get("password"))}
+                }
                 }
 
         # Update profile settings in the database
