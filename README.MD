@@ -308,11 +308,9 @@ The MongoDB Data Scheme Citypop Central
 #### Index Page
 - Check the responsiveness of the page. **(checked)**
 - Check the latest song links function and open in a new screen. **(checked)**
-
-
-#### C.R.U.D. Index Page
 - Check whether records show up when searching the following keywords: Artist Name, Song Name, Genre, Release Year, Album Name, Uploaded By, Upload Date. **(checked)**
 - Check whether a song added to the database shows up to the latest songs summary. **(checked)**
+
 
 <img src="" alt="Index Page"><br>
 <sub>Index Page</sub>
@@ -326,14 +324,12 @@ The MongoDB Data Scheme Citypop Central
 - Check whether there is no text-overflow. **(checked)**
 - Check whether the Youtube link functions and opens a new blank page. **(checked)**
 - Check whether the 'Edit' and 'Delete' icons show up when logged in and check whether they function properly. **(checked)**
-
-
-#### C.R.U.D. Results Page
 - Check the number of results (records) indicated to match the real shown results on the screen. **(checked)**
 - Check pagination functions properly. **(checked)**
 - Check whether a maximum of 10 records shows up on the screen. **(checked)**
 - Check whether 'Edit Date' shows up when the song has been edited. **(checked)**
 - Check manipulation of the search bar search keys won't give wrong results or errors. **(checked)**
+
 
 <img src="" alt="Edit and Delete Icons"><br>
 <sub>Edit and Delete Icons</sub>
@@ -343,13 +339,11 @@ The MongoDB Data Scheme Citypop Central
 - Check the responsiveness of the page. **(checked)**
 - Check all country names are capitalized and alphabetically sorted. **(checked)**
 - Check the regular expression functions properly for the email text field. **(checked)**
-
-
-#### C.R.U.D. Profile Page
 - Check correct username shows up. **(checked)**
 - Check whether the 'Delete your profile' link function works properly. **(checked)**
 - Check whether all fields are updated in the database when changed. **(checked)**
 - Check regular expression. **(checked)**
+
 
 <img src="" alt="Profile Page"><br>
 <sub>Profile Page</sub>
@@ -360,9 +354,6 @@ The MongoDB Data Scheme Citypop Central
 - Check whether Artist Name and Songs Name are properly indicated. **(checked)**
 - Check colour changes when hovering. **(checked)**
 - Check alphabetical order. **(checked)**
-
-
-#### C.R.U.D. My Songs Page
 - Check whether all your songs show up.**(checked)**
 - Check whether all songs show up when logged in as admin. **(checked)**
 - Check whether the correct song information is loaded into form from the database. **(checked)**
@@ -372,44 +363,52 @@ The MongoDB Data Scheme Citypop Central
 
 
 #### Add Song Page
-- Check the responsiveness of the page.
-- Check whether the input fields match with the Edit Songs Page.
-- Check field description is understandable for a visitor.
-- Check the regular expressions.
+- Check the responsiveness of the page. **(checked)**
+- Check whether the input fields match with the Edit Songs Page. **(checked)**
+- Check field description is understandable for a visitor. **(checked)**
+- Check whether album image loads correctly. **(checked)**
+- Check the regular expression. **(checked)**
+- Check whether the added song is in the database. **(checked)**
 
-
-#### C.R.U.D. Add Song Page
-- Check whether the added song is in the database.
 
 <img src="" alt="Add Song Page"><br>
 <sub>Add Song Page</sub>
 
 
+#### Edit Song Page
+- Check the responsiveness of the page. **(checked)**
+- Check whether the input fields match with the Edit Songs Page. **(checked)**
+- Check field description is understandable for a visitor. **(checked)**
+- Check whether album image loads correctly. **(checked)**
+- Check the regular expression. **(checked)**
+- Check whether admin can edit all songs. **(checked)**
+- Check whether admin can delete all songs. **(checked)**
+
+
 #### Login Page
-- Check the responsiveness of the page.
-- Check the link to the Register page functions.
+- Check the responsiveness of the page. **(checked)**
+- Check the link to the Register page functions. **(checked)**
+- Check whether login functions. **(checked)**
+- Check regular expression. **(checked)**
 
-
-#### C.R.U.D. Login Page
-- Check whether login functions.
 
 <img src="" alt="Login Page"><br>
 <sub>Login Page</sub>
 
 
 #### Register Page
-- Check the responsiveness of the page.
-- Check the link to the Login page functions.
-- Check the regular expressions.
-- Check password match functionality.
+- Check the responsiveness of the page. **(checked)**
+- Check the link to the Login page functions. **(checked)**
+- Check the regular expressions. **(checked)**
+- Check password match functionality. **(checked)**
 
 <img src="" alt="Register Page"><br>
 <sub>Register Page</sub>
 
 
 #### Youtube Page
-- Check the responsiveness of the page.
-- Check song autoplay.
+- Check the responsiveness of the page. **(checked)**
+- Check song autoplay. **(checked)**
 
 <img src="" alt="Youtube Page"><br>
 <sub>Youtube Page</sub>
