@@ -484,7 +484,8 @@ def add_song():
 
             # Convert to '13 November 2019'
             date = str(date_time_now.day) + " " +\
-                str(date_time_now.strftime("%B")) + " " + str(date_time_now.year)
+                str(date_time_now.strftime("%B")) + " "\
+                + str(date_time_now.year)
 
             # Create data memory for song
             song = {
@@ -516,12 +517,14 @@ def add_song():
         genres = mongo.db.genres.find().sort("genre", 1)
 
         # Return information to front-end of website
-        return render_template("add_song.html", genres=genres,
-                        release_years=release_years, title=title)
+        return render_template(
+            "add_song.html", genres=genres,
+            release_years=release_years, title=title)
 
     else:
         # Redirect to the index page
         return redirect(url_for("index"))
+
 
 @app.route("/edit_song", methods=["GET", "POST"])
 def edit_song():
@@ -617,31 +620,22 @@ def delete_song(song_id):
     # Song uploaded by this user before
     uploaded_by = song["uploaded_by"]
 
-    # If user is logged in
+    # If a user is logged in
     if 'user' in session:
 
-        if session['user'] != 'admin':
+        # If admin or orginial user who uploaded the song is logged in
+        if session['user'] == 'admin' or session['user'] == uploaded_by:
 
-            # Logged in user is not the same as user who uploaded the song
-            if uploaded_by != session["user"]:
+            # Delete song from database
+            mongo.db.songs.remove({"_id": ObjectId(song_id)})
 
-                # Flash message not allowed to update song
-                flash("You are not allowed to delete this song")
+            # Flash message song removed from database
+            flash("Song removed from database")
+            return redirect(url_for("index"))
 
-                # Redirect to the index page
-                return redirect(url_for("index"))
-
-            else:
-                # Delete song from database
-                # mongo.db.songs.remove({"_id": ObjectId(song_id)})
-
-                # Flash message song deleted from database
-                flash('Song has been deleted from the database')
-
-    else:
-
-        # Return to index page
-        return redirect(url_for("index"))
+    # Flash message not allowed to delete this song
+    flash("You are not allowed to delete this song")
+    return redirect(url_for("index"))
 
 
 @app.route("/userinfo")
