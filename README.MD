@@ -208,6 +208,7 @@ All pages are responsive on all devices. Designed for minimum viewport width of:
 * Implementation of an image database instead of loading album images from the discogs.com website.
 * Sub-divide the JavaScript code, all code is now loaded on all pages.
 * At this moment it is not possible to update your password, to be implemented in the future.
+* Data in the database are all saved as strings, can be changed to other data types like int for release years.
 
 
 <!-- Data Scheme -->
@@ -491,26 +492,25 @@ The website is designed for a minimum viewport width of 320px (iPhone 5 size).
 The following online validators were used to check whether the website generated any Javascript, html and CSS syntax errors:
 
 #### W3C Markup Validator
-[website](https://validator.w3.org/)
+[website](https://validator.w3.org/)  
+All code was checked by direct input.  
+W3C Markup Validator, the following pages were checked:  
 
-W3C Markup Validator, the following pages were checked:
-Make sure you are logged in as Admin onto the website when clicking on the links below.
-* [about](https://validator.w3.org/nu/?doc=http%3A%2F%2Fcitypop-central.herokuapp.com%2Fabout)
-* [add_song](https://validator.w3.org/nu/?doc=http%3A%2F%2Fcitypop-central.herokuapp.com%2Fadd_song)
-* [edit_song](https://validator.w3.org/nu/?doc=http%3A%2F%2Fcitypop-central.herokuapp.com%2Fedit_song%3Fsong_id%3D617bc16c312ed7617ea2acb4)
-* [login](https://validator.w3.org/nu/?doc=http%3A%2F%2Fcitypop-central.herokuapp.com%2Flogin)
-* [my_songs](https://validator.w3.org/nu/?doc=http%3A%2F%2Fcitypop-central.herokuapp.com%2Fmy_songs)
-* [profile](https://validator.w3.org/nu/?doc=http%3A%2F%2Fcitypop-central.herokuapp.com%2Fprofile%3Fusername%3Dadmin)
-* [register](https://validator.w3.org/nu/?doc=http%3A%2F%2Fcitypop-central.herokuapp.com%2Fregister)
-* [index](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcitypop-central.herokuapp.com%2F)
-* [results](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcitypop-central.herokuapp.com%2Fresults%3Fsearch%3Dcitypop%26page%3D0)
-* [settings](https://validator.w3.org/nu/?doc=http%3A%2F%2Fcitypop-central.herokuapp.com%2Fsettings)
-* [userinfo](https://validator.w3.org/nu/?doc=http%3A%2F%2Fcitypop-central.herokuapp.com%2Fuserinfo%3Fuser%3Dmaurice)
-* [users](https://validator.w3.org/nu/?doc=http%3A%2F%2Fcitypop-central.herokuapp.com%2Fusers)
-* [youtube](https://validator.w3.org/nu/?doc=http%3A%2F%2Fcitypop-central.herokuapp.com%2Fyoutube%3Flink%3Dv6VmbmlUyww)
-* 404 Checked by direct input into the validator.
-
-The 'base'html page is loaded into all webpages.
+* about.html
+* add_song.html
+* base.html
+* edit_song.html
+* login.html
+* my_songs.html
+* profile.html
+* register.html
+* index.html
+* results.html
+* settings.html
+* userinfo.html
+* users.html
+* youtube.html
+* 404.html
 
 Errors found:
 All pages generate Jinja related errors (Validator does not recognize Jinja code).
@@ -520,19 +520,19 @@ All pages generate Jinja related errors (Validator does not recognize Jinja code
 [website](https://jigsaw.w3.org/css-validator/)
 
 W3C CSS Validator, the following files were checked:
-* [about](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fcitypop-central.herokuapp.com%2Fstatic%2Fcss%2Fabout.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
-* [error404](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fcitypop-central.herokuapp.com%2Fstatic%2Fcss%2Ferror404.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
-* [footer](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fcitypop-central.herokuapp.com%2Fstatic%2Fcss%2Ffooter.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
-* [forms](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fcitypop-central.herokuapp.com%2Fstatic%2Fcss%2Fforms.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
-* [header](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fcitypop-central.herokuapp.com%2Fstatic%2Fcss%2Fheader.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
-* [my-songs](https://jigsaw.w3.org/css-validator/validator?uri=http%3A%2F%2Fcitypop-central.herokuapp.com%2Fstatic%2Fcss%2Fmy-songs.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=enn)
-* [profile](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fcitypop-central.herokuapp.com%2Fstatic%2Fcss%2Fprofile.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
-* [random-songs](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fcitypop-central.herokuapp.com%2Fstatic%2Fcss%2Frandom-songs.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
-* [results](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fcitypop-central.herokuapp.com%2Fstatic%2Fcss%2Fresults.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
-* [settings](https://jigsaw.w3.org/css-validator/validator?uri=http%3A%2F%2Fcitypop-central.herokuapp.com%2Fstatic%2Fcss%2Fsettings.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
-* [users](https://jigsaw.w3.org/css-validator/validator?uri=http%3A%2F%2Fcitypop-central.herokuapp.com%2Fstatic%2Fcss%2Fusers.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
-* [userinfo](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fcitypop-central.herokuapp.com%2Fstatic%2Fcss%2Fuserinfo.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
-* [youtube](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fcitypop-central.herokuapp.com%2Fstatic%2Fcss%2Fyoutube.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+* [about.css](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fcitypop-central.herokuapp.com%2Fstatic%2Fcss%2Fabout.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+* [error404.css](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fcitypop-central.herokuapp.com%2Fstatic%2Fcss%2Ferror404.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+* [footer.css](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fcitypop-central.herokuapp.com%2Fstatic%2Fcss%2Ffooter.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+* [forms.css](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fcitypop-central.herokuapp.com%2Fstatic%2Fcss%2Fforms.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+* [header.css](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fcitypop-central.herokuapp.com%2Fstatic%2Fcss%2Fheader.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+* [my-songs.css](https://jigsaw.w3.org/css-validator/validator?uri=http%3A%2F%2Fcitypop-central.herokuapp.com%2Fstatic%2Fcss%2Fmy-songs.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=enn)
+* [profile.css](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fcitypop-central.herokuapp.com%2Fstatic%2Fcss%2Fprofile.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+* [random-songs.css](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fcitypop-central.herokuapp.com%2Fstatic%2Fcss%2Frandom-songs.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+* [results.css](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fcitypop-central.herokuapp.com%2Fstatic%2Fcss%2Fresults.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+* [settings.css](https://jigsaw.w3.org/css-validator/validator?uri=http%3A%2F%2Fcitypop-central.herokuapp.com%2Fstatic%2Fcss%2Fsettings.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+* [users.css](https://jigsaw.w3.org/css-validator/validator?uri=http%3A%2F%2Fcitypop-central.herokuapp.com%2Fstatic%2Fcss%2Fusers.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+* [userinfo.css](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fcitypop-central.herokuapp.com%2Fstatic%2Fcss%2Fuserinfo.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+* [youtube.css](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fcitypop-central.herokuapp.com%2Fstatic%2Fcss%2Fyoutube.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 
 Warnings found:
 Validator does not recognize CSS variables.
@@ -541,7 +541,7 @@ Validator does not recognize CSS variables.
 #### JSHint Validator
 [website](https://www.jshint.com/)
 
-JSHint Validator, the following file was checked:
+JSHint Validator, the following file was checked by direct input:
 * script.js
 
 Errors found:
@@ -551,7 +551,7 @@ No important errors found.
 #### PEP8 Online Check
 [website](http://www.pep8online.com/)
 
-PEP8 Online Check, the following file was checked:
+PEP8 Online Check, the following file was checked by direct input:
 * app.py
 
 Errors found:
