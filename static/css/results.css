@@ -136,9 +136,6 @@ Date: November 2021
     float: left;
     width: calc(100% - 175px);
     color: var(--white);
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
 }
 
 
@@ -185,11 +182,7 @@ Date: November 2021
     font-size: 18px;
     border-radius: 10px;
     color:var(--yellow);
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
 }
-
 
 .more-info-button {
     box-sizing: border-box;
@@ -226,6 +219,8 @@ Date: November 2021
     font-size: 20px;
     text-decoration: none;
     font-weight: 200;
+    text-overflow: ellipsis !important;
+    overflow: hidden !important;
 }
 
 
