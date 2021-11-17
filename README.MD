@@ -304,7 +304,7 @@ The MongoDB Data Scheme Citypop Central
 - Check the functionality of the videos. **(checked)**
 - Check the video description. **(checked)**
 
-<img src="" alt="About Page"><br>
+<img src="static/readme-images/about.jpg" alt="About Page"><br>
 <sub>About Page</sub>
 
 
@@ -315,7 +315,7 @@ The MongoDB Data Scheme Citypop Central
 - Check whether a song added to the database shows up to the latest songs summary. **(checked)**
 
 
-<img src="" alt="Index Page"><br>
+<img src="static/readme-images/index.jpg" alt="Index Page"><br>
 <sub>Index Page</sub>
 
 
@@ -333,8 +333,10 @@ The MongoDB Data Scheme Citypop Central
 - Check whether 'Edit Date' shows up when the song has been edited. **(checked)**
 - Check manipulation of the search bar search keys won't give wrong results or errors. **(checked)**
 
+<img src="static/readme-images/results.jpg" alt="Search results page"><br>
+<sub>Search results page</sub>
 
-<img src="" alt="Edit and Delete Icons"><br>
+<img src="static/readme-images/icons.jpg" alt="Edit and Delete Icons"><br>
 <sub>Edit and Delete Icons</sub>
 
 
@@ -348,7 +350,7 @@ The MongoDB Data Scheme Citypop Central
 - Check regular expression. **(checked)**
 
 
-<img src="" alt="Profile Page"><br>
+<img src="static/readme-images/profile.jpg" alt="Profile Page"><br>
 <sub>Profile Page</sub>
 
 
@@ -381,7 +383,7 @@ The MongoDB Data Scheme Citypop Central
 - Check whether all songs show up when logged in as admin. **(checked)**
 - Check whether the correct song information is loaded into form from the database. **(checked)**
 
-<img src="" alt="My Songs Page"><br>
+<img src="static/readme-images/uploadedsongs.jpg" alt="My Songs Page"><br>
 <sub>My Songs Page</sub>
 
 
@@ -394,7 +396,7 @@ The MongoDB Data Scheme Citypop Central
 - Check whether the added song is in the database. **(checked)**
 
 
-<img src="" alt="Add Song Page"><br>
+<img src="static/readme-images/addsong.jpg" alt="Add Song Page"><br>
 <sub>Add Song Page</sub>
 
 
@@ -415,7 +417,7 @@ The MongoDB Data Scheme Citypop Central
 - Check regular expression. **(checked)**
 
 
-<img src="" alt="Login Page"><br>
+<img src="static/readme-images/login.jpg" alt="Login Page"><br>
 <sub>Login Page</sub>
 
 
@@ -425,7 +427,7 @@ The MongoDB Data Scheme Citypop Central
 - Check the regular expressions. **(checked)**
 - Check password match functionality. **(checked)**
 
-<img src="" alt="Register Page"><br>
+<img src="static/readme-images/register.jpg" alt="Register Page"><br>
 <sub>Register Page</sub>
 
 
@@ -433,7 +435,7 @@ The MongoDB Data Scheme Citypop Central
 - Check the responsiveness of the page. **(checked)**
 - Check song autoplay. **(checked)**
 
-<img src="" alt="Youtube Page"><br>
+<img src="static/readme-images/youtube.jpg" alt="Youtube Page"><br>
 <sub>Youtube Page</sub>
 
 
@@ -444,7 +446,7 @@ The MongoDB Data Scheme Citypop Central
 - Check e-mail address is hidden when the user turned it off on the Profile page. **(checked)**
 - Check non-existing user return message. **(checked)**
 
-<img src="" alt="Userinfo Page"><br>
+<img src="static/readme-images/userinfo.jpg" alt="Userinfo Page"><br>
 <sub>Userinfo Page</sub>
 
 
@@ -454,7 +456,7 @@ The MongoDB Data Scheme Citypop Central
 - Check close message is functioning. **(checked)**
 - Check whether flash messages appear after a user action. **(checked)**
 
-<img src="" alt="Flash messages">
+<img src="static/readme-images/flashmessage.jpg" alt="Flash messages"><br>
 <span>Flash Messages</span>
 
 
@@ -463,7 +465,7 @@ The MongoDB Data Scheme Citypop Central
 - Check 404-page loads when a non-existing page is loaded. **(checked)**
 - Check of link redirects to homepage. **(checked)**
 
-<img src="" alt="404 Page">
+<img src="static/readme-images/404.jpg" alt="404 Page"><br>
 <span>404 Page</span>
 
 
@@ -657,8 +659,8 @@ No important errors found.
 8. Add the following KEY-VALUES:
 - IP -> 0.0.0.0
 - PORT -> 5000
-- SECRET_KEY -> Copy from env.py file
-- MONGO_URI -> Copy from env.py file
+- SECRET_KEY -> Copy from env .py file
+- MONGO_URI -> Copy from env .py file
 - MONGO_DBNAME -> Add from your mongoDB database
 9. Make sure there is a 'Procfile' and a 'requirements.txt' file pushed into your GitHub repository.
 10. Click on the 'Deploy' tab.
@@ -667,7 +669,8 @@ No important errors found.
 13. Wait until the website got deployed.
 14. Click the 'View' button to see your deployed website on Heroku.
 
-<img src="assets/images-readme/publishing.png" alt="github pages publishing">
+<img src="static/readme-images/publishing.jpg" alt="Heroku publishing"><br>
+<sub>Publishing of website on heroku</sub>
 
 
 ### Forking
@@ -677,7 +680,8 @@ If you want to make a copy of the repository you can Fork it without changing th
 3. On the right side of your screen, next to 'Unwatch' pull-down menu, and the 'Star' button, you can find the 'Fork' button.
 4. By clicking this button, it will create a copy of the website in your repository.
 
-<img src="static/readme-images/forking.png" alt="forking webpage">
+<img src="static/readme-images/forking.jpg" alt="forking website"><br>
+<sub>Forking of website on github</sub>
 
 
 ### Cloning
@@ -690,7 +694,8 @@ You can clone the repository by following the next procedure:
 6. When in this repository, select the folder or create a folder where you want to clone the directory.
 7. Go to the terminal and type: 'Git Clone (copied link)' and press enter. The directory has been cloned now.
 
-<img src="static/readme-images/cloning.png" alt="cloning webpage">
+<img src="static/readme-images/cloning.jpg" alt="cloning website"><br>
+<sub>Cloning of website on github</sub>
 
 
 ### Downloading
@@ -700,7 +705,8 @@ You can download the repository by following the next procedure:
 3. Click on the 'Code' button next to the Green 'GitPod' button and then click on 'Download ZIP'.
 4. A .zip file of the repository content will be downloaded. 
 
-<img src="static/readme-images/downloading.png" alt="downloading webpage">
+<img src="static/readme-images/downloading.jpg" alt="downloading website"><br>
+<sub>Downloading of website on github</sub>
 
 <!-- Credits -->
 <a id="credits"></a>
@@ -727,7 +733,7 @@ All content on the 'About' page was written by the website creator.
 - All album images are directly loaded from the [discogs.com](https://www.discogs.com/) website.
 - All images in this README file were created by the website creator.
 
-<img src="assets/images/logo.png" alt="website logo"><br>
+<img src="static/readme-images/logo.jpg" alt="website logo"><br>
 <sub>Logo of the website</sub>
 
 ### Acknowledgements
