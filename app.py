@@ -584,6 +584,13 @@ def update_song(song_id):
 
     if request.method == "POST":
 
+        # Get date of today
+        date_time_now = datetime.datetime.now()
+
+        # Convert to '13 November 2019'
+        date = str(date_time_now.day) + " " + str(
+            date_time_now.strftime("%B")) + " " + str(date_time_now.year)
+
         # Import data from form
         submit = {
             "$set": {
@@ -594,7 +601,8 @@ def update_song(song_id):
                 "album_name": request.form.get("album_name"),
                 "album_image": request.form.get("album_image"),
                 "song_length": request.form.get("song_length"),
-                "youtube": request.form.get("youtube")
+                "youtube": request.form.get("youtube"),
+                "edit_date": date
                     }
                 }
 
