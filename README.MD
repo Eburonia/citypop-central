@@ -366,6 +366,8 @@ The MongoDB Data Scheme Citypop Central
 - Check regular expression. **(checked)**
 - Check unwanted user input from the address bar. **(checked)**
 
+<img src="static/readme-images/settings.jpg" alt="Settings Page"><br>
+<sub>Settings Page (for admin only)</sub>
 
 #### Users (for admin only)
 - Check the responsiveness of the page. **(checked)**
@@ -373,6 +375,8 @@ The MongoDB Data Scheme Citypop Central
 - Check whether all users show up from database. **(checked)**
 - Check whether it is possible to delete a user. **(checked)**
 
+<img src="static/readme-images/users.jpg" alt="Users Page"><br>
+<sub>Users Page (for admin only)</sub>
 
 #### My Songs Page (all songs for admin)
 - Check the responsiveness of the page. **(checked)**
