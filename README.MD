@@ -252,26 +252,24 @@ The MongoDB Data Scheme Citypop Central
 
 #### Common
 
-**(checked)**
-
-- Check aria labels.
-- Check aria labels start with a capitalized letter.
-- Check alternative 'alt' text images.
-- Check available title tags.
-- Check title tags all start with a capitalized letter.
-- Check whether page titles are loaded correctly.
-- Check all needed CSS files are imported properly.
-- Check ghost CSS code.
-- Check commented out code.
-- Check comments added to code files.
-- Check for non-functioning Python code.
-- Turn off Flask debug mode.
+- Check aria labels. **(checked)**
+- Check aria labels start with a capitalized letter. **(checked)**
+- Check alternative 'alt' text images. **(checked)**
+- Check available title tags. **(checked)**
+- Check title tags all start with a capitalized letter. **(checked)**
+- Check whether page titles are loaded correctly. **(checked)**
+- Check all needed CSS files are imported properly. **(checked)**
+- Check ghost CSS code. **(checked)**
+- Check commented out code. **(checked)**
+- Check comments added to code files. **(checked)**
+- Check for non-functioning Python code. **(checked)**
+- Turn off Flask debug mode. **(checked)**
 
 
 #### Background Images
-- Check whether background image sizing is around 500 kB.
-- Check whether all 5 background randomized images will show up.
-- Check whether background images show up properly show up on smaller devices.
+- Check whether background image sizing is around 500 kB. **(checked)**
+- Check whether all 5 background randomized images will show up. **(checked)**
+- Check whether background images show up properly show up on smaller devices. **(checked)**
 
 
 #### Header/Navigation Bar
