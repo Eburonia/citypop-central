@@ -348,7 +348,10 @@ The MongoDB Data Scheme Citypop Central
 - Check whether the 'Delete your profile' link function works properly. **(checked)**
 - Check whether all fields are updated in the database when changed. **(checked)**
 - Check regular expression. **(checked)**
-
+- Check whether other users have no access to profile page by using the address bar. **(checked)** 
+- Check whether visitors have no access to profile page by using the address bar. **(checked)**
+- Check whether other users cannot delete a user profile page by using the address bar. **(checked)** 
+- Check whether visitors cannot delete a user profile page by using the address bar. **(checked)**
 
 <img src="static/readme-images/profile.jpg" alt="Profile Page"><br>
 <sub>Profile Page</sub>
@@ -412,6 +415,8 @@ The MongoDB Data Scheme Citypop Central
 - Check the regular expression. **(checked)**
 - Check whether admin can edit all songs. **(checked)**
 - Check whether admin can delete all songs. **(checked)**
+- Check whether other users cannot edit songs via address bar. **(checked)**
+- Check whether visitors cannot edit songs via address bar. **(checked)**
 
 
 #### Login Page
@@ -430,6 +435,8 @@ The MongoDB Data Scheme Citypop Central
 - Check the link to the Login page functions. **(checked)**
 - Check the regular expressions. **(checked)**
 - Check password match functionality. **(checked)**
+- Block when username already exists. **(checked)**
+- Block when email address already exists. **(checked)**
 
 <img src="static/readme-images/register.jpg" alt="Register Page"><br>
 <sub>Register Page</sub>
@@ -448,7 +455,7 @@ The MongoDB Data Scheme Citypop Central
 - Check all showed information is correct. **(checked)**
 - Check e-mail address is hidden for non-users (visitors). **(checked)**
 - Check e-mail address is hidden when the user turned it off on the Profile page. **(checked)**
-- Check non-existing user return message. **(checked)**
+- Check non-existing user return message user does not exist. **(checked)**
 
 <img src="static/readme-images/userinfo.jpg" alt="Userinfo Page"><br>
 <sub>Userinfo Page</sub>
