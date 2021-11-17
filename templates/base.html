@@ -82,9 +82,9 @@ Date: November 2021
     {% endif %}
 
 
-
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}" type="text/css">
-    
+    {% if title == 'Citypop Central | Home' or title == 'Citypop Central | Youtube' or title == 'Citypop Central | Results' %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}" type="text/css">
+    {% endif %}
 
     <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
