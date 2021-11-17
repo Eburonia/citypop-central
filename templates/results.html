@@ -18,8 +18,8 @@ Date: November 2021
 
         <label for="search-query" class="search-label">Search songs in our database</label>
         <p class="search-p">e.g. artist, song, album, genre (citypop, funk, jazz), or release year.</p>
-        <input type="text" id="search-query" name="search-query" class="search-textbox" aria-label="Please enter a keyword in this textbox to search our songs database, this a required field" required>
-        <input type="submit" value="search" class="search-button" title="Search" aria-label="Click this button to search in our songs database, make sure you have added at least one keyword to the search textbox"><br><br>
+        <input type="text" id="search-query" name="search-query" class="search-textbox" aria-label="Please enter a keyword in this textbox to search into our songs database, this a required field" required>
+        <input type="submit" value="search" class="search-button" title="Search" aria-label="Click this button to search into our songs database, make sure you have added at least one keyword to the search textbox"><br><br>
 
     </form>
 
@@ -37,7 +37,7 @@ Date: November 2021
 
             <div class="random-song">
 
-                <a href="/youtube?link={{ random_song.youtube }}" target="_blank" title="{{random_song.artist_name}} - {{random_song.song_name}}" aria-label="Click here to listen to this random song">
+                <a href="/youtube?link={{ random_song.youtube }}" target="_blank" title="{{random_song.artist_name}} - {{random_song.song_name}}" aria-label="Click here to listen to this random song on YouTube">
 
                     {% if random_song.album_image %}
 
@@ -78,18 +78,18 @@ Date: November 2021
 
             <div class="song-title-bar">
 
-                <a class="youtube-link" href="/youtube?link={{ song.youtube }}" target="_blank" title="Watch on YouTube"><i class="fab fa-youtube"></i>
+                <a class="youtube-link" href="/youtube?link={{ song.youtube }}" target="_blank" title="Watch on YouTube" aria-label="Click here to listen this song on YouTube"><i class="fab fa-youtube"></i>
 
                 {{ item }}. {{ song.artist_name }} - {{ song.song_name }}</a>
 
-                <i class="search-icon expand-info fas fa-question-circle" title="Expand for more information"></i>
+                <i class="search-icon expand-info fas fa-question-circle" title="Expand for more information" aria-label="Click here for more information about the song"></i>
 
                 {% if session.user == song.uploaded_by or session.user == 'admin' %}
             
-                    <a href="/edit_song?song_id={{ song._id }}" title="Edit song"><i class="admin-icon fas fa-edit"></i></a>
+                    <a href="/edit_song?song_id={{ song._id }}" title="Edit song"><i class="admin-icon fas fa-edit" aria-label="Click here to edit this song"></i></a>
 
-                    <i class="admin-icon delete-song-check fas fa-trash-alt" title="Delete song"></i>
-                    <a href="{{ url_for('delete_song', song_id=song._id) }}"><i class="delete-link fas fa-trash-alt" title="Confirm to delete song"></i></a>
+                    <i class="admin-icon delete-song-check fas fa-trash-alt" title="Delete song" aria-label="Click here to delete this song"></i>
+                    <a href="{{ url_for('delete_song', song_id=song._id) }}"><i class="delete-link fas fa-trash-alt" title="Confirm to delete song" aria-label="Click here to confirm to delete this song"></i></a>
 
                 {% endif %}
 
@@ -101,7 +101,7 @@ Date: November 2021
 
                     <a href="{{ song.album_image }}" target="_blank">
 
-                        <img src="{{ song.album_image }}" alt="Album cover: {{song.artist_name}} - {{song.album_name}}" title="Click here to see the album cover">
+                        <img src="{{ song.album_image }}" alt="Album cover: {{song.artist_name}} - {{song.album_name}}" title="Click here to see the album cover" aria-label="Click here to see the album cover">
             
                     </a>
                     
@@ -172,7 +172,7 @@ Date: November 2021
                         </div>
 
                         <div class="song-info-value">
-                            <a href="/userinfo?user={{ song.uploaded_by }}" title="View user profile">{{ song.uploaded_by }}</a>
+                            <a href="/userinfo?user={{ song.uploaded_by }}" title="View user profile" aria-label="Click here to see the user's profile">{{ song.uploaded_by }}</a>
                         </div>
 
                     {% endif %}
@@ -212,11 +212,11 @@ Date: November 2021
 
             <hr class="hr-pagination">
 
-            <a href="{{ previous_page }}" title="Go to the previous results page"> {{ previous_page_text }} </a>
+            <a href="{{ previous_page }}" title="Go to the previous results page" aria-label="Click here to go to the previous page"> {{ previous_page_text }} </a>
 
             <span id="separator"> {{ separator }} </span>
 
-            <a href="{{ next_page }}" title="Go to the next results page"> {{ next_page_text }} </a>
+            <a href="{{ next_page }}" title="Go to the next results page" aria-label="Click here to go to the next page"> {{ next_page_text }} </a>
 
         {% endif %}
 

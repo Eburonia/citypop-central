@@ -49,7 +49,7 @@ Date: November 2021
         <!-- share your email with other users -->
         <label for="share-email" class="form-label">Share your email address with other users :</label>
         <p class="form-info">By selecting yes, other users can see you email address on your userinfo page.</p>
-        <select id="share-email" name="share-email" class="form-textbox" aria-label="Please select if you want to share your email address to other users">
+        <select id="share-email" name="share-email" class="form-textbox" aria-label="Please select yes if you want to share your email address to other users">
 
             {% if settings.share_email == 'yes' %}
                 <option value="yes" selected>yes</option>
@@ -88,7 +88,7 @@ Date: November 2021
     <span id="delete-profile-button" title="Click on this link to delete your profile">Click here to delete your profile</span><br><br>
 
     <!-- confirm delete profile link -->
-    <a id="confirm-delete-profile-link" href="/delete-profile" title="Click on the link to confirm to delete your profile">Confirm to delete your profile</a><br><br>
+    <a id="confirm-delete-profile-link" href="/delete-profile" title="Click on the link to confirm to delete your profile" aria-label="Click on the link to confirm to delete your profile">Confirm to delete your profile</a><br><br>
 
 </div>
 
