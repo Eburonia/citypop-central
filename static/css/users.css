@@ -11,7 +11,7 @@ Date: November 2021
     overflow: hidden;
     background-color: var(--black);
     width: 50%;
-    margin: 0 auto;
+    margin: 20px auto;
     padding: 30px;
     border: 2px solid var(--yellow);
     border-radius: 20px;
