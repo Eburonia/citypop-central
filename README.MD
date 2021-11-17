@@ -348,23 +348,24 @@ The MongoDB Data Scheme Citypop Central
 #### C.R.U.D. Profile Page
 - Check correct username shows up. **(checked)**
 - Check whether the 'Delete your profile' link function works properly. **(checked)**
-- Check whether all fields are updated in the database when changed.
+- Check whether all fields are updated in the database when changed. **(checked)**
+- Check regular expression. **(checked)**
 
 <img src="" alt="Profile Page"><br>
 <sub>Profile Page</sub>
 
 
 #### My Songs Page
-- Check the responsiveness of the page.
-- Check whether Artist Name and Songs Name are properly indicated.
-- Check whether the upload date and edit date are indicated.
-- Check colour changes when hovering.
-- Check alphabetical sort.
+- Check the responsiveness of the page. **(checked)**
+- Check whether Artist Name and Songs Name are properly indicated. **(checked)**
+- Check colour changes when hovering. **(checked)**
+- Check alphabetical order. **(checked)**
 
 
 #### C.R.U.D. My Songs Page
-- Check whether all your songs show up.
-- Check whether links open on a new blank page and loads the correct information form the database.
+- Check whether all your songs show up.**(checked)**
+- Check whether all songs show up when logged in as admin. **(checked)**
+- Check whether the correct song information is loaded into form from the database. **(checked)**
 
 <img src="" alt="My Songs Page"><br>
 <sub>My Songs Page</sub>
