@@ -141,71 +141,73 @@ Instead, an image of the responsive design has been added on top of this README 
 
 
 ### Header
-A header has been added on top of every page and exists out of the website logo, and a navigation bar. The background colour used for the header is a black transparent colour as described in the colour scheme section in this README file. The navigation bar will change to a 'hamburger-style' navigation menu on smaller devices (e.g. iPad or smartphone). By hovering the navigation bar anchor links, the links will highlight and make it clear to the end-user this is a clickable link.
-The company logo on the top left-hand side of the header has a clickable anchor link assigned to it which will always redirect the website to the index page. The Company logo will automatically resize for smaller devices. 
+A header has been added on top of every page and exists out of the website logo, and a navigation bar. The background colour used for the header is a black transparent colour as described in the colour scheme section in this README file. The navigation bar will change to a 'hamburger-style' navigation menu on smaller devices (e.g. iPad or smartphone). Hovering the navigation bar's hyperlinks will make them highlight, making it clear to the end-user these are clickable links. The company logo on the top left-hand side of the header has a clickable hyperlink assigned to it which will redirect the website to the 'Index' page. The Company logo will automatically resize for smaller devices.
 
 
 ### Footer
-A footer has been added on the bottom of the 'Index' and 'Results' page and exists out of social media links, and a copyright notice. The social media links are styled in gold colour. By hovering the social media link icons, the colour will highlight in pink colour as described in the colour scheme section of this README file and makes it clear to the end-user these are clickable links. The icons used for the social media links are directly loaded from the [fontawesome](https://www.fontawesome.com) website. All social media links will be opened on a new blank page. A clear copyright notice is visible at the bottom of the footer.
+A footer has been added on the bottom of the 'Index,' 'Results' and 'YouTube' pages and exists out of social media links (Twitter, Pinterest and, Instagram) and a copyright notice. The social media links are styled in yellow colour. By hovering the social media link icons, the colour will highlight in pink colour as described in the colour scheme section of this README file, making it clear to the end-user these are clickable links. The icons used for the social media links are directly loaded from the [fontawesome](https://www.fontawesome.com) website. All social media links will be opened on a new blank page. A clear copyright notice is visible at the bottom of the footer.
 
 
 ### Index Page
-The 'Index' page is the most important page on the website and starts with a welcoming statement to every visitor. Below the statement, a search bar indicated to search songs. To help new visitors to add correct keywords in the search bar, example search keywords are indicated above the search bar.  Then a summary of the 8 latest songs added to the database is shown to the visitor. These are clickable and will open a new blank page to the YouTube embedded video. The bottom of the page ends with links to the website's socials pages.
+The 'Index' page is the starting point of the website and starts with a welcoming statement to every visitor. Below the statement, an implemented search bar makes it possible for users to search through the website's songs database. To help visitors to add correct keywords, above the search bar, example keywords are indicated (artist name, song name, album name, genres, and release year). Below the search bar, a summary of the 8 latest songs added to the database is shown to the visitor. These album covers are clickable and will open a new blank page to the website's 'YouTube' page which has an embedded YouTube video of the song. The bottom of the page ends with the footer has described above.
 
 
 ### 404 Page
-The 404 page is a simple-looking page stating the 404 error message and link to re-direct the visitor/user back to the index page.
+The '404' page is a simple-looking page stating the 404 error message and a link to re-direct the visitor/user back to the 'Index' page.
 
 
 ### About Page
-The 'About' page gives information about the purpose of the website. Some history and background information about the Citypop genre are stated on this page. Also embedded are two YouTube videos about the history of Citypop and a video of Western tourists buying Citypop records at a local used record store in the Shibuya district of Tokyo. 
+The 'About' page gives information to the visitor about the history and background information of the Citypop genre. Also embedded are two YouTube videos about the history of Citypop and a video of Western tourists buying Citypop LP records at a local used record store in the Shibuya district of Tokyo.
 
 
 ### Add Song Page
-On the 'Add song' page, the user can add songs to the Citypop Central database. The user needs to add the necessary song information into a form. On top of every text field, given is some extra information to the end-user to add the correct information. Regular expression is introduced to force the user to add correct data to the database. Because it is not possible to store images in the database, all album images have to be loaded from the discogs.com website by adding the link to the image.
-All songs can be listened to on Youtube by adding the video link ID. This link can be found in the address bar of every YouTube video and will look like this: 'yOulloW7lEA'.
+On the 'Add song' page, only a user can add songs to the Citypop Central database. The user needs to add the necessary song information into a form. On top of every data field, some extra information is given to the user to add the correct data information. Regular expression is introduced to force the user to add correct data to the database. Because it is not possible to store images in the database, all album cover images have to be loaded from the discogs.com website by adding the link to the image. In case no album cover image is available, the album image data field stays empty. The website automatically adds a 'no-cover' image to the song when leaving the album image data field and should pop up on the screen! Add the song from the Youtube website by adding the video link ID. Every YouTube song this ID can be found in the address bar when playing a specific song on the YouTube website, and it looks like this: https://www.youtube.com/watch?v=pE2D3LWADFg --> 'pE2D3LWADFg' is the video link ID!
 
 
 ### Edit Song Page
+The 'Edit song' page looks and works the same as the 'Add song' page and functions almost the same. Instead of adding a song to the database, a song can be edited here. At the bottom below the 'Edit song' button, a 'Delete song' section has been introduced. By clicking the hyperlink 'Click here to delete this song' another hyperlink will pop up in a red colour 'Confirm to delete this song'. By clicking the second hyperlink the song will be deleted from the database. Only the user who originally added the song to the database is also able to edit the song, with an exception for the administrator or 'admin' of the website.
 
 
 ### Login Page
-On the 'Login' page, existing users login into their Citypop Central account. The correct username or password needs to be added to the form to access the user account. A flash message will pop up when submitted an incorrect username, or password. The flash message will not tell whether the username or password was incorrect.
+On the 'Login' page, existing users login into their Citypop Central account. The correct username or password needs to be added to the form to access the user account. A flash message will pop up when submitted an incorrect username, or password. The flash message will not tell whether the username or password was incorrect. At the bottom below the 'Login' button, a hyperlink has been introduced re-directing visitors to the 'Register' page in case they want to create a user account.
 
 
-### My Songs Page
-The 'My Songs' page indicates a summary of the uploaded songs by the user. Alphabetically sorted the Artist's name and Song name. By clicking on one of the songs, the user will be re-directed to the edit page of the song. Here the user can change information or even delete the song.
+### My Songs/All Songs Page
+On the 'My Songs' page, a summary of all uploaded songs by the user is indicated. In case logged in as the administrator 'admin' of the website, this page (All Songs) will summarize ALL songs in the database. Songs are alphabetically sorted by the artist's name and then song name. By clicking on one of the songs, the user will be re-directed to the 'Edit song' page. Here the user or admin can change the song's data information or even delete the song.
 
 
 ### Profile Page
-On the 'Profile' page, you can update some of your user information like your email address, the country you are living in, and whether you want to share your email address with other users or not. You cannot update your username and gender. You are also able to delete your profile by clicking the link at the bottom of the form. By clicking this link, a second link will pop up to confirm to delete your profile. The songs you have added to the database will stay in the database under your username.
+On the 'Profile' page, the user can update user-related information like email address, the country currently living in, and whether you want to share your email address with other users. It is not possible to update your username and gender.  Updating your password has not been introduced for now. At the bottom below the 'Update' song button, a 'Delete profile' section has been introduced. By clicking the hyperlink 'Click here to delete your profile' another hyperlink will pop up in a red colour 'Confirm to delete your profile.' By clicking the second hyperlink your account/profile will be deleted from the website and you are no longer able to log in under the profile's username.
 
 
 ### Register Page
-On the 'Register' page, you can create a Citypop Central user account. Indicated are necessary information fields like username, password, email address, the country you live in, and gender. On top of every text field, given is some extra information to the end-user to add the correct information. When submitting the form, the back-end of the website checks whether the submitted username already exists or not. There is a double check when adding a password. New users have to add the passwords twice. This is to check whether the user did not make a typo when adding the password. A blue message will pop up under the password text field, warning the user both passwords don't match. Add a valid email address. Select the country you are currently living in. The summary of all countries and genders is coming from the database, making it easy to update them in case needed in the future. For now, users can communicate with each other by email. Maybe new users don't want this and for that reason, an option is given to not share your email address on your user information page. Indicated is a link to the login page in case a user already has an account.
+On the 'Register' page, a visitor can create a Citypop Central user account. Indicated are necessary information data fields like username, password, email address, the country you live in, and gender. On top of every data field, some extra information is given to the user to add the correct data information. Regular expression is introduced to force the visitor to add correct data to the database. When submitting the form, the back-end of the website checks whether the submitted username or email address already exists or not. A double-check is done when adding the new password. Visitors have to add the passwords twice. This is to check whether the user did not made a typo when adding the password. A blue message will pop up above the password data field, warning the visitor both passwords are not matching. The summary of all countries and genders is directly imported from the database, making it easy for the administrator of the website to update or edit them in case needed. This can be done on the 'Settings' page when the administrator is logged in. For now, users can communicate with each other by email. The user email address will be shown on the 'Userinfo' page of the user and is only visible for other logged-in users. Maybe the user doesn't want to expose the email addresses to other users. an option is given on the user's 'Profile' page to not share the email address. At the bottom below the 'Register' button, a hyperlink has been introduced re-directing visitors to the 'Login' page in case they want to login to their existing user account.
 
 
 ### Results Page
-The 'Results' page will show up at the moment a visitor has added a search query. The results found in the database will then show up on the screen. Pagination implemented limiting the number of search results to 10 search records per page. The top of the page indicates the number of results found in the database. The current indicated results are shown on-screen also. All search records show the following information: Artist Name, Song Name, Genre, Release Year, Album Name. An expanded information button (question mark icon) to show more additional information about the song is introduced. By clicking this icon more information will show up on the screen. This information is: Song Length, Uploaded By, Upload Date, Edit Date. By clicking the Artist Name and Song Title at the top of every search query, the visitor will be automatically redirected to the YouTube song page which will run the song automatically. An image of the Album Cover of the song's album is indicted. By clicking the album image a larger image will show op on screen.
+The 'Results' page will show up at the moment a visitor has added a search query in the search bar on the 'Index' page. The results found in the database will then show up on the screen. In case no results are found, a flash message will pop up telling the visitor 'No results found.' The maximum number of records shown on the screen is limited to 10 records per page. On the top left side of the search results, the number of results found in the database is shown. On the right side, the currently shown records are also indicated (e.g. Result 1 - 10). All displayed records show the following information: Artist Name, Song Name, Genre, Release Year, Album Name. An expanded information button (question mark icon) to show additional information about the song is introduced. By clicking this icon more information will show up on the screen. This information is Song Length, Uploaded By, Upload Date, Edit Date. The 'Edit Date' will only be shown when the song has been edited after it has been added to the database. By clicking the Artist Name or Song Title at the top of every search record, the visitor will be automatically redirected (blank page) to the website's 'YouTube' page of the song. On this page, the YouTube video of the song has been embedded and the video will play automatically when the page is loaded.
+On the right side of the Artist Name and Song Name, when logged in, the user can see whether he has uploaded this song before. An 'Edit' and 'Delete' icon will be shown if that is the case. By clicking the 'Garbage Bin' icon the user can directly delete the song from the database and by clicking the 'Pen' icon, the user can directly edit the song. 
+An image of the 'Album Cover' of the song's album is indicted. By clicking the album image a larger image will show op on screen.
 
 
 ### Settings Page (for admin only)
-
+Only the administrator 'admin' of the website has access to the 'Settings' page. Here the administrator can add or delete the following information in/from the database: Country names (for users), Genders (for users), Genres (for songs), Release Years (for songs).
 
 
 ### User Info Page
-The 'User Information' page gives information about a user to other users and is not visible for only visitors of the website. Users need to be logged in to see user information. A user is able to turn off the visibility of their email address on their profile page. To access the user information page, click on the expand link (?) of a song to see which user uploaded the song. By clicking on the username the user information page will pop up.
+The 'User Information' page gives information about a user to other users or visitors. The email address indicated on the 'User Information' page is only visible to logged-in users. A user can turn off the visibility of their email to other users on the 'User Information' page by disabling it on their 'Profile' page. To access the user information page, click on the expand link (?) of a song to see which user uploaded the song. By clicking on the username the user information page will pop up (blank page).
 
 
-### Users
+### Users Page (for admin only)
+Only the administrator 'admin' of the website has access to the 'Users' page. Here the administrator sees a summary of all users and can delete unwanted users from the database by clicking the delete icon 'Garbage Bin'. A second red coloured 'Garbage Bin' will pop up and by clicking this icon, the specific user will be deleted from the website and database and will be no longer able to enter his account.
 
 
 ### YouTube Page
-
+By clicking the Artist Name or Song Title at the top of every search record on the 'Results' page, the visitor will be automatically redirected (blank page) to the website's 'YouTube' page of the song. On this page, the YouTube video of the song has been embedded and the video will play automatically when the page is loaded.
 
 
 ### Flash Messages
-Flash messages will pop up with useful information for the user and can be closed by clicking the cross button.
+Flash messages will pop up with useful information for the user and can be closed by clicking the cross icon.
 
 
 ### Responsiveness
