@@ -115,7 +115,7 @@ Sans-serif has been set as fallback font.
 
 #### Wireframes
 Wireframes beloning to the website's project have been made in [Adobe XD](https://www.adobe.com/products/xd.html).
-The wireframes are implemeted in markdown files and can be found over here:
+The wireframes are implemented in markdown files and can be accessed over here:
 - Wireframes of the '404' Page - [link](static/readme-images/wireframes/wireframes-404.md)
 - Wireframes of the 'About' Page - [link](static/readme-images/wireframes/wireframes-about.md)
 - Wireframes of the 'Add Song' Page - [link](static/readme-images/wireframes/wireframes-addsong.md)
@@ -216,6 +216,9 @@ By clicking the Artist Name or Song Title at the top of every search record on t
 ### Flash Messages
 Flash messages will pop up with useful information for the user and can be closed by clicking the cross icon.
 
+
+### Forms
+Same styling for all forms on every page.
 
 ### Responsiveness
 All pages are responsive on all devices. Designed for minimum viewport width of: 320px.
