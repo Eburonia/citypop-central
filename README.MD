@@ -300,6 +300,9 @@ The MongoDB Data Scheme Citypop Central
 - Check whether all 5 background randomized images will show up. **(checked)**
 - Check whether background images show up properly on smaller devices. **(checked)**
 
+<img src="static/img/background3.jpg" alt="Hero Image"><br>
+<sub>Background (Hero) Image</sub>
+
 
 #### Header/Navigation Bar
 - Check whether the header is always on top of the pages. **(checked)**
@@ -313,6 +316,9 @@ The MongoDB Data Scheme Citypop Central
 - Check the 'Logout' button shows up when logged in. **(checked)**
 - Check whether the toggle button functions properly. **(checked)**
 
+<img src="static/readme-images/headerphone.jpg" alt="Header Phone"><br>
+<sub>Header on Phone</sub>
+
 
 #### Footer
 - Check whether the footer is on the bottom of the 'Index,' 'Results,' 'Youtube' and 'About' page. **(checked)**
@@ -320,6 +326,9 @@ The MongoDB Data Scheme Citypop Central
 - Check whether the social media links change colour when hovering. **(checked)**
 - Check for dead links. **(checked)**
 - Check the responsiveness on smaller devices (min. 320px width). **(checked)**
+
+<img src="static/readme-images/footer.jpg" alt="Footer"><br>
+<sub>Footer</sub>
 
 
 #### Index Page
