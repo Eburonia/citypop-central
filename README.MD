@@ -231,7 +231,7 @@ All pages are responsive on all devices. Designed for minimum viewport width of:
 
 ### Future Features
 * A message function for users to communicate with each other instead of using e-mail communication.
-* Implementation of an image database instead of loading album images from the discogs.com website.
+* Implementation of an image database instead of loading album images from the [discogs.com](https://www.discogs.com/) website.
 * Sub-divide the JavaScript code, all code is now loaded on all pages.
 * At this moment it is not possible to update your password, to be implemented in the future.
 * Data in the database are all saved as strings, can be changed to other data types like int for release years.
@@ -259,19 +259,19 @@ The MongoDB Data Scheme Citypop Central
 
 
 ### Frameworks, Libraries and Programs Used
-- [jQuery v3.5.1](https://jquery.com/download/) - jQuery which is a JavaScript Library mainly used for manipulating the HTML DOM tree, is used throughout the website especially on the 'Practice' and 'Editor' page.
-- [Font Awesome](https://www.fontawesome.com/) - Font Awesome icons are used on the website for linking to the social media pages and in h2 headings.
+- [jQuery v3.5.1](https://jquery.com/download/) - jQuery which is a JavaScript Library mainly used for manipulating the HTML DOM tree, is used on some pages.
+- [Font Awesome](https://www.fontawesome.com/) - Font Awesome icons are used on the website for linking to the social media pages and edit and delete purposes.
 - [Git](https://git-scm.com/) - Git was used for version control and code change tracking of the website project. The terminal in Gitpod was used to commit and to push the project to the Github repository.
 - [Github](https://github.com/) - The project code has been stored on the Github website.
 - [GitPod](https://www.gitpod.io/) - GitPod was used for creating the code, testing of the website, commiting, and pushing the code to the github repository.
 - [Heroku](https://www.heroku.com/) - The project has been imported from the Github website to the Heroku website which allows Python related projects.
 - [Adobe XD](https://www.adobe.com/products/xd.html) - Adobe XD was used to create the website's Wireframes. To see the Wireframes, go to the Design section above to see the results.
-- [Photopea.com](https://www.photopea.com/) - The Photopea website is used for creating the website logo, 'Manual' page images and README images.
+- [Photopea.com](https://www.photopea.com/) - The Photopea website was used for editing the README file images.
 - [Flask](https://en.wikipedia.org/wiki/Flask_(web_framework)) - Flask is a micro web framework written in Python used for interaction between front-end and back-end of the website.
 
 
 ### Database
-- [MongoDB](https://en.wikipedia.org/wiki/MongoDB) - The website uses the document-oriented database MongoDB.
+- [MongoDB](https://www.mongodb.com/) - The website uses the document-oriented database MongoDB.
 
 
 <!-- Testing -->
@@ -289,17 +289,16 @@ The MongoDB Data Scheme Citypop Central
 - Check title tags all start with a capitalized letter. **(checked)**
 - Check whether page titles are loaded correctly. **(checked)**
 - Check all needed CSS files are imported properly. **(checked)**
-- Check ghost CSS code. **(checked)**
 - Check commented out code. **(checked)**
 - Check comments added to code files. **(checked)**
 - Check for non-functioning Python code. **(checked)**
 - Turn off Flask debug mode. **(checked)**
 
 
-#### Background Images
+#### Background (Hero) Images
 - Check whether background image sizing is around 500 kB. **(checked)**
 - Check whether all 5 background randomized images will show up. **(checked)**
-- Check whether background images show up properly show up on smaller devices. **(checked)**
+- Check whether background images show up properly on smaller devices. **(checked)**
 
 
 #### Header/Navigation Bar
@@ -316,11 +315,30 @@ The MongoDB Data Scheme Citypop Central
 
 
 #### Footer
-- Check whether the footer is on the bottom of the 'Index,''Results,' 'Youtube' and 'About' page. **(checked)**
+- Check whether the footer is on the bottom of the 'Index,' 'Results,' 'Youtube' and 'About' page. **(checked)**
 - Check whether all social media links are working properly and are opening a new blank page. **(checked)**
-- Check whether the social links change colour when hovering. **(checked)**
+- Check whether the social media links change colour when hovering. **(checked)**
 - Check for dead links. **(checked)**
 - Check the responsiveness on smaller devices (min. 320px width). **(checked)**
+
+
+#### Index Page
+- Check the responsiveness of the page. **(checked)**
+- Check the latest uploaded song links function and open in a new screen. **(checked)**
+- Check whether records show up when searching the following keywords: Artist Name, Song Name, Genre, Release Year, Album Name, Uploaded By, Upload Date. **(checked)**
+- Check whether a song added to the database shows up to the latest songs summary. **(checked)**
+
+<img src="static/readme-images/index.jpg" alt="Index Page"><br>
+<sub>Index Page</sub>
+
+
+#### 404 Page
+- Check the responsiveness of the page. **(checked)**
+- Check 404-page loads when a non-existing page is loaded. **(checked)**
+- Check of link redirects to homepage. **(checked)**
+
+<img src="static/readme-images/404.jpg" alt="404 Page"><br>
+<span>404 Page</span>
 
 
 #### About Page
@@ -334,36 +352,54 @@ The MongoDB Data Scheme Citypop Central
 <sub>About Page</sub>
 
 
-#### Index Page
+#### Add Song Page
 - Check the responsiveness of the page. **(checked)**
-- Check the latest song links function and open in a new screen. **(checked)**
-- Check whether records show up when searching the following keywords: Artist Name, Song Name, Genre, Release Year, Album Name, Uploaded By, Upload Date. **(checked)**
-- Check whether a song added to the database shows up to the latest songs summary. **(checked)**
+- Check whether the input fields match with the Edit Songs Page. **(checked)**
+- Check field description is understandable for a visitor. **(checked)**
+- Check whether album image loads correctly. **(checked)**
+- Check the regular expression. **(checked)**
+- Check whether the added song is in the database. **(checked)**
+
+<img src="static/readme-images/addsong.jpg" alt="Add Song Page"><br>
+<sub>Add Song Page</sub>
 
 
-<img src="static/readme-images/index.jpg" alt="Index Page"><br>
-<sub>Index Page</sub>
-
-
-#### Results Page
+#### Edit Song Page
 - Check the responsiveness of the page. **(checked)**
-- Check whether the 'Expand for more information' icon (question mark) functions properly. **(checked)**
-- Check whether the 'Uploaded By' link opens a new blank page. **(checked)**
-- Check whether all show song information is correct. **(checked)**
-- Check whether there is no text-overflow. **(checked)**
-- Check whether the Youtube link functions and opens a new blank page. **(checked)**
-- Check whether the 'Edit' and 'Delete' icons show up when logged in and check whether they function properly. **(checked)**
-- Check the number of results (records) indicated to match the real shown results on the screen. **(checked)**
-- Check pagination functions properly. **(checked)**
-- Check whether a maximum of 10 records shows up on the screen. **(checked)**
-- Check whether 'Edit Date' shows up when the song has been edited. **(checked)**
-- Check manipulation of the search bar search keys won't give wrong results or errors. **(checked)**
+- Check whether the input fields match with the Add Songs Page. **(checked)**
+- Check field description is understandable for a visitor. **(checked)**
+- Check whether album image loads correctly. **(checked)**
+- Check the regular expression. **(checked)**
+- Check whether admin can edit all songs. **(checked)**
+- Check whether admin can delete all songs. **(checked)**
+- Check whether other users cannot edit songs via address bar. **(checked)**
+- Check whether visitors cannot edit songs via address bar. **(checked)**
 
-<img src="static/readme-images/results.jpg" alt="Search results page"><br>
-<sub>Search results page</sub>
+<img src="static/readme-images/editsong.jpg" alt="Edit Song Page"><br>
+<sub>Add Song Page</sub>
 
-<img src="static/readme-images/icons.jpg" alt="Edit and Delete Icons"><br>
-<sub>Edit and Delete Icons</sub>
+
+#### Login Page
+- Check the responsiveness of the page. **(checked)**
+- Check the link to the Register page functions. **(checked)**
+- Check whether login functions. **(checked)**
+- Check regular expression. **(checked)**
+
+<img src="static/readme-images/login.jpg" alt="Login Page"><br>
+<sub>Login Page</sub>
+
+
+#### My Songs Page (All Songs when logged in as admin)
+- Check the responsiveness of the page. **(checked)**
+- Check whether Artist Name and Songs Name are properly indicated. **(checked)**
+- Check colour changes when hovering. **(checked)**
+- Check alphabetical order. **(checked)**
+- Check whether all your songs show up. **(checked)**
+- Check whether all songs show up when logged in as admin. **(checked)**
+- Check whether the correct song information is loaded from the database. **(checked)**
+
+<img src="static/readme-images/uploadedsongs.jpg" alt="My Songs Page"><br>
+<sub>My Songs Page</sub>
 
 
 #### Profile Page
@@ -383,6 +419,39 @@ The MongoDB Data Scheme Citypop Central
 <sub>Profile Page</sub>
 
 
+#### Register Page
+- Check the responsiveness of the page. **(checked)**
+- Check the link to the Login page functions. **(checked)**
+- Check the regular expressions. **(checked)**
+- Check password match functionality. **(checked)**
+- Block when username already exists. **(checked)**
+- Block when email address already exists. **(checked)**
+
+<img src="static/readme-images/register.jpg" alt="Register Page"><br>
+<sub>Register Page</sub>
+
+
+#### Results Page
+- Check the responsiveness of the page. **(checked)**
+- Check whether the 'Expand for more information' icon (question mark) functions properly. **(checked)**
+- Check whether the 'Uploaded By' link opens a new blank page. **(checked)**
+- Check whether all song information is correct. **(checked)**
+- Check whether there is no text-overflow. **(checked)**
+- Check whether the Youtube link functions and opens a new blank page. **(checked)**
+- Check whether the 'Edit' and 'Delete' icons show up when logged in and check whether they function properly. **(checked)**
+- Check the number of results (records) indicated to match the real shown results on the screen. **(checked)**
+- Check pagination functions properly. **(checked)**
+- Check whether a maximum of 10 records shows up on the screen. **(checked)**
+- Check whether 'Edit Date' shows up when the song has been edited. **(checked)**
+- Check manipulation of the search bar search keys won't give wrong results or errors. **(checked)**
+
+<img src="static/readme-images/results.jpg" alt="Search results page"><br>
+<sub>Search results page</sub>
+
+<img src="static/readme-images/icons.jpg" alt="Edit and Delete Icons"><br>
+<sub>Edit and Delete Icons</sub>
+
+
 #### Settings Page (for admin only)
 - Check the responsiveness of the page. **(checked)**
 - Check whether only admin has access to this page. **(checked)**
@@ -398,83 +467,6 @@ The MongoDB Data Scheme Citypop Central
 <img src="static/readme-images/settings.jpg" alt="Settings Page"><br>
 <sub>Settings Page (for admin only)</sub>
 
-#### Users (for admin only)
-- Check the responsiveness of the page. **(checked)**
-- Check whether only admin has access to this page. **(checked)**
-- Check whether all users show up from database. **(checked)**
-- Check whether it is possible to delete a user. **(checked)**
-
-<img src="static/readme-images/users.jpg" alt="Users Page"><br>
-<sub>Users Page (for admin only)</sub>
-
-#### My Songs Page (all songs for admin)
-- Check the responsiveness of the page. **(checked)**
-- Check whether Artist Name and Songs Name are properly indicated. **(checked)**
-- Check colour changes when hovering. **(checked)**
-- Check alphabetical order. **(checked)**
-- Check whether all your songs show up.**(checked)**
-- Check whether all songs show up when logged in as admin. **(checked)**
-- Check whether the correct song information is loaded into form from the database. **(checked)**
-
-<img src="static/readme-images/uploadedsongs.jpg" alt="My Songs Page"><br>
-<sub>My Songs Page</sub>
-
-
-#### Add Song Page
-- Check the responsiveness of the page. **(checked)**
-- Check whether the input fields match with the Edit Songs Page. **(checked)**
-- Check field description is understandable for a visitor. **(checked)**
-- Check whether album image loads correctly. **(checked)**
-- Check the regular expression. **(checked)**
-- Check whether the added song is in the database. **(checked)**
-
-
-<img src="static/readme-images/addsong.jpg" alt="Add Song Page"><br>
-<sub>Add Song Page</sub>
-
-
-#### Edit Song Page
-- Check the responsiveness of the page. **(checked)**
-- Check whether the input fields match with the Edit Songs Page. **(checked)**
-- Check field description is understandable for a visitor. **(checked)**
-- Check whether album image loads correctly. **(checked)**
-- Check the regular expression. **(checked)**
-- Check whether admin can edit all songs. **(checked)**
-- Check whether admin can delete all songs. **(checked)**
-- Check whether other users cannot edit songs via address bar. **(checked)**
-- Check whether visitors cannot edit songs via address bar. **(checked)**
-
-
-#### Login Page
-- Check the responsiveness of the page. **(checked)**
-- Check the link to the Register page functions. **(checked)**
-- Check whether login functions. **(checked)**
-- Check regular expression. **(checked)**
-
-
-<img src="static/readme-images/login.jpg" alt="Login Page"><br>
-<sub>Login Page</sub>
-
-
-#### Register Page
-- Check the responsiveness of the page. **(checked)**
-- Check the link to the Login page functions. **(checked)**
-- Check the regular expressions. **(checked)**
-- Check password match functionality. **(checked)**
-- Block when username already exists. **(checked)**
-- Block when email address already exists. **(checked)**
-
-<img src="static/readme-images/register.jpg" alt="Register Page"><br>
-<sub>Register Page</sub>
-
-
-#### Youtube Page
-- Check the responsiveness of the page. **(checked)**
-- Check song autoplay. **(checked)**
-
-<img src="static/readme-images/youtube.jpg" alt="Youtube Page"><br>
-<sub>Youtube Page</sub>
-
 
 #### Userinfo Page
 - Check the responsiveness of the page. **(checked)**
@@ -487,6 +479,24 @@ The MongoDB Data Scheme Citypop Central
 <sub>Userinfo Page</sub>
 
 
+#### Users Page (for admin only)
+- Check the responsiveness of the page. **(checked)**
+- Check whether only admin has access to this page. **(checked)**
+- Check whether all users show up from database. **(checked)**
+- Check whether it is possible to delete a user. **(checked)**
+
+<img src="static/readme-images/users.jpg" alt="Users Page"><br>
+<sub>Users Page (for admin only)</sub>
+
+
+#### Youtube Page
+- Check the responsiveness of the page. **(checked)**
+- Check song autoplay. **(checked)**
+
+<img src="static/readme-images/youtube.jpg" alt="Youtube Page"><br>
+<sub>Youtube Page</sub>
+
+
 #### Flash Messages
 - Check the responsiveness of the flash messages. **(checked)**
 - Check flash messages all start with a capitalized letter. **(checked)**
@@ -495,15 +505,6 @@ The MongoDB Data Scheme Citypop Central
 
 <img src="static/readme-images/flashmessage.jpg" alt="Flash messages"><br>
 <span>Flash Messages</span>
-
-
-#### 404-Page
-- Check the responsiveness of the page. **(checked)**
-- Check 404-page loads when a non-existing page is loaded. **(checked)**
-- Check of link redirects to homepage. **(checked)**
-
-<img src="static/readme-images/404.jpg" alt="404 Page"><br>
-<span>404 Page</span>
 
 
 ### Usability Testing
