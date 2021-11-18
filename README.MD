@@ -529,13 +529,20 @@ The website is designed for a minimum viewport width of 320px (iPhone 5 size).
 
 
 ### Testing Code
-The following online validators were used to check whether the website generated any Javascript, html and CSS syntax errors:
+The following online validators were used to check whether the website generated any HTML, CSS, JavaScript/JQuery and Python syntax errors:
+   - [W3C Markup Validator](https://validator.w3.org/)
+   - [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
+   - [JSHint Validator](https://www.jshint.com/)
+   - [PEP8 Online Check](http://www.pep8online.com/)
+
 
 #### W3C Markup Validator
-[website](https://validator.w3.org/)  
-All code was checked by direct input.  
-W3C Markup Validator, the following pages were checked:  
 
+All HTML code was checked by direct input into the validator (copy & paste).   
+The following pages were checked:  
+
+* index.html
+* 404.html
 * about.html
 * add_song.html
 * base.html
@@ -544,22 +551,19 @@ W3C Markup Validator, the following pages were checked:
 * my_songs.html
 * profile.html
 * register.html
-* index.html
 * results.html
 * settings.html
 * userinfo.html
 * users.html
 * youtube.html
-* 404.html
 
-Errors found:
-All pages generate Jinja related errors (Validator does not recognize Jinja code).
-
+Errors:  
+All pages generate Jinja related errors (the validator does not recognize Jinja code).  
+No serious errors discovered.
 
 #### W3C CSS Validator
-[website](https://jigsaw.w3.org/css-validator/)
 
-W3C CSS Validator, the following files were checked:
+The following CSS files were checked:
 * [about.css](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fcitypop-central.herokuapp.com%2Fstatic%2Fcss%2Fabout.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 * [error404.css](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fcitypop-central.herokuapp.com%2Fstatic%2Fcss%2Ferror404.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 * [footer.css](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fcitypop-central.herokuapp.com%2Fstatic%2Fcss%2Ffooter.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
@@ -574,28 +578,27 @@ W3C CSS Validator, the following files were checked:
 * [userinfo.css](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fcitypop-central.herokuapp.com%2Fstatic%2Fcss%2Fuserinfo.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 * [youtube.css](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fcitypop-central.herokuapp.com%2Fstatic%2Fcss%2Fyoutube.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 
-Warnings found:
-Validator does not recognize CSS variables.
+Warnings:  
+Validator does not recognize CSS variables.  
+No errors discovered.
 
 
 #### JSHint Validator
-[website](https://www.jshint.com/)
 
-JSHint Validator, the following file was checked by direct input:
+The following JavaScript/JQuery file was checked by direct input into the validator (copy & paste):
 * script.js
 
-Errors found:
-No important errors found.
+Errors:   
+No errors discovered.
 
 
 #### PEP8 Online Check
-[website](http://www.pep8online.com/)
 
-PEP8 Online Check, the following file was checked by direct input:
+The following Python file was checked by direct input into the validator (copy & paste):
 * app.py
 
-Errors found:
-No important errors found.
+Errors:   
+No errors discovered.
 
 ### Testing Grammar and Spelling 
 - [Grammarly.com](https://www.grammarly.com/) was used to check grammar and spelling.
