@@ -115,7 +115,7 @@ def results():
     # Pagination from here
 
         # Set the number of records per page
-        limit = 10
+        limit = 3
 
         # Determine number of pages needed for results
         number_of_pages = math.ceil(number_of_results / limit)
@@ -137,7 +137,8 @@ def results():
         if int(page) >= 1:
 
             # set link for address bar
-            previous_page = f"/results?search={query}&page={str(int(page) - 1)}"
+            previous_page = "/results?search=" + query +\
+                "&page=" + str(int(page) - 1)
 
             # Set link text front-end
             previous_page_text = 'Prev page'

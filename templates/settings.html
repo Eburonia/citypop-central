@@ -13,7 +13,7 @@ Date: November 2021
 <div class="form-div">
 
     <!-- heading -->
-    <h2 class="form-heading">Website settings</h2>
+    <h1 class="form-heading">Website settings</h1>
 
     <!-- remove country from database -->
     <form class="settings-form" action="{{ url_for('delete_country') }}" method="POST">
@@ -90,6 +90,7 @@ Date: November 2021
         <h2 class="settings-heading form-heading">Genre settings</h2>
 
         <label for="remove-genre" class="form-label">Remove genre from database :</label>
+        <p class="form-info">Select the genre you want to delete from the database.</p>
         <select id="remove-genre" name="remove-genre" class="settings-textbox form-textbox" aria-label="Please select the genre you want to remove from the database">
 
             {% for genre in genres %}
@@ -123,6 +124,7 @@ Date: November 2021
         <h2 class="settings-heading form-heading">Release year settings</h2>
 
         <label for="remove-release-year" class="form-label">Remove release year from database :</label>
+        <p class="form-info">Select the release year you want to delete from the database.</p>
         <select id="remove-release-year" name="remove-release-year" class="settings-textbox form-textbox" aria-label="Please select the release year you want to remove from the database">
 
             {% for release_year in release_years %}
