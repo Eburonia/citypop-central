@@ -149,32 +149,16 @@ The company logo on the top left-hand side of the header has a clickable anchor 
 A footer has been added on the bottom of the 'Index' and 'Results' page and exists out of social media links, and a copyright notice. The social media links are styled in gold colour. By hovering the social media link icons, the colour will highlight in pink colour as described in the colour scheme section of this README file and makes it clear to the end-user these are clickable links. The icons used for the social media links are directly loaded from the [fontawesome](https://www.fontawesome.com) website. All social media links will be opened on a new blank page. A clear copyright notice is visible at the bottom of the footer.
 
 
-### About Page
-The 'About' page gives information about the purpose of the website. Some history and background information about the Citypop genre are stated on this page. Also embedded are two YouTube videos about the history of Citypop and a video of Western tourists buying Citypop records at a local used record store in the Shibuya district of Tokyo. 
-
-
 ### Index Page
 The 'Index' page is the most important page on the website and starts with a welcoming statement to every visitor. Below the statement, a search bar indicated to search songs. To help new visitors to add correct keywords in the search bar, example search keywords are indicated above the search bar.  Then a summary of the 8 latest songs added to the database is shown to the visitor. These are clickable and will open a new blank page to the YouTube embedded video. The bottom of the page ends with links to the website's socials pages.
 
 
-### Results Page
-The 'Results' page will show up at the moment a visitor has added a search query. The results found in the database will then show up on the screen. Pagination implemented limiting the number of search results to 10 search records per page. The top of the page indicates the number of results found in the database. The current indicated results are shown on-screen also. All search records show the following information: Artist Name, Song Name, Genre, Release Year, Album Name. An expanded information button (question mark icon) to show more additional information about the song is introduced. By clicking this icon more information will show up on the screen. This information is: Song Length, Uploaded By, Upload Date, Edit Date. By clicking the Artist Name and Song Title at the top of every search query, the visitor will be automatically redirected to the YouTube song page which will run the song automatically. An image of the Album Cover of the song's album is indicted. By clicking the album image a larger image will show op on screen.
+### 404 Page
+The 404 page is a simple-looking page stating the 404 error message and link to re-direct the visitor/user back to the index page.
 
 
-### Register Page
-On the 'Register' page, you can create a Citypop Central user account. Indicated are necessary information fields like username, password, email address, the country you live in, and gender. On top of every text field, given is some extra information to the end-user to add the correct information. When submitting the form, the back-end of the website checks whether the submitted username already exists or not. There is a double check when adding a password. New users have to add the passwords twice. This is to check whether the user did not make a typo when adding the password. A blue message will pop up under the password text field, warning the user both passwords don't match. Add a valid email address. Select the country you are currently living in. The summary of all countries and genders is coming from the database, making it easy to update them in case needed in the future. For now, users can communicate with each other by email. Maybe new users don't want this and for that reason, an option is given to not share your email address on your user information page. Indicated is a link to the login page in case a user already has an account.
-
-
-### Login Page
-On the 'Login' page, existing users login into their Citypop Central account. The correct username or password needs to be added to the form to access the user account. A flash message will pop up when submitted an incorrect username, or password. The flash message will not tell whether the username or password was incorrect.
-
-
-### Profile Page
-On the 'Profile' page, you can update some of your user information like your email address, the country you are living in, and whether you want to share your email address with other users or not. You cannot update your username and gender. You are also able to delete your profile by clicking the link at the bottom of the form. By clicking this link, a second link will pop up to confirm to delete your profile. The songs you have added to the database will stay in the database under your username.
-
-
-### My Songs Page
-The 'My Songs' page indicates a summary of the uploaded songs by the user. Alphabetically sorted the Artist's name and Song name. By clicking on one of the songs, the user will be re-directed to the edit page of the song. Here the user can change information or even delete the song.
+### About Page
+The 'About' page gives information about the purpose of the website. Some history and background information about the Citypop genre are stated on this page. Also embedded are two YouTube videos about the history of Citypop and a video of Western tourists buying Citypop records at a local used record store in the Shibuya district of Tokyo. 
 
 
 ### Add Song Page
@@ -182,16 +166,46 @@ On the 'Add song' page, the user can add songs to the Citypop Central database. 
 All songs can be listened to on Youtube by adding the video link ID. This link can be found in the address bar of every YouTube video and will look like this: 'yOulloW7lEA'.
 
 
+### Edit Song Page
+
+
+### Login Page
+On the 'Login' page, existing users login into their Citypop Central account. The correct username or password needs to be added to the form to access the user account. A flash message will pop up when submitted an incorrect username, or password. The flash message will not tell whether the username or password was incorrect.
+
+
+### My Songs Page
+The 'My Songs' page indicates a summary of the uploaded songs by the user. Alphabetically sorted the Artist's name and Song name. By clicking on one of the songs, the user will be re-directed to the edit page of the song. Here the user can change information or even delete the song.
+
+
+### Profile Page
+On the 'Profile' page, you can update some of your user information like your email address, the country you are living in, and whether you want to share your email address with other users or not. You cannot update your username and gender. You are also able to delete your profile by clicking the link at the bottom of the form. By clicking this link, a second link will pop up to confirm to delete your profile. The songs you have added to the database will stay in the database under your username.
+
+
+### Register Page
+On the 'Register' page, you can create a Citypop Central user account. Indicated are necessary information fields like username, password, email address, the country you live in, and gender. On top of every text field, given is some extra information to the end-user to add the correct information. When submitting the form, the back-end of the website checks whether the submitted username already exists or not. There is a double check when adding a password. New users have to add the passwords twice. This is to check whether the user did not make a typo when adding the password. A blue message will pop up under the password text field, warning the user both passwords don't match. Add a valid email address. Select the country you are currently living in. The summary of all countries and genders is coming from the database, making it easy to update them in case needed in the future. For now, users can communicate with each other by email. Maybe new users don't want this and for that reason, an option is given to not share your email address on your user information page. Indicated is a link to the login page in case a user already has an account.
+
+
+### Results Page
+The 'Results' page will show up at the moment a visitor has added a search query. The results found in the database will then show up on the screen. Pagination implemented limiting the number of search results to 10 search records per page. The top of the page indicates the number of results found in the database. The current indicated results are shown on-screen also. All search records show the following information: Artist Name, Song Name, Genre, Release Year, Album Name. An expanded information button (question mark icon) to show more additional information about the song is introduced. By clicking this icon more information will show up on the screen. This information is: Song Length, Uploaded By, Upload Date, Edit Date. By clicking the Artist Name and Song Title at the top of every search query, the visitor will be automatically redirected to the YouTube song page which will run the song automatically. An image of the Album Cover of the song's album is indicted. By clicking the album image a larger image will show op on screen.
+
+
+### Settings Page (for admin only)
+
+
+
 ### User Info Page
 The 'User Information' page gives information about a user to other users and is not visible for only visitors of the website. Users need to be logged in to see user information. A user is able to turn off the visibility of their email address on their profile page. To access the user information page, click on the expand link (?) of a song to see which user uploaded the song. By clicking on the username the user information page will pop up.
 
 
+### Users
+
+
+### YouTube Page
+
+
+
 ### Flash Messages
 Flash messages will pop up with useful information for the user and can be closed by clicking the cross button.
-
-
-### 404 Page
-The 404 page is a simple-looking page stating the 404 error message and link to re-direct the visitor/user back to the index page.
 
 
 ### Responsiveness
