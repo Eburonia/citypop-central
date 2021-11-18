@@ -376,7 +376,7 @@ The MongoDB Data Scheme Citypop Central
 - Check whether visitors cannot edit songs via address bar. **(checked)**
 
 <img src="static/readme-images/editsong.jpg" alt="Edit Song Page"><br>
-<sub>Add Song Page</sub>
+<sub>Edit Song Page</sub>
 
 
 #### Login Page
