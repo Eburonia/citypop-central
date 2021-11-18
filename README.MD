@@ -599,34 +599,34 @@ No important errors found.
    * For Japanese visitors or people who can read Japanese, also Citypop Central was written in Japanese Hiragana: 'シティ・ポップ・セントラル.'
    * The 'Search songs in our database' search field and button on the 'Index' page tells it is possible to search for songs on the website.
    * Certain keywords are added above the search songs field to help the visitor use the correct keywords.
-   * A link to the 'About the citypop central website' page has been added. Here the visitor finds information about the Citypop genre.
-   * The 'Register' page tells the visitor you can add your songs into the database.
+   * A link to the 'About the citypop central website' page has been added. Here the visitor finds information about the website and Citypop genre.
+   * On the 'Register' page, it tells visitors you can add your songs into the database when you register.
 
 2. As a visitor of the website, I want to navigate easily throughout the website, so I don't get frustrated not knowing where to click.
-   * A navigation bar is available on every page in the upper right corner.
+   * A navigation bar in the header is available on every page in the upper right corner.
    * The website is easily usable for visitors who are only searching for songs. All links and buttons are foreseen with a title explaining the purpose which can be excessed when hovering.
    * Search results are limited to a maximum of 10 songs per page. Pagination has been introduced to switch to the next or previous pages.
-   *Every search result has a (?) button that expands less relevant information about each song.
+   * Every search result has a (?) button that expands less relevant information about each song.
 
 3. As a visitor of the website, I want to target specific songs, so I don't get lost when I have to scroll through all available songs on the website.
    * Visitors can search under the following keywords: Artist name, Song name, Genre, Release Year, Album Name, Uploaded By, and Upload Date.
 
 4. As a visitor of the website, I not only want to find information about the songs, but I also want to listen to the songs.
-   * At the top of every search record, the Artist's name and Song name are indicated. A YouTube icon in front of the Artist's name has been implemented telling the visitor this is a clickable link. By clicking this link, the visitor will be redirected to a blank page that includes the embedded Youtube video. For convenience reasons, all records will play automatically. By hovering the link the text 'Watch on YouTube' will pop up.
+   * At the top of every search record, the Artist's name and Song name are indicated. A YouTube icon in front of the Artist's name has been implemented telling the visitor this is a clickable link. By hovering the link the text 'Watch on YouTube' will pop up. By clicking this link, the visitor will be redirected to a blank page that includes the embedded Youtube video of the song. For convenience reasons, all records will play automatically.
 
 5. As a visitor of the website, I want to see the album cover of the song.
    * For every search record, you can press the album image and a larger size image will appear on the screen.
 
 6. As a visitor of the website, I might want to contact the website owner, so I can ask a question or give some feedback.
-   * On the bottom, inside the search function division of the 'Index' and 'Youtube' pages, hyperlinks to the website's social media accounts are indicated. By clicking on one of the links, the visitor will be redirected to these social media accounts. Here the visitor can send direct messages to the website owner.
+   * On the bottom, inside the search function division of the 'Index,' 'About' and 'Youtube' pages, hyperlinks to the website's social media accounts are indicated. By clicking on one of the links, the visitor will be redirected to these social media accounts. Here the visitor can send direct messages to the website owner.
 
 #### Returning Visitor User Goals
 1. As a returning visitor of the website, I want to be able to not only search for song information or listen to the songs but also want to add my own (favorite) songs to the database.
-   * By clicking the 'Register' button, every visitor can create a user account. When done, the visitor will get access to an 'Add Song' form. Here the user can add all information needed to upload a song: Artist Name, Song Name, Genre, Release Year, Album Name, Song Length, and the YouTube video ID.
-   * Next to adding songs to the website, the user will also be able to 'Update' and 'Delete' the added songs.
+   * By clicking the 'Register' button, every visitor can create a user account. When done, the visitor will get access to an 'Add Song' form. Here the user can add all information needed to upload a song: Artist Name, Song Name, Genre, Release Year, Album Name, Album Image, Song Length, and the YouTube video ID.
+   * Next to adding songs to the website, the user will also be able to 'Edit' and 'Delete' the added songs.
    * The username will appear below the navigation bar when the user is logged-in. 
    * A summary of all uploaded songs is available on the 'My Songs' page. By clicking on one of the song's hyperlinks, the user will be automatically redirected to the page where the song can be edited.
-   * When a user account is created, visitors become users and will also have access to a 'Profile' page. Here some additional information about the user is added.
+   * When a user account is created, visitors become users and will also have access to a 'Profile' page. Here some additional information about the user is added and can be updated.
    * When registered, visitors become users and are now able to maintain their profile information, add songs, edit songs, delete songs. This means only songs you have added to the database, not songs uploaded by other users.
    * Regular expressions have been added where needed, to help the user understand what input is expected, additional information has been added above every data field.
 
@@ -637,20 +637,19 @@ No important errors found.
    * When logged in, in the upper right side of the navigation bar, a link to 'My Songs' will be available. By clicking this link the user will be redirected to a page that gives a summary of all your added songs in the past.
 
 4. As a returning visitor of the website, I want to delete my profile whenever I want.
-   * When logged in, at the bottom of your 'Profile' page, a link has been added which gives you the option to delete your user account. A second link has to be clicked to confirm you want to delete your profile. Your profile will be deleted, but the songs you added to the website will stay on the website under your name.
+   * When logged in, at the bottom of your 'Profile' page, a link has been added which gives you the option to delete your user account. A second link has to be clicked to confirm whether you want to delete your profile or not. Your profile will be deleted, but the songs you have added to the website before will stay visible on the website under your name.
 
 5. As a returning visitor of the website, I want to be able to update my user account in case some information about me (e.g. location) has been changed.
-   * When logged in, on the 'Profile' page you can update your e-mail and the country you live in.
-   *The option to change your password has been added.
+   * When logged in, on the 'Profile' page you can update your e-mail and the country you are currently living in.
+   * The option to change your password has not been added but will be implemented in the future.
 
 6. As a returning visitor of the website, I want to be able to see information about other users of the website and contact them when needed.
-   * Every song record has an information field in the expanded information section of the record stating who uploaded the song  'Uploaded by'. Only users can click on the 'Uploaded by' link to see more information about the other user. Here is the e-mail address of the user who uploaded the song is indicated. The user has the option to hide this e-mail address for other users on the 'Profile' page.
+   * Every song record has an information field in the expanded information section of the record stating who uploaded the song  'Uploaded by'. Only users can see and click on the 'Uploaded by' link to see more information about the other user. Here the e-mail address of the user who uploaded the song is indicated. The user has the option to hide this e-mail address for other users on the 'Profile' page.
 
 
 #### Administrator User Goals
 1. As an administrator of the website, I want to be able to adjust all uploaded songs, so I can change them for whatever reason.
    * The administrator has access to the 'All songs' page, here all songs on the website will be alphabetically summarized. The administrator can edit and delete all songs on the website.
-   * The administrator has access to the 'Users' page, here all users are alphabetically summarized. The administrator can delete every user who has access to the website.
 2. As an administrator of the website, I want to adjust other information which is relevant to the website.
    * The administrator has access to the 'Settings' page, here it is possible to adjust the following information: Country settings, add or delete country names from the website. Country names are indicated on the user's profile page, telling in which country the user is currently living.
    * The administrator can add or delete other genders to the website. For now only male and female are available. A gender has to be selected by a new user when creating a user account.
@@ -659,7 +658,7 @@ No important errors found.
 3. As an administrator of the website, I want to know when songs were updated for the last time.
    * Songs will get an extra data field when the song was updated for the last time. Click the expand more information (?) to see this field below the 'Upload Date' field.
 4. As an administrator of the website, I want to be able to delete unwanted users.
-   * A special 'Users' page has been added for the administrator. Here he can delete every user by as simple mouseclick.
+   * The administrator has access to the 'Users' page, here all users are alphabetically summarized. Here the administrator can delete every user who has access to the website.
 
 <!-- Known Bugs -->
 <a id="bugs"></a>
