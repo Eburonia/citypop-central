@@ -177,8 +177,14 @@ $('#album_image').blur(function() {
 
 // Load album image when loading the edit or add song page
 let album_image = $('#album_image').val();
-$('#album_image_added > img').attr("src", album_image);
 
+// Check if there is a album image, in case not 'no album' cover loaded on screen
+if(album_image == '') {
+    $('#album_image_added > img').attr("src","static/img/no-cover.jpg");
+}
+else {
+    $('#album_image_added > img').attr("src", album_image);
+}
 
 // Show album image when leaving album image field
 $('#album_image').blur(function() {

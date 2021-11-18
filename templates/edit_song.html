@@ -85,8 +85,12 @@ Date: November 2021
         <!-- added album image -->
         <div id="album_image_added">
              
-            <img src="" alt="Album cover: {{ song.artist_name }} - {{ song.song_name }}" title="{{ song.artist_name }} - {{ song.song_name }}" aria-label="Album cover: {{ song.artist_name }} - {{ song.song_name }}">
-            
+            {% if song.album_image  %}
+                <img src="{{ song.album_image }}" alt="Selected album cover" title="Selected album cover" aria-label="Selected album cover"> 
+            {% else %}
+                <img src="/static/img/no-cover.jpg" alt="Album cover: {{ song.artist_name }} - {{ song.song_name }}" title="{{ song.artist_name }} - {{ song.song_name }}" aria-label="Album cover: {{ song.artist_name }} - {{ song.song_name }}">
+            {% endif %}
+
         </div>
 
         <!-- song length -->

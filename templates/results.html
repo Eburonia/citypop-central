@@ -111,8 +111,11 @@ Date: November 2021
                     <!-- album image -->
                     <a href="{{ song.album_image }}" target="_blank">
 
-                        <img src="{{ song.album_image }}" alt="Album cover: {{song.artist_name}} - {{song.album_name}}" title="Click here to see the album cover" aria-label="Click here to see the album cover">
-            
+                        {% if song.album_image %}
+                            <img src="{{ song.album_image }}" alt="Album cover: {{song.artist_name}} - {{song.album_name}}" title="Click here to see the album cover" aria-label="Click here to see the album cover">
+                        {% else %}
+                            <img src="static/img/no-cover.jpg" alt="Album cover: No cover available">
+                        {% endif %}
                     </a>
                     
                 </div>
