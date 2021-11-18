@@ -677,10 +677,10 @@ No errors discovered.
 <!-- Known Bugs -->
 <a id="bugs"></a>
 ## Known Bugs
-* When the Artist Name and Song title become too long wrapping is needed, this is not an elegant solution and needs to be fixed in the future.
-* Some tags don't accept aria labels.
-* Regular expression check for YouTube video ID and image hyperlink for album cover is almost impossible to check.
-* It is probably still possible to manipulate some pages via the address bar, maybe I have missed some of them.
+* When the Artist Name and Song title become too long, wrapping is needed, this is not an elegant solution and needs to be fixed in the future.
+* Some HTML tags don't accept aria labels.
+* Regular expression check for YouTube video ID and image hyperlink for album cover image is almost impossible to check, other solutions are to be found in the future.
+* It probably is still possible to manipulate some pages via the address bar, most pages are checked but, maybe I have missed some of them.
 
 
 <!-- Deployment -->
@@ -688,7 +688,7 @@ No errors discovered.
 ## Deployment
 
 ### Publishing
-'Herokuapp' was used for publishing the website. The procedure was as follows:
+'Heroku' was used for publishing the website. The procedure was as follows:
 1. Login to the [Heroku](https://www.heroku.com/) website.
 2. Click the 'Create New App' button.
 3. Give your app a new unique name, choose your region and then click the 'Create App' button.
@@ -753,9 +753,9 @@ You can download the repository by following the next procedure:
 ## Credits
 
 ### Code
-- Most of all HTML, CSS, jQuery, JavaScript, Python, and Jinja code was written by the website creator: Maurice Vossen.
-- Regular Expressions. [link](https://www.html5pattern.com/Passwords)
-- Pagination example code for Flask and MongoDB. [link](https://www.youtube.com/watch?v=Lnt6JqtzM7I)
+- All HTML, CSS, jQuery, JavaScript, Python, and Jinja code was written by the website creator: Maurice Vossen.
+- Regular Expression. [link](https://www.html5pattern.com/Passwords)
+- Query Pagination in Flask and MongoDB - API Example. [link](https://www.youtube.com/watch?v=Lnt6JqtzM7I)
 - Understanding how aspect-ratio works in CSS for the iframe Youtube Video Screen. [link](https://www.youtube.com/watch?v=FF3fuYLnApQ)
 
 ### Content
