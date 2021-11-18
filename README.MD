@@ -690,6 +690,8 @@ No errors discovered.
 * Some HTML tags don't accept aria labels.
 * Regular expression check for YouTube video ID and image hyperlink for album cover image is almost impossible to check, other solutions are to be found in the future.
 * It probably is still possible to manipulate some pages via the address bar, most pages are checked but, maybe I have missed some of them.
+* The Python code in the app .py file exceed more than 1000 lines, this gives a warning in the termninal.
+* The Python code in the app .py file has single and double quote marks used in the code, this is not consistent.
 
 
 <!-- Deployment -->
