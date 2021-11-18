@@ -77,15 +77,16 @@ For more information about Citypop, check the following videos on YouTube:
 3. As an administrator of the website, I want to know when songs were updated for the last time.
 4. As an administrator of the website, I want to be able to delete unwanted users.
 
+### Design
 
 #### Colour Scheme
 The following colours were used throughout the webpage:
 - rgba(0, 0, 0, 0.9): black transparent, used as background colour in the header and forms, and buttons.
-- rgba(251, 213, 168, 1): gold, used for logo, login button, division frame borders, textfields, form texts, and socials.
-- rgba(255, 113, 151, 1): pink, used for logo, headings, comments forms, register button, hover colour, pagination, buttons.
+- rgba(251, 213, 168, 1): yellow, used for logo, login/logout button, division frame borders, textfields, form texts, and socials.
+- rgba(255, 113, 151, 1): pink, used for logo, headings, comments forms, hover colour, register button, pagination, and buttons.
 - rgba(238, 238, 238, 1): white, used for logo, search record information fields, comments on forms.
 - rgba(255, 255, 255, 0.2): gray transparent, used in textfields background colour.
-- rgba(255, 0, 0, 1): red, used on critial links e.g. deleting your profile or deleting a song.
+- rgba(255, 0, 0, 1): red, used on critical links e.g. deleting your profile or deleting a song.
 - rgba(135, 206, 235, 1): skyblue, used for flash messages in case passwords don't match on the register page. 
 
 <img src="static/readme-images/colour-scheme.jpg" alt="Colour scheme"><br>
@@ -95,15 +96,21 @@ The following colours were used throughout the webpage:
 
 #### Typography
 The '[Nunito](https://fonts.google.com/specimen/Nunito)' font was implemented from the Google Fonts website and used throughout the whole website including the website logo.
-Sans-serif has been set as back-up font.
+Sans-serif has been set as fallback font.
 
 <img src="static/readme-images/font-type.jpg" alt="Nunito font-type"><br>
 <sub>Nunito font-type</sub>
 
 
 #### Imagery
-- Five different implemented background images. Background images are all street scenes from Tokyo made by the website owner. Colours adjusted in such a way it won't distract the information in the foreground.
-- All Album Cover images are implemented from the Discogs.com website. This is not a proper way of doing this because we are using somebody else its data, but because we don't have a server where we can upload and read images it's the only solution for the moment.
+- There are five different hero background images implemented on every page. The background images are all street scenes from Tokyo made by the website owner in the year 2019. The colours are adjusted in such a way it won't distract the information in the foreground.
+   - Background image 1 - [link](static/img/background1.jpg)
+   - Background image 2 - [link](static/img/background2.jpg)
+   - Background image 3 - [link](static/img/background3.jpg)
+   - Background image 4 - [link](static/img/background4.jpg)
+   - Background image 5 - [link](static/img/background5.jpg)
+
+- All Album Cover images are implemented from the [discogs.com](https://www.discogs.com/) website. This is not a proper way of doing this because we are using somebody else its data, but because we don't have a server where we can upload and read images, it's the only solution for the moment.
 
 
 #### Wireframes
