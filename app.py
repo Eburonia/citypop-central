@@ -115,7 +115,7 @@ def results():
     # Pagination from here
 
         # Set the number of records per page
-        limit = 3
+        limit = 10
 
         # Determine number of pages needed for results
         number_of_pages = math.ceil(number_of_results / limit)
