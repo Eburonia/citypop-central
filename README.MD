@@ -202,7 +202,7 @@ Only the administrator 'admin' of the website has access to the 'Settings' page.
 
 
 ### User Info Page
-The 'User Information' page gives information about a user to other users or visitors. The email address indicated on the 'User Information' page is only visible to logged-in users. A user can turn off the visibility of their email to other users on the 'User Information' page by disabling it on their 'Profile' page. To access the user information page, click on the expand link (?) of a song to see which user uploaded the song. By clicking on the username the user information page will pop up (blank page).
+The 'User Information' page gives information about a user to other users or visitors. The email address indicated on the 'User Information' page is only visible to logged-in users. A user can turn off the visibility of their email to other users on the 'User Information' page by disabling it on their 'Profile' page. To access the user information page, click on the expand link (?) of a song to see which user uploaded the song (only when you are logged in as a user). By clicking on the 'Uploaded By' username the user information page will pop up (blank page).
 
 
 ### Users Page (for admin only)
