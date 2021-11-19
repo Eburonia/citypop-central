@@ -345,7 +345,7 @@ The MongoDB Data Scheme Citypop Central
 #### 404 Page
 - Check the responsiveness of the page. **(checked)**
 - Check 404-page loads when a non-existing page is loaded. **(checked)**
-- Check of link redirects to homepage. **(checked)**
+- Check whether link redirects to homepage. **(checked)**
 
 <img src="static/readme-images/404.jpg" alt="404 Page"><br>
 <span>404 Page</span>
@@ -399,9 +399,9 @@ The MongoDB Data Scheme Citypop Central
 <sub>Login Page</sub>
 
 
-#### My Songs Page (All Songs when logged in as admin)
+#### My Songs Page ('All Songs' when logged in as admin)
 - Check the responsiveness of the page. **(checked)**
-- Check whether Artist Name and Songs Name are properly indicated. **(checked)**
+- Check whether Artist Name and Song Name are properly indicated. **(checked)**
 - Check colour changes when hovering. **(checked)**
 - Check alphabetical order. **(checked)**
 - Check whether all your songs show up. **(checked)**
@@ -420,8 +420,8 @@ The MongoDB Data Scheme Citypop Central
 - Check whether the 'Delete your profile' link function works properly. **(checked)**
 - Check whether all fields are updated in the database when changed. **(checked)**
 - Check regular expression. **(checked)**
-- Check whether other users have no access to profile page by using the address bar. **(checked)** 
-- Check whether visitors have no access to profile page by using the address bar. **(checked)**
+- Check whether other users have no access to the profile page by using the address bar. **(checked)** 
+- Check whether visitors have no access to profile the page by using the address bar. **(checked)**
 - Check whether other users cannot delete a user profile page by using the address bar. **(checked)** 
 - Check whether visitors cannot delete a user profile page by using the address bar. **(checked)**
 
@@ -471,6 +471,8 @@ The MongoDB Data Scheme Citypop Central
 - Check whether it is possible to add a gender from the database. **(checked)**
 - Check whether it is possible to delete a genre from the database. **(checked)**
 - Check whether it is possible to add a genre from the database. **(checked)**
+- Check whether it is possible to delete a release year from the database. **(checked)**
+- Check whether it is possible to add a release year from the database. **(checked)**
 - Check regular expression. **(checked)**
 - Check unwanted user input from the address bar. **(checked)**
 
@@ -482,8 +484,8 @@ The MongoDB Data Scheme Citypop Central
 - Check the responsiveness of the page. **(checked)**
 - Check all showed information is correct. **(checked)**
 - Check e-mail address is hidden for non-users (visitors). **(checked)**
-- Check e-mail address is hidden when the user turned it off on the Profile page. **(checked)**
-- Check non-existing user return message user does not exist. **(checked)**
+- Check e-mail address is hidden for users and visitors when turned off on the 'Profile' page. **(checked)**
+- Check non-existing user return message when user does not exist. **(checked)**
 
 <img src="static/readme-images/userinfo.jpg" alt="Userinfo Page"><br>
 <sub>Userinfo Page</sub>
@@ -611,7 +613,7 @@ Errors:
 No errors discovered.
 
 ### Testing Grammar and Spelling 
-- [Grammarly.com](https://www.grammarly.com/) was used to check grammar and spelling.
+[Grammarly.com](https://www.grammarly.com/) was used to check grammar and spelling.
 
 
 ### Testing User Stories from User Experience (UX) Section
@@ -717,6 +719,7 @@ No errors discovered.
 * The Python code in the app .py file has single and double quote marks used in the code, this is not consistent to be updated in the future.
 * Users can delete their profile directly via the address bar without defensive programming '/delete-profile', this should be only possible if a user knows about this is possible, although it's better to fix this in the future.
 * The GitHub repository has some files and folders I was not sure if I could delete them for the project (.gitpod.dockerfile, .gitpod.yml and .vscode). They are coming from the Code Institute's template.
+* Songs don't autoplay on phone and ipad.
 
 
 <!-- Deployment -->
