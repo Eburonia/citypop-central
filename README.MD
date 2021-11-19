@@ -712,11 +712,11 @@ No errors discovered.
 * No significant bugs found on the website by the website creator.
 * When the Artist Name and Song title become too long, wrapping is needed, this is not an elegant solution and needs to be fixed in the future.
 * Some HTML tags don't accept aria labels.
-* Regular expression check for YouTube video ID and image hyperlink for thr album cover image is almost impossible to check, other solutions are to be found in the future.
+* Regular expression check for YouTube video ID and image hyperlink for the album cover image is almost impossible to check, other solutions need to be found in the future.
 * There is a possibility that it is still possible to manipulate some pages via the address bar, most pages are checked but maybe I have missed one?
-* The Python code in the app .py file exceed more than 1000 lines, this gives a warning in the GitHub terminal.
-* The Python code in the app .py file has single and double quote marks used in the code, this is not consistent to be updated in the future.
-* Users can delete their profile directly via the address bar without defensive programming '/delete-profile', this should be only possible if a user knows about this is possible, although it's better to fix this in the future.
+* The Python code in the app.py file exceed more than 1000 lines, this gives a warning in the GitHub terminal.
+* The Python code in the app.py file has single and double quote marks used in the code, this is not consistent to be updated in the future.
+* Users can delete their profile directly via the address bar without defensive programming '/delete-profile', this is only possible when a user knows about this possibility, although it's better to fix this in the future.
 * The GitHub repository has some files and folders I was not sure if I could delete them for the project (.gitpod.dockerfile, .gitpod.yml and .vscode). They are coming from the Code Institute's template.
 * Songs don't autoplay on phone and ipad.
 
