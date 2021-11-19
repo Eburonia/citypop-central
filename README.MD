@@ -103,7 +103,7 @@ Sans-serif has been set as fallback font.
 
 
 #### Imagery
-- There are five different hero background images implemented on every page. The background images are all street scenes from Tokyo made by the website owner in the year 2019. The colours are adjusted in such a way it won't distract the information in the foreground.
+- There are five different hero background images implemented on every page and will be randomly loaded. The background images are all street scenes from Tokyo made by the website owner in the year 2019. The colours are adjusted in such a way it won't distract the information in the foreground.
    - Background image 1 - [link](static/img/background1.jpg)
    - Background image 2 - [link](static/img/background2.jpg)
    - Background image 3 - [link](static/img/background3.jpg)
@@ -152,11 +152,11 @@ A header has been added on top of every page and exists out of the website logo,
 
 
 ### Footer
-A footer has been added on the bottom of the 'Index,' 'Results' and 'YouTube' pages and exists out of social media links (Twitter, Pinterest and, Instagram) and a copyright notice. The social media links are styled in yellow colour. By hovering the social media link icons, the colour will highlight in pink colour as described in the colour scheme section of this README file, making it clear to the end-user these are clickable links. The icons used for the social media links are directly loaded from the [fontawesome](https://www.fontawesome.com) website. All social media links will be opened on a new blank page. A clear copyright notice is visible at the bottom of the footer.
+A footer has been added on the bottom of the 'Index,' 'Results,' 'About' and 'YouTube' pages and exists out of social media links (Twitter, Pinterest and, Facebook) and a copyright notice. The social media links are styled in yellow colour. By hovering the social media link icons, the colour will highlight in pink colour as described in the colour scheme section of this README file, making it clear to the end-user these are clickable links. The icons used for the social media links are directly loaded from the [fontawesome](https://www.fontawesome.com) website. All social media links will be opened on a new blank page. A clear copyright notice is visible at the bottom of the footer.
 
 
 ### Index Page
-The 'Index' page is the starting point of the website and starts with a welcoming statement to every visitor. Below the statement, an implemented search bar makes it possible for users to search through the website's songs database. To help visitors to add correct keywords, above the search bar, example keywords are indicated (artist name, song name, album name, genres, and release year). Below the search bar, a summary of the 8 latest songs added to the database is shown to the visitor. These album covers are clickable and will open a new blank page to the website's 'YouTube' page which has an embedded YouTube video of the song. The bottom of the page ends with the footer has described above.
+The 'Index' page is the starting point of the website and starts with a welcoming statement to every visitor. Below the statement, an implemented search bar makes it possible for visitors to search through the website's songs database. To help visitors to add correct keywords, above the search bar, keyword suggestions are indicated (artist name, song name, album name, genres, and release year). Below the search bar, a summary of the 8 latest songs added to the database is shown to the visitor. These album covers are clickable and will open a new blank page to the website's 'YouTube' page which has an embedded YouTube video of the song. The bottom of the page ends with the footer has described above.
 
 
 ### 404 Page
