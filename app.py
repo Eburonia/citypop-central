@@ -199,7 +199,8 @@ def results():
         for i in range(start_result, end_result + 1):
             result_numbers.append(i)
 
-        # Set the number of records found in database, to be shown in the front-end
+        # Set the number of records found in database,
+        # to be shown in the front-end
         number_of_results = 'Number of results : ' + str(number_of_results)
 
         # Return information to front-end of website
@@ -1061,4 +1062,4 @@ def page_not_found(e):
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=True)
+            debug=False)
