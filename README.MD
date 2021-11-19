@@ -206,11 +206,11 @@ The 'User Information' page gives information about a user to other users or vis
 
 
 ### Users Page (for admin only)
-Only the administrator 'admin' of the website has access to the 'Users' page. Here the administrator sees a summary of all users and can delete unwanted users from the database by clicking the delete icon 'Garbage Bin'. A second red coloured 'Garbage Bin' will pop up and by clicking this icon, the specific user will be deleted from the website and database and will be no longer able to enter his account.
+Only the administrator 'admin' of the website has access to the 'Users' page. Here the administrator sees a summary of all users and can delete unwanted users from the database by clicking the delete icon 'Garbage Bin'. A second red coloured 'Garbage Bin' icon will show up and by clicking this icon, the specific user will be deleted from the website and database and will be no longer able to enter his account.
 
 
 ### YouTube Page
-By clicking the Artist Name or Song Title at the top of every search record on the 'Results' page, the visitor will be automatically redirected (blank page) to the website's 'YouTube' page of the song. On this page, the YouTube video of the song has been embedded and the video will play automatically when the page is loaded.
+By clicking the Artist Name or Song Name at the top of every search record on the 'Results' page, the visitor will be automatically redirected (blank page) to the website's 'YouTube' page of the song. On this page, the YouTube video of the song has been embedded and the video will automatically play when the page is loaded.
 
 
 ### Flash Messages
@@ -219,6 +219,7 @@ Flash messages will pop up with useful information for the user and can be close
 
 ### Forms
 Same styling for all forms on every page.
+
 
 ### Responsiveness
 All pages are responsive on all devices. Designed for minimum viewport width of: 320px.
@@ -234,7 +235,7 @@ All pages are responsive on all devices. Designed for minimum viewport width of:
 * Implementation of an image database instead of loading album images from the [discogs.com](https://www.discogs.com/) website.
 * Sub-divide the JavaScript code, all code is now loaded on all pages.
 * At this moment it is not possible to update your password, to be implemented in the future.
-* Data in the database are all saved as strings, can be changed to other data types like int for release years.
+* Data in the database are all saved as strings, can be changed to other data types like 'int' for release years.
 
 
 <!-- Data Scheme -->
@@ -266,7 +267,7 @@ The MongoDB Data Scheme Citypop Central
 - [GitPod](https://www.gitpod.io/) - GitPod was used for creating the code, testing of the website, commiting, and pushing the code to the github repository.
 - [Heroku](https://www.heroku.com/) - The project has been imported from the Github website to the Heroku website which allows Python related projects.
 - [Adobe XD](https://www.adobe.com/products/xd.html) - Adobe XD was used to create the website's Wireframes. To see the Wireframes, go to the Design section above to see the results.
-- [Photopea.com](https://www.photopea.com/) - The Photopea website was used for editing the README file images.
+- [Photopea.com](https://www.photopea.com/) - The Photopea website was used for creating the README file images and favicon image. 
 - [Flask](https://en.wikipedia.org/wiki/Flask_(web_framework)) - Flask is a micro web framework written in Python used for interaction between front-end and back-end of the website.
 
 
@@ -804,7 +805,7 @@ All content on the 'About' page was written by the website creator.
 ### Media
 
 #### Images
-- The website logo was created by the website creator.
+- The website logo and favicon was created by the website creator.
 - All album images are directly loaded from the [discogs.com](https://www.discogs.com/) website.
 - All images in this README file were created by the website creator.
 
