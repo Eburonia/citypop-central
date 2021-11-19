@@ -11,7 +11,7 @@ View the GitHub Respository [link](https://github.com/Eburonia/citypop-central/)
 
 <!-- About -->
 ## About
-The Citypop Central website contains information about Japanese songs and a link to the song's YouTube page. In our database, you find songs that are a mix of Jazz, Soul, Funk, Disco, or Synth-Pop from the '70s and '80s.  Combined with Japanese lyrics is this genre better known under the name 'Citypop.'
+The Citypop Central website contains information about Japanese songs and a link to the song's YouTube page. In our database, you find songs that are a mix of Jazz, Soul, Funk, Disco, or Synth-Pop from the '70s and '80s.  Combined with Japanese lyrics is this genre is better known under the name 'Citypop.'
 
 Back in the '70s and '80s, Japan had a strong economy that eventually would collapse. This era was better known as the 'Bubble economy.' Everybody had a good income, poverty almost did not exist, and a lot of money was made and spent during those years. Life was good, especially in the nightlife districts of Tokyo and other big Japanese cities. It was during those years that 'Citypop' became very popular in Japan.
 
@@ -114,7 +114,7 @@ Sans-serif has been set as fallback font.
 
 
 #### Wireframes
-Wireframes beloning to the website's project have been made in [Adobe XD](https://www.adobe.com/products/xd.html).
+Wireframes belonging to the website's project have been made in [Adobe XD](https://www.adobe.com/products/xd.html).
 The wireframes are implemented in markdown files and can be accessed over here:
 - Wireframes of the '404' Page - [link](static/readme-images/wireframes/wireframes-404.md)
 - Wireframes of the 'About' Page - [link](static/readme-images/wireframes/wireframes-about.md)
@@ -168,7 +168,7 @@ The 'About' page gives information to the visitor about the history and backgrou
 
 
 ### Add Song Page
-On the 'Add song' page, only a logged in user can add songs to the Citypop Central database. The user needs to add the necessary song information into a form. On top of every data field, some extra information is given to the user to add the correct data information. Regular expression is introduced to force the user to add correct data to the database. Because it is not possible to store images in the database, all album cover images have to be loaded from the [discogs.com](https://www.discogs.com/) website by adding the link into the image data field. A typical link to one of these album covers from the discogs website looks like this: https://img.discogs.com/mEAMMAzV336RAr0O0FjH41Q7oY4=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-4777778-1618165602-9892.jpeg.jpg. In case no album cover image is available, the album image data field needs to stay empty. The website automatically adds a 'no-cover' image to the form when leaving the album image data field and will pop up on the screen. Adding the song link from the Youtube website is done by adding the video link ID. For every YouTube song, this ID can be found in the address bar when playing a specific song on the YouTube website. For example, the hyperlink in the address bar looks like this: https://www.youtube.com/watch?v=pE2D3LWADFg. Here 'pE2D3LWADFg' is the video link ID! Copy this and paste it into the YouTube Link data field.
+On the 'Add song' page, only a logged-in user can add songs to the Citypop Central database. The user needs to add the necessary song information into a form. On top of every data field, some extra information is given to the user to add the correct data information. Regular expression is introduced to force the user to add correct data to the database. Because it is not possible to store images in the database, all album cover images have to be loaded from the [discogs.com](https://www.discogs.com/) website by adding the link into the image data field. A typical link to one of these album covers from the discogs website looks like this: https://img.discogs.com/mEAMMAzV336RAr0O0FjH41Q7oY4=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-4777778-1618165602-9892.jpeg.jpg. In case no album cover image is available, the album image data field needs to stay empty. The website automatically adds a 'no-cover' image to the form when leaving the album image data field and will pop up on the screen. Adding the song link from the Youtube website is done by adding the video link ID. For every YouTube song, this ID can be found in the address bar when playing a specific song on the YouTube website. For example, the hyperlink in the address bar looks like this: https://www.youtube.com/watch?v=pE2D3LWADFg. Here 'pE2D3LWADFg' is the video link ID! Copy this and paste it into the YouTube Link data field.
 
 
 ### Edit Song Page
@@ -188,12 +188,12 @@ On the 'Profile' page, the user can update user-related information like email a
 
 
 ### Register Page
-On the 'Register' page, a visitor can create a Citypop Central user account. Indicated are necessary data fields like username, password, email address, the country you live in, and gender. On top of every data field, some extra information is given to the user to add the correct data. Regular expression is introduced to force the visitor to add correct data to the database. When submitting the form, the back-end of the website checks whether the submitted username or email address already exists or not. A double-check is done when adding the new password. Visitors have to add the passwords twice. This is to check whether the user did not made a typo when adding the password. A blue message will pop up above the password data field, warning the visitor both passwords are not matching. The summary of all countries and genders is directly imported from the database, making it easy for the administrator of the website to update or edit them in case needed. This can be done on the 'Settings' page when the administrator is logged in. For now, users can communicate with each other by email. The user email address will be shown on the 'Userinfo' page of the user and is only visible for other logged-in users. Maybe the user doesn't want to expose the email addresses to other users. An option is given on the user's 'Profile' page to not share the email address. At the bottom below the 'Register' button, a hyperlink has been introduced re-directing visitors to the 'Login' page in case they want to login to their existing user account.
+On the 'Register' page, a visitor can create a Citypop Central user account. Indicated are necessary data fields like username, password, email address, the country you live in, and gender. On top of every data field, some extra information is given to the user to add the correct data. Regular expression is introduced to force the visitor to add correct data to the database. When submitting the form, the back-end of the website checks whether the submitted username or email address already exists or not. A double-check is done when adding the new password. Visitors have to add the passwords twice. This is to check whether the user did not make a typo when adding the password. A blue message will pop up above the password data field, warning the visitor both passwords are not matching. The summary of all countries and genders is directly imported from the database, making it easy for the administrator of the website to update or edit them in case needed. This can be done on the 'Settings' page when the administrator is logged in. For now, users can communicate with each other by email. The user email address will be shown on the 'Userinfo' page of the user and is only visible for other logged-in users. Maybe the user doesn't want to expose the email addresses to other users. An option is given on the user's 'Profile' page to not share the email address. At the bottom below the 'Register' button, a hyperlink has been introduced re-directing visitors to the 'Login' page in case they want to login to their existing user account.
 
 
 ### Results Page
 The 'Results' page will show up at the moment a visitor has added a search query in the search bar on the 'Index' page. The results found in the database will then show up on the screen. In case no results are found, a flash message will pop up telling the visitor 'No results found.' The maximum number of records shown on the screen is limited to 10 records per page. On the top left side of the search results, the number of results found in the database is shown. On the right side, the currently shown records are also indicated (e.g. Result 1 - 10). All displayed records show the following information: Artist Name, Song Name, Genre, Release Year, Album Name. An expanded information button (question mark icon) to show additional information about the song is introduced. By clicking this icon more information will show up on the screen. This information is Song Length, Uploaded By, Upload Date, and Edit Date. The 'Edit Date' will only be shown when the song has been edited after it has been added to the database. The 'Uploaded By' is only visible for logged in users. By clicking the Artist Name or Song Title at the top of every search record, the visitor will be automatically redirected (blank page) to the website's 'YouTube' page of the song. On this page, the YouTube video of the song has been embedded and the video will play automatically when the page is loaded.
-On the right side of the Artist Name and Song Name, when logged in, the user can see whether he has uploaded this song before. An 'Edit' and 'Delete' icon will be shown if that is the case. By clicking the 'Garbage Bin' icon the user can directly delete the song from the database and by clicking the 'Pen' icon, the user can directly edit the song. 
+On the right side of the Artist Name and Song Name, when logged-in, the user can see whether he has uploaded this song before. An 'Edit' and 'Delete' icon will be shown if that is the case. By clicking the 'Garbage Bin' icon the user can directly delete the song from the database and by clicking the 'Pen' icon, the user can directly edit the song. 
 An image of the 'Album Cover' of the song's album is indicted. By clicking the album image a larger image will show op on screen.
 
 
@@ -259,16 +259,16 @@ The MongoDB Data Scheme Citypop Central
 - [Jinja](https://en.wikipedia.org/wiki/Jinja_(template_engine))
 
 
-### Frameworks, Libraries and Programs Used
+### Frameworks, Libraries, and Programs Used
 - [jQuery v3.5.1](https://jquery.com/download/) - jQuery which is a JavaScript Library mainly used for manipulating the HTML DOM tree, is used on some pages.
 - [Font Awesome](https://www.fontawesome.com/) - Font Awesome icons are used on the website for linking to the social media pages and edit and delete purposes.
-- [Git](https://git-scm.com/) - Git was used for version control and code change tracking of the website project. The terminal in Gitpod was used to commit and to push the project to the Github repository.
+- [Git](https://git-scm.com/) - Git was used for version control and code change tracking of the website project. The terminal in Gitpod was used to commit and push the project to the Github repository.
 - [Github](https://github.com/) - The project code has been stored on the Github website.
-- [GitPod](https://www.gitpod.io/) - GitPod was used for creating the code, testing of the website, commiting, and pushing the code to the github repository.
-- [Heroku](https://www.heroku.com/) - The project has been imported from the Github website to the Heroku website which allows Python related projects.
+- [GitPod](https://www.gitpod.io/) - GitPod was used for creating the code, testing the website, committing, and pushing the code to the Github repository.
+- [Heroku](https://www.heroku.com/) - The project has been imported from the Github website to the Heroku website which allows Python-related projects.
 - [Adobe XD](https://www.adobe.com/products/xd.html) - Adobe XD was used to create the website's Wireframes. To see the Wireframes, go to the Design section above to see the results.
 - [Photopea.com](https://www.photopea.com/) - The Photopea website was used for creating the README file images and favicon image. 
-- [Flask](https://en.wikipedia.org/wiki/Flask_(web_framework)) - Flask is a micro web framework written in Python used for interaction between front-end and back-end of the website.
+- [Flask](https://en.wikipedia.org/wiki/Flask_(web_framework)) - Flask is a micro web framework written in Python used for interaction between the front-end and back-end of the website.
 
 
 ### Database
@@ -334,7 +334,7 @@ The MongoDB Data Scheme Citypop Central
 
 #### Index Page
 - Check the responsiveness of the page. **(checked)**
-- Check the latest uploaded song links function and open in a new screen. **(checked)**
+- Check the latest uploaded song links function and open a new screen. **(checked)**
 - Check whether records show up when searching the following keywords: Artist Name, Song Name, Genre, Release Year, Album Name, Uploaded By, Upload Date. **(checked)**
 - Check whether a song added to the database shows up to the latest songs summary. **(checked)**
 
@@ -345,7 +345,7 @@ The MongoDB Data Scheme Citypop Central
 #### 404 Page
 - Check the responsiveness of the page. **(checked)**
 - Check 404-page loads when a non-existing page is loaded. **(checked)**
-- Check whether link redirects to homepage. **(checked)**
+- Check whether the link redirects to the homepage. **(checked)**
 
 <img src="static/readme-images/404.jpg" alt="404 Page"><br>
 <span>404 Page</span>
@@ -366,7 +366,7 @@ The MongoDB Data Scheme Citypop Central
 - Check the responsiveness of the page. **(checked)**
 - Check whether the input fields match with the Edit Songs Page. **(checked)**
 - Check field description is understandable for a visitor. **(checked)**
-- Check whether album image loads correctly. **(checked)**
+- Check whether the album image loads correctly. **(checked)**
 - Check the regular expression. **(checked)**
 - Check whether the added song is in the database. **(checked)**
 
@@ -378,12 +378,12 @@ The MongoDB Data Scheme Citypop Central
 - Check the responsiveness of the page. **(checked)**
 - Check whether the input fields match with the Add Songs Page. **(checked)**
 - Check field description is understandable for a visitor. **(checked)**
-- Check whether album image loads correctly. **(checked)**
+- Check whether the album image loads correctly. **(checked)**
 - Check the regular expression. **(checked)**
-- Check whether admin can edit all songs. **(checked)**
-- Check whether admin can delete all songs. **(checked)**
-- Check whether other users cannot edit songs via address bar. **(checked)**
-- Check whether visitors cannot edit songs via address bar. **(checked)**
+- Check whether the admin can edit all songs. **(checked)**
+- Check whether the admin can delete all songs. **(checked)**
+- Check whether other users cannot edit songs via the address bar. **(checked)**
+- Check whether visitors cannot edit songs via the address bar. **(checked)**
 
 <img src="static/readme-images/editsong.jpg" alt="Edit Song Page"><br>
 <sub>Edit Song Page</sub>
@@ -446,7 +446,7 @@ The MongoDB Data Scheme Citypop Central
 - Check whether the 'Expand for more information' icon (question mark) functions properly. **(checked)**
 - Check whether the 'Uploaded By' link opens a new blank page. **(checked)**
 - Check whether all song information is correct. **(checked)**
-- Check whether there is no text-overflow. **(checked)**
+- Check whether there is no text overflow. **(checked)**
 - Check whether the Youtube link functions and opens a new blank page. **(checked)**
 - Check whether the 'Edit' and 'Delete' icons show up when logged in and check whether they function properly. **(checked)**
 - Check the number of results (records) indicated to match the real shown results on the screen. **(checked)**
@@ -464,7 +464,7 @@ The MongoDB Data Scheme Citypop Central
 
 #### Settings Page (for admin only)
 - Check the responsiveness of the page. **(checked)**
-- Check whether only admin has access to this page. **(checked)**
+- Check whether only the admin has access to this page. **(checked)**
 - Check whether it is possible to delete a country from the database. **(checked)**
 - Check whether it is possible to add a country from the database. **(checked)**
 - Check whether it is possible to delete a gender from the database. **(checked)**
@@ -480,12 +480,12 @@ The MongoDB Data Scheme Citypop Central
 <sub>Settings Page (for admin only)</sub>
 
 
-#### Userinfo Page
+#### User Info Page
 - Check the responsiveness of the page. **(checked)**
 - Check all showed information is correct. **(checked)**
 - Check e-mail address is hidden for non-users (visitors). **(checked)**
 - Check e-mail address is hidden for users and visitors when turned off on the 'Profile' page. **(checked)**
-- Check non-existing user return message when user does not exist. **(checked)**
+- Check non-existing user return message when the user does not exist. **(checked)**
 
 <img src="static/readme-images/userinfo.jpg" alt="Userinfo Page"><br>
 <sub>Userinfo Page</sub>
@@ -493,8 +493,8 @@ The MongoDB Data Scheme Citypop Central
 
 #### Users Page (for admin only)
 - Check the responsiveness of the page. **(checked)**
-- Check whether only admin has access to this page. **(checked)**
-- Check whether all users show up from database. **(checked)**
+- Check whether only the admin has access to this page. **(checked)**
+- Check whether all users show up from the database. **(checked)**
 - Check whether it is possible to delete a user. **(checked)**
 
 <img src="static/readme-images/users.jpg" alt="Users Page"><br>
@@ -520,7 +520,7 @@ The MongoDB Data Scheme Citypop Central
 
 
 ### Usability Testing
-- Family and friends were asked to test the website and to navigate through all website pages. Buttons, links, and contact form were tested by them.
+- Family and friends were asked to test the website and to navigate through all website pages. Buttons, links, and forms were tested by them.
 
 
 ### Compatibility Testing
@@ -541,7 +541,7 @@ The website is designed for a minimum viewport width of 320px (iPhone 5 size).
 
 
 ### Testing Code
-The following online validators were used to check whether the website generated any HTML, CSS, JavaScript/JQuery and Python syntax errors:
+The following online validators were used to check whether the website generated any HTML, CSS, JavaScript/JQuery, and Python syntax errors:
    - [W3C Markup Validator](https://validator.w3.org/)
    - [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
    - [JSHint Validator](https://www.jshint.com/)
@@ -570,8 +570,8 @@ The following pages were checked:
 * youtube.html
 
 Errors:  
-All pages generate Jinja related errors (the validator does not recognize Jinja code).  
-No serious errors discovered.
+All pages generate Jinja-related errors (the validator does not recognize Jinja code).  
+No serious errors were discovered.
 
 #### W3C CSS Validator
 
@@ -591,8 +591,8 @@ The following CSS files were checked:
 * [youtube.css](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fcitypop-central.herokuapp.com%2Fstatic%2Fcss%2Fyoutube.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 
 Warnings:  
-Validator does not recognize CSS variables.  
-No errors discovered.
+The validator does not recognize CSS variables.  
+No errors were discovered.
 
 
 #### JSHint Validator
@@ -601,7 +601,7 @@ The following JavaScript/JQuery file was checked by direct input into the valida
 * script.js
 
 Errors:   
-No errors discovered.
+No errors werediscovered.
 
 
 #### PEP8 Online Check
@@ -610,7 +610,7 @@ The following Python file was checked by direct input into the validator (copy &
 * app.py
 
 Errors:   
-No errors discovered.
+No errors were discovered.
 
 ### Testing Grammar and Spelling 
 [Grammarly.com](https://www.grammarly.com/) was used to check grammar and spelling.
@@ -625,7 +625,7 @@ No errors discovered.
    * For Japanese visitors or people who can read Japanese, also Citypop Central was written in Japanese Hiragana: 'シティ・ポップ・セントラル.'
    * The 'Search songs in our database' search bar and button on the 'Index' page tells it is possible to search for songs on the website.
    * Suggestions for keywords are added above the search bar to help the visitor use the correct keywords.
-   * A link to the 'About the citypop central website' page has been added. Here the visitor finds information about the website and Citypop genre.
+   * A link to the 'About the Citypop Central website' page has been added. Here the visitor finds information about the website and Citypop genre.
    * On the 'Register' page, it tells visitors they can add their songs into the database when they register.
 
 <img src="static/readme-images/searchbar.jpg" alt="Search Bar"><br>
@@ -709,16 +709,16 @@ No errors discovered.
 <!-- Known Bugs -->
 <a id="bugs"></a>
 ## Known Bugs
-* No significant bugs found on the website by the website creator.
+* No significant bugs were found on the website by the website creator.
 * When the Artist Name and Song title become too long, wrapping is needed, this is not an elegant solution and needs to be fixed in the future.
 * Some HTML tags don't accept aria labels.
 * Regular expression check for YouTube video ID and image hyperlink for the album cover image is almost impossible to check, other solutions need to be found in the future.
 * There is a possibility that it is still possible to manipulate some pages via the address bar, most pages are checked but maybe I have missed one?
-* The Python code in the app.py file exceed more than 1000 lines, this gives a warning in the GitHub terminal.
+* The Python code in the app.py file exceeds more than 1000 lines, this gives a warning in the GitHub terminal.
 * The Python code in the app.py file has single and double quote marks used in the code, this is not consistent to be updated in the future.
 * Users can delete their profile directly via the address bar without defensive programming '/delete-profile', this is only possible when a user knows about this possibility, although it's better to fix this in the future.
 * The GitHub repository has some files and folders I was not sure if I could delete them for the project (.gitpod.dockerfile, .gitpod.yml and .vscode). They are coming from the Code Institute's template.
-* Songs don't autoplay on phone and ipad.
+* Songs don't autoplay on phone and iPad.
 
 
 <!-- Deployment -->
@@ -739,7 +739,7 @@ No errors discovered.
 - PORT -> 5000
 - SECRET_KEY -> Copy from env .py file
 - MONGO_URI -> Copy from env .py file
-- MONGO_DBNAME -> Add from your mongoDB database
+- MONGO_DBNAME -> Add from your MongoDB database
 9. Make sure there is a 'Procfile' and a 'requirements.txt' file pushed into your GitHub repository.
 10. Click on the 'Deploy' tab.
 11. Click on the 'Enable Automatic Deploys' button.
@@ -755,7 +755,7 @@ No errors discovered.
 If you want to make a copy of the repository you can Fork it without changing the original repository by following the next procedure:
 1. Login to the [GitHub](https://www.github.com/) website.
 2. On the left side of your screen, you can find a summary of all repositories. Select [Eburonia/citypop-central](https://github.com/Eburonia/citypop-central)
-3. On the right side of your screen, next to 'Unwatch' pull-down menu, and the 'Star' button, you can find the 'Fork' button.
+3. On the right side of your screen, next to the 'Unwatch' pull-down menu, and the 'Star' button, you can find the 'Fork' button.
 4. By clicking this button, it will create a copy of the website in your repository.
 
 <img src="static/readme-images/forking.jpg" alt="forking website"><br>
@@ -807,16 +807,16 @@ All content on the 'About' page was written by the website creator.
 ### Media
 
 #### Images
-- The website logo and favicon was created by the website creator.
+- The website logo and favicon were created by the website creator.
 - All album images are directly loaded from the [discogs.com](https://www.discogs.com/) website.
 - All images in this README file were created by the website creator.
 
 <img src="static/readme-images/logo.jpg" alt="website logo"><br>
 <sub>Logo of the website</sub>
 
-### Acknowledgements
-- Thanks to my personal mentor Victor Miclovich for answering my questions and giving feedback to this project.
-- The many free coding forums on the internet, especially [Stackoverflow.com](https://www.stackoverflow.com/) for providing answers to my coding questions. Most of my questions were already asked by other users of the stackoverflow website, making it easy to find quick answers.
+### Acknowledgments
+- Thanks to my personal mentor Victor Miclovich for answering my questions and giving feedback on this project.
+- The many free coding forums on the internet, especially [Stackoverflow.com](https://www.stackoverflow.com/) for providing answers to my coding questions. Most of my questions were already asked by other users of the StackOverflow website, making it easy to find quick answers.
 
 
 
