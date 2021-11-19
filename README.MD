@@ -2,7 +2,7 @@
 
 <!-- Responsive Image -->
 <img src="static/readme-images/responsive.jpg" alt="Responsive design of the website">
-
+<sub>Responsive design of the website</sub><br><br>
 
 <!-- Links -->
 View the Live project on Heroku [link](https://citypop-central.herokuapp.com/)<br>
@@ -458,8 +458,8 @@ The MongoDB Data Scheme Citypop Central
 <img src="static/readme-images/results.jpg" alt="Search results page"><br>
 <sub>Search results page</sub>
 
-<img src="static/readme-images/icons.jpg" alt="Edit and Delete Icons"><br>
-<sub>Edit and Delete Icons</sub>
+<img src="static/readme-images/icons.jpg" alt="Youtube, Delete, Edit, and Expand more information Icons"><br>
+<sub>Youtube, Delete, Edit, and Expand more information Icons</sub>
 
 
 #### Settings Page (for admin only)
@@ -516,7 +516,7 @@ The MongoDB Data Scheme Citypop Central
 - Check whether flash messages appear after a user action. **(checked)**
 
 <img src="static/readme-images/flashmessage.jpg" alt="Flash messages"><br>
-<span>Flash Messages</span>
+<sub>Flash Messages</sub>
 
 
 ### Usability Testing
@@ -667,7 +667,7 @@ No errors were discovered.
    * Regular expressions have been added where needed, to help the user understand what input is expected, additional information has been added above every data field.
 
 <img src="static/readme-images/userlogin.jpg" alt="User Login"><br>
-<sub>Navigation Bar Logged in Users</sub>
+<sub>Navigation Bar Logged in User</sub>
 
 2. As a returning visitor of the website, I want to log out from my user account for safety reasons.
    * When logged in into your user account, it clearly states a logout button in the header's upper right corner.
