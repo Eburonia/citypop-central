@@ -61,7 +61,7 @@ def results():
     # Set page title
     title = 'Citypop Central | Results'
 
-    # Get search keyword(s) from textfield
+    # Get search keyword(s) from search bar
     query = request.form.get("search-query")
 
     # Get search keyword(s) from address bar
@@ -70,7 +70,7 @@ def results():
     # Get page number from address bar
     page = request.args.get('page')
 
-    # Determine whether search keyword is coming from textfield or address bar
+    # Determine whether search keyword is coming from search bar or address bar
     if search is None:
         query = request.form.get("search-query")
     else:
@@ -79,15 +79,16 @@ def results():
     # If search keyword is given
     if query:
 
-        # Search in database
+        # Search keywords in database
         songs_query = mongo.db.songs.find({"$text": {"$search": query}})
 
-        # Sort result(s) by Artist Name
+        # Sort result(s) by artist name
         songs_query.sort('artist_name')
 
         # Count the number of the records found in database
         number_of_results = songs_query.count()
 
+        # When no results found
         if number_of_results == 0:
             flash("No results found")
             return redirect(url_for("index"))
@@ -104,23 +105,25 @@ def results():
 
     # Check user input from the address bar
         # If non-numeric pages are selected from the address bar
-        # by direct user input
+        # by direct user input return to homepage
         if not str(page).isnumeric():
             return redirect(url_for("index"))
 
         # If pages lower than 0 are selected
+        # Return to homepage
         if int(page) < 0:
             return redirect(url_for("index"))
 
     # Pagination from here
 
-        # Set the number of records per page
+        # Set the number of shown records per page
         limit = 10
 
         # Determine number of pages needed for results
         number_of_pages = math.ceil(number_of_results / limit)
 
         # If user selects higher page number than available
+        # Return to homepage
         if int(page) >= number_of_pages:
             return redirect(url_for("index"))
 
@@ -133,14 +136,14 @@ def results():
             for i in range(int(page) * limit, number_of_results):
                 output.append(songs_query[i])
 
-        # Set the pagination anchor link for the previous page
+        # Set the pagination hyperlink for the previous page
         if int(page) >= 1:
 
-            # set link for address bar
+            # Set link for address bar
             previous_page = "/results?search=" + query +\
                 "&page=" + str(int(page) - 1)
 
-            # Set link text front-end
+            # Set link text for front-end
             previous_page_text = 'Prev page'
 
         else:
@@ -149,15 +152,15 @@ def results():
             previous_page = ''
             previous_page_text = ''
 
-        # Set the pagination anchor link for the next page
+        # Set the pagination hyperlink for the next page
         next_page_text = ''
 
         if int(page) < number_of_pages - 1:
 
-            # set link for address bar
+            # Set link for address bar
             next_page = f"/results?search={query}&page={str(int(page) + 1)}"
 
-            # Set link text front-end
+            # Set link text for front-end
             next_page_text = 'Next page'
 
         else:
@@ -167,7 +170,7 @@ def results():
             next_page_text = ''
             next_page = ''
 
-        # Set separation pipe front-end, only when
+        # Set separation pipe for front-end, only when
         # there is a previous and next page
         if previous_page_text and next_page_text:
             separator = '|'
@@ -196,7 +199,7 @@ def results():
         for i in range(start_result, end_result + 1):
             result_numbers.append(i)
 
-        # Set the number of records found in database, to be shown in front-end
+        # Set the number of records found in database, to be shown in the front-end
         number_of_results = 'Number of results : ' + str(number_of_results)
 
         # Return information to front-end of website
@@ -224,7 +227,7 @@ def register():
 
     if request.method == "POST":
 
-        # Check whether both passwords textfield the same password is given
+        # Check whether both passwords data fields the same password match
         if request.form.get("password") != \
                 request.form.get("password-confirm"):
 
@@ -236,7 +239,7 @@ def register():
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
-        # If username already exists
+        # If username already exists in database
         if existing_user:
 
             # Flash message username already exists
@@ -247,14 +250,14 @@ def register():
         existing_email = mongo.db.users.find_one(
             {"email": request.form.get("email")})
 
-        # If email address already exists
+        # If email address already exists in database
         if existing_email:
 
             # Flash message email address already exists
             flash('Email address already exists')
             return redirect(url_for("register"))
 
-        # If username does not exist, create user
+        # If username does not exists, create user
         regi = {
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password")),
@@ -343,7 +346,7 @@ def profile():
     This function loads the profile.html page
     '''
 
-    # Is user is logged in
+    # If user is logged in
     if 'user' in session:
 
         # Set page title
@@ -387,7 +390,7 @@ def update_profile(username):
 
     if request.method == "POST":
 
-        # Check whether both passwords textfield the same password is given
+        # Check whether both password data fields are the same passwords
         if request.form.get("password") != \
                 request.form.get("password-confirm"):
 
@@ -419,7 +422,7 @@ def delete_profile():
     This function deletes your profile page
     '''
 
-    # Is user is logged in
+    # If user is logged in
     if 'user' in session:
 
         # Delete user from database
@@ -448,7 +451,6 @@ def logout():
     # Is user is logged in
     if 'user' in session:
 
-        # Remove user from session cookies
         # Flash message you have been logged out
         flash("You have been logged out")
 
@@ -473,12 +475,12 @@ def add_song():
     # Set page title
     title = 'Citypop Central | Add Song'
 
-    # Is user is logged in
+    # If user is logged in
     if 'user' in session:
 
         if request.method == "POST":
 
-            # Get date of today
+            # Get the date of today
             date_time_now = datetime.datetime.now()
 
             # Convert to '13 November 2019'
@@ -512,7 +514,7 @@ def add_song():
         # Add allowable release years from database to front-end
         release_years = mongo.db.release_years.find().sort("release_year", 1)
 
-        # Add allowable gender names from database to front-end
+        # Add allowable genre names from database to front-end
         genres = mongo.db.genres.find().sort("genre", 1)
 
         # Return information to front-end of website
@@ -540,7 +542,7 @@ def edit_song():
     # Get the song from the database
     song = mongo.db.songs.find_one({"_id": ObjectId(song_id)})
 
-    # Song uploaded by this user before
+    # Song uploaded by user before
     uploaded_by = song["uploaded_by"]
 
     # If user is logged in
@@ -583,7 +585,7 @@ def update_song(song_id):
 
     if request.method == "POST":
 
-        # Get date of today
+        # Get the date of today
         date_time_now = datetime.datetime.now()
 
         # Convert to '13 November 2019'
@@ -760,11 +762,16 @@ def delete_user(user_id):
     This function deletes a specific user in the database
     '''
 
-    # Delete user from database
-    mongo.db.users.remove({"_id": ObjectId(user_id)})
+    # If user is logged in
+    if 'user' in session:
 
-    # Flash message user deleted from database
-    flash('User has been deleted from the database')
+        if session["user"] == 'admin':
+
+            # Delete user from database
+            mongo.db.users.remove({"_id": ObjectId(user_id)})
+
+            # Flash message user deleted from database
+            flash('User has been deleted from the database')
 
     # Return to index page
     return redirect(url_for("users"))

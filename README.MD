@@ -714,6 +714,7 @@ No errors discovered.
 * There is a possibility that it is still possible to manipulate some pages via the address bar, most pages are checked but maybe I have missed one?
 * The Python code in the app .py file exceed more than 1000 lines, this gives a warning in the GitHub terminal.
 * The Python code in the app .py file has single and double quote marks used in the code, this is not consistent to be updated in the future.
+* Users can delete their profile directly via the address bar without defensive programming '/delete-profile', this should be only possible if a user knows about this is possible, although it's better to fix this in the future.
 
 
 <!-- Deployment -->
