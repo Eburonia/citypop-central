@@ -1,4 +1,4 @@
-<h1 align="center">Citypop Central - Japanese Songs Database</h1>
+<h1 align="center">Citypop Central - 70's and 80's Japanese Songs</h1>
 
 <!-- Responsive Image -->
 <img src="static/readme-images/responsive.jpg" alt="Responsive design of the website">
@@ -686,12 +686,13 @@ No errors discovered.
 <!-- Known Bugs -->
 <a id="bugs"></a>
 ## Known Bugs
+* No significant bugs found on the website by the website creator.
 * When the Artist Name and Song title become too long, wrapping is needed, this is not an elegant solution and needs to be fixed in the future.
 * Some HTML tags don't accept aria labels.
-* Regular expression check for YouTube video ID and image hyperlink for album cover image is almost impossible to check, other solutions are to be found in the future.
-* It probably is still possible to manipulate some pages via the address bar, most pages are checked but, maybe I have missed some of them.
-* The Python code in the app .py file exceed more than 1000 lines, this gives a warning in the termninal.
-* The Python code in the app .py file has single and double quote marks used in the code, this is not consistent.
+* Regular expression check for YouTube video ID and image hyperlink for thr album cover image is almost impossible to check, other solutions are to be found in the future.
+* There is a possibility that it is still possible to manipulate some pages via the address bar, most pages are checked but maybe I have missed one?
+* The Python code in the app .py file exceed more than 1000 lines, this gives a warning in the GitHub terminal.
+* The Python code in the app .py file has single and double quote marks used in the code, this is not consistent to be updated in the future.
 
 
 <!-- Deployment -->
