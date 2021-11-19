@@ -625,17 +625,28 @@ No errors discovered.
    * A link to the 'About the citypop central website' page has been added. Here the visitor finds information about the website and Citypop genre.
    * On the 'Register' page, it tells visitors you can add your songs into the database when you register.
 
+<img src="static/readme-images/searchbar.jpg" alt="Search Bar"><br>
+<sub>Search Bar</sub>
+
+
 2. As a visitor of the website, I want to navigate easily throughout the website, so I don't get frustrated not knowing where to click.
    * A navigation bar in the header is available on every page in the upper right corner.
    * The website is easily usable for visitors who are only searching for songs. All links and buttons are foreseen with a title explaining the purpose which can be excessed when hovering.
    * Search results are limited to a maximum of 10 songs per page. Pagination has been introduced to switch to the next or previous pages.
    * Every search result has a (?) button that expands less relevant information about each song.
 
+<img src="static/readme-images/expandmore.jpg" alt="Expand More Button"><br>
+<sub>Expand More Button (?) Upper Right Corner</sub>
+
+
 3. As a visitor of the website, I want to target specific songs, so I don't get lost when I have to scroll through all available songs on the website.
    * Visitors can search under the following keywords: Artist name, Song name, Genre, Release Year, Album Name, Uploaded By, and Upload Date.
 
 4. As a visitor of the website, I not only want to find information about the songs, but I also want to listen to the songs.
    * At the top of every search record, the Artist's name and Song name are indicated. A YouTube icon in front of the Artist's name has been implemented telling the visitor this is a clickable link. By hovering the link the text 'Watch on YouTube' will pop up. By clicking this link, the visitor will be redirected to a blank page that includes the embedded Youtube video of the song. For convenience reasons, all records will play automatically.
+
+<img src="static/readme-images/linkyoutube.jpg" alt="Link to YouTube Songs Page"><br>
+<sub>Link to YouTube Songs Page</sub>
 
 5. As a visitor of the website, I want to see the album cover of the song.
    * For every search record, you can press the album image and a larger size image will appear on the screen.
@@ -652,6 +663,9 @@ No errors discovered.
    * When a user account is created, visitors become users and will also have access to a 'Profile' page. Here some additional information about the user is added and can be updated.
    * When registered, visitors become users and are now able to maintain their profile information, add songs, edit songs, delete songs. This means only songs you have added to the database, not songs uploaded by other users.
    * Regular expressions have been added where needed, to help the user understand what input is expected, additional information has been added above every data field.
+
+<img src="static/readme-images/userlogin.jpg" alt="User Login"><br>
+<sub>Navigation Bar Logged in Users</sub>
 
 2. As a returning visitor of the website, I want to log out from my user account for safety reasons.
    * When logged in into your user account, it clearly states a logout button in the header's upper right corner.
@@ -682,6 +696,13 @@ No errors discovered.
    * Songs will get an extra data field when the song was updated for the last time. Click the expand more information (?) to see this field below the 'Upload Date' field.
 4. As an administrator of the website, I want to be able to delete unwanted users.
    * The administrator has access to the 'Users' page, here all users are alphabetically summarized. Here the administrator can delete every user who has access to the website.
+
+<img src="static/readme-images/adminnavbar.jpg" alt="Admin Navbar"><br>
+<sub>Navigation Bar Administrator</sub>
+
+<img src="static/readme-images/unwantedusers.jpg" alt="Unwanted Users"><br>
+<sub>Delete Unwanted Users</sub>
+
 
 <!-- Known Bugs -->
 <a id="bugs"></a>
